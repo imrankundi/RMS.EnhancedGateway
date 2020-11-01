@@ -1,0 +1,21 @@
+{
+  "logPath": "D:\\RMS\\Logs",
+  "logLevel": 5,
+  "restApis": [
+    {
+      "name": "Reon",
+      "baseUrl": "http://localhost:5556/api/",
+      "apis": {
+        "registration": "agent/registration",
+        "notify": "agent/notify"
+      }
+    },
+    {
+      "name": "PushServer",
+      "baseUrl": "http://localhost:5600/api/",
+      "apis": {
+        "notify": "simulator/notify"
+      }
+    }
+  ]
+}

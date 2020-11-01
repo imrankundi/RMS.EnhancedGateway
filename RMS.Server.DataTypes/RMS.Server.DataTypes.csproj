@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{923D555C-A354-45DE-8D8C-237A124F942D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMS.Server.DataTypes</RootNamespace>
+    <AssemblyName>RMS.Server.DataTypes</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\WebApiServerConfiguration.cs" />
+    <Compile Include="Configuration\WebApiServerConfigurationManager.cs" />
+    <Compile Include="Constants\ServerConstants.cs" />
+    <Compile Include="Models\AdviceMessageModel.cs" />
+    <Compile Include="Models\TransactionQueueModel.cs" />
+    <Compile Include="Models\TransactionInquiryModel.cs" />
+    <Compile Include="Models\BaseServerModel.cs" />
+    <Compile Include="Models\CommunicationContext.cs" />
+    <Compile Include="Models\AddTransactionToQueueModel.cs" />
+    <Compile Include="Models\ServerErrorModel.cs" />
+    <Compile Include="Models\InitiateTransactionModel.cs" />
+    <Compile Include="Models\TerminalRegistrationModel.cs" />
+    <Compile Include="Models\TerminalRegistrationStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\ConfigurationRequest.cs" />
+    <Compile Include="Requests\Request.cs" />
+    <Compile Include="Requests\ServerRequestType.cs" />
+    <Compile Include="Responses\AgentHeartbeatResponse.cs" />
+    <Compile Include="Responses\NotifyResponse.cs" />
+    <Compile Include="Responses\AgentQRCodeResponse.cs" />
+    <Compile Include="Responses\AgentRegistrationResponse.cs" />
+    <Compile Include="Responses\PaymentAppTransactionAdviceResponse.cs" />
+    <Compile Include="Responses\PaymentAppTransactionInquiryResponse.cs" />
+    <Compile Include="Responses\ServerInitiateTransactionResponse.cs" />
+    <Compile Include="Quartz\CronTriggerDetail.cs" />
+    <Compile Include="Quartz\IntervalType.cs" />
+    <Compile Include="Quartz\SimpleTriggerDetail.cs" />
+    <Compile Include="Quartz\TriggerDetail.cs" />
+    <Compile Include="Quartz\TriggerType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="Configuration\WebApiServerConfiguration.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
+      <Project>{ba0aa6fa-2253-4a6a-a062-ab0f87c22815}</Project>
+      <Name>RMS.Component.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.WebApi\RMS.Component.WebApi.csproj">
+      <Project>{a4fe70fd-6186-4843-be09-c6ef564156b0}</Project>
+      <Name>RMS.Component.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

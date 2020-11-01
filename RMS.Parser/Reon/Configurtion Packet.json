@@ -1,0 +1,150 @@
+{
+  "info": {
+    "_postman_id": "2b8ff957-3921-4a80-8b63-fcc240cd5d6f",
+    "name": "ConfigApiForReon",
+    "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Token",
+      "_postman_id": "4fad64f2-9986-4d7a-98e8-8bdaf376f911",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application\/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"userName\":\"reon.configs\",\"password\":\"reon#cnf\", \"lifeMinutes\":1440}"
+        },
+        "url": "{{baseUrl}}\/token",
+        "description": "This should be used to generate a token. The token will have a validity of upto 24 hours after which you shall regenerate"
+      },
+      "response": []
+    },
+    {
+      "name": "List of configurable parameters",
+      "_postman_id": "593033cd-387a-40ad-af84-e5d4b48bab8e",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": { "token": "{{jwt}}" }
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Version",
+            "value": "1.0",
+            "type": "text"
+          }
+        ],
+        "url": "{{baseUrl}}\/site\/configs\/list\/SP003208",
+        "description": "To fetch the list of configurable parameters available against any site"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Configured Values",
+      "_postman_id": "659debcb-7de6-4ccf-bbb5-82167ee6ef81",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": { "token": "{{jwt}}" }
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Version",
+            "value": "1.0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}\/site\/config\/SP003208?device=MENT&deviceid=25&listofparameters=modbus_LVD2ConnectVoltage,modbus_LVD2DisconnectVoltage",
+          "host": [ "{{baseUrl}}" ],
+          "path": [ "site", "config", "SP003208" ],
+          "query": [
+            {
+              "key": "device",
+              "value": "MENT"
+            },
+            {
+              "key": "deviceid",
+              "value": "25"
+            },
+            {
+              "key": "listofparameters",
+              "value": "modbus_LVD2ConnectVoltage,modbus_LVD2DisconnectVoltage",
+              "description": "The comma separated list of keys fetched in the\"List of configurable parameters\""
+            }
+          ]
+        },
+        "description": "To fetch the current values configured against a given list of parameters. Please note that the parameters to get in a given request should be all contagious locations"
+      },
+      "response": []
+    },
+    {
+      "name": "Set Configuration Values",
+      "_postman_id": "3dba525d-cea5-46ea-84d3-3eee660697b9",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": { "token": "{{jwt}}" }
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-API-Version",
+            "value": "1.0",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"siteId\": \"SP003208\",\r\n    \"device\": \"MENT\",\r\n    \"deviceId\": \"25\",\r\n    \"values\": {\r\n        \"modbus_LVD2ConnectVoltage\": 47\r\n    }\r\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}\/site\/config\/SP003208",
+        "description": "To set parameters. Please note that the parameters to be set in a given request should be all contagious locations"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "8f5f36f9-3830-45a7-9d4c-e086efacfdb7",
+        "type": "text\/javascript",
+        "exec": [ "" ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "58b27169-c0c0-4bfa-ada2-c0a155b65f53",
+        "type": "text\/javascript",
+        "exec": [ "" ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "id": "4694c155-bf72-426e-a1ef-bdd365393f3e",
+      "key": "baseUrl",
+      "value": "https:\/\/67.23.248.117:8089\/api\/",
+      "type": "string"
+    },
+    {
+      "id": "dd8e1852-98e9-47dd-81e7-fbc215a15bdf",
+      "key": "jwt",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

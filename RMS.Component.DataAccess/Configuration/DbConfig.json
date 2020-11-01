@@ -1,0 +1,26 @@
+{
+  "logPath": "",
+  "logLevel": 5,
+  "connectionStringName": "orcl",
+  "connectionStrings": [
+    {
+      "name": "enc",
+      "connectionString": "Persist Security Info=False;User ID=sa;pwd=sa; Initial Catalog=SmartCardData;Data Source=.;Min Pool Size=100;Max Pool Size=300;Connection Timeout=1600",
+      "encrypted": false,
+      "dbType": "MSSQL"
+    },
+    {
+      "name": "qr",
+      "connectionString": "1TXRGLcexeyw1/Ar95xoITH1K43Zoh+GL1Dt+q2dshjawg2lBbeMzbByrHQk0JpHNuFXReruLYHisppPoJMlKEAWSb5QBE65T8ri+M7z+GRV2wVLukS9k1z1iCY5D1udopyB0FcdmDwlQUW2qOdVpqFkboar9fIxCq1tZlx57BMTmGt2EyCfcnwTXs/LXEBwVaSdW6VijBj9kS7NOWbvZQ==",
+      "encrypted": true,
+      "dbType": "MSSQL"
+    },
+    {
+      "name": "orcl",
+      "connectionString": "Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=WIN-11PN4DOR5M6)(PORT=1521)))(CONNECT_DATA=(SID=ORCL)));User ID=HR;Password=sa;",
+      "encrypted": false,
+      "dbType": 3
+    }
+
+  ]
+}

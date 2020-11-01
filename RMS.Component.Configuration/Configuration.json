@@ -1,0 +1,19 @@
+{
+  "logPath": "C:\\RMAgent\\",
+  "logLevel": 5,
+  "agent": {
+    "url": "http://+:5555",
+    "serverIps": [ "127.0.0.1", "::" ]
+  },
+  "transactionExpiry": 20,
+  "terminalAgents": [
+    {
+      "terminalId": "Terminal001",
+      "terminalAgentApiUrl": "http://localhost:5555/api/"
+    },
+    {
+      "terminalId": "Terminal002",
+      "terminalAgentApiUrl": "http://localhost:5557/api/"
+    }
+  ]
+}

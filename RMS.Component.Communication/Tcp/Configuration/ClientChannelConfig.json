@@ -1,0 +1,10 @@
+{
+  "logPath": "C:\\Touchless\\ClientChannel\\",
+  "logLevel": 5,
+  "port": 3001,
+  "ip": "127.0.0.1",
+  "retryAfterSeconds": 10,
+  "validateCertificate": false,
+  "certificateThumbprint": "",
+  "enableTls": false
+}

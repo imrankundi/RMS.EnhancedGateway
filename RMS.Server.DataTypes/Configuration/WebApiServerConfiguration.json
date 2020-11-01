@@ -1,0 +1,7 @@
+{
+  "logPath": "C:\\TouchlessServer\\",
+  "logLevel": 5,
+  "enableTcpServer": false,
+  "url": "http://+:5556",
+  "enableSimulation": true
+}

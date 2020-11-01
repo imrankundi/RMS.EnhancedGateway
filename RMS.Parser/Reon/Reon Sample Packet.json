@@ -1,0 +1,40 @@
+{
+  "siteId": "SP002396",
+  "mapping": "ES0050",
+  "ingester": "SALTEC",
+  "data": [
+    {
+      "Timestamp": "2020-10-24T12:59:46",
+      "DeviceType": "SGRC",
+      "DeviceId": "00",
+      "Temp-1": 41.7,
+      "Temp-2": 37.2,
+      "SignalStrength": -73,
+      "BitErrorRate": 0,
+      "HighCounter1": 14,
+      "HighCounter2": 40,
+      "HighCounter3": 31901050,
+      "HighCounter4": 8764397,
+      "HighCounter5": 28672395,
+      "HighCounter6": 29529753,
+      "[high]MainsFail": 31459765,
+      "[high]DGRunning": 31897217,
+      "LowCounter1": 99,
+      "Debug": 900.35,
+      "LowCounter3": 11879,
+      "LowCounter4": 18691932,
+      "LowCounter5": 3240495,
+      "LowCounter6": 154839,
+      "[low]MainsFail": 453165,
+      "[low]DGRunning": 15562,
+      "Al_Aux8": 0,
+      "Al_CurrentSimConnected": 0,
+      "Al_Aux6": 1,
+      "Al_Aux5": 0,
+      "Al_Aux4": 1,
+      "Al_Aux3": 1,
+      "Al_Aux2": 1,
+      "Al_Aux1": 1
+    }
+  ]
+}

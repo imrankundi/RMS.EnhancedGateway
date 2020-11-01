@@ -1,0 +1,9 @@
+{
+  "logPath": "C:\\Touchless\\ServerChannel\\",
+  "logLevel": 5,
+  "port": 3001,
+  "ip": "127.0.0.1",
+  "retryAfterSeconds": 10,
+  "certificateThumbprint": "f9b68a07437cf265db33dc2d58a5ca3df376ab3e",
+  "enableTls": false
+}
