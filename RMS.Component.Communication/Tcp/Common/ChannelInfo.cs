@@ -10,6 +10,7 @@ namespace RMS.Component.Communication.Tcp.Event
         public DateTime LastDataReceived { get; set; }
         public DateTime LastDataSent { get; set; }
         public DateTime RegisteredOn { get; set; }
+        public DateTime LastSynchronized { get; set; }
         //public ChannelStatus ChannelStatus { get; set; }
 
     }

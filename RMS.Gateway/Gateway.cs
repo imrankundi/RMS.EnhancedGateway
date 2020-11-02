@@ -278,40 +278,7 @@ namespace RMS.Gateway
 
         }
 
-        //private void KickInvalidListeners()
-        //{
-        //    if (listenerGateway == null)
-        //        return;
-
-        //    if (listenerGateway.ClientList == null)
-        //        return;
-
-        //    var keys = listenerGateway.ClientList.ToArray();
-        //    foreach (var key in keys)
-        //    {
-        //        if(listenerClients.ContainsKey(key))
-        //        {
-        //            try
-        //            {
-        //                var status = listenerClients[key];
-        //                if(status != null)
-        //                {
-        //                    if (status.IsValid == false && status.ConnectionElapsedSeconds > 20)
-        //                    {
-        //                        listenerGateway.DisconnectClient(key);
-        //                        listenerClients.Remove(key);
-        //                    }
-        //                }
-        //            }
-        //            catch(Exception ex)
-        //            {
-        //                LoggingManager.Log(ex);
-        //            }
-        //        }
-
-        //    }
-        //}
-
+       
         public void Restart()
         {
             Stop();

@@ -145,6 +145,7 @@
     <Compile Include="Tcp\Client\ClientContext.cs" />
     <Compile Include="Tcp\Client\Configuration\ChannelKeyValuePair.cs" />
     <Compile Include="Tcp\Common\TlsHandlerFactory.cs" />
+    <Compile Include="Tcp\Server\ChannelManager.cs" />
     <Compile Include="Tcp\Server\Configuration\ChannelKeyValuePair.cs" />
     <Compile Include="Tcp\Server\Configuration\ServerChannelConfigurationManager.cs" />
     <Compile Include="Tcp\Server\ClientChannelManager.cs" />
@@ -185,6 +186,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
+      <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
+      <Name>RMS.AWS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
       <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
       <Name>RMS.Component.Common</Name>
@@ -204,6 +209,18 @@
     <ProjectReference Include="..\RMS.Component.Wmi\RMS.Component.Wmi.csproj">
       <Project>{F3337F40-4BAC-4EC1-BD5B-E230F1B2EC72}</Project>
       <Name>RMS.Component.Wmi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Core\RMS.Core.csproj">
+      <Project>{E5740B08-507A-4B3A-AE2C-9018D4005671}</Project>
+      <Name>RMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Gateway\RMS.Gateway.csproj">
+      <Project>{8A7BD567-7F1A-4C5E-915A-F9DB01554C9A}</Project>
+      <Name>RMS.Gateway</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Parser\RMS.Parser.csproj">
+      <Project>{6282BE99-CE20-4331-B67F-35B216DF771A}</Project>
+      <Name>RMS.Parser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

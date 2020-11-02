@@ -23,10 +23,10 @@ namespace RMS.Component.Communication.Tcp.Server
 
         private readonly ServerChannelConfiguration configuration;
         public IServerChannelHandler ServerChannelHandler { get; set; }
+        //public ClientChannelManager ClientChannelManager { get; set; }
+        
         private Timer timer;
         private const int timerIntervalInSectons = 1;
-        public IEnumerable<string> ChannelIds => ClientChannelManager.ChannelInfo.Keys;
-
         public bool IsStarted
         {
             get
@@ -39,31 +39,27 @@ namespace RMS.Component.Communication.Tcp.Server
             }
         }
         string className = nameof(ServerChannel);
-        public ConcurrentDictionary<IChannelHandlerContext, ChannelInfo> Channels => ClientChannelManager.Channels;
-        //public ConcurrentDictionary<string, IChannelHandlerContext> ChannelGroup => ClientChannelManager.ChannelGroup;
-        //public IEnumerable<string> ChannelKeys => ClientChannelManager.ChannelGroup.Keys.ToArray<string>();
 
         private void DisconnectAllClientChannels()
         {
             try
             {
                 Logging.ServerChannelLogger.Instance.Log.Information(className, "DisconnectAllClientChannels", "Disconnecting clients");
-                if (Channels != null)
-                {
-                    var channels = Channels.Keys.ToArray();
-                    foreach (var channel in channels)
-                    {
-                        try
-                        {
-                            channel.CloseAsync();
-                        }
-                        catch (Exception ex)
-                        {
-                            Logging.ServerChannelLogger.Instance.Log.Error(className, "DisconnectAllClientChannels",
-                                string.Format("Message: {0}, Details: {1}", ex.Message, ex.ToString()));
-                        }
-                    }
-                }
+
+
+                //var channels = ClientChannelManager?.Channels.Keys.ToArray();
+                //foreach (var channel in channels)
+                //{
+                //    try
+                //    {
+                //        channel.CloseAsync();
+                //    }
+                //    catch (Exception ex)
+                //    {
+                //        Logging.ServerChannelLogger.Instance.Log.Error(className, "DisconnectAllClientChannels",
+                //            string.Format("Message: {0}, Details: {1}", ex.Message, ex.ToString()));
+                //    }
+                //}
             }
             catch (Exception ex)
             {
@@ -72,6 +68,12 @@ namespace RMS.Component.Communication.Tcp.Server
 
             }
         }
+
+        public void SynchronizeTerminals()
+        {
+            ChannelManager.Instance.SynchronizeTerminals();
+        }
+
         public ServerChannel(ServerChannelConfiguration configuration)
         {
             Logging.ServerChannelLogger.Instance.Log.Verbose(className, className, "Constructor fired");
@@ -79,6 +81,7 @@ namespace RMS.Component.Communication.Tcp.Server
             timer.Interval = timerIntervalInSectons * 1000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
+            //ClientChannelManager = new ClientChannelManager();
 
             if (configuration == null)
             {
@@ -189,6 +192,7 @@ namespace RMS.Component.Communication.Tcp.Server
                         pipeline.AddLast("decoder", decoder);
 
                         handler = new ServerChannelHandler();
+                        //handler.ClientChannelManager = ClientChannelManager;
                         handler.ChannelHandler = ServerChannelHandler;
                         pipeline.AddLast("handler", handler);
                     }));
@@ -239,7 +243,7 @@ namespace RMS.Component.Communication.Tcp.Server
 
         public async Task Broadcast(string msg)
         {
-            var channels = this.Channels;
+            var channels = ClientChannelManager.Channels;
             var allChannels = channels.Keys.ToArray();
             foreach (var channel in allChannels)
             {
@@ -249,24 +253,12 @@ namespace RMS.Component.Communication.Tcp.Server
 
         public async Task Send(string id, string msg)
         {
-            var channel = ClientChannelManager.FindChannelByKey(id);
+            //var channel = ClientChannelManager.FindChannelByKey(id);
 
-            if (channel == null)
-                return;
-            await channel.WriteAndFlushAsync(msg);
+            //if (channel == null)
+            //    return;
+            //await channel.WriteAndFlushAsync(msg);
 
         }
-
-
-        public ChannelInfo FindChannelInfo(ClientContext context)
-        {
-            return ClientChannelManager.FindChannelInfo(context.Context);
-        }
-
-        public bool RegisterChannelKey(ClientContext context, string key)
-        {
-            return ClientChannelManager.RegisterChannelKey(context.Context, key);
-        }
-
     }
 }

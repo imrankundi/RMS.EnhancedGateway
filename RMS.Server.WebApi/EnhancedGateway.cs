@@ -13,6 +13,7 @@ using RMS.Server.Tcp.Messages;
 using RMS.Server.WebApi.Configuration;
 using System;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace RMS.Server.WebApi
 {
@@ -21,6 +22,33 @@ namespace RMS.Server.WebApi
         private ServerChannel server;
         private ServerInfo info;
         private ServerChannelConfiguration configurations;
+        private Timer timer;
+        public EnhancedGateway()
+        {
+            timer = new Timer();
+            timer.Interval = ServerChannelConfigurationManager.Instance.Configurations.SyncIntervalInSeconds * 1000;
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Console.WriteLine("Timer Tick...");
+            timer.Enabled = false;
+            try
+            {
+                SynchronizeTerminals();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                timer.Enabled = true;
+            }
+            
+        }
 
         public async Task Start()
         {
@@ -38,6 +66,13 @@ namespace RMS.Server.WebApi
             Request req = jsonObject.ToObject<Request>();
             Console.WriteLine(req.ToFormattedJson());
             //server.Send(request.ChannelKey, request.Data);
+        }
+
+        private void SynchronizeTerminals()
+        {
+            //ClientChannelManager.BroadCast(TerminalHelper.TimeSync());
+            server.SynchronizeTerminals();
+            //terminalGateway.BroadCast(TerminalHelper.TimeSync());
         }
 
         private async Task EstablishServerChannel()
@@ -85,14 +120,14 @@ namespace RMS.Server.WebApi
 
         public void ServerChannelDataReceived(ServerChannelDataReceivedEventArgs e)
         {
-            var message = e.Message;
-            Console.WriteLine(message);
-            var result = ParsingManager.FirstLevelParser(message);
-            UpdateClientInfo(e.Context, result);
-            var packet = ParsingManager.SecondLevelParser(result);
-            var json = JsonConvert.SerializeObject(packet, Formatting.Indented);
-            Console.WriteLine(json);
-            PushToServer(json);
+            //var message = e.Message;
+            //Console.WriteLine(message);
+            //var result = ParsingManager.FirstLevelParser(message);
+            //UpdateClientInfo(e.Context, result);
+            //var packet = ParsingManager.SecondLevelParser(result);
+            //var json = JsonConvert.SerializeObject(packet, Formatting.Indented);
+            //Console.WriteLine(json);
+            //PushToServer(json);
         }
 
         private static void PushToServer(object request)
@@ -133,25 +168,25 @@ namespace RMS.Server.WebApi
             }
 
         }
-        private void UpdateClientInfo(ClientContext context, ReceivedPacket packet)
-        {
-            if (context == null)
-                return;
+        //private void UpdateClientInfo(ClientContext context, ReceivedPacket packet)
+        //{
+        //    if (context == null)
+        //        return;
 
-            if (packet == null)
-                return;
+        //    if (packet == null)
+        //        return;
 
-            if (server == null)
-                return;
+        //    if (server == null)
+        //        return;
 
 
-            var info = server.FindChannelInfo(context);
-            if(info.ChannelKey.Equals(TerminalHelper.DefaultTerminalId))
-            {
-                //info.ChannelKey = packet.TerminalId;
-                server.RegisterChannelKey(context, packet.TerminalId);
-            }
-        }
+        //    var info = server.ClientChannelManager.fi(context);
+        //    if(info.ChannelKey.Equals(TerminalHelper.DefaultTerminalId))
+        //    {
+        //        //info.ChannelKey = packet.TerminalId;
+        //        server.RegisterChannelKey(context, packet.TerminalId);
+        //    }
+        //}
 
         public void ServerChannelConnected(ServerChannelConnectedEventArgs e)
         {
@@ -170,14 +205,16 @@ namespace RMS.Server.WebApi
 
         private void PopulateChannelList()
         {
-            var keys = server.ChannelIds;
-            //StringBuilder sb = new StringBuilder();
-            Console.WriteLine("------------------------------------");
-            foreach (var key in keys)
-            {
-                Console.WriteLine(key);
-            }
-            Console.WriteLine("------------------------------------");
+            //var keys = server.ClientChannelManager?.ChannelKeys;
+            //if (keys == null)
+            //    return;
+            ////StringBuilder sb = new StringBuilder();
+            //Console.WriteLine("------------------------------------");
+            //foreach (var key in keys)
+            //{
+            //    Console.WriteLine(key);
+            //}
+            //Console.WriteLine("------------------------------------");
 
         }
 

@@ -9,18 +9,24 @@ using System.Linq;
 
 namespace RMS.Component.Communication.Tcp.Server
 {
-    public class ClientChannelManager
+    public class ChannelManager
     {
-        public static ConcurrentDictionary<string, IChannelHandlerContext> ChannelKeyDictionary { get; private set; }
-        public static ConcurrentDictionary<IChannelHandlerContext, ChannelInfo> Channels { get; private set; }
-        public IEnumerable<string> ChannelKeys => ChannelKeyDictionary?.Keys.ToArray();
-        //public ConcurrentDictionary<string, ChannelInfo> ChannelInfo { get; private set; }
-        public ClientChannelManager()
+        private static readonly ConcurrentDictionary<IChannelHandlerContext, ChannelInfo> channels =
+            new ConcurrentDictionary<IChannelHandlerContext, ChannelInfo>();
+        public static ConcurrentDictionary<IChannelHandlerContext, ChannelInfo> Channels => channels;
+
+        private static readonly ConcurrentDictionary<string, IChannelHandlerContext> channelKeyDictionary =
+            new ConcurrentDictionary<string, IChannelHandlerContext>();
+        public static ConcurrentDictionary<string, IChannelHandlerContext> ChannelKeyDictionary => channelKeyDictionary;
+
+        private static readonly ChannelManager instance = new ChannelManager();
+        public static ChannelManager Instance => instance;
+        private ChannelManager()
         {
-            ChannelKeyDictionary = new ConcurrentDictionary<string, IChannelHandlerContext>();
-            Channels = new ConcurrentDictionary<IChannelHandlerContext, ChannelInfo>();
-            //ChannelInfo = new ConcurrentDictionary<string, ChannelInfo>();
         }
+
+        public IEnumerable<string> ChannelKeys => ChannelKeyDictionary?.Keys.ToArray();
+
         public ChannelInfo AddChannel(IChannelHandlerContext context)
         {
             if (context == null)
@@ -51,10 +57,12 @@ namespace RMS.Component.Communication.Tcp.Server
                 /*----------------------------------------------*/
                 if (info != null)
                 {
-                    //ChannelKeyDictionary.TryRemove(info.ChannelKey, out IChannelHandlerContext ctx);
+                    UnregisterChannelKey(info.ChannelKey);
+                    ChannelKeyDictionary.TryRemove(info.ChannelKey, out IChannelHandlerContext ctx);
+                    context.CloseAsync();
                     //ChannelInfo.TryRemove(info.ChannelKey, out ChannelInfo inf);
 
-                    UnrigisterChannelKey(info.ChannelKey);
+
                 }
                 /*----------------------------------------------*/
                 return result;
@@ -68,7 +76,7 @@ namespace RMS.Component.Communication.Tcp.Server
             var channels = Channels.Keys.ToArray();
             try
             {
-                foreach(var channel in channels)
+                foreach (var channel in channels)
                 {
                     try
                     {
@@ -88,18 +96,21 @@ namespace RMS.Component.Communication.Tcp.Server
 
         public void SynchronizeTerminals()
         {
-            Console.WriteLine("SynchronizeTerminals");
+
             var channels = Channels.Keys.ToArray();
+            Console.WriteLine("SynchronizeTerminals. Channel Count: {0}", channels.Length);
             try
             {
                 foreach (var channel in channels)
                 {
                     try
                     {
+
                         bool result = Channels.TryGetValue(channel, out ChannelInfo info);
-                        if(result)
+                        Console.WriteLine("Channel Key: {0}", info.ChannelKey);
+                        if (result)
                         {
-                            if(DateTimeHelper.CurrentUniversalTime
+                            if (DateTimeHelper.CurrentUniversalTime
                                 .AddSeconds(-(ServerChannelConfigurationManager.Instance
                                 .Configurations.KickIntervalInSeconds)) > info.LastDataReceived)
                             {
@@ -129,6 +140,14 @@ namespace RMS.Component.Communication.Tcp.Server
             }
         }
 
+        public void UpdateChannelInfo(IChannelHandlerContext context, string key)
+        {
+            var info = FindChannelInfo(context);
+            info.ChannelKey = key;
+            info.LastDataReceived = DateTimeHelper.CurrentUniversalTime;
+
+        }
+
         public string GenerateChannelId()
         {
             return Guid.NewGuid().ToString();
@@ -154,7 +173,7 @@ namespace RMS.Component.Communication.Tcp.Server
             return null;
         }
 
-        
+
         public bool RemoveAll()
         {
             return false;
@@ -184,12 +203,12 @@ namespace RMS.Component.Communication.Tcp.Server
             {
                 var channelHandlerContext = FindChannelByKey(key);
                 var channelInfo = FindChannelInfo(channelHandlerContext);
-                if(channelInfo != null)
+                if (channelInfo != null)
                 {
                     channelInfo.ChannelKey = key;
                     channelInfo.RegisteredOn = DateTime.UtcNow;
                 }
-                
+
                 //channelInfo.ChannelStatus = Touchless.DataAccess.Enum.ChannelStatus.Connected;
                 //add to DB.
             }
@@ -223,11 +242,10 @@ namespace RMS.Component.Communication.Tcp.Server
             }
         }
 
-        public bool UnrigisterChannelKey(string key)
+        public bool UnregisterChannelKey(string key)
         {
             if (string.IsNullOrEmpty(key))
                 return false;
-
 
             if (!ChannelKeyDictionary.ContainsKey(key))
                 return false;
@@ -236,11 +254,15 @@ namespace RMS.Component.Communication.Tcp.Server
             ChannelKeyDictionary.TryRemove(key, out context);
 
             if (context != null)
+            {
+
                 return true;
+            }
+            //
 
             return false;
         }
         /*-------------------------------------------------------------*/
-       
+
     }
 }
