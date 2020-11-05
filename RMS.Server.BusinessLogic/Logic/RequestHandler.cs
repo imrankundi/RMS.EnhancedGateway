@@ -9,18 +9,18 @@ namespace RMS.Server.BusinessLogic
 {
     public class RequestHandler
     {
-        public static BaseResponse HandleRequest(object request, CommunicationContext context)
+        public static BaseResponse HandleRequest(JObject request, CommunicationContext context)
         {
             try
             {
                 //SendToSimulator(request);
-                var jsonObject = JObject.FromObject(request);
-                Logger.Instance.Log.Debug("RequestHelper", "HandleRequest", jsonObject.ToString());
-                Request req = jsonObject.ToObject<Request>();
+                //var jsonObject = JObject.FromObject(request);
+                Logger.Instance.Log.Debug("RequestHelper", "HandleRequest", request.ToString());
+                Request req = request.ToObject<Request>();
                 switch (req.RequestType)
                 {
-                    case ServerRequestType.Configuration:
-                        return Configure(jsonObject.ToObject<ConfigurationRequest>(), context);
+                    case ServerRequestType.TerminalCommand:
+                        return SendCommand(request.ToObject<TerminalCommandRequest>(), context);
                     default:
                         return UnsupportedRequestType();
                 }
@@ -41,7 +41,8 @@ namespace RMS.Server.BusinessLogic
             }
         }
 
-        private static BaseResponse Configure(ConfigurationRequest request, CommunicationContext context)
+
+        private static BaseResponse SendCommand(TerminalCommandRequest request, CommunicationContext context)
         {
             BaseResponse response = new ErrorResponse
             {
@@ -54,7 +55,7 @@ namespace RMS.Server.BusinessLogic
             return response;
         }
 
-        private static BaseResponse CreateErrorResponse(Exception ex)
+        public static BaseResponse CreateErrorResponse(Exception ex)
         {
             BaseResponse response = new ErrorResponse
             {
@@ -66,7 +67,7 @@ namespace RMS.Server.BusinessLogic
             };
             return response;
         }
-        private static BaseResponse UnsupportedRequestType()
+        public static BaseResponse UnsupportedRequestType()
         {
             BaseResponse response = new ErrorResponse
             {

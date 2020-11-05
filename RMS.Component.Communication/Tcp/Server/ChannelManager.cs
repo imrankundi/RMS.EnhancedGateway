@@ -37,8 +37,8 @@ namespace RMS.Component.Communication.Tcp.Server
                 ChannelInfo info = new ChannelInfo
                 {
                     ChannelId = GenerateChannelId(),
-                    ConnectedOn = DateTime.UtcNow,
-                    ChannelKey = "SPxxxxxx"
+                    ConnectedOn = DateTimeHelper.CurrentUniversalTime,
+                    ChannelKey = TerminalHelper.DefaultTerminalId
                 };
                 var result = Channels.TryAdd(context, info);
                 if (!result)
@@ -57,12 +57,16 @@ namespace RMS.Component.Communication.Tcp.Server
                 /*----------------------------------------------*/
                 if (info != null)
                 {
-                    UnregisterChannelKey(info.ChannelKey);
-                    ChannelKeyDictionary.TryRemove(info.ChannelKey, out IChannelHandlerContext ctx);
-                    context.CloseAsync();
-                    //ChannelInfo.TryRemove(info.ChannelKey, out ChannelInfo inf);
-
-
+                    try
+                    {
+                        UnregisterChannelKey(info.ChannelKey);
+                        ChannelKeyDictionary.TryRemove(info.ChannelKey, out IChannelHandlerContext ctx);
+                        context.CloseAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
                 /*----------------------------------------------*/
                 return result;
@@ -105,22 +109,24 @@ namespace RMS.Component.Communication.Tcp.Server
                 {
                     try
                     {
-
                         bool result = Channels.TryGetValue(channel, out ChannelInfo info);
                         Console.WriteLine("Channel Key: {0}", info.ChannelKey);
                         if (result)
                         {
-                            if (DateTimeHelper.CurrentUniversalTime
+                            var kickInterval = DateTimeHelper.CurrentUniversalTime
                                 .AddSeconds(-(ServerChannelConfigurationManager.Instance
-                                .Configurations.KickIntervalInSeconds)) > info.LastDataReceived)
+                                .Configurations.KickIntervalInSeconds));
+
+                            if (kickInterval > info.LastDataReceived && kickInterval > info.ConnectedOn)
                             {
                                 RemoveChannel(channel);
                             }
                             else
                             {
-                                if (DateTimeHelper.CurrentUniversalTime
+                                var pingInterval = DateTimeHelper.CurrentUniversalTime
                                 .AddSeconds(-(ServerChannelConfigurationManager.Instance
-                                .Configurations.PingIntervalInSeconds)) > info.LastSynchronized)
+                                .Configurations.PingIntervalInSeconds));
+                                if (pingInterval > info.LastSynchronized)
                                 {
                                     channel.WriteAndFlushAsync(TerminalHelper.TimeSync());
                                     info.LastSynchronized = DateTimeHelper.CurrentUniversalTime;
@@ -145,6 +151,15 @@ namespace RMS.Component.Communication.Tcp.Server
             var info = FindChannelInfo(context);
             info.ChannelKey = key;
             info.LastDataReceived = DateTimeHelper.CurrentUniversalTime;
+
+            if (info.ChannelKey != TerminalHelper.DefaultTerminalId)
+            {
+                if (!ChannelKeyDictionary.ContainsKey(key))
+                {
+                    ChannelKeyDictionary.TryAdd(key, context);
+                }
+            }
+
 
         }
 

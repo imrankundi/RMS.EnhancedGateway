@@ -3,21 +3,18 @@ using Newtonsoft.Json.Linq;
 using RMS.AWS;
 using RMS.Component.Communication.Tcp.Client;
 using RMS.Component.Communication.Tcp.Server;
-using RMS.Component.RestHelper;
-using RMS.Gateway;
-using RMS.Parser;
-using RMS.Server.BusinessLogic;
+using RMS.Core.Common;
 using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.Tcp.Messages;
-using RMS.Server.WebApi.Configuration;
+using RMS.Server.WebApi.Common;
 using System;
 using System.Threading.Tasks;
 using System.Timers;
 
 namespace RMS.Server.WebApi
 {
-    public class EnhancedGateway : IServerChannelHandler
+    public class EnhancedGateway : ITerminalCommandHandler
     {
         private ServerChannel server;
         private ServerInfo info;
@@ -47,7 +44,7 @@ namespace RMS.Server.WebApi
             {
                 timer.Enabled = true;
             }
-            
+
         }
 
         public async Task Start()
@@ -63,9 +60,11 @@ namespace RMS.Server.WebApi
         public void Notify(object request)
         {
             var jsonObject = JObject.FromObject(request);
-            Request req = jsonObject.ToObject<Request>();
-            Console.WriteLine(req.ToFormattedJson());
-            //server.Send(request.ChannelKey, request.Data);
+            TerminalCommandRequest command = jsonObject.ToObject<TerminalCommandRequest>();
+
+            // parse and store command to a dictionary
+            Console.WriteLine(command.ToFormattedJson());
+            Task.Run(() => server.Send(command.TerminalId, command.Data));
         }
 
         private void SynchronizeTerminals()
@@ -101,28 +100,34 @@ namespace RMS.Server.WebApi
             //throw new NotImplementedException();
         }
 
-        private void SendResponse(TcpMessage message, ClientContext context)
-        {
-            CommunicationContext communicationContext = new CommunicationContext
-            {
-                IP = context.IP
-            };
-            var response = RequestHandler.HandleRequest(message.Data, communicationContext);
-            TcpMessage msg = new TcpMessage
-            {
-                MessageType = MessageType.Response,
-                Data = response,
-                ChannelId = message.ChannelId,
-                ChannelKey = message.ChannelKey
-            };
-            context.Send(msg.ToJson());
-        }
+        //private void SendResponse(TcpMessage message, ClientContext context)
+        //{
+        //    CommunicationContext communicationContext = new CommunicationContext
+        //    {
+        //        IP = context.IP
+        //    };
+        //    var response = RequestHandler.HandleRequest(message.Data, communicationContext);
+        //    TcpMessage msg = new TcpMessage
+        //    {
+        //        MessageType = MessageType.Response,
+        //        Data = response,
+        //        ChannelId = message.ChannelId,
+        //        ChannelKey = message.ChannelKey
+        //    };
+        //    context.Send(msg.ToJson());
+        //}
 
-        public void ServerChannelDataReceived(ServerChannelDataReceivedEventArgs e)
+        public void TerminalCommandReceived(TerminalCommandReceivedEventArgs e)
         {
-            //var message = e.Message;
-            //Console.WriteLine(message);
-            //var result = ParsingManager.FirstLevelParser(message);
+            Console.WriteLine("{0}: {1}", e.ChannelKey, e.Message);
+            var command = TerminalCommandHandler.Instance.Find(e.ChannelKey);
+            if (command != null)
+            {
+                command.ResponseData = e.Message;
+                command.ResponseReceivedOn = DateTimeHelper.CurrentUniversalTime;
+                command.Status = CommandStatus.ResponseReceived;
+            }
+            //var result = ParsingManager.FirstLevelParser(e.Message);
             //UpdateClientInfo(e.Context, result);
             //var packet = ParsingManager.SecondLevelParser(result);
             //var json = JsonConvert.SerializeObject(packet, Formatting.Indented);
@@ -188,20 +193,6 @@ namespace RMS.Server.WebApi
         //    }
         //}
 
-        public void ServerChannelConnected(ServerChannelConnectedEventArgs e)
-        {
-            TcpMessage message = new TcpMessage
-            {
-                MessageType = MessageType.Connected,
-                ChannelId = e.ChannelId,
-                ChannelKey = null
-            };
-            string msg = string.Format("{0} -> {1}", e.ChannelId, "Connected");
-            //e.Context.Send(message.ToJson());
-            e.Context.Send(TerminalHelper.TimeSync());
-            Console.WriteLine(msg);
-            PopulateChannelList();
-        }
 
         private void PopulateChannelList()
         {
@@ -218,26 +209,6 @@ namespace RMS.Server.WebApi
 
         }
 
-        public void ServerChannelDisconnected(ServerChannelDisconnectedEventArgs e)
-        {
-            string msg = string.Format("{0} -> {1}", e.ChannelId, "Disconnected");
-            Console.WriteLine(msg);
-            PopulateChannelList();
-        }
 
-        public void ServerChannelError(ServerChannelErrorEventArgs e)
-        {
-        }
-
-        public void ServerListeningStateChanged(ServerChannelEventArgs e)
-        {
-            Console.WriteLine(server.IsStarted ? "Server Started" : "Server Stopped");
-        }
-
-        public void ServerChannelRegistered(ServerChannelRegisteredEventArgs e)
-        {
-            string msg = string.Format("{0} -> {1}", e.ChannelId, "Registered");
-            Console.WriteLine(msg);
-        }
     }
 }

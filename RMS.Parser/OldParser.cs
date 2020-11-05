@@ -1,11 +1,11 @@
-﻿using RMS.Core.Common;
+﻿using LoreSoft.MathExpressions;
+using Newtonsoft.Json;
+using RMS.Core.Common;
 using RMS.Core.Enumerations;
 using RMS.Core.Logging;
 using RMS.Core.QueryBuilder;
-using LoreSoft.MathExpressions;
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace RMS.Parser
 {

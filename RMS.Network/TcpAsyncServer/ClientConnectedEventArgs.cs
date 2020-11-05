@@ -6,7 +6,7 @@ namespace RMS.Network.Server
 {
     public class ClientConnectedEventArgs : EventArgs
     {
-        
+
         public DateTime ClientConnectedOn { get; private set; }
 
         public Socket ClientSocket { get; private set; }

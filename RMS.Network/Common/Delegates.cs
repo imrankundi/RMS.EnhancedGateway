@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace RMS.Network.Client
+﻿namespace RMS.Network.Client
 {
     public delegate void ClientConnectedEventHandler(object Sender, ConnectionStatusEventArgs e);
     public delegate void ClientConnectingEventHandler(object Sender, ConnectionStatusEventArgs e);

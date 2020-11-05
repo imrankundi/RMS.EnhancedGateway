@@ -1,7 +1,4 @@
-﻿using RMS.Core.Logging;
-using System;
-using System.Text;
-using System.Threading;
+﻿using System;
 using System.Collections.Concurrent;
 
 namespace RMS.Parser.Configuration
@@ -16,7 +13,7 @@ namespace RMS.Parser.Configuration
         {
             configQueue = new ConcurrentDictionary<string, ConfigurationPacket>();
         }
-        
+
         public ConfigurationQueueResult Add(ConfigurationPacket packet)
         {
             try
@@ -45,7 +42,7 @@ namespace RMS.Parser.Configuration
 
                 bool result = configQueue.TryAdd(packet.TerminalId, packet);
 
-                if(!result)
+                if (!result)
                 {
                     return new ConfigurationQueueResult
                     {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-
-namespace RMS.Gateway
+﻿namespace RMS.Gateway
 {
     public class GatewaySettings
     {

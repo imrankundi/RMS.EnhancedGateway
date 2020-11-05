@@ -1,0 +1,48 @@
+﻿{
+  "Device": "SGRC",
+  "ProcotoclHeader": "CGRC",
+  "DeviceType": "Saltec",
+  "ProtocolType": "Control",
+  "PageNumberIndex": -1,
+  "Pages": [
+    {
+      "PageName": "Default",
+      "PageNumber": 0,
+      "Parameters": [
+        {
+          "Name": "DeviceId",
+          "Signed": false,
+          "EnableDataType": false,
+          "MinVal": -1,
+          "MaxVal": -1,
+          "Field": "Id",
+          "Expression": "{0}",
+          "Precision": 5,
+          "DataType": "String",
+          "Evaluate": false,
+          "ParameterType": "Id",
+          "BitwiseLabels": [],
+          "ParameterIndexes": [ 1 ],
+          "Factor": 1
+        },
+        {
+          "Name": "Timestamp",
+          "Signed": false,
+          "EnableDataType": false,
+          "MinVal": -1,
+          "MaxVal": -1,
+          "Field": "DateAndTime",
+          "Expression": "{0} {1}",
+          "Precision": 2,
+          "DataType": "DateTime",
+          "Evaluate": false,
+          "ParameterType": "Data",
+          "BitwiseLabels": [],
+          "ParameterIndexes": [ 2, 3 ],
+          "Factor": 1
+        }
+      ]
+    }
+  ]
+
+}

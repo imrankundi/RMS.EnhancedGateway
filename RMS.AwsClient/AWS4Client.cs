@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RMS.AWS.Logging;
+using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -43,7 +44,7 @@ namespace RMS.AWS
                     string Signature = GetSignature(httpRequestMessage, server.SecretKey, server.Region, server.Service, timeStamp);
                     string AuthorizationHeader = GetAuthorizationHeader(server.AccessKey, timeStamp, server.Region, server.Service, Signature);
 
-                    using(HttpClient httpClient = new HttpClient())
+                    using (HttpClient httpClient = new HttpClient())
                     {
                         httpClient.Timeout = TimeSpan.FromSeconds(httpTimeout);
                         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("AWS4-HMAC-SHA256", AuthorizationHeader);
@@ -53,10 +54,15 @@ namespace RMS.AWS
                         {
                             return true;
                         }
+                        else
+                        {
+                            Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
+                        }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
+                    Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
                     //ErrorLogger.GetInstance().LogExceptionAsync(ex, "Posting data to server from AWS4Client");
                 }
             }
@@ -185,9 +191,9 @@ namespace RMS.AWS
         {
             return !(string.IsNullOrWhiteSpace(server.AccessKey)
                 || string.IsNullOrWhiteSpace(server.SecretKey)
-                || string.IsNullOrWhiteSpace(server.Region) 
-                || string.IsNullOrWhiteSpace(server.Service) 
-                || string.IsNullOrWhiteSpace(server.XApiKey) 
+                || string.IsNullOrWhiteSpace(server.Region)
+                || string.IsNullOrWhiteSpace(server.Service)
+                || string.IsNullOrWhiteSpace(server.XApiKey)
                 || string.IsNullOrWhiteSpace(server.EndPointUri));
         }
     }

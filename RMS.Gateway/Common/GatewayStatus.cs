@@ -19,7 +19,7 @@ namespace RMS.Gateway
         {
             get
             {
-                return DateTimeHelper.CurrentUniversalTime.Subtract(LastSync); 
+                return DateTimeHelper.CurrentUniversalTime.Subtract(LastSync);
             }
         }
         public double LastSyncElapsedSeconds
@@ -50,13 +50,13 @@ namespace RMS.Gateway
         {
             get
             {
-                return DateTimeHelper.CurrentUniversalTime.Subtract(StartedOn); 
+                return DateTimeHelper.CurrentUniversalTime.Subtract(StartedOn);
             }
         }
 
         public double UpTimeSeconds
         {
-            get 
+            get
             {
                 return UpTime.TotalSeconds;
             }

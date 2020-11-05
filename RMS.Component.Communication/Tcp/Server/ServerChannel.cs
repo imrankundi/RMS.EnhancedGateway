@@ -7,10 +7,7 @@ using DotNetty.Transport.Channels.Sockets;
 using RMS.Component.Common;
 using RMS.Component.Communication.Tcp.Client;
 using RMS.Component.Communication.Tcp.Common;
-using RMS.Component.Communication.Tcp.Event;
 using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -22,11 +19,11 @@ namespace RMS.Component.Communication.Tcp.Server
     {
 
         private readonly ServerChannelConfiguration configuration;
-        public IServerChannelHandler ServerChannelHandler { get; set; }
+        public ITerminalCommandHandler ServerChannelHandler { get; set; }
         //public ClientChannelManager ClientChannelManager { get; set; }
-        
+
         private Timer timer;
-        private const int timerIntervalInSectons = 1;
+        private const int timerIntervalInSeconds = 1;
         public bool IsStarted
         {
             get
@@ -78,7 +75,7 @@ namespace RMS.Component.Communication.Tcp.Server
         {
             Logging.ServerChannelLogger.Instance.Log.Verbose(className, className, "Constructor fired");
             timer = new Timer();
-            timer.Interval = timerIntervalInSectons * 1000;
+            timer.Interval = timerIntervalInSeconds * 1000;
             timer.Elapsed += Timer_Elapsed;
             timer.Start();
             //ClientChannelManager = new ClientChannelManager();
@@ -99,50 +96,17 @@ namespace RMS.Component.Communication.Tcp.Server
         bool lastServerStartState = false;
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            try
-            {
-                if (lastServerStartState != IsStarted)
-                {
-                    if (ServerChannelHandler == null)
-                        return;
 
-                    lastServerStartState = IsStarted;
-                    ServerChannelHandler.ServerListeningStateChanged(new ServerChannelEventArgs());
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
 
         }
 
         private void RaiseError(ClientContext context, string message, ErrorType errorType)
         {
-            if (ServerChannelHandler != null)
-            {
-                ServerChannelHandler.ServerChannelError(new ServerChannelErrorEventArgs
-                {
-                    Context = context,
-                    Message = message,
-                    Details = message,
-                    ErrorType = errorType
-                });
-            }
+
         }
         private void RaiseError(ClientContext context, Exception ex, ErrorType errorType)
         {
-            if (ServerChannelHandler != null)
-            {
-                ServerChannelHandler.ServerChannelError(new ServerChannelErrorEventArgs
-                {
-                    Context = context,
-                    Message = ex.Message,
-                    Details = ex.ToString(),
-                    ErrorType = errorType
-                });
-            }
+
         }
         private X509Certificate2 GetCertificate()
         {
@@ -243,7 +207,7 @@ namespace RMS.Component.Communication.Tcp.Server
 
         public async Task Broadcast(string msg)
         {
-            var channels = ClientChannelManager.Channels;
+            var channels = ChannelManager.Channels;
             var allChannels = channels.Keys.ToArray();
             foreach (var channel in allChannels)
             {
@@ -251,13 +215,14 @@ namespace RMS.Component.Communication.Tcp.Server
             }
         }
 
-        public async Task Send(string id, string msg)
+        public async Task Send(string key, string message)
         {
-            //var channel = ClientChannelManager.FindChannelByKey(id);
+            var channel = ChannelManager.Instance.FindChannelByKey(key);
 
-            //if (channel == null)
-            //    return;
-            //await channel.WriteAndFlushAsync(msg);
+            if (channel == null)
+                return;
+
+            await channel.WriteAndFlushAsync(message);
 
         }
     }

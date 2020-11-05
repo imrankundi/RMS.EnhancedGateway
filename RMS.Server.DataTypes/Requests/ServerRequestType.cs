@@ -2,7 +2,7 @@
 {
     public enum ServerRequestType
     {
-        Configuration = 1,
+        TerminalCommand = 1,
         Notify = 2
     }
 }

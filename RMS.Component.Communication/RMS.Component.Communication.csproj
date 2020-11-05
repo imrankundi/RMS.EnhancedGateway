@@ -148,14 +148,8 @@
     <Compile Include="Tcp\Server\ChannelManager.cs" />
     <Compile Include="Tcp\Server\Configuration\ChannelKeyValuePair.cs" />
     <Compile Include="Tcp\Server\Configuration\ServerChannelConfigurationManager.cs" />
-    <Compile Include="Tcp\Server\ClientChannelManager.cs" />
-    <Compile Include="Tcp\Server\IServerChannelHandler.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelRegisteredEventArgs.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelEventArgs.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelConnectedEventArgs.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelDisconnectedEventArgs.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelDataReceivedEventArgs.cs" />
-    <Compile Include="Tcp\Server\EventArgs\ServerChannelErrorEventArgs.cs" />
+    <Compile Include="Tcp\Server\ITerminalCommandHandler.cs" />
+    <Compile Include="Tcp\Server\EventArgs\TerminalCommandReceivedEventArgs.cs" />
     <Compile Include="Tcp\Client\EventArgs\ClientChannelEventArgs.cs" />
     <Compile Include="Tcp\Client\EventArgs\ClientChannelConnectedEventArgs.cs" />
     <Compile Include="Tcp\Client\EventArgs\ClientChannelDisconnectedEventArgs.cs" />

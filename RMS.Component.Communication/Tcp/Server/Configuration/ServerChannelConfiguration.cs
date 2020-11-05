@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using RMS.AWS;
 using RMS.Component.Configuration;
-using System.Net;
+using System.Collections.Generic;
 
 namespace RMS.Component.Communication.Tcp.Server
 {
@@ -8,7 +8,7 @@ namespace RMS.Component.Communication.Tcp.Server
     {
         public string ChannelId { get; set; }
         public string ChannelKey { get; set; }
-        public string Ip { get; set; }
+        //public string Ip { get; set; }
         public int Port { get; set; }
         public int RetryAfterSeconds { get; set; }
         public bool EnableTls { get; set; }
@@ -18,9 +18,10 @@ namespace RMS.Component.Communication.Tcp.Server
         public int KickIntervalInSeconds { get; set; }
         public int KickWaitInSeconds { get; set; }
         public int SyncIntervalInSeconds { get; set; }
-        [JsonIgnore]
-        public IPAddress IpAddress => IPAddress.Parse(Ip);
-        [JsonIgnore]
-        public IPEndPoint EndPoint => new IPEndPoint(IpAddress, Port);
+        public IList<ServerInfo> Listeners { get; set; }
+        //[JsonIgnore]
+        //public IPAddress IpAddress => IPAddress.Parse(Ip);
+        //[JsonIgnore]
+        //public IPEndPoint EndPoint => new IPEndPoint(IpAddress, Port);
     }
 }

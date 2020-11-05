@@ -1,7 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.IO;
 using System.Threading;
 
 namespace RMS.Network.Client
@@ -16,7 +16,7 @@ namespace RMS.Network.Client
 
         private readonly string ip;
         private readonly int port;
-        
+
 
         public bool IsConnected { get; private set; }
 
@@ -66,10 +66,10 @@ namespace RMS.Network.Client
             if (IsConnected)
                 return;
 
-            
+
             clientThread = new Thread(new ThreadStart(this.PerformConnection));
             clientThread.Start();
-            
+
         }
 
         public void Disconnect()

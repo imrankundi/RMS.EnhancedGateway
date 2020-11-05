@@ -6,9 +6,9 @@ namespace RMS.Server.WebApi
     internal static class ConfigureService
     {
         static readonly string className = nameof(ConfigureService);
-        static readonly string serviceName = "NCR Touchless Server Service";
-        static readonly string displayName = "NCR Touchless Server Service";
-        static readonly string description = "NCR Touchless Server Service";
+        static readonly string serviceName = "SalTec RMS Enhanced Gateway Service";
+        static readonly string displayName = "SalTec RMS Enhanced Gateway Service";
+        static readonly string description = "SalTec RMS Enhanced Gateway Service";
         internal static void Configure()
         {
             try

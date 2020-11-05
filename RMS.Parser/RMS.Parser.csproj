@@ -83,6 +83,9 @@
     <None Include="Drivers\SEDT.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Drivers\CGRC.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Drivers\SGRC.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

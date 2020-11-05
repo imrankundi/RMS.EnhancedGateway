@@ -9,8 +9,8 @@ namespace RMS.Gateway
         public static string TimeSync()
         {
             DateTime datetime = DateTimeHelper.CurrentUniversalTime;
-            return String.Format("SPDT({0},{1})", 
-                datetime.ToString(DateTimeFormat.UK.Date), 
+            return String.Format("SPDT({0},{1})",
+                datetime.ToString(DateTimeFormat.UK.Date),
                 datetime.ToString(DateTimeFormat.UK.Time)); // giving problem with virtual gt
         }
     }

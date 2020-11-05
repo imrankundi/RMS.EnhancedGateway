@@ -67,6 +67,15 @@ namespace RMS.Parser
                             };
                         }
                     }
+                    else if (pkt.Equals("PONG"))
+                    {
+                        return new ReceivedPacket()
+                        {
+                            Data = pkt,
+                            ProtocolHeader = pkt,
+                            TerminalId = terminalId
+                        };
+                    }
                 }
 
 
@@ -125,7 +134,7 @@ namespace RMS.Parser
                         (new Thread(() => ParsePacket(parser))).Start();
 #endif
 
-                   
+
                 }
             }
             catch (Exception ex)
@@ -206,11 +215,6 @@ namespace RMS.Parser
                 LoggingManager.Log(ex);
             }
 
-        }
-
-        public static void ParsePacket(DeviceParser parser)
-        {
-            bool result = parser.Parse();
         }
 
         public static ReonParsedPacket ParsePacket(ReonParser parser)

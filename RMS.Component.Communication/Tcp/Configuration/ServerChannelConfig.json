@@ -1,12 +1,30 @@
 {
-  "logPath": "C:\\Touchless\\ServerChannel\\",
+  "logPath": "C:\\RMS\\Enhanced Gateway\\",
   "logLevel": 5,
   "port": 3001,
-  "ip": "127.0.0.1",
+  //"ip": "127.0.0.1",
   "retryAfterSeconds": 10,
   "certificateThumbprint": "f9b68a07437cf265db33dc2d58a5ca3df376ab3e",
   "enableTls": false,
   "pingIntervalInSeconds": 60,
   "kickIntervalInSeconds": 60,
-  "syncIntervalInSeconds": 10
+  "syncIntervalInSeconds": 10,
+  "listeners": [
+    {
+      "AccessKey": "ACCESS_KEY",
+      "AuthenticationType": "AWS4",
+      "EndPointUri": "http://localhost:5600/api/simulator/notify",
+      "HttpTimeoutSecs": 10,
+      "Id": 1,
+      "Region": "Pakistan",
+      "Service": "execute-api",
+      "XApiKey": "API_KEY",
+      "SecretKey": "SECRET_KEY",
+      "UploadInterval": 100,
+      "Name": "Reon (AWSV4)",
+      "MaxRecordsPerHit": 10,
+      "MaxRecordsToFetch": 10,
+      "ParallelTcpConn": 2
+    }
+  ]
 }

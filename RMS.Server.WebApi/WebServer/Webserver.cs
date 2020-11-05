@@ -1,5 +1,4 @@
 ﻿using Microsoft.Owin.Hosting;
-using RMS.Server.BusinessLogic;
 using RMS.Server.WebApi.Configuration;
 using System;
 using System.Threading.Tasks;

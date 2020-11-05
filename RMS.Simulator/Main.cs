@@ -25,6 +25,7 @@ namespace RMS.Simulator
             Server.Start();
         }
 
+        long count;
         public void LogMessage(object request)
         {
             if (InvokeRequired)
@@ -32,8 +33,14 @@ namespace RMS.Simulator
                 Invoke(new Action<object>(LogMessage), new object[] { request });
                 return;
             }
-            var msg = string.Format("[{0}]: {1}", DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"), request);
-            txtServerLog.AppendText(msg);
+
+            if (count < long.MaxValue)
+                count++;
+            else
+                count = 0;
+
+            var msg = string.Format("Timestamp: {0}\nMessage Count: {1}\n{2}\n", DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"), count, request);
+            txtServerLog.Text = msg;
             txtServerLog.Focus();
         }
 
@@ -47,7 +54,7 @@ namespace RMS.Simulator
             LogMessage(request);
         }
 
-        
+
         private void UpdateTextBox(RichTextBox richTextBox, string text)
         {
             if (InvokeRequired)
@@ -68,14 +75,14 @@ namespace RMS.Simulator
         {
         }
 
-        
+
         private void chkShowDecodedQr_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
 
-      
+
         private void UpdateLabel(Label label, string msg)
         {
             if (InvokeRequired)
@@ -86,31 +93,5 @@ namespace RMS.Simulator
             label.Text = msg;
         }
 
-        private void btnWithdraw_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnStartSession_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnCreateReceiptData_Click(object sender, EventArgs e)
-        {
-        
-        }
-
-        private void btnEndSession_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnTransactionEndedState_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void btnUpdateTransactionStatus_Click(object sender, EventArgs e)
-        {
-        }
-
-        
     }
 }

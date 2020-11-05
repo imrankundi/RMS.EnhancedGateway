@@ -74,7 +74,7 @@ namespace RMS.Network.Server
             {
                 LoggingManager.Log(ex);
             }
-            
+
         }
 
         private void StopListening()
@@ -114,11 +114,11 @@ namespace RMS.Network.Server
                 //connectionListener = null;
                 IsStarted = false;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LoggingManager.Log(ex);
             }
-            
+
         }
 
         public void Stop()
@@ -141,11 +141,11 @@ namespace RMS.Network.Server
             {
                 clientSocket.BeginDisconnect(false, OnClientDisconnected, clientSocket);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LoggingManager.Log(ex);
             }
-            
+
         }
         private void OnClientDisconnected(IAsyncResult asyncResult)
         {

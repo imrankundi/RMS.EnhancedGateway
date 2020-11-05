@@ -1,11 +1,9 @@
-﻿using RMS.Core.Common;
+﻿using LoreSoft.MathExpressions;
+using Newtonsoft.Json;
+using RMS.Core.Common;
 using RMS.Core.Enumerations;
-using RMS.Core.Logging;
-using RMS.Core.QueryBuilder;
-using LoreSoft.MathExpressions;
 using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 namespace RMS.Parser
 {
@@ -134,14 +132,14 @@ namespace RMS.Parser
                             {
                                 byte[] byteArray = ConversionHelper.ToByteArray(values.ToArray());
                                 float floatValue;
-                                if(mapping.DataType == DataType.Float)
+                                if (mapping.DataType == DataType.Float)
                                 {
                                     floatValue = ConversionHelper.ToFloat(byteArray);
                                 }
                                 else
                                 {
                                     floatValue = ConversionHelper.ToMicrochipFloat(byteArray);
-                                } 
+                                }
                                 double val = Math.Round(floatValue, mapping.Precision);
                                 parsedPacket.Data.Add(mapping.Name, val);
                             }
@@ -195,7 +193,7 @@ namespace RMS.Parser
             if (SiteManager.Instance.Sites.SiteList == null)
                 return string.Empty;
 
-            if(SiteManager.Instance.Sites.SiteList.ContainsKey(key))
+            if (SiteManager.Instance.Sites.SiteList.ContainsKey(key))
             {
                 return SiteManager.Instance.Sites.SiteList[key];
             }
@@ -203,10 +201,10 @@ namespace RMS.Parser
             return string.Empty;
         }
 
-        private Dictionary<string, object> BitwiseParameter(Dictionary<string, object> dictionary, 
+        private Dictionary<string, object> BitwiseParameter(Dictionary<string, object> dictionary,
             Parameter mapping, string binary)
         {
-            if(!string.IsNullOrEmpty(binary))
+            if (!string.IsNullOrEmpty(binary))
             {
                 var bitwiseArray = ConversionHelper.ToIntArray(binary.ToCharArray());
                 for (int ii = 0; ii < bitwiseArray.Length; ii++)
@@ -229,7 +227,7 @@ namespace RMS.Parser
                     }
                 }
             }
-            
+
             return dictionary;
 
         }

@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(1078, 642);
             this.Controls.Add(this.txtServerLog);
             this.Name = "Main";
-            this.Text = "TMCW Simulator";
+            this.Text = "RMS AWS Simulator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResumeLayout(false);

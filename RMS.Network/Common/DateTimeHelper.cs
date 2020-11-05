@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Globalization;
 
 namespace RMS.Network
 {
     public sealed class DateTimeHelper
     {
-        public static DateTime GetDateTime() 
+        public static DateTime GetDateTime()
         {
             return DateTime.UtcNow;
         }
@@ -16,8 +13,8 @@ namespace RMS.Network
         public static string SynchronizeGT()
         {
             DateTime datetime = GetDateTime();
-            return String.Format("SPDT({0},{1})", 
-                datetime.ToString("dd/MM/yyyy"), 
+            return String.Format("SPDT({0},{1})",
+                datetime.ToString("dd/MM/yyyy"),
                 datetime.ToString("HH:mm:ss")); // giving problem with virtual gt
         }
 

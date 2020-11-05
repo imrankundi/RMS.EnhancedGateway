@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RMS.Parser;
 
 namespace RMS.Test
@@ -19,7 +18,16 @@ namespace RMS.Test
             var message = CreateModbusPacket("SP000316", "MENT", new byte[] { 95, 156, 17, 74, 25, 3, 3, 0, 0, 20, 20, 242, 0, 235, 0, 234, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 114, 227, 233 });
             //var message = "SP002411<SGRC(ID(00,30/10/2020,14:23:19)X(28.0,24.2,-65,0)H(14,45,32264261,10478812,32264298,32236195,32216922,32217082)L(99,900.35,43106,21828503,43109,71240,90465,90265)A(00101111))>";
             var packet = ParsingManager.FirstLevelParser(message);
-            var pkt = ParsingManager.SecondLevelParser(packet);
+            var protocl = ProtocolList.Instance.Find(packet.ProtocolHeader);
+            if (protocl.ProtocolType == Core.Enumerations.ProtocolType.Monitoring)
+            {
+                var pkt = ParsingManager.SecondLevelParser(packet);
+            }
+            else
+            {
+
+            }
+
         }
         [TestMethod]
         public void LoadSites()

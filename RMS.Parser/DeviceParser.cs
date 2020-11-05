@@ -1,8 +1,8 @@
-﻿using RMS.Core.Common;
+﻿using LoreSoft.MathExpressions;
+using RMS.Core.Common;
 using RMS.Core.Enumerations;
 using RMS.Core.Logging;
 using RMS.Core.QueryBuilder;
-using LoreSoft.MathExpressions;
 using System;
 using System.Collections.Generic;
 

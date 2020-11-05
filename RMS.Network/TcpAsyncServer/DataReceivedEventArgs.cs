@@ -32,7 +32,7 @@ namespace RMS.Network.Server
                 int port = 0;
                 if (ClientSocket != null)
                 {
-                    
+
                     port = ((IPEndPoint)ClientSocket.RemoteEndPoint).Port;
                 }
 

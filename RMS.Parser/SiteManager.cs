@@ -27,8 +27,8 @@ namespace RMS.Parser
             if (Directory.Exists(folder))
             {
                 string filePath = string.Format(@"{0}\{1}", folder, "Sites.json");
-                
-                if(File.Exists(filePath))
+
+                if (File.Exists(filePath))
                 {
                     string text = File.ReadAllText(filePath);
                     Sites = JsonConvert.DeserializeObject<Sites>(text);

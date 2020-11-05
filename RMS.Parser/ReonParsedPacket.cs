@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Core.Enumerations;
-using RMS.Core.QueryBuilder;
 using System;
 using System.Collections.Generic;
 

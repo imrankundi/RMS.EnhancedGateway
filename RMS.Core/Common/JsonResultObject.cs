@@ -1,5 +1,5 @@
-﻿using RMS.Core.Enumerations;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using RMS.Core.Enumerations;
 
 namespace RMS.Core.Common
 {

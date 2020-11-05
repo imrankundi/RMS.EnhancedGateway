@@ -1,7 +1,9 @@
 {
-  "logPath": "C:\\TouchlessServer\\",
+  "logPath": "C:\\RMS\\Enhanced Gateway\\",
   "logLevel": 5,
   "enableTcpServer": false,
   "url": "http://+:5556",
-  "enableSimulation": true
+  "enableSimulation": true,
+  "terminalCommandRetries": 30,
+  "terminalCommandRetryIntervalInSeconds": 1 
 }
