@@ -33,7 +33,7 @@ namespace RMS.Parser
                         Protocol protocol = JsonConvert.DeserializeObject<Protocol>(allText);
                         protocols.Add(protocol.ProcotoclHeader, protocol);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
                     }

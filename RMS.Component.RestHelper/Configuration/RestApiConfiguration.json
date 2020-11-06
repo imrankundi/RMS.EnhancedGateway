@@ -3,11 +3,10 @@
   "logLevel": 5,
   "restApis": [
     {
-      "name": "Reon",
+      "name": "RMS",
       "baseUrl": "http://localhost:5556/api/",
       "apis": {
-        "registration": "agent/registration",
-        "notify": "agent/notify"
+        "TerminalCommand": "terminal/command"
       }
     },
     {

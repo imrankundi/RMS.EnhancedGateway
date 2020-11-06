@@ -53,33 +53,40 @@ namespace RMS.Component.Communication.Tcp.Server
                 string key = string.Empty;
                 var result = ParsingManager.FirstLevelParser(message);
 
-                if (!result.Data.Equals(TerminalHelper.PONG))
+                if(result != null)
                 {
-                    var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
-                    if (protocol != null)
+                    if (!result.Data.Equals(TerminalHelper.PONG))
                     {
-                        if (protocol.ProtocolType == ProtocolType.Monitoring)
+                        var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
+                        if (protocol != null)
                         {
-                            var packet = ParsingManager.SecondLevelParser(result);
-                            var json = JsonConvert.SerializeObject(packet, Formatting.None);
-                            ChannelManager.Instance.UpdateChannelInfo(context, result.TerminalId);
-                            Console.WriteLine(json);
-                            if (!string.IsNullOrEmpty(json))
+                            if (protocol.ProtocolType == ProtocolType.Monitoring)
                             {
-                                PushToServer(json);
+                                var packet = ParsingManager.SecondLevelParser(result);
+                                if (packet != null)
+                                {
+                                    var json = JsonConvert.SerializeObject(packet, Formatting.None);
+                                    ChannelManager.Instance.UpdateChannelInfo(context, result.TerminalId);
+                                    Console.WriteLine(json);
+                                    if (!string.IsNullOrEmpty(json))
+                                    {
+                                        PushToServer(json);
+                                    }
+                                }
+                            }
+                            else if (protocol.ProtocolType == ProtocolType.Control)
+                            {
+                                ChannelHandler.TerminalCommandReceived(new TerminalCommandReceivedEventArgs
+                                {
+                                    ChannelKey = result.TerminalId,
+                                    Message = message
+                                });
                             }
                         }
-                        else if (protocol.ProtocolType == ProtocolType.Control)
-                        {
-                            ChannelHandler.TerminalCommandReceived(new TerminalCommandReceivedEventArgs
-                            {
-                                ChannelKey = result.TerminalId,
-                                Message = message
-                            });
-                        }
-                    }
 
+                    }
                 }
+                
             }
             catch (Exception ex)
             {

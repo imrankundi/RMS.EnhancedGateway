@@ -68,9 +68,6 @@
     <None Include="Drivers\MENT.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Drivers\MENT__.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Drivers\MUMC.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
