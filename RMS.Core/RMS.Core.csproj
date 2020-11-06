@@ -60,7 +60,6 @@
     <Compile Include="Common\DateTimeFormat.cs" />
     <Compile Include="Common\DateTimeHelper.cs" />
     <Compile Include="Common\IJsonObject.cs" />
-    <Compile Include="Common\JsonNetFilterAttribute.cs" />
     <Compile Include="Common\JsonResultObject.cs" />
     <Compile Include="DictionaryHelper.cs" />
     <Compile Include="Enumerations\SqlCondition.cs" />

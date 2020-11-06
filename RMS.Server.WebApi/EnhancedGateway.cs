@@ -4,6 +4,7 @@ using RMS.AWS;
 using RMS.Component.Communication.Tcp.Client;
 using RMS.Component.Communication.Tcp.Server;
 using RMS.Core.Common;
+using RMS.Parser;
 using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.Tcp.Messages;
@@ -73,7 +74,6 @@ namespace RMS.Server.WebApi
             server.SynchronizeTerminals();
             //terminalGateway.BroadCast(TerminalHelper.TimeSync());
         }
-
         private async Task EstablishServerChannel()
         {
 
@@ -94,32 +94,10 @@ namespace RMS.Server.WebApi
                 server = null;
             }
         }
-
-        private void HandleResponse(TcpMessage message, ClientContext context)
-        {
-            //throw new NotImplementedException();
-        }
-
-        //private void SendResponse(TcpMessage message, ClientContext context)
-        //{
-        //    CommunicationContext communicationContext = new CommunicationContext
-        //    {
-        //        IP = context.IP
-        //    };
-        //    var response = RequestHandler.HandleRequest(message.Data, communicationContext);
-        //    TcpMessage msg = new TcpMessage
-        //    {
-        //        MessageType = MessageType.Response,
-        //        Data = response,
-        //        ChannelId = message.ChannelId,
-        //        ChannelKey = message.ChannelKey
-        //    };
-        //    context.Send(msg.ToJson());
-        //}
-
         public void TerminalCommandReceived(TerminalCommandReceivedEventArgs e)
         {
             Console.WriteLine("{0}: {1}", e.ChannelKey, e.Message);
+            //var result = ParsingManager.FirstLevelParser(e.Message);
             var command = TerminalCommandHandler.Instance.Find(e.ChannelKey);
             if (command != null)
             {
@@ -134,65 +112,6 @@ namespace RMS.Server.WebApi
             //Console.WriteLine(json);
             //PushToServer(json);
         }
-
-        private static void PushToServer(object request)
-        {
-
-            try
-            {
-                ServerInfo info = new ServerInfo
-                {
-                    AccessKey = "ACCESS_KEY",
-                    AuthenticationType = "AWS4",
-                    EndPointUri = "http://localhost:5600/api/simulator/notify",
-                    HttpTimeoutSecs = 10,
-                    Id = 1,
-                    Region = "Pakistan",
-                    Service = "execute-api",
-                    XApiKey = "API_KEY",
-                    SecretKey = "SECRET_KEY",
-                    UploadInterval = 100,
-                    Name = "Reon (AWSV4)",
-                    MaxRecordsPerHit = 10,
-                    MaxRecordsToFetch = 10,
-                    ParallelTcpConn = 2
-                };
-                AWS4Client client = new AWS4Client(info);
-                client.PostData(JsonConvert.SerializeObject(request, Formatting.Indented));
-                //var configuration = WebApiServerConfigurationManager.Instance.Configurations;
-                //if (!configuration.EnableSimulation)
-                //    return;
-
-                //var client = new RestClientFactory("PushServer");
-                //var response = client.PostCallAsync<object, object>
-                //    (client.apiConfiguration.Apis["notify"], request);
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-        }
-        //private void UpdateClientInfo(ClientContext context, ReceivedPacket packet)
-        //{
-        //    if (context == null)
-        //        return;
-
-        //    if (packet == null)
-        //        return;
-
-        //    if (server == null)
-        //        return;
-
-
-        //    var info = server.ClientChannelManager.fi(context);
-        //    if(info.ChannelKey.Equals(TerminalHelper.DefaultTerminalId))
-        //    {
-        //        //info.ChannelKey = packet.TerminalId;
-        //        server.RegisterChannelKey(context, packet.TerminalId);
-        //    }
-        //}
-
 
         private void PopulateChannelList()
         {

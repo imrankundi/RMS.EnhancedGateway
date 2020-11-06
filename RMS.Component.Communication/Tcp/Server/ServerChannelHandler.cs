@@ -13,7 +13,6 @@ namespace RMS.Component.Communication.Tcp.Server
     public class ServerChannelHandler : SimpleChannelInboundHandler<string>
     {
         private string className = nameof(ServerChannelHandler);
-        //public ClientChannelManager ClientChannelManager { get; set; }
         public ITerminalCommandHandler ChannelHandler { get; set; }
 
         private void PushToServer(object request)

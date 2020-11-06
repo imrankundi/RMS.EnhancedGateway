@@ -59,7 +59,7 @@
       <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
       <Name>RMS.Component.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PKPSAssets.Component.Logging\RMS.Component.Logging.csproj">
+    <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
       <Project>{6ecb1ef7-2c8f-4a75-bba0-c772372973e3}</Project>
       <Name>RMS.Component.Logging</Name>
     </ProjectReference>

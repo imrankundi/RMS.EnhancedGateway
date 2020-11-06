@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{75381455-8932-4820-8D32-EBAFD15575BB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PKPSAssets.Simulator</RootNamespace>
-    <AssemblyName>PKPSAssets.Simulator</AssemblyName>
+    <RootNamespace>RMS.Simulator</RootNamespace>
+    <AssemblyName>Simulator</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -134,6 +134,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="Configuration\SimulatorConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
