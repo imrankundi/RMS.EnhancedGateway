@@ -145,6 +145,7 @@
     <Compile Include="Tcp\Client\ClientContext.cs" />
     <Compile Include="Tcp\Client\Configuration\ChannelKeyValuePair.cs" />
     <Compile Include="Tcp\Common\TlsHandlerFactory.cs" />
+    <Compile Include="Tcp\Server\PacketMerger.cs" />
     <Compile Include="Tcp\Server\ChannelManager.cs" />
     <Compile Include="Tcp\Server\Configuration\ChannelKeyValuePair.cs" />
     <Compile Include="Tcp\Server\Configuration\ServerChannelConfigurationManager.cs" />

@@ -65,6 +65,12 @@
     <Compile Include="StateManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Drivers\CMOD.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Drivers\M485.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Drivers\MENT.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -5,6 +5,7 @@ using RMS.Core.Enumerations;
 using RMS.Gateway;
 using RMS.Parser;
 using System;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,6 +15,9 @@ namespace RMS.Component.Communication.Tcp.Server
     {
         private string className = nameof(ServerChannelHandler);
         public ITerminalCommandHandler ChannelHandler { get; set; }
+        public ServerChannelHandler()
+        {
+        }
 
         private void PushToServer(object request)
         {
@@ -47,13 +51,58 @@ namespace RMS.Component.Communication.Tcp.Server
         protected override void ChannelRead0(IChannelHandlerContext context, string message)
         {
             string methodName = nameof(ChannelRead0);
+
+            Logging.ServerChannelLogger.Instance.Log.Verbose(className, methodName, string.Format("{0}: [{1}]", context.Channel, message));
+
             try
             {
-                Logging.ServerChannelLogger.Instance.Log.Verbose(className, methodName, string.Format("{0}: [{1}]", context.Channel, message));
+                var info = ChannelManager.Instance.FindChannelInfo(context);
+                if (info != null)
+                {
+
+                    string filter = string.Empty;
+                    int filterLenght = 3;
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        if (message.Length > filterLenght)
+                        {
+                            filter = message.Substring(message.Length - filterLenght, filterLenght);
+                            if (!filter.Contains(">"))
+                            {
+                                Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Partial Packet Received {0}: [{1}]", context.Channel, message));
+                                info.MessageBuffer.Append(message);
+                                info.PartialPacket = true;
+                                return;
+                            }
+                            else
+                            {
+                                info.MessageBuffer.Append(message);
+
+                                message = info.MessageBuffer.ToString();
+                                info.MessageBuffer.Clear();
+                                if (info.PartialPacket)
+                                {
+                                    Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
+                                }
+                                info.PartialPacket = false;
+                            }
+                        }
+                        else
+                        {
+                            info.MessageBuffer.Append(message);
+                            info.PartialPacket = false;
+                            message = info.MessageBuffer.ToString();
+                            info.MessageBuffer.Clear();
+                            Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
+
+                        }
+                    }
+                }
+
                 string key = string.Empty;
                 var result = ParsingManager.FirstLevelParser(message);
 
-                if(result != null)
+                if (result != null)
                 {
                     if (!result.Data.Equals(TerminalHelper.PONG))
                     {
@@ -76,17 +125,30 @@ namespace RMS.Component.Communication.Tcp.Server
                             }
                             else if (protocol.ProtocolType == ProtocolType.Control)
                             {
-                                ChannelHandler.TerminalCommandReceived(new TerminalCommandReceivedEventArgs
+                                if (protocol.DeviceType == DeviceType.Saltec)
                                 {
-                                    ChannelKey = result.TerminalId,
-                                    Message = message
-                                });
+                                    ChannelHandler.TerminalCommandReceived(new TerminalCommandReceivedEventArgs
+                                    {
+                                        ChannelKey = result.TerminalId,
+                                        Message = message
+                                    });
+                                }
+                                else if (protocol.DeviceType == DeviceType.Modbus)
+                                {
+                                    //string.Format("{0}<{1}({2})>\r", packet.TerminalId, packet.ProtocolHeader, packet.Data);
+                                    ChannelHandler.TerminalCommandReceived(new TerminalCommandReceivedEventArgs
+                                    {
+                                        ChannelKey = result.TerminalId,
+                                        Message = string.Format("{0}<{1}({2})>\r", result.TerminalId, result.ProtocolHeader, result.Data)
+                                    });
+                                }
+
                             }
                         }
 
                     }
                 }
-                
+
             }
             catch (Exception ex)
             {
