@@ -25,7 +25,7 @@
           "Factor": 1
         },
         {
-          "Name": "Date And Time",
+          "Name": "Timestamp",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -316,7 +316,7 @@
           "Factor": 1
         },
         {
-          "Name": "Date And Time",
+          "Name": "Timestamp",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -368,7 +368,7 @@
           "Factor": 1
         },
         {
-          "Name": "Date And Time",
+          "Name": "Timestamp",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -644,7 +644,7 @@
           "Factor": 1
         },
         {
-          "Name": "Date And Time",
+          "Name": "Timestamp",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,

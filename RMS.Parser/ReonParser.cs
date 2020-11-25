@@ -111,8 +111,8 @@ namespace RMS.Parser
                                 {
                                     int power = (mapping.ParameterIndexes.Count * 8) - 1;
                                     double maxValue = Math.Pow(2, power) - 1;
-                                    //val = val > maxValue ? maxValue - val : val;
-                                    doubleValue = doubleValue > maxValue ? doubleValue - maxValue * 2 : doubleValue;
+                                    doubleValue = doubleValue > maxValue ? maxValue * 2 - doubleValue : doubleValue;
+                                    //doubleValue = doubleValue > maxValue ? doubleValue - maxValue * 2 : doubleValue;
 
                                 }
 
