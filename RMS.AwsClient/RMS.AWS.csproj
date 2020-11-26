@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RMS.AWS</RootNamespace>
     <AssemblyName>RMS.AWS</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +58,14 @@
     <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
       <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
       <Name>RMS.Component.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite\RMS.Component.DataAccess.SQLite.csproj">
+      <Project>{E2C327B1-BDEA-436C-BB00-993F8B2351AD}</Project>
+      <Name>RMS.Component.DataAccess.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Core\RMS.Core.csproj">
+      <Project>{E5740B08-507A-4B3A-AE2C-9018D4005671}</Project>
+      <Name>RMS.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

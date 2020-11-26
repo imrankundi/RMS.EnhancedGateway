@@ -1,4 +1,5 @@
-﻿using RMS.Core.Logging;
+﻿using RMS.Core.Common;
+using RMS.Core.Logging;
 using System;
 using System.Text;
 using System.Threading;
@@ -50,6 +51,7 @@ namespace RMS.Parser
 
                             return new ReceivedPacket()
                             {
+                                ReceivedOn = DateTimeHelper.CurrentUniversalTime,
                                 Data = data,
                                 ProtocolHeader = protocolHeader,
                                 TerminalId = terminalId
@@ -96,12 +98,12 @@ namespace RMS.Parser
                 {
                     ReonParser parser = new ReonParser(receivedPacket);
 
-#if DEBUG
+                    //#if DEBUG
                     return ParsePacket(parser);
-#else
-                    if (parser != null)
-                        (new Thread(() => ParsePacket(parser))).Start();
-#endif
+                    //#else
+                    //                    if (parser != null)
+                    //                        (new Thread(() => ParsePacket(parser))).Start();
+                    //#endif
                 }
             }
             catch (Exception ex)
@@ -127,12 +129,12 @@ namespace RMS.Parser
                         TerminalId = pkt[0]
                     });
 
-#if DEBUG
+                    //#if DEBUG
                     return ParsePacket(parser);
-#else
-                    if (parser != null)
-                        (new Thread(() => ParsePacket(parser))).Start();
-#endif
+                    //#else
+                    //                    if (parser != null)
+                    //                        (new Thread(() => ParsePacket(parser))).Start();
+                    //#endif
 
 
                 }

@@ -1,4 +1,7 @@
 ﻿using RMS.AWS.Logging;
+using RMS.Component.DataAccess.SQLite;
+using RMS.Component.DataAccess.SQLite.Entities;
+using RMS.Core.Common;
 using System;
 using System.Linq;
 using System.Net;
@@ -56,14 +59,30 @@ namespace RMS.AWS
                         }
                         else
                         {
-                            Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
+                            PushApiEntity entity = new PushApiEntity
+                            {
+                                Timestamp = DateTimeHelper.CurrentUniversalTime,
+                                Data = MessageBody,
+                                ServerId = server.Id,
+                                Status = Status.NotSent
+                            };
+                            PushApiRepository.Save(entity);
+                            //Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
                         }
                     }
                 }
                 catch (Exception)
                 {
-                    Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
+                    //Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
                     //ErrorLogger.GetInstance().LogExceptionAsync(ex, "Posting data to server from AWS4Client");
+                    PushApiEntity entity = new PushApiEntity
+                    {
+                        Timestamp = DateTimeHelper.CurrentUniversalTime,
+                        Data = MessageBody,
+                        ServerId = server.Id,
+                        Status = Status.NotSent
+                    };
+                    PushApiRepository.Save(entity);
                 }
             }
 
