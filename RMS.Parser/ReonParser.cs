@@ -21,6 +21,7 @@ namespace RMS.Parser
 
         public virtual ReonParsedPacket Parse()
         {
+            Dictionary<string, object> dataDictionary = new Dictionary<string, object>();
             Protocol protocol = ProtocolList.Instance.Find(Packet.ProtocolHeader);
             if (protocol == null)
                 return null;
@@ -43,9 +44,12 @@ namespace RMS.Parser
                 ReceivedOn = DateTimeHelper.CurrentUniversalTime
             };
 
-            parsedPacket.Mapping = PopulateMapping(parsedPacket.TerminalId);
-
-            parsedPacket.Data.Add("DeviceType", Packet.ProtocolHeader);
+            SiteInfo siteInfo = GetSiteInfo(parsedPacket.TerminalId);
+            if(siteInfo != null)
+            {
+                parsedPacket.Mapping = siteInfo.Name;
+            }
+            dataDictionary.Add("DeviceType", Packet.ProtocolHeader);
             if (protocol.PageNumberIndex != -1)
             {
                 if (array.Length > protocol.PageNumberIndex)
@@ -80,6 +84,7 @@ namespace RMS.Parser
                     {
                         int.TryParse(value, out int id);
                         parsedPacket.Id = id.ToString("00");
+                        dataDictionary.Add("DeviceId", parsedPacket.Id);
                     }
 
                     else if (mapping.ParameterType == ParameterType.Data)
@@ -96,14 +101,22 @@ namespace RMS.Parser
                                 string binary = ConversionHelper.ToBinary(integerValue, length);
 
                                 /*------------------------------------------*/
-                                BitwiseParameter(parsedPacket.Data, mapping, binary);
+                                BitwiseParameter(dataDictionary, mapping, binary);
                                 /*------------------------------------------*/
                                 //parsedPacket.Data.Add(mapping.Name, binary);
                             }
                             else if (mapping.DataType == DataType.Epoch)
                             {
                                 DateTime datetime = DateTimeHelper.FromEpoch(doubleValue);
-                                parsedPacket.Data.Add(mapping.Name, datetime);
+                                if(siteInfo != null)
+                                {
+                                    if(siteInfo.TimeOffset != null)
+                                    {
+                                        datetime = datetime.AddHours(siteInfo.TimeOffset.Hours);
+                                        datetime = datetime.AddMinutes(siteInfo.TimeOffset.Minutes);
+                                    }
+                                }
+                                dataDictionary.Add(mapping.Name, datetime);
                             }
                             else
                             {
@@ -118,7 +131,7 @@ namespace RMS.Parser
 
                                 float factor = mapping.Factor == 0 ? 1 : mapping.Factor;
                                 doubleValue = Math.Round(doubleValue * factor, mapping.Precision);
-                                parsedPacket.Data.Add(mapping.Name, doubleValue);
+                                dataDictionary.Add(mapping.Name, doubleValue);
                             }
                         }
                         else
@@ -126,7 +139,15 @@ namespace RMS.Parser
                             if (mapping.DataType == DataType.DateTime)
                             {
                                 DateTime datetime = DateTimeHelper.Parse(value, DateTimeFormat.UK.DateTime);
-                                parsedPacket.Data.Add(mapping.Name, datetime);
+                                if (siteInfo != null)
+                                {
+                                    if (siteInfo.TimeOffset != null)
+                                    {
+                                        datetime = datetime.AddHours(siteInfo.TimeOffset.Hours);
+                                        datetime = datetime.AddMinutes(siteInfo.TimeOffset.Minutes);
+                                    }
+                                }
+                                dataDictionary.Add(mapping.Name, datetime);
                             }
                             else if (mapping.DataType == DataType.Float || mapping.DataType == DataType.MicrochipFloat)
                             {
@@ -141,18 +162,18 @@ namespace RMS.Parser
                                     floatValue = ConversionHelper.ToMicrochipFloat(byteArray);
                                 }
                                 double val = Math.Round(floatValue, mapping.Precision);
-                                parsedPacket.Data.Add(mapping.Name, val);
+                                dataDictionary.Add(mapping.Name, val);
                             }
                             else if (mapping.DataType == DataType.Binary)
                             {
                                 /*------------------------------------------*/
-                                BitwiseParameter(parsedPacket.Data, mapping, value);
+                                BitwiseParameter(dataDictionary, mapping, value);
                                 /*------------------------------------------*/
                             }
                             else
                             {
                                 object val = DataTypeHelper.Convert(mapping.DataType, value);
-                                parsedPacket.Data.Add(mapping.Name, val);
+                                dataDictionary.Add(mapping.Name, val);
                             }
                         }
 
@@ -165,7 +186,7 @@ namespace RMS.Parser
                     //return null;
                 }
             }
-
+            parsedPacket.Data.Add(dataDictionary);
             //ExecuteQuery(parsedPacket);
             return parsedPacket;
         }
@@ -185,20 +206,20 @@ namespace RMS.Parser
             //}
         }
 
-        private string PopulateMapping(string key)
+        private SiteInfo GetSiteInfo(string key)
         {
             if (SiteManager.Instance.Sites == null)
-                return string.Empty;
+                return null;
 
             if (SiteManager.Instance.Sites.SiteList == null)
-                return string.Empty;
+                return null;
 
             if (SiteManager.Instance.Sites.SiteList.ContainsKey(key))
             {
                 return SiteManager.Instance.Sites.SiteList[key];
             }
 
-            return string.Empty;
+            return null;
         }
 
         private Dictionary<string, object> BitwiseParameter(Dictionary<string, object> dictionary,
@@ -211,19 +232,13 @@ namespace RMS.Parser
                 {
                     if (mapping.BitwiseLabels != null)
                     {
-
-                        if (mapping.BitwiseLabels.Count - 1 >= ii)
+                        if(mapping.BitwiseLabels.Count > 0)
                         {
-                            dictionary.Add(mapping.BitwiseLabels[ii], bitwiseArray[ii]);
+                            foreach(BitwiseLabel label in mapping.BitwiseLabels)
+                            {
+                                dictionary.Add(label.Label, bitwiseArray[label.Index]);
+                            }
                         }
-                        else
-                        {
-                            dictionary.Add(string.Format("Al_{0}", ii + 1), bitwiseArray[ii]);
-                        }
-                    }
-                    else
-                    {
-                        dictionary.Add(string.Format("Al_{0}", ii + 1), bitwiseArray[ii]);
                     }
                 }
             }

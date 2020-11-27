@@ -772,36 +772,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
           "Name": "(MEMT) Rectifier Voltage (Vdc)",
           "Signed": true,
           "EnableDataType": true,

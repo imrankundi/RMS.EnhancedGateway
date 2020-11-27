@@ -70,7 +70,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Battery Volts (Vdc)",
+          "Name": "BatteryVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -85,7 +85,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MNAR) Battery Current (A)",
+          "Name": "BatteryCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -100,7 +100,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Remaining Capacity (Ah)",
+          "Name": "RemainingCapacity",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -115,7 +115,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Average Cell Temp (°C)",
+          "Name": "AverageCellTemp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -130,7 +130,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Environment Temp (°C)",
+          "Name": "EnvironmentTemp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -156,6 +156,68 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 0,
+              "Label": "Al_CellOverVoltage"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_CellUnderVoltage"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_PackOverVoltage"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_PackUnderVoltage"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_ChargingOverCurrent"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_SOCLow"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_DiffVolt"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Reserved13"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Reserved14"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_Reserved15"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DischargingOverCurrent"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_CellOverTemperature"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_CellUnderTemperature"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_EnvironmentOverTemperature"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_EnvironmentUnderTemperature"
+            }
+          ],
           "ParameterIndexes": [ 20, 21 ],
           "Factor": 1
         },
@@ -171,6 +233,72 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 0,
+              "Label": "Al_CellOVProtect"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_CellUVProtect"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_PackOVProtect"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_PackUVProtect"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_SCProtect"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_OCProtect"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Reserved3"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Reserved4"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Reserved5"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_Reserved6"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_ChgOTProtect"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_ChgUTProtect"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_DschOTProtect"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DschUTProtect"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Reserved1"
+            },
+            {
+              "Index": 15,
+              "Label": "Al_Reserved2"
+            }
+          ],
           "ParameterIndexes": [ 22, 23 ],
           "Factor": 1
         },
@@ -186,11 +314,77 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_FrontEndSampleError"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_TempSensorDiscon"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Reserved7"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Reserved8"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_Reserved9"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DschMOSFETConnect"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_CurrentLimitEnable"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Reserved16"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Reserved17"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Reserved18"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Reserved10"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Reserved11"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_Reserved12"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_Charging"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_Discharging"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_ChMOSFETConnect"
+            }
+          ],
           "ParameterIndexes": [ 24, 25 ],
           "Factor": 1
         },
         {
-          "Name": "(MNAR) SOC (%)",
+          "Name": "SOC",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -205,7 +399,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MNAR) Reserved 1",
+          "Name": "Reserved1",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -220,7 +414,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Reserved 2",
+          "Name": "Reserved2",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -235,7 +429,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Reserved 3",
+          "Name": "Reserved3",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -250,7 +444,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Reserved 4",
+          "Name": "Reserved4",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -265,7 +459,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Reserved 5",
+          "Name": "Reserved5",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -280,7 +474,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Cell 1 Voltage (Vdc)",
+          "Name": "Cell1Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -295,7 +489,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 2 Voltage (Vdc)",
+          "Name": "Cell2Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -310,7 +504,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 3 Voltage (Vdc)",
+          "Name": "Cell3Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -325,7 +519,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 4 Voltage (Vdc)",
+          "Name": "Cell4Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -340,7 +534,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 5 Voltage (Vdc)",
+          "Name": "Cell5Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -355,7 +549,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 6 Voltage (Vdc)",
+          "Name": "Cell6Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -370,7 +564,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 7 Voltage (Vdc)",
+          "Name": "Cell7Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -385,7 +579,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 8 Voltage (Vdc)",
+          "Name": "Cell8Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -400,7 +594,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 9 Voltage (Vdc)",
+          "Name": "Cell9Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -415,7 +609,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 10 Voltage (Vdc)",
+          "Name": "Cell10Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -430,7 +624,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 11 Voltage (Vdc)",
+          "Name": "Cell11Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -445,7 +639,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 12 Voltage (Vdc)",
+          "Name": "Cell12Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -460,7 +654,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 13 Voltage (Vdc)",
+          "Name": "Cell13Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -475,7 +669,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 14 Voltage (Vdc)",
+          "Name": "Cell14Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -490,7 +684,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 15 Voltage (Vdc)",
+          "Name": "Cell15Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -505,7 +699,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Cell 16 Voltage (Volts)",
+          "Name": "Cell16Voltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -520,7 +714,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MNAR) Total Temp Number",
+          "Name": "NumberOfTemperatures",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -535,7 +729,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Cell 1 Temp (°C)",
+          "Name": "Cell1Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -550,7 +744,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 2 Temp (°C)",
+          "Name": "Cell2Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -565,7 +759,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 3 Temp (°C)",
+          "Name": "Cell3Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -580,7 +774,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 4 Temp (°C)",
+          "Name": "Cell4Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -595,7 +789,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 5 Temp (°C)",
+          "Name": "Cell5Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -610,7 +804,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 6 Temp (°C)",
+          "Name": "Cell6Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -625,7 +819,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 7 Temp (°C)",
+          "Name": "Cell7Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -640,7 +834,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 8 Temp (°C)",
+          "Name": "Cell8Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -655,7 +849,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 9 Temp (°C)",
+          "Name": "Cell9Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -670,7 +864,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 10 Temp (°C)",
+          "Name": "Cell10Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -685,7 +879,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 11 Temp (°C)",
+          "Name": "Cell11Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -700,7 +894,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 12 Temp (°C)",
+          "Name": "Cell12Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -715,7 +909,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 13 Temp (°C)",
+          "Name": "Cell13Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -730,7 +924,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 14 Temp (°C)",
+          "Name": "Cell14Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -745,7 +939,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 15 Temp (°C)",
+          "Name": "Cell15Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -760,7 +954,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Cell 16 Temp (°C)",
+          "Name": "Cell16Temp",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -775,7 +969,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Full Capacity (Ah)",
+          "Name": "FullCapacity",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -790,7 +984,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MNAR) Remaining Charge Time (min)",
+          "Name": "RemainingChargeTime",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -805,7 +999,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MNAR) Remaining Discharge Time (min)",
+          "Name": "RemainingDischargeTime",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -831,6 +1025,72 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_Cell1UV"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Cell2UV"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Cell3UV"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Cell4UV"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_Cell5UV"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_Cell6UV"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_Cell7UV"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Cell8UV"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Cell9UV"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Cell0UV"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Cell11UV"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Cell12UV"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_Cell13UV"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_Cell14UV"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_Cell15UV"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_Cell16UV"
+            }
+          ],
           "ParameterIndexes": [ 126, 127 ],
           "Factor": 1
         }

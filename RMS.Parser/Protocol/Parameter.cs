@@ -17,7 +17,7 @@ namespace RMS.Parser
         public int Precision { get; set; }
         public bool Evaluate { get; set; }
         public List<int> ParameterIndexes { get; set; }
-        public List<string> BitwiseLabels { get; set; }
+        public List<BitwiseLabel> BitwiseLabels { get; set; }
         public float Factor { get; set; }
     }
 }

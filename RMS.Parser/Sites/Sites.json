@@ -1,7 +1,36 @@
 {
   "siteList": {
-    "SP003199": "TEST_ONE",
-    "SP003169": "TEST_TWO",
-    "SP000316": "TEST_THREE"
+    "SP900020": {
+      "TerminalId": "SP900061",
+      "Name": "ES2HYD02884",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900013": {
+      "TerminalId": "SP900013",
+      "Name": "REONTESTINGLABECM",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900047": {
+      "TerminalId": "SP900047",
+      "Name": "EN1-GKN-01985",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900019": {
+      "TerminalId": "SP900019",
+      "Name": "SP900019",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    }
   }
 }

@@ -23,12 +23,14 @@ namespace RMS.Parser
         public int PageNumber { get; internal set; }
         [JsonIgnore]
         public DateTime ReceivedOn { get; internal set; }
-        [JsonProperty("data")]
-        public Dictionary<string, object> Data { get; private set; }
+        //[JsonProperty("data")]
+        //public Dictionary<string, object> Data { get; private set; }
 
+        [JsonProperty("data")]
+        public List<Dictionary<string, object>> Data { get; private set; }
         public ReonParsedPacket()
         {
-            Data = new Dictionary<string, object>();
+            Data = new List<Dictionary<string, object>>();
         }
     }
 }

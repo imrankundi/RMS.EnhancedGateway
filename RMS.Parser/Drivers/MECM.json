@@ -6,522 +6,6 @@
   "PageNumberIndex": 6,
   "Pages": [
     {
-      "PageName": "MD5 Hash",
-      "PageNumber": 2,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Hash Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11, 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) GW Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15, 16, 17 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Polling Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19, 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Config Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23, 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Storage Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27, 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SNMP Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31, 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) RS485 Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35, 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) RS232 Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39, 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) MECM Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43, 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) ECM Config Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47, 48, 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SNMP Config Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51, 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) ECM Hard Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55, 56, 57 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) GSM Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59, 60, 61 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) IO Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63, 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) EC25 Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67, 68, 69 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) GPS Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71, 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) System Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75, 76, 77 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SMS Routine Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79, 80, 81 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SMS Fallback Hash",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 82, 83, 84, 85 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved1",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 86, 87, 88, 89 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved2",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 90, 91, 92, 93 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved3",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 94, 95, 96, 97 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved4",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 98, 99, 100, 101 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved5",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 102, 103, 104, 105 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved6",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 106, 107, 108, 109 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved7",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 110, 111, 112, 113 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved8",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 114, 115, 116, 117 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Reserved9",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 118, 119, 120, 121 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Processor ID H",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 122, 123, 124, 125 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Processor ID L",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 126, 127, 128, 129 ],
-          "Factor": 1
-        }
-      ]
-    },
-    {
       "PageName": "System",
       "PageNumber": 4,
       "Parameters": [
@@ -556,21 +40,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -586,7 +55,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) System Voltage (Vdc)",
+          "Name": "InputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -601,7 +70,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) Output Voltage (Vdc)",
+          "Name": "OutputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -616,7 +85,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) Internal Battery Voltage (Vdc)",
+          "Name": "InternalBattVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -631,7 +100,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MECM) RTC Battery Voltage (Vdc)",
+          "Name": "RTCCellVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -646,7 +115,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MECM) Processor Temperature (°C)",
+          "Name": "ProcessorTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -661,7 +130,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) Controller Temperature (°C)",
+          "Name": "ControllerTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -676,7 +145,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) System Uptime",
+          "Name": "SystemLife",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -691,82 +160,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) RAM usage (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 0.1
-        },
-        {
-          "Name": "(MECM) CPU usage (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 0.1
-        },
-        {
-          "Name": "(MECM) Storage usage (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 0.1
-        },
-        {
-          "Name": "(MECM) RAM usage (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Storage Used (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35, 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) External Temp 1 (°C)",
+          "Name": "ExternalTemperature1",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -781,7 +175,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) External Temp 2 (°C)",
+          "Name": "ExternalTemperature2",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -796,7 +190,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) External Temp 3 (°C)",
+          "Name": "ExternalTemperature3",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -811,7 +205,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) Heat Sink Temperature (°C)",
+          "Name": "HeatSinkTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -826,96 +220,6 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MECM) Stored Data Size (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47, 48, 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Last login Time",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51, 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Last login IP (4 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Last login IP (3 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Last login IP (2 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Last login IP (1 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61 ],
-          "Factor": 1
-        },
-        {
           "Name": "(MECM) Alarms",
           "Signed": false,
           "EnableDataType": true,
@@ -927,10 +231,15 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_FanStatus"
+            }
+          ],
           "ParameterIndexes": [ 62, 63 ],
           "Factor": 1
         }
-
       ]
     },
     {
@@ -968,36 +277,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
           "Name": "(MECM) Digital Inputs 1-8",
           "Signed": false,
           "EnableDataType": true,
@@ -1009,11 +288,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DigitalInput1"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DigitalInput2"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DigitalInput3"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_DigitalInput4"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_DigitalInput5"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DigitalInput6"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_DigitalInput7"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_DigitalInput8"
+            }
+          ],
           "ParameterIndexes": [ 10, 11 ],
           "Factor": 1
         },
         {
-          "Name": "(MECM) DI1 High Counter",
+          "Name": "DigitalInHighCounter1",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1028,7 +341,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI1 Low Counter",
+          "Name": "DigitalInLowCounter1",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1043,7 +356,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI2 High Counter",
+          "Name": "DigitalInHighCounter2",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1058,7 +371,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI2 Low Counter",
+          "Name": "DigitalInLowCounter2",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1073,7 +386,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI3 High Counter",
+          "Name": "DigitalInHighCounter3",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1088,7 +401,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI3 Low Counter",
+          "Name": "DigitalInLowCounter3",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1103,7 +416,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI4 High Counter",
+          "Name": "DigitalInHighCounter4",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1118,7 +431,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI4 Low Counter",
+          "Name": "DigitalInLowCounter4",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1133,7 +446,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI5 High Counter",
+          "Name": "DigitalInHighCounter5",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1148,7 +461,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI5 Low Counter",
+          "Name": "DigitalInLowCounter5",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1163,7 +476,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI6 High Counter",
+          "Name": "DigitalInHighCounter6",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1178,7 +491,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI6 Low Counter",
+          "Name": "DigitalInLowCounter6",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1193,7 +506,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI7 High Counter",
+          "Name": "DigitalInHighCounter7",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1208,7 +521,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI7 Low Counter",
+          "Name": "DigitalInLowCounter7",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1223,7 +536,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI8 High Counter",
+          "Name": "DigitalInHighCounter8",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1238,7 +551,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI8 Low Counter",
+          "Name": "DigitalInLowCounter8",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1291,36 +604,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
           "Name": "(MECM) Digital Inputs 9-14",
           "Signed": false,
           "EnableDataType": true,
@@ -1332,11 +615,37 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DigitalInput9"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DigitalInput10"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DigitalInput11"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_DigitalInput12"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_DigitalInput13"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DigitalInput14"
+            }
+          ],
           "ParameterIndexes": [ 10, 11 ],
           "Factor": 1
         },
         {
-          "Name": "(MECM) DI9 High Counter",
+          "Name": "DigitalInHighCounter9",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1351,7 +660,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI9 Low Counter",
+          "Name": "DigitalInLowCounter9",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1366,7 +675,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI10 High Counter",
+          "Name": "DigitalInHighCounter10",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1381,7 +690,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI10 Low Counter",
+          "Name": "DigitalInLowCounter10",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1396,7 +705,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI11 High Counter",
+          "Name": "DigitalInHighCounter11",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1411,7 +720,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI11 Low Counter",
+          "Name": "DigitalInLowCounter11",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1426,7 +735,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI12 High Counter",
+          "Name": "DigitalInHighCounter12",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1441,7 +750,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI12 Low Counter",
+          "Name": "DigitalInLowCounter12",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1456,7 +765,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI13 High Counter",
+          "Name": "DigitalInHighCounter13",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1471,7 +780,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI13 Low Counter",
+          "Name": "DigitalInLowCounter13",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1486,7 +795,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI14 High Counter",
+          "Name": "DigitalInHighCounter14",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1501,7 +810,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DI14 Low Counter",
+          "Name": "DigitalInLowCounter14",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1552,36 +861,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
           "Name": "(MECM) Digital Outputs 1-3",
           "Signed": false,
           "EnableDataType": true,
@@ -1594,10 +873,24 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 10, 11 ],
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DigitalOutput1"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DigitalOutput2"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DigitalOutput3"
+            }
+          ],
           "Factor": 1
         },
         {
-          "Name": "(MECM) DO1 High Counter",
+          "Name": "DigitalOutHighCounter1",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1612,7 +905,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DO1 Low Counter",
+          "Name": "DigitalOutLowCounter1",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1627,7 +920,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DO2 High Counter",
+          "Name": "DigitalOutHighCounter2",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1642,7 +935,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DO2 Low Counter",
+          "Name": "DigitalOutLowCounter2",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1657,7 +950,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DO3 High Counter",
+          "Name": "DigitalOutHighCounter3",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1672,7 +965,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) DO3 Low Counter",
+          "Name": "DigitalOutLowCounter3",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1723,37 +1016,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Data channel",
+          "Name": "DataChannel",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1768,7 +1031,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Server Connection Uptime",
+          "Name": "ServerConnUptime",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1783,7 +1046,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) Server Connection Downtime",
+          "Name": "ServerConnDowntime",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1798,7 +1061,7 @@
           "Factor": 0.000277778
         },
         {
-          "Name": "(MECM) Online Counter",
+          "Name": "OnlineCounter",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1813,7 +1076,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Offline Counter",
+          "Name": "OfflineCounter",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1828,7 +1091,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) OpenVPN status",
+          "Name": "VPNConnStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1854,307 +1117,17 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_LANPortLinkStatus"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_WANPortLinkStatus"
+            }
+          ],
           "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (6 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (5 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (4 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (3 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (2 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN MAC (1 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN IP (4 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN IP (3 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN IP (2 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) LAN IP (1 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (6 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (5 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (4 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (3 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (2 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink MAC (1 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink IP (4 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink IP (3 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink IP (2 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Uplink IP (1 octet)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 51 ],
           "Factor": 1
         }
       ]
@@ -2194,97 +1167,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) IMEI number H",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11, 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) IMEI number L",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15, 16, 17 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) IMSI number H",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19, 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) IMSI number L",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23, 24, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SIM connected",
+          "Name": "GSM_ConnectedSIM",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2299,7 +1182,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) GSM signal strength",
+          "Name": "GSM_SignalStrength",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2314,7 +1197,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Operator",
+          "Name": "GSM_Operator",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2329,7 +1212,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Network Mode",
+          "Name": "GSM_NetworkMode",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2344,7 +1227,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Band Info",
+          "Name": "GSM_BandInfo",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2359,7 +1242,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Cell ID",
+          "Name": "GSM_CellId",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2374,7 +1257,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Area Code",
+          "Name": "GSM_AreaCode",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2387,129 +1270,7 @@
           "ParameterType": "Data",
           "ParameterIndexes": [ 38, 39 ],
           "Factor": 1
-        },
-        {
-          "Name": "(MECM) SIM1 Counter",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41, 42, 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SIM2 Counter",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44, 45, 46, 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Data in SIM 1 (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49, 50, 51 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Data out SIM 1 (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 52, 53, 54, 55 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Data in SIM 2 (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57, 58, 59 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Data out SIM 2 (MBs)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61, 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SIM 1 SMS counter",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65, 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) SIM 2 SMS counter",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": "5",
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69, 70, 71 ],
-          "Factor": 1
         }
-
-
       ]
     },
     {
@@ -2547,37 +1308,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MECM) Lattitude",
+          "Name": "GPS_Latitude",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2592,7 +1323,7 @@
           "Factor": 0.000001
         },
         {
-          "Name": "(MECM) Longitude",
+          "Name": "GPS_Longitude",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2607,7 +1338,7 @@
           "Factor": 0.000001
         },
         {
-          "Name": "(MECM) No of Satellites",
+          "Name": "GPS_NumOfSats",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2622,7 +1353,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MECM) Altitude",
+          "Name": "GPS_Altitude",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2638,7 +1369,7 @@
         }
       ]
     }
-  
+
   ]
 
 }

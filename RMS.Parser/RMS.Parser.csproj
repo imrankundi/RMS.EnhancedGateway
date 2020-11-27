@@ -49,6 +49,7 @@
     <Compile Include="Configuration\ConfigurationQueueResult.cs" />
     <Compile Include="Configuration\ConfigurationPacket.cs" />
     <Compile Include="Configuration\DeviceConfigurationManager.cs" />
+    <Compile Include="Protocol\BitwiseLabel.cs" />
     <Compile Include="ReonParser.cs" />
     <Compile Include="ReonParsedPacket.cs" />
     <Compile Include="ParsedPacket.cs" />

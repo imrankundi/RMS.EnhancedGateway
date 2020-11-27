@@ -390,14 +390,38 @@
           "Evaluate": false,
           "ParameterType": "Data",
           "BitwiseLabels": [
-            "Al_Aux8",
-            "Al_CurrentSimConnected",
-            "Al_Aux6",
-            "Al_Aux5",
-            "Al_Aux4",
-            "Al_Aux3",
-            "Al_Aux2",
-            "Al_Aux1"
+            {
+              "Index": 0,
+              "Label": "Al_Aux8"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_CurrentSimConnected"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_Aux6"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_Aux5"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Aux4"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Aux3"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Aux2"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Aux1"
+            }
           ],
           "ParameterIndexes": [ 28 ],
           "Factor": 1

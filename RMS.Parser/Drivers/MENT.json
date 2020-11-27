@@ -70,7 +70,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Mains Volt 1 (Vac)",
+          "Name": "SNMP_MainsVolt1",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -85,7 +85,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Volt 2 (Vac)",
+          "Name": "SNMP_MainsVolt2",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -100,7 +100,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Volt 3 (Vac)",
+          "Name": "SNMP_MainsVolt3",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -115,7 +115,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Current 1 (Aac)",
+          "Name": "SNMP_MainsCurrent1",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -130,7 +130,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Current 2 (Aac)",
+          "Name": "SNMP_MainsCurrent2",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -145,7 +145,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Current 3 (Aac)",
+          "Name": "SNMP_MainsCurrent3",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -160,7 +160,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Mains Frequency (Hz)",
+          "Name": "SNMP_MainsFrequency",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -175,7 +175,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) System Voltage (Vdc)",
+          "Name": "SNMP_SystemVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -190,7 +190,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Rectifier Voltage (Vdc)",
+          "Name": "SNMP_RectifierVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -205,7 +205,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Rectifier Current (Adc)",
+          "Name": "SNMP_RectifierCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -220,7 +220,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load Current (Adc)",
+          "Name": "SNMP_LoadCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -235,7 +235,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) System Power (kW)",
+          "Name": "SNMP_SystemPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -250,7 +250,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Battery Current (Adc)",
+          "Name": "SNMP_BatteryCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -265,7 +265,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery State",
+          "Name": "SNMP_BatteryState",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -280,7 +280,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Temperature (°C)",
+          "Name": "SNMP_BatteryTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -295,7 +295,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Ambient Temperature (°C)",
+          "Name": "SNMP_AmbientTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -310,7 +310,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Surplus Capacity (Ah)",
+          "Name": "SNMP_BatterySurplusCapacity",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -325,7 +325,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 1 Current (Adc)",
+          "Name": "SNMP_Load1Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -340,7 +340,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load Total Energy (kWh)",
+          "Name": "SNMP_LoadTotalEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -355,7 +355,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Load 1 Energy (kWh)",
+          "Name": "SNMP_Load1Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -370,7 +370,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) LVD1 State",
+          "Name": "SNMP_LVD1State",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -385,7 +385,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD2 State",
+          "Name": "SNMP_LVD2State",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -466,7 +466,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 1 Output Voltage (Vdc)",
+          "Name": "SNMP_Rectifier1OutputVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -481,7 +481,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 1 Output Current (Adc)",
+          "Name": "SNMP_Rectifier1OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -496,7 +496,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 1 Output Power (kW)",
+          "Name": "SNMP_Rectifier1OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -511,7 +511,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 1 Temperature (°C)",
+          "Name": "SNMP_Rectifier1Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -526,7 +526,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 1 Alarm State",
+          "Name": "SNMP_Rectifier1AlarmState",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -541,7 +541,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 2 Output Voltage (Vdc)",
+          "Name": "SNMP_Rectifier2OutputVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -556,7 +556,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 2 Output Current (Adc)",
+          "Name": "SNMP_Rectifier2OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -571,7 +571,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 2 Output Power (kW)",
+          "Name": "SNMP_Rectifier2OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -586,7 +586,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 2 Temperature (°C)",
+          "Name": "SNMP_Rectifier2Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -601,7 +601,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 2 Alarm State",
+          "Name": "SNMP_Rectifier2AlarmState",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -616,7 +616,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 3 Output Voltage (Vdc)",
+          "Name": "SNMP_Rectifier3OutputVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -631,7 +631,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 3 Output Current (Adc)",
+          "Name": "SNMP_Rectifier3OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -646,7 +646,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 3 Output Power (kW)",
+          "Name": "SNMP_Rectifier3OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -661,7 +661,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 3 Temperature (°C)",
+          "Name": "SNMP_Rectifier3OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -676,7 +676,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 3 Alarm State",
+          "Name": "SNMP_Rectifier3AlarmState",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -691,7 +691,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 4 Output Voltage (Vdc)",
+          "Name": "SNMP_Rectifier4OutputVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -706,7 +706,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 4 Output Current (Adc)",
+          "Name": "SNMP_Rectifier4OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -721,7 +721,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 4 Output Power (kW)",
+          "Name": "SNMP_Rectifier4OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -736,7 +736,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 4 Temperature (°C)",
+          "Name": "SNMP_Rectifier4Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -751,7 +751,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier 4 Alarm State",
+          "Name": "SNMP_Rectifier4AlarmState",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -832,7 +832,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Float Voltage (Vdc)",
+          "Name": "SNMP_FloatVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -847,7 +847,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Float Current limit (%)",
+          "Name": "SNMP_FloatCurrentlimit",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -862,7 +862,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Boost Enable",
+          "Name": "SNMP_BoostEnable",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -877,7 +877,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Boost Duration (min)",
+          "Name": "SNMP_BoostDuration",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -892,7 +892,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Boost Voltage (Vdc)",
+          "Name": "SNMP_BoostVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -907,7 +907,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Boost current limit (%)",
+          "Name": "SNMP_BoostCurrentLimit",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -922,7 +922,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Test Enable",
+          "Name": "SNMP_BatteryTestEnable",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -937,7 +937,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery test process timer (min)",
+          "Name": "SNMP_BatteryTestProcessTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -952,7 +952,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery test lock timer (min)",
+          "Name": "SNMP_BatteryTestLockTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -967,7 +967,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery test Voltage (Vdc)",
+          "Name": "SNMP_BatteryTestVoltage",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -982,7 +982,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery test current limit (%)",
+          "Name": "SNMP_BatteryTestCurrentLimit",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -997,7 +997,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) System AVC enable",
+          "Name": "SNMP_SystemAVCEnable",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1012,7 +1012,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Boost trigger",
+          "Name": "SNMP_BoostTrigger",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1027,7 +1027,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Rectifier float voltage setpoint (Vdc)",
+          "Name": "SNMP_RectifierFloatVoltageSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1042,7 +1042,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Rectifier current limit setpoint (Adc)",
+          "Name": "SNMP_RectifierCurrentLimitSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1057,7 +1057,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Rectifier AC current limit setpoint (Aac)",
+          "Name": "SNMP_RectifierACCurrentLimitSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1072,7 +1072,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Rectifier number",
+          "Name": "SNMP_RectifierNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1087,7 +1087,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Temp Low Alarm Setpoint (°C)",
+          "Name": "SNMP_BatteryTempLowAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1102,7 +1102,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Temp High Alarm Setpoint (°C)",
+          "Name": "SNMP_BatteryTempHighAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1117,7 +1117,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Ambient Temp Low Alarm Setpoint (°C)",
+          "Name": "SNMP_AmbientTempLowAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1132,7 +1132,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Ambient Temp High Alarm Setpoint (°C)",
+          "Name": "SNMP_AmbientTempHighAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1147,7 +1147,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC Voltage High alarm setpoint (Vac)",
+          "Name": "SNMP_ACVoltageHighAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1162,7 +1162,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC voltage low alarm setpoint (Vac)",
+          "Name": "SNMP_ACVoltageLowAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1177,7 +1177,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC current high alarm setpoint (Aac)",
+          "Name": "SNMP_ACCurrentHighAlarmSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1192,7 +1192,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) System overload rate (%)",
+          "Name": "SNMP_SystemOverloadRate",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1207,7 +1207,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD1 control pattern",
+          "Name": "SNMP_LVD1ControlPattern",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1222,7 +1222,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD1 disconnect setpoint (Vdc)",
+          "Name": "SNMP_LVD1DisconnectSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1237,7 +1237,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) LVD1 reconnect setpoint (Vdc)",
+          "Name": "SNMP_LVD1ReconnectSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1252,7 +1252,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) LVD2 control pattern",
+          "Name": "SNMP_LVD2ControlPattern",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1267,7 +1267,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD2 disconnect setpoint (Vdc)",
+          "Name": "SNMP_LVD2DisconnectSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1282,7 +1282,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) LVD2 reconnect setpoint (Vdc)",
+          "Name": "SNMP_LVD2ReconnectSetpoint",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1363,7 +1363,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Output Bus Voltage (V)",
+          "Name": "MTCP_OutputBusVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1378,7 +1378,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Total Rectifier Current (A)",
+          "Name": "MTCP_TotalRectifierCurrent_A",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1393,7 +1393,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Total Load Current (A)",
+          "Name": "MTCP_TotalLoadCurrent_A",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1408,7 +1408,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Total Battery Current (A)",
+          "Name": "MTCP_TotalBatteryCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1423,7 +1423,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Bank 1 Current (A)",
+          "Name": "MTCP_BatteryBank1Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1438,7 +1438,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Bank 2 Current (A)",
+          "Name": "MTCP_BatteryBank2Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1453,7 +1453,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Bank 3 Current (A)",
+          "Name": "MTCP_BatteryBank3Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1468,7 +1468,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Bank 4 Current (A)",
+          "Name": "MTCP_BatteryBank4Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1483,7 +1483,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Battery Temperature (°C)",
+          "Name": "SNMP_BatteryTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1498,7 +1498,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Ambient Temperature (°C)",
+          "Name": "SNMP_AmbientTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1579,7 +1579,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Bus 1 Voltage (Vdc)",
+          "Name": "MTCP_Bus1Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1594,7 +1594,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Total Load Current (Adc)",
+          "Name": "MTCP_TotalLoadCurrent_B",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1609,7 +1609,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 1 Current (Adc)",
+          "Name": "SNMP_Load1Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1624,7 +1624,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 2 Current (Adc)",
+          "Name": "MTCP_Load2Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1639,7 +1639,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 3 Current (Adc)",
+          "Name": "MTCP_Load3Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1654,7 +1654,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 4 Current (Adc)",
+          "Name": "MTCP_Load4Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1669,7 +1669,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 5 Current (Adc)",
+          "Name": "MTCP_Load5Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1684,7 +1684,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 6 Current (Adc)",
+          "Name": "MTCP_Load6Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1699,7 +1699,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 7 Current (Adc)",
+          "Name": "MTCP_Load7Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1714,7 +1714,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 8 Current (Adc)",
+          "Name": "MTCP_Load8Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1729,7 +1729,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 9 Current (Adc)",
+          "Name": "MTCP_Load9Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1744,7 +1744,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 10 Current (Adc)",
+          "Name": "MTCP_Load10Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1759,7 +1759,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 11 Current (Adc)",
+          "Name": "MTCP_Load11Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1774,7 +1774,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 12 Current (Adc)",
+          "Name": "MTCP_Load12Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1789,7 +1789,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 13 Current (Adc)",
+          "Name": "MTCP_Load13Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1804,7 +1804,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 14 Current (Adc)",
+          "Name": "MTCP_Load14Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1819,7 +1819,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 15 Current (Adc)",
+          "Name": "MTCP_Load15Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1834,7 +1834,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Load 16 Current (Adc)",
+          "Name": "MTCP_Load16Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1849,7 +1849,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Special Load 1 Current (A)",
+          "Name": "MTCP_SpecialLoad1Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1864,7 +1864,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Special Load 2 Current (A)",
+          "Name": "MTCP_SpecialLoad2Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1879,7 +1879,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Special Load 3 Current (A)",
+          "Name": "MTCP_SpecialLoad3Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1894,7 +1894,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Special Load 4 Current (A)",
+          "Name": "MTCP_SpecialLoad4Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1909,7 +1909,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) Total Load Energy (kWh)",
+          "Name": "MTCP_TotalLoadEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1924,7 +1924,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 1 Energy (kWh)",
+          "Name": "SNMP_Load1Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1939,7 +1939,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 2 Energy (kWh)",
+          "Name": "MTCP_Load2Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1954,7 +1954,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 3 Energy (kWh)",
+          "Name": "MTCP_Load3Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1969,7 +1969,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 4  Energy (kWh)",
+          "Name": "MTCP_Load4Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1984,7 +1984,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 5 Energy (kWh)",
+          "Name": "MTCP_Load5Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1999,7 +1999,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 6 Energy (kWh)",
+          "Name": "MTCP_Load6Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2014,7 +2014,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 7 Energy (kWh)",
+          "Name": "MTCP_Load7Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2029,7 +2029,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 8 Energy (kWh)",
+          "Name": "MTCP_Load8Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2044,7 +2044,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 9 Energy (kWh)",
+          "Name": "MTCP_Load9Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2059,7 +2059,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 10 Energy (kWh)",
+          "Name": "MTCP_Load10Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2074,7 +2074,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 11 Energy (kWh)",
+          "Name": "MTCP_Load11Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2089,7 +2089,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 12 Energy (kWh)",
+          "Name": "MTCP_Load12Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2104,7 +2104,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 13 Energy (kWh)",
+          "Name": "MTCP_Load13Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2119,7 +2119,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 14 Energy (kWh)",
+          "Name": "MTCP_Load14Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2134,7 +2134,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 15 Energy (kWh)",
+          "Name": "MTCP_Load15Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2149,7 +2149,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "(MENT) Load 16 Energy (kWh)",
+          "Name": "MTCP_Load16Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2230,7 +2230,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC1 Phase A Voltage (Vac)",
+          "Name": "MTCP_AC1PhaseAVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2245,7 +2245,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC1 Phase B Voltage (Vac)",
+          "Name": "MTCP_AC1PhaseBVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2260,7 +2260,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC1 Phase C Voltage (Vac)",
+          "Name": "MTCP_AC1PhaseCVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2275,7 +2275,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC1 Frequency (Hz)",
+          "Name": "MTCP_AC1Frequency",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2290,7 +2290,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC2 Phase A Voltage (Vac)",
+          "Name": "MTCP_AC2PhaseAVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2305,7 +2305,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC2 Phase B Voltage (Vac)",
+          "Name": "MTCP_AC2PhaseBVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2320,7 +2320,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC2 Phase C Voltage (Vac)",
+          "Name": "MTCP_AC2PhaseCVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2335,7 +2335,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) AC2 Frequency (Hz)",
+          "Name": "MTCP_AC2Frequency",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2350,7 +2350,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) AC1 Phase A Current (Aac)",
+          "Name": "MTCP_AC1PhaseACurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2365,7 +2365,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) AC1 Phase B Current (Aac)",
+          "Name": "MTCP_AC1PhaseBCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2380,7 +2380,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) AC1 Phase C Current (Aac)",
+          "Name": "MTCP_AC1PhaseCCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2395,7 +2395,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) AC2 Phase A Current (Aac)",
+          "Name": "MTCP_AC2PhaseACurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2410,7 +2410,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) AC2 Phase B Current (Aac)",
+          "Name": "MTCP_AC2PhaseBCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2425,7 +2425,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(MENT) AC2 Phase C Current (Aac)",
+          "Name": "MTCP_AC2PhaseCCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2710,7 +2710,7 @@
           "Factor": 1
         },
         {
-          "Name": "Total Solar Input Current",
+          "Name": "MTCP_TotalSolarInCurr",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2791,7 +2791,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Remaining Batt Capacity (AH)",
+          "Name": "MTCP_RemainingBattCapacity",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2806,7 +2806,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Backup Time (Min)",
+          "Name": "MTCP_BatteryBackupTime",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2821,7 +2821,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Battery Operating Status",
+          "Name": "MTCP_BatteryOperatingStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2836,7 +2836,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Equalization Status",
+          "Name": "MTCP_EqualizationStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2851,7 +2851,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Test Status",
+          "Name": "MTCP_TestStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2866,7 +2866,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Current Limit Status",
+          "Name": "MTCP_CurrentLimitStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2881,7 +2881,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Temperature Compensation Status",
+          "Name": "MTCP_TemperatureCompensationStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2896,7 +2896,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Active Control Status",
+          "Name": "MTCP_ActiveControlStatus",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3112,7 +3112,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 Status",
+          "Name": "MTCP_LVD1Status",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3127,7 +3127,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 Control Timer",
+          "Name": "MTCP_LVD1ControlTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3142,7 +3142,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 AC Normal Timer",
+          "Name": "MTCP_LVD1ACNormalTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3157,7 +3157,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 AC Abnormal Timer",
+          "Name": "MTCP_LVD1ACAbnormalTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3172,7 +3172,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 Control Input Signal",
+          "Name": "MTCP_LVD1ControlInputSignal",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3187,7 +3187,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 1 Control Output Signal",
+          "Name": "MTCP_LVD1ControlOutputSignal",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3202,7 +3202,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 Status",
+          "Name": "MTCP_LVD2Status",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3217,7 +3217,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 Control Timer",
+          "Name": "MTCP_LVD2ControlTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3232,7 +3232,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 AC Normal Timer",
+          "Name": "MTCP_LVD2ACNormalTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3247,7 +3247,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 AC Abnormal Timer",
+          "Name": "MTCP_LVD2ACAbnormalTimer",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3262,7 +3262,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 Control Input Signal",
+          "Name": "MTCP_LVD2ControlInputSignal",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3277,7 +3277,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) LVD 2 Control Output Signal",
+          "Name": "MTCP_LVD2ControlOutputSignal",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3358,7 +3358,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Module Average Voltage (V)",
+          "Name": "MTCP_ModuleAverageVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3373,7 +3373,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Total Rectifier Current (A)",
+          "Name": "MTCP_TotalRectifierCurrent_A",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3388,7 +3388,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Total System Power(W)",
+          "Name": "MTCP_TotalSystemPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3403,7 +3403,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) Rectifier Average Power (%)",
+          "Name": "MTCP_RectifierAveragePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3418,7 +3418,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Output Average Power (%)",
+          "Name": "MTCP_OutputAveragePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3433,7 +3433,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Current Limit Bias Voltage (V)",
+          "Name": "MTCP_CurrentLimitBiasVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3448,127 +3448,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier S/No",
+          "Name": "MTCP_Rectifier1SNo",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3583,7 +3463,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 1 Rectifier Output Voltage (V)",
+          "Name": "MTCP_Rectifier1OutputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3598,7 +3478,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 1 Rectifier Output Current (A)",
+          "Name": "MTCP_Rectifier1OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3613,7 +3493,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 1 Rectifier Output Power (%)",
+          "Name": "MTCP_Rectifier1OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3628,7 +3508,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 1 Rectifier Max Power (W)",
+          "Name": "MTCP_Rectifier1MaxPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3643,7 +3523,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 1 Rectifier Temperature (°C)",
+          "Name": "MTCP_Rectifier1Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3669,11 +3549,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_R1FanFailure"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_R1OverTemperature"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_R1CurrentLimit"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_R1Overvoltage"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_R1AcFailure"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_R1Shutdown"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_R1ModuleFailure"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_R1Communication"
+            }
+          ],
           "ParameterIndexes": [ 56, 57 ],
           "Factor": 1
         },
         {
-          "Name": "(MENT) 1 Rectifier Hardware Version Number",
+          "Name": "MTCP_Rectifier1HardwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3688,7 +3602,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 1 Rectifier Software Version Number",
+          "Name": "MTCP_Rectifier1SoftwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3703,7 +3617,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 2 Rectifier S/No",
+          "Name": "MTCP_Rectifier2SNo",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3718,7 +3632,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 2 Rectifier Output Voltage (V)",
+          "Name": "MTCP_Rectifier2OutputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3733,7 +3647,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 2 Rectifier Output Current (A)",
+          "Name": "MTCP_Rectifier2OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3748,7 +3662,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 2 Rectifier Output Power (%)",
+          "Name": "MTCP_Rectifier2OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3763,7 +3677,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 2 Rectifier Max Power (W)",
+          "Name": "MTCP_Rectifier2MaxPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3778,7 +3692,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 2 Rectifier Temperature (°C)",
+          "Name": "MTCP_Rectifier2Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3804,11 +3718,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_R2FanFailure"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_R2OverTemperature"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_R2CurrentLimit"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_R2Overvoltage"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_R2AcFailure"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_R2Shutdown"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_R2ModuleFailure"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_R2Communication"
+            }
+          ],
           "ParameterIndexes": [ 76, 77 ],
           "Factor": 1
         },
         {
-          "Name": "(MENT) 2 Rectifier Hardware Version Number",
+          "Name": "MTCP_Rectifier2HardwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3823,7 +3771,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 2 Rectifier Software Version Number",
+          "Name": "MTCP_Rectifier2SoftwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3838,7 +3786,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 3 Rectifier S/No",
+          "Name": "MTCP_Rectifier3SNo",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3853,7 +3801,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 3 Rectifier Output Voltage (V)",
+          "Name": "MTCP_Rectifier3OutputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3868,7 +3816,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 3 Rectifier Output Current (A)",
+          "Name": "MTCP_Rectifier3OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3883,7 +3831,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 3 Rectifier Output Power (%)",
+          "Name": "MTCP_Rectifier3OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3898,7 +3846,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 3 Rectifier Max Power (W)",
+          "Name": "MTCP_Rectifier3MaxPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3913,7 +3861,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 3 Rectifier Temperature (°C)",
+          "Name": "MTCP_Rectifier3Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3939,11 +3887,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_R3FanFailure"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_R3OverTemperature"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_R3CurrentLimit"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_R3Overvoltage"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_R3AcFailure"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_R3Shutdown"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_R3ModuleFailure"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_R3Communication"
+            }
+          ],
           "ParameterIndexes": [ 96, 97 ],
           "Factor": 1
         },
         {
-          "Name": "(MENT) 3 Rectifier Hardware Version Number",
+          "Name": "MTCP_Rectifier3HardwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3958,7 +3940,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 3 Rectifier Software Version Number",
+          "Name": "MTCP_Rectifier3SoftwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3973,7 +3955,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 4 Rectifier S/No",
+          "Name": "MTCP_Rectifier4SNo",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3988,7 +3970,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 4 Rectifier Output Voltage (V)",
+          "Name": "MTCP_Rectifier4OutputVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4003,7 +3985,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 4 Rectifier Output Current (A)",
+          "Name": "MTCP_Rectifier4OutputCurrent",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4018,7 +4000,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 4 Rectifier Output Power (%)",
+          "Name": "MTCP_Rectifier4OutputPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4033,7 +4015,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(MENT) 4 Rectifier Max Power (W)",
+          "Name": "MTCP_Rectifier4MaxPower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4048,7 +4030,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 4 Rectifier Temperature (°C)",
+          "Name": "MTCP_Rectifier4Temperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4074,11 +4056,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_R4FanFailure"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_R4OverTemperature"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_R4CurrentLimit"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_R4Overvoltage"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_R4AcFailure"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_R4Shutdown"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_R4ModuleFailure"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_R4Communication"
+            }
+          ],
           "ParameterIndexes": [ 116, 117 ],
           "Factor": 1
         },
         {
-          "Name": "(MENT) 4 Rectifier Hardware Version Number",
+          "Name": "MTCP_Rectifier4HardwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4093,7 +4109,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) 4 Rectifier Software Version Number",
+          "Name": "MTCP_Rectifier4SoftwareVersionNumber",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -4185,6 +4201,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_Ac1PhaseLoss"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Ac1Fault"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Ac2Fault"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Ac1L1Overcurrent"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Ac1L2Overcurrent"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Ac1L3Overcurrent"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Ac2L1Overcurrent"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_Ac2L2Overcurrent"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_Ac2L3Overcurrent"
+            }
+          ],
+
           "ParameterIndexes": [ 10, 11 ],
           "Factor": 1
         },
@@ -4200,6 +4255,49 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_Ac1L1Overvoltage"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Ac1L2Overvoltage"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Ac1L3Overvoltage"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Ac1L1Undervoltage"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_Ac1L2Undervoltage"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_Ac1L3Undervoltage"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_Ac1L1Fail"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Ac1L2Fail"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Ac1L3Fail"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Ac1HighFrequency"
+            }
+          ],
+
           "ParameterIndexes": [ 12, 13 ],
           "Factor": 1
         },
@@ -4215,6 +4313,53 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_Ac2L1Overvoltage"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Ac2L2Overvoltage"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Ac2L3Overvoltage"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Ac2L1Undervoltage"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_Ac2L2Undervoltage"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_Ac2L3Undervoltage"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_Ac2L1Fail"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_Ac2L2Fail"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Ac2L3Fail"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Ac2HighFrequency"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Ac2LowFrequency"
+            }
+          ],
+
           "ParameterIndexes": [ 14, 15 ],
           "Factor": 1
         },
@@ -4230,6 +4375,53 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_SystemVoltLow1"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_SystemVoltLow2"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_SystemVoltHigh1"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_SystemVoltHigh2"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_AmbientTempLow"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_AmbientTempHigh"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_SensorFail"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_SystemVoltSensorFail"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_TempSensor1Fail"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_CurrentSensorFail"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_TempSensor2Fail"
+            }
+          ],
+
           "ParameterIndexes": [ 16, 17 ],
           "Factor": 1
         },
@@ -4245,6 +4437,65 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_SystemOverload"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_SingleRectifierFailure"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_MultipleRectifiersFailure"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_SingleRectifierLoss"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_MultipleRectifiersLoss"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_RectifierNoLoad"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_RectifierCurrentLimit"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_RectifierOverTemperature"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_AllRectifiersAreOff"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Fan1IsFaulty"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Fan2IsFaulty"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Fan3IsFaulty"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_Fan4IsFaulty"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_RectifierFanFailure"
+            }
+          ],
+
           "ParameterIndexes": [ 18, 19 ],
           "Factor": 1
         },
@@ -4260,6 +4511,69 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_BatteryTestFailed"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_BatteryOvercurrent"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_BatteryDischarging"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_EqualizeCharge"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_BatteryTest"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_BatteryCurrentLimit"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_SingleCellHighVoltage"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_SingleCellLowVoltage"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_Lvd1Disconnected"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_Lvd2Disconnected"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_Lvd1Fault"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_Lvd2Fault"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_LowBatteryTemperature"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_HighBatteryTemperature"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_BatterySymmetryAlarm"
+            }
+          ],
+
           "ParameterIndexes": [ 20, 21 ],
           "Factor": 1
         },
@@ -4275,6 +4589,73 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_Mov1Fault"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_Mov2Failure"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_Ac1OpenState"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Ac2OpenState"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_BatteryFuse1Fault"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_BatteryFuse2Fault"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_BatteryFuse3Fault"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_BatteryFuse4Fault"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_BatteryFuse5Fault"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_BatteryFuse6Fault"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_BatteryFuse7Fault"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_BatteryFuse8Fault"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_AcdFault"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_LoadFuseAFault"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_LoadFuseBFault"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_CustomAcFault"
+            }
+          ],
+
           "ParameterIndexes": [ 22, 23 ],
           "Factor": 1
         },
@@ -4290,6 +4671,73 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DigitalInput1"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DigitalInput2"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DigitalInput3"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_DigitalInput4"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_DigitalInput5"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DigitalInput6"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_DigitalInput7"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_DigitalInput8"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_DigitalInput9"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_DigitalInput10"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_DigitalInput11"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_DigitalInput12"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_DigitalInput13"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_DigitalInput14"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_DigitalInput15"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_DigitalInput16"
+            }
+          ],
+
           "ParameterIndexes": [ 24, 25 ],
           "Factor": 1
         },
@@ -4305,6 +4753,57 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DigitalInput17"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DigitalInput18"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DigitalInput19"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Digitalinput20"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_DigitalInput21"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_DigitalInput22"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_DigitalInput23"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_DigitalInput24"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_DigitalInput25"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_DigitalInput26"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_DigitalInput27"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_DigitalInput28"
+            }
+          ],
+
           "ParameterIndexes": [ 26, 27 ],
           "Factor": 1
         },
@@ -4320,6 +4819,25 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_AcSamplingUnit1Loss"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_AcSamplingUnit2Loss"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_AcSamplingUnit1Fault"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_AcSamplingUnit2Fault"
+            }
+          ],
+
           "ParameterIndexes": [ 28, 29 ],
           "Factor": 1
         },
@@ -4335,6 +4853,33 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_DcSamplingUnit1Loss"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_DcSamplingUnit2Loss"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_DcSamplingUnit1Fault"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_DcSamplingUnit2Fault"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_IoExpansionUnit1Loss"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_IoExpansionUnit2Loss"
+            }
+          ],
+
           "ParameterIndexes": [ 30, 31 ],
           "Factor": 1
         },
@@ -4350,583 +4895,74 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Index": 15,
+              "Label": "Al_BatterySamplingUnit1Loss"
+            },
+            {
+              "Index": 14,
+              "Label": "Al_BatterySamplingUnit2Loss"
+            },
+            {
+              "Index": 13,
+              "Label": "Al_BatterySamplingUnit3Loss"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_BatterySamplingUnit4Loss"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_BatterySamplingUnit5Loss"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_BatterySamplingUnit6Loss"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_BatterySamplingUnit7Loss"
+            },
+            {
+              "Index": 8,
+              "Label": "Al_BatterySamplingUnit8Loss"
+            },
+            {
+              "Index": 7,
+              "Label": "Al_BatterySamplingUnit1Fault"
+            },
+            {
+              "Index": 6,
+              "Label": "Al_BatterySamplingUnit2Fault"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_BatterySamplingUnit3Fault"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_BatterySamplingUnit4Fault"
+            },
+            {
+              "Index": 3,
+              "Label": "Al_BatterySamplingUnit5Fault"
+            },
+            {
+              "Index": 2,
+              "Label": "Al_BatterySamplingUnit6Fault"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_BatterySamplingUnit7Fault"
+            },
+            {
+              "Index": 0,
+              "Label": "Al_BatterySamplingUnit8Fault"
+            }
+          ],
+
           "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        }
-      ]
-    },
-    {
-      "PageName": "Page10",
-      "PageNumber": 10,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Open (0-15) Level State",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Open (16-27) Level state",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 15, 16 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 43, 44 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 45, 46 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 47, 48 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 49, 50 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 51, 52 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 53, 54 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 55, 56 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 57, 58 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 59, 60 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F31",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F32",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Output Signal 1",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F33",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Output Signal 2",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F34",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 81, 82 ],
           "Factor": 1
         }
       ]
@@ -4981,97 +5017,7 @@
           "Factor": 1
         },
         {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Module Average Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) Total Rectifier Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13, 14, 15 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) Total System Power(W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 16, 17, 18, 19 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) Rectifier Average Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Output Average Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) Current Limit Bias Voltage (V)",
+          "Name": "MTCP_CurrentLimitBiasVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -5086,22 +5032,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Number Of Conc Conn Modules",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Solar Modules Average",
+          "Name": "MTCP_SolarModulesAverage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -5116,7 +5047,7 @@
           "Factor": 1
         },
         {
-          "Name": "(MENT) Total Solar Modules Output Current",
+          "Name": "MTCP_TotalSolarModOutCurr",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -5129,3334 +5060,10 @@
           "ParameterType": "Data",
           "ParameterIndexes": [ 30, 31, 32, 33 ],
           "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43, 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 1 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63, 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 2 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F31",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 80, 81 ],
-          "Factor": 1
         }
-      ]
-    },
-    {
-      "PageName": "Page12",
-      "PageNumber": 12,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11, 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 16, 17 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 3 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31, 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 4 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51, 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 5 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71, 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F31",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F32",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 80, 81 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F33",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 82, 83 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F34",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 84, 85 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F35",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 86, 87 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 6 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F36",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 88, 89 ],
-          "Factor": 1
-        }
-      ]
-    },
-    {
-      "PageName": "Page13",
-      "PageNumber": 13,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11, 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 16, 17 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 7 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31, 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 8 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51, 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 9 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier S/No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71, 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Output Voltage (V)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Output Current (A)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Output Power (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F31",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Max Power (W)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F32",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 80, 81 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Temperature (°C)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F33",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 82, 83 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Fault Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F34",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 84, 85 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Hardware Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F35",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 86, 87 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(MENT) 10 Rectifier Software Version Number",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F36",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 88, 89 ],
-          "Factor": 1
-        }
-
-      ]
-    },
-    {
-      "PageName": "Page14",
-      "PageNumber": 14,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Battery Temperature",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Ambient Temperature",
-          "Signed": true,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13 ],
-          "Factor": 0.01
-        }
-
-      ]
-    },
-    {
-      "PageName": "Page15",
-      "PageNumber": 15,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep State",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep State Identifier",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Cycle Interval Time",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Rectifier Cycle Time",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 16, 17 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Action Timer",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Pause Timer",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Pause Trigger",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Current Limit Analysis Time",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Sleep Current Limit Indicator",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules operating Phase A",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules operating Phase B",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules operating Phase C",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules faulty Phase A",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules faulty Phase B",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Rectifier Modules faulty Phase C",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Controlled OFF of rectifier modules Phase A",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Controlled OFF of rectifier modules Phase B",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Controlled OFF of rectifier modules Phase C",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of rectifier modules operating normally",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 1 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49, 50, 51 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 2 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 52, 53, 54, 55 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 3 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57, 58, 59 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 4 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61, 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 5 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65, 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 6 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69, 70, 71 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 7 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 72, 73, 74, 75 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Rectifier 8 S No",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77, 78, 79 ],
-          "Factor": 1
-        }
-      ]
-    },
-    {
-      "PageName": "Page16",
-      "PageNumber": 16,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Operating Status",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Completion Delay Timer",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Long Charge Timer",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 15, 16 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Voltage Charging Timer",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 43, 44 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Generator ON state",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 45, 46 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Generator Trigger state",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Binary",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 47, 48 ],
-          "Factor": 1
-        }
-
-      ]
-    },
-    {
-      "PageName": "Page17",
-      "PageNumber": 17,
-      "Parameters": [
-        {
-          "Name": "Device ID",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Id",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Timestamp",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "DateAndTime",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
-          "Precision": 5,
-          "DataType": "Epoch",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Max System Voltage",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 10, 11 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Min System Voltage",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 12, 13 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Bus Voltage Low 1",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 14, 15 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Bus Voltage Low 2",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F4",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 16, 17 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Bus Voltage High 1",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F5",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 18, 19 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "Bus Voltage High 2",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F6",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 20, 21 ],
-          "Factor": 0.01
-        },
-        {
-          "Name": "System Overload (%)",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 22, 23 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of DC Sampling Units",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F8",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 24, 25 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F9",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 26, 27 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F10",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 28, 29 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F11",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 30, 31 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F12",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 32, 33 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F13",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 34, 35 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 36, 37 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F15",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 38, 39 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F16",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 40, 41 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F17",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 42, 43 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F18",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 44, 45 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 46, 47 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 48, 49 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F21",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 50, 51 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F22",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 52, 53 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F23",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 54, 55 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F24",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 56, 57 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F25",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 58, 59 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F26",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 60, 61 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F27",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 62, 63 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F28",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 64, 65 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F29",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 66, 67 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F30",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 68, 69 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F31",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 70, 71 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F32",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 72, 73 ],
-          "Factor": 1
-        },
-        {
-          "Name": "AC High Voltage Threshold",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F33",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 74, 75 ],
-          "Factor": 1
-        },
-        {
-          "Name": "AC Low Voltage Threshold",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F34",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 76, 77 ],
-          "Factor": 1
-        },
-        {
-          "Name": "AC Overcurrent Threshold",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F35",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 78, 79 ],
-          "Factor": 1
-        },
-        {
-          "Name": "AC Freq High Threshold",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F36",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 80, 81 ],
-          "Factor": 1
-        },
-        {
-          "Name": "AC Freq Low Threshold",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F37",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 82, 83 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of AC Sampling Units",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F38",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 84, 85 ],
-          "Factor": 1
-        },
-        {
-          "Name": "C.T. Ratio",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F39",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 86, 87 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No. of Phase-Module Type",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F40",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Integer",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 88, 89 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F41",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 90, 91 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F42",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 92, 93 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F43",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 94, 95 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F44",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 96, 97 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F45",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 98, 99 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F46",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 100, 101 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F47",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 102, 103 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F48",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 104, 105 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No Of Battery Banks",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F49",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 106 ],
-          "Factor": 1
-        },
-        {
-          "Name": "No Of Cell Intervals",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F50",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 107 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Batt Bank 1 Capacity",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F51",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 108, 109 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Batt Bank 2 Capacity",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F52",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 110, 111 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Batt Bank 3 Capacity",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F53",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 112, 113 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Batt Bank 4 Capacity",
-          "Signed": false,
-          "EnableDataType": true,
-          "MinVal": 0,
-          "MaxVal": 0,
-          "Field": "F54",
-          "Expression": "{0} * 256 + {1}",
-          "Precision": 5,
-          "DataType": "Double",
-          "Evaluate": true,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 114, 115 ],
-          "Factor": 1
-        }
-
       ]
     }
+    
   ]
 
 }
