@@ -26,7 +26,7 @@
     },
     "SP900019": {
       "TerminalId": "SP900019",
-      "Name": "SP900019",
+      "Name": "HOME-TEST",
       "TimeOffset": {
         "Hours": 5,
         "Minutes": 0

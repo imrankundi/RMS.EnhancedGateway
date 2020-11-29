@@ -5,7 +5,7 @@ namespace RMS.Server.DataTypes.Responses
 {
     public class TerminalCommandResponse : BaseResponse
     {
-        public ServerRequestType RequestType { get; set; }
+        public GatewayRequestType RequestType { get; set; }
         public string TerminalId { get; set; }
         public string Data { get; set; }
     }

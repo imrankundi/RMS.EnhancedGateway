@@ -6,8 +6,8 @@
   "retryAfterSeconds": 10,
   "certificateThumbprint": "f9b68a07437cf265db33dc2d58a5ca3df376ab3e",
   "enableTls": false,
-  "pingIntervalInSeconds": 60,
-  "kickIntervalInSeconds": 60,
+  "pingIntervalInSeconds": 300,
+  "kickIntervalInSeconds": 300,
   "syncIntervalInSeconds": 10,
   "listeners": [
     {

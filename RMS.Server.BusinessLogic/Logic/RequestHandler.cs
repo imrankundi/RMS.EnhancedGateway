@@ -19,7 +19,7 @@ namespace RMS.Server.BusinessLogic
                 Request req = request.ToObject<Request>();
                 switch (req.RequestType)
                 {
-                    case ServerRequestType.TerminalCommand:
+                    case GatewayRequestType.TerminalCommand:
                         return SendCommand(request.ToObject<TerminalCommandRequest>(), context);
                     default:
                         return UnsupportedRequestType();

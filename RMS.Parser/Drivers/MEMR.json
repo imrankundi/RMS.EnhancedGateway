@@ -1717,7 +1717,7 @@
           "Factor": 1
         },
         {
-          "Name": "(Rect AC) Very Low Phase Voltage A",
+          "Name": "Al_RectAcVeryLowPhaseVoltageA",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2863,7 +2863,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PV Converter 3) Solar Converter Fault",
+          "Name": "Al_PVConverter3SolarConverterFault",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3274,7 +3274,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PV Converter 6) Input Voltage Failure",
+          "Name": "Al_PVConverter6InputVoltageFailure",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -3499,7 +3499,7 @@
           "Factor": 1
         },
         {
-          "Name": "(LVD3 Cabinet) LVD3 Failure",
+          "Name": "Al_LVD3CabinetLvd3Failure",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,

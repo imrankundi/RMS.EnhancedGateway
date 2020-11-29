@@ -1,8 +1,9 @@
 ﻿namespace RMS.Server.DataTypes.Requests
 {
-    public enum ServerRequestType
+    public enum GatewayRequestType
     {
         TerminalCommand = 1,
-        Notify = 2
+        ReloadProtocols = 2,
+        ReloadSites = 3
     }
 }

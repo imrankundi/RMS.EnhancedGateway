@@ -39,25 +39,30 @@ namespace RMS.Component.DataAccess.SQLite
             return result;
         }
 
+        private static readonly object locker = new object();
         public static bool Save(ReceivedPacketEntity entity)
         {
             bool result;
             try
             {
-                if (!File.Exists(DatabaseFile))
+                lock(locker)
                 {
-                    if(!Directory.Exists(DatabaseDirectory))
+                    if (!File.Exists(DatabaseFile))
                     {
-                        Directory.CreateDirectory(DatabaseDirectory);
+                        if (!Directory.Exists(DatabaseDirectory))
+                        {
+                            Directory.CreateDirectory(DatabaseDirectory);
+                        }
+                        CreateDatabase();
                     }
-                    CreateDatabase();
+                    using (var connection = CreateConnection())
+                    {
+                        connection.Open();
+                        var query = @"INSERT INTO ReceivedPackets(ReceivedOn, TerminalId, ProtocolHeader, Data, Status) VALUES(@ReceivedOn, @TerminalId, @ProtocolHeader, @Data, @Status); SELECT last_insert_rowid();";
+                        entity.Id = connection.Query<long>(query, entity).First();
+                    }
                 }
-                using (var connection = CreateConnection())
-                {
-                    connection.Open();
-                    var query = @"INSERT INTO ReceivedPackets(ReceivedOn, TerminalId, ProtocolHeader, Data, Status) VALUES(@ReceivedOn, @TerminalId, @ProtocolHeader, @Data, @Status); SELECT last_insert_rowid();";
-                    entity.Id = connection.Query<long>(query, entity).First();
-                }
+                
                 result = true;
             }
             catch (Exception ex)

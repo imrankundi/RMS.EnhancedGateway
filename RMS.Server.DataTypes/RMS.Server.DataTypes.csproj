@@ -63,7 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requests\TerminalCommandRequest.cs" />
     <Compile Include="Requests\Request.cs" />
-    <Compile Include="Requests\ServerRequestType.cs" />
+    <Compile Include="Requests\GatewayRequestType.cs" />
     <Compile Include="Responses\TerminalCommandResponse.cs" />
     <Compile Include="Quartz\CronTriggerDetail.cs" />
     <Compile Include="Quartz\IntervalType.cs" />

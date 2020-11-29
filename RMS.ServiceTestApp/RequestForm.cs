@@ -41,7 +41,7 @@ namespace ServiceTestApp
         {
             UpdateTextBox(txtResponse, "Please Wait... (PerformTerminalCommandRequest)");
             TerminalCommandRequest request = new TerminalCommandRequest();
-            request.RequestType = ServerRequestType.TerminalCommand;
+            request.RequestType = GatewayRequestType.TerminalCommand;
             request.TerminalId = txtTerminalId.Text;
             request.Data = txtCommand.Text;
             Task.Run(() => PerformTerminalCommandRequest(request));

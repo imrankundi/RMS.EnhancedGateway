@@ -46,5 +46,10 @@ namespace RMS.Parser
                 }
             }
         }
+
+        public void Reload()
+        {
+            ReadFromFile();
+        }
     }
 }

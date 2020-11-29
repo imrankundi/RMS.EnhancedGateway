@@ -23,6 +23,7 @@ namespace RMS.Parser
         private void ReadProtocolFromFile()
         {
             string folder = FolderPath();
+            protocols.Clear();
             if (Directory.Exists(folder))
             {
                 foreach (string file in Directory.EnumerateFiles(folder))
@@ -57,6 +58,11 @@ namespace RMS.Parser
 
             return protocols[protocolHeader];
 
+        }
+
+        public void Reload()
+        {
+            ReadProtocolFromFile();
         }
     }
 }

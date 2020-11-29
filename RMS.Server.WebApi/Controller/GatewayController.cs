@@ -1,5 +1,8 @@
-﻿using RMS.Component.WebApi.Responses;
+﻿using Newtonsoft.Json;
+using RMS.Component.WebApi.Requests;
+using RMS.Component.WebApi.Responses;
 using RMS.Core.Common;
+using RMS.Parser;
 using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
@@ -12,10 +15,60 @@ using System.Web.Http;
 namespace RMS.Server.WebApi.Controller
 {
 
-    public class TerminalController : ApiController
+    public class GatewayController : ApiController
     {
         // POST api/demo 
-        public TerminalCommandResponse Post(TerminalCommandRequest request)
+        public BaseResponse Post(BaseRequest request)
+        {
+            return null;
+        }
+
+        [HttpGet]
+        public BaseResponse ReloadProtocols()
+        {
+            try
+            {
+                ProtocolList.Instance.Reload();
+                Console.WriteLine(JsonConvert.SerializeObject(ProtocolList.Instance.Protocols.Keys));
+                return new BaseResponse
+                {
+                    Message = "Protocols are succesfully reloaded",
+                    ResponseType = ResponseType.Success
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse
+                {
+                    Message = "Unable to reloaded Protocols [" + ex.Message + "]",
+                    ResponseType = ResponseType.Failed
+                };
+            }
+        }
+        [HttpGet]
+        public BaseResponse ReloadSites()
+        {
+            try
+            {
+                SiteManager.Instance.Reload();
+                Console.WriteLine(JsonConvert.SerializeObject(SiteManager.Instance.Sites, Formatting.Indented));
+                return new BaseResponse
+                {
+                    Message = "Sites are succesfully reloaded",
+                    ResponseType = ResponseType.Success
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse
+                {
+                    Message = "Unable to reloaded Sites [" + ex.Message + "]",
+                    ResponseType = ResponseType.Failed
+                };
+            }
+        }
+
+        public TerminalCommandResponse Command(TerminalCommandRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
             try
@@ -106,11 +159,6 @@ namespace RMS.Server.WebApi.Controller
                     Message = ex.Message
                 };
             }
-        }
-
-        public TerminalCommandResponse Command(TerminalCommandRequest request)
-        {
-            return Post(request);
         }
 
     }

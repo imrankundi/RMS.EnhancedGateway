@@ -4,7 +4,7 @@
     {
         public TerminalCommandRequest()
         {
-            RequestType = ServerRequestType.TerminalCommand;
+            RequestType = GatewayRequestType.TerminalCommand;
         }
 
         public string TerminalId { get; set; }
