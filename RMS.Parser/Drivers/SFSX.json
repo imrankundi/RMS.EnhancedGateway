@@ -58,7 +58,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) ADC Levels (Avg/S)",
+          "Name": "ADCLevels",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -74,7 +74,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Volume (Avg/S)",
+          "Name": "VolumeUnfiltered",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -90,7 +90,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Raw Height (Mm)",
+          "Name": "RawHeight",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -106,7 +106,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Filtered Height (Mm)",
+          "Name": "FilteredHeight",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -122,7 +122,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Compensated Height (Mm)",
+          "Name": "CompensatedHeight",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -138,7 +138,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Raw Volume (Ltrs)",
+          "Name": "RawVolume",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -154,7 +154,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Filtered Volume (Ltrs)",
+          "Name": "FilteredVolume",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -170,7 +170,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Compensated Volume (Ltrs)",
+          "Name": "CompensatedVolume",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -186,7 +186,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Ambient Temperature (°C)",
+          "Name": "AmbientTemperature",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -202,7 +202,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Fuel Temperature (°C)",
+          "Name": "FuelTemperature",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -218,7 +218,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Refill Counter (Ltrs)",
+          "Name": "RefillCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -234,7 +234,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Consumption Counter (Ltrs)",
+          "Name": "ConsumptionCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -250,7 +250,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Genset Average (Ltr/Hr)",
+          "Name": "GensetAverage",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -266,7 +266,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Battery Voltage (V)",
+          "Name": "BatteryVoltage",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -282,7 +282,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Debug",
+          "Name": "FSX_Debug",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -298,7 +298,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Unusual Consumption (Ltrs)",
+          "Name": "UnusualConsumption",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -314,38 +314,6 @@
           "Factor": 1
         },
         {
-          "Name": "(FS) Reserved",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "F17",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 21 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(FS) Reserved",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "F18",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 22 ],
-          "Factor": 1
-        },
-        {
           "Name": "Alarms",
           "Signed": false,
           "EnableDataType": false,
@@ -357,7 +325,40 @@
           "DataType": "Binary",
           "Evaluate": false,
           "ParameterType": "Data",
-          "BitwiseLabels": [],
+          "BitwiseLabels": [
+            {
+              "Index": 0,
+              "Label": "Al_AUX1"
+            },
+            {
+              "Index": 1,
+              "Label": "Al_AUX2"
+            },
+            {
+              "Index": 4,
+              "Label": "Al_LowFuelWarning"
+            },
+            {
+              "Index": 5,
+              "Label": "Al_LowFuelAlarm"
+            },
+            {
+              "Index": 9,
+              "Label": "Al_T1High"
+            },
+            {
+              "Index": 10,
+              "Label": "Al_T2High"
+            },
+            {
+              "Index": 11,
+              "Label": "Al_Refilling"
+            },
+            {
+              "Index": 12,
+              "Label": "Al_Theft"
+            }
+          ],
           "ParameterIndexes": [ 24 ],
           "Factor": 1
         }

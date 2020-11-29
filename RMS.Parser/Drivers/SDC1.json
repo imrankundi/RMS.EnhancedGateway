@@ -58,7 +58,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-1 Low Counter (Hrs)",
+          "Name": "DI1LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -74,7 +74,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-2 Low Counter (Hrs)",
+          "Name": "DI2LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -90,7 +90,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-3 Low Counter (Hrs)",
+          "Name": "DI3LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -106,7 +106,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-4 Low Counter (Hrs)",
+          "Name": "DI4LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -122,7 +122,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-5 Low Counter (Hrs)",
+          "Name": "DI5LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -138,7 +138,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-6 Low Counter (Hrs)",
+          "Name": "DI6LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -154,7 +154,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-1 High Counter (Hrs)",
+          "Name": "DI1HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -170,7 +170,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-2 High Counter (Hrs)",
+          "Name": "DI2HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -186,7 +186,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-3 High Counter (Hrs)",
+          "Name": "DI3HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -202,7 +202,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-4 High Counter (Hrs)",
+          "Name": "DI4HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -218,7 +218,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-5 High Counter (Hrs)",
+          "Name": "DI5HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -234,7 +234,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) DI-6 High Counter (Hrs)",
+          "Name": "DI6HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -250,7 +250,7 @@
           "Factor": 1
         },
         {
-          "Name": "(DC1) System Life (Hrs)",
+          "Name": "SystemLife",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -264,56 +264,7 @@
           "BitwiseLabels": [],
           "ParameterIndexes": [ 17 ],
           "Factor": 1
-        },
-        {
-          "Name": "Reserved 1",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "F14",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 18 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved 2",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "F15",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 19 ],
-          "Factor": 1
-        },
-        {
-          "Name": "Reserved 3",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "F16",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 20 ],
-          "Factor": 1
         }
-
       ]
     }
   ]

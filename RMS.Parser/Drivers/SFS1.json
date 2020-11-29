@@ -42,23 +42,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 5,
-          "DataType": "String",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "BitwiseLabels": [],
-          "ParameterIndexes": [ 1 ],
-          "Factor": 1
-        },
-        {
-          "Name": "(FS1) Genset Running",
+          "Name": "DI1HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -74,7 +58,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) Mains Fail",
+          "Name": "DI2HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -90,7 +74,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) DI-3 High",
+          "Name": "DI3HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -106,7 +90,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) DI-4 High",
+          "Name": "DI4HighCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -122,7 +106,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) DI-1 Low",
+          "Name": "DI1LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -138,7 +122,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) Mains Available",
+          "Name": "DI2LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -154,7 +138,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) DI-3 Low",
+          "Name": "DI3LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -170,7 +154,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) DI-4 Low",
+          "Name": "DI4LowCounter",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -186,7 +170,7 @@
           "Factor": 1
         },
         {
-          "Name": "(FS1) System Life",
+          "Name": "SystemLife",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
