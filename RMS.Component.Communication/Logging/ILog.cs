@@ -1,4 +1,4 @@
-﻿namespace RMS.AWS.Logging
+﻿namespace RMS.Component.Communication.Logging
 {
     public interface ILog
     {

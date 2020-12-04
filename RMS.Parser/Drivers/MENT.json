@@ -40,21 +40,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -436,21 +421,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -799,21 +769,6 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
           "Factor": 1
         },
         {
@@ -1333,21 +1288,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -1483,7 +1423,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "SNMP_BatteryTemperature",
+          "Name": "MTCP_BatteryTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1498,7 +1438,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "SNMP_AmbientTemperature",
+          "Name": "MTCP_AmbientTemperature",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1549,21 +1489,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -1609,7 +1534,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "SNMP_Load1Current",
+          "Name": "MTCP_Load1Current",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": 0,
@@ -1924,7 +1849,7 @@
           "Factor": 0.001
         },
         {
-          "Name": "SNMP_Load1Energy",
+          "Name": "MTCP_Load1Energy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": 0,
@@ -2197,21 +2122,6 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
           "Factor": 1
         },
         {
@@ -2761,21 +2671,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -3082,21 +2977,6 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
           "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
@@ -3325,21 +3205,6 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
           "Factor": 1
         },
         {
@@ -4157,21 +4022,6 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
           "Factor": 1
         },
         {
@@ -5002,7 +4852,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
+          "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -5013,7 +4863,7 @@
           "DataType": "Integer",
           "Evaluate": false,
           "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
+          "ParameterIndexes": [ 6 ],
           "Factor": 1
         },
         {

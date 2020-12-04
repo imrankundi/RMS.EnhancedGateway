@@ -1,4 +1,5 @@
-﻿using RMS.AWS.Logging;
+﻿using Newtonsoft.Json;
+using RMS.AWS.Logging;
 using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Core.Common;
@@ -21,72 +22,79 @@ namespace RMS.AWS
             this.server = server;
         }
 
-        public async Task<bool> PostData(string MessageBody, int httpTimeout = 30)
+        public async Task<bool> PostData(string messageBody, int httpTimeout = 30)
         {
             DateTime timeStamp = DateTime.UtcNow;
-
-            if (MessageBody != null)
+            bool result = false;
+            if (messageBody != null)
             {
                 try
                 {
-                    string MessageBodyHash = ComputeSha256Hash(MessageBody);
+                    string messageBodyHash = ComputeSha256Hash(messageBody);
 
-                    Uri TargetUri = new Uri(server.EndPointUri);
+                    Uri targetUri = new Uri(server.EndPointUri);
                     HttpMethod httpMethod = HttpMethod.Post;
 
-                    HttpContent httpContent = new StringContent(MessageBody);
+                    HttpContent httpContent = new StringContent(messageBody);
                     httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
-                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(httpMethod, TargetUri);
+                    HttpRequestMessage httpRequestMessage = new HttpRequestMessage(httpMethod, targetUri);
                     httpRequestMessage.Content = httpContent;
                     httpRequestMessage.Headers.Add("x-api-key", server.XApiKey);
-                    httpRequestMessage.Headers.Add("X-Amz-Content-Sha256", MessageBodyHash);
+                    httpRequestMessage.Headers.Add("X-Amz-Content-Sha256", messageBodyHash);
                     httpRequestMessage.Headers.Add("X-Amz-Date", timeStamp.ToString("yyyyMMddTHHmmssZ"));
-                    httpRequestMessage.Headers.Host = TargetUri.Host;
+                    httpRequestMessage.Headers.Host = targetUri.Host;
 
-                    string Signature = GetSignature(httpRequestMessage, server.SecretKey, server.Region, server.Service, timeStamp);
-                    string AuthorizationHeader = GetAuthorizationHeader(server.AccessKey, timeStamp, server.Region, server.Service, Signature);
+                    string signature = GetSignature(httpRequestMessage, server.SecretKey, server.Region, server.Service, timeStamp);
+                    string authorizationHeader = GetAuthorizationHeader(server.AccessKey, timeStamp, server.Region, server.Service, signature);
 
                     using (HttpClient httpClient = new HttpClient())
                     {
                         httpClient.Timeout = TimeSpan.FromSeconds(httpTimeout);
-                        httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("AWS4-HMAC-SHA256", AuthorizationHeader);
+                        httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("AWS4-HMAC-SHA256", authorizationHeader);
 
                         HttpResponseMessage msg = await httpClient.SendAsync(httpRequestMessage);
+                        string content = msg.Content.ReadAsStringAsync().Result;
+                        PushApiEntity entity = new PushApiEntity
+                        {
+                            Timestamp = DateTimeHelper.CurrentUniversalTime,
+                            Request = messageBody,
+                            ServerId = server.Id,
+                            Response = content,
+                            HttpStatusCode = msg.StatusCode
+                        };
+                        //PushApiRepository.Save(entity);
+                        Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
                         if (msg.StatusCode == HttpStatusCode.OK)
                         {
-                            return true;
+                            result = true;
                         }
                         else
                         {
-                            PushApiEntity entity = new PushApiEntity
-                            {
-                                Timestamp = DateTimeHelper.CurrentUniversalTime,
-                                Data = MessageBody,
-                                ServerId = server.Id,
-                                Status = Status.NotSent
-                            };
-                            PushApiRepository.Save(entity);
-                            //Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
+                            result = false;
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     //Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
                     //ErrorLogger.GetInstance().LogExceptionAsync(ex, "Posting data to server from AWS4Client");
+                    result = false;
                     PushApiEntity entity = new PushApiEntity
                     {
                         Timestamp = DateTimeHelper.CurrentUniversalTime,
-                        Data = MessageBody,
+                        Request = messageBody,
                         ServerId = server.Id,
-                        Status = Status.NotSent
+                        HttpStatusCode = HttpStatusCode.Unused,
+                        Response = "[ERROR_AT_GATEWAY] => " + ex.Message
                     };
-                    PushApiRepository.Save(entity);
+
+                    Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                    //PushApiRepository.Save(entity);
                 }
             }
 
-            return false;
+            return result;
         }
 
         static byte[] HmacSHA256(string data, byte[] key)

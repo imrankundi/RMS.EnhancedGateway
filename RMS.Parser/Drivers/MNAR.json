@@ -25,7 +25,7 @@
           "Factor": 1
         },
         {
-          "Name": "Date And Time",
+          "Name": "Timestamp",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -37,36 +37,6 @@
           "Evaluate": true,
           "ParameterType": "Data",
           "ParameterIndexes": [ 0, 1, 2, 3 ],
-          "Factor": 1
-        },
-        {
-          "Name": "DeviceId",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
-          "Factor": 1
-        },
-        {
-          "Name": "PageNumber",
-          "Signed": false,
-          "EnableDataType": false,
-          "MinVal": -1,
-          "MaxVal": -1,
-          "Field": "Id",
-          "Expression": "{0}",
-          "Precision": 0,
-          "DataType": "Integer",
-          "Evaluate": false,
-          "ParameterType": "Data",
-          "ParameterIndexes": [ 6 ],
           "Factor": 1
         },
         {

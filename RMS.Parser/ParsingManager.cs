@@ -63,6 +63,7 @@ namespace RMS.Parser
 
                             return new ReceivedPacket()
                             {
+                                ReceivedOn = DateTimeHelper.CurrentUniversalTime,
                                 Data = data,
                                 ProtocolHeader = protocolHeader,
                                 TerminalId = terminalId
@@ -73,6 +74,7 @@ namespace RMS.Parser
                     {
                         return new ReceivedPacket()
                         {
+                            ReceivedOn = DateTimeHelper.CurrentUniversalTime,
                             Data = pkt,
                             ProtocolHeader = pkt,
                             TerminalId = terminalId

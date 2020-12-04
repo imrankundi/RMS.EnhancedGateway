@@ -40,7 +40,7 @@
           "Factor": 1
         },
         {
-          "Name": "DeviceId",
+          "Name": "PageNumber",
           "Signed": false,
           "EnableDataType": false,
           "MinVal": -1,
@@ -51,11 +51,11 @@
           "DataType": "Integer",
           "Evaluate": false,
           "ParameterType": "Data",
-          "ParameterIndexes": [ 4 ],
+          "ParameterIndexes": [ 6 ],
           "Factor": 1
         },
         {
-          "Name": "(PMM) L1 Voltage (Vac)",
+          "Name": "L1Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -70,7 +70,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L1-L2 Voltage (Vac)",
+          "Name": "L1L2Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -85,7 +85,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L1 Current (Aac)",
+          "Name": "L1Current",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -100,7 +100,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L1 Frequency (Hz)",
+          "Name": "L1Frequency",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -115,7 +115,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L1 Power Factor ",
+          "Name": "L1PowerFactor",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -130,7 +130,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L1 Apparent Power (kW)",
+          "Name": "L1ApparentPower",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -145,7 +145,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L1 Active Power (kW)",
+          "Name": "L1ActivePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -160,7 +160,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L2 Voltage (Vac)",
+          "Name": "L2Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -175,7 +175,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L2-L3 Voltage (Vac)",
+          "Name": "L2L3Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -190,7 +190,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L2 Current (Aac)",
+          "Name": "L2Current",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -205,7 +205,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L2 Frequency (Hz)",
+          "Name": "L2Frequency",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -220,7 +220,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L2 Power Factor ",
+          "Name": "L2PowerFactor",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -235,7 +235,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L2 Apparent Power (kW)",
+          "Name": "L2ApparentPower",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -250,7 +250,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L2 Active Power (kW)",
+          "Name": "L2ActivePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -265,7 +265,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L3 Voltage (Vac)",
+          "Name": "L3Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -280,7 +280,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L3-L1 Voltage (Vac)",
+          "Name": "L3L1Voltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -295,7 +295,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) L3 Current (Aac)",
+          "Name": "L3Current",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -310,7 +310,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L3 Frequency (Hz)",
+          "Name": "L3Frequency",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -325,7 +325,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) L3 Power Factor ",
+          "Name": "L3PowerFactor",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -340,7 +340,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L3 Apparent Power (kW)",
+          "Name": "L3ApparentPower",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -355,7 +355,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L3 Active Power (kW)",
+          "Name": "L3ActivePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -370,7 +370,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Average Voltage (L-N) (Vac)",
+          "Name": "LNAverageVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -385,7 +385,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) Average Voltage (L-L) (Vac)",
+          "Name": "LLAverageVoltage",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -400,7 +400,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) Total Current (Aac)",
+          "Name": "TotalCurrent",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -415,7 +415,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) System Frequency (Hz)",
+          "Name": "SystemFrequency",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -430,7 +430,7 @@
           "Factor": 0.1
         },
         {
-          "Name": "(PMM) System Power Factor ",
+          "Name": "SystemPowerFactor",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -445,7 +445,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Total Apparent Power (kW)",
+          "Name": "TotalApparentPower",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -460,7 +460,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Total Active Power (kW)",
+          "Name": "TotalActivePower",
           "Signed": true,
           "EnableDataType": true,
           "MinVal": "0",
@@ -475,7 +475,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L1 Import Active Energy  (kWh)",
+          "Name": "L1ImportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -490,7 +490,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L1 Export Active Energy (kWh)",
+          "Name": "L1ExportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -505,7 +505,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L2 Import Active Energy (kWh)",
+          "Name": "L2ImportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -520,7 +520,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L2 Export Active Energy (kWh)",
+          "Name": "L2ExportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -535,7 +535,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L3 Import Active Energy (kWh)",
+          "Name": "L3ImportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -550,7 +550,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) L3 Export Active Energy (kWh)",
+          "Name": "L3ExportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -565,7 +565,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Total Import Active Energy (kWh)",
+          "Name": "TotalImportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -580,7 +580,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Total Export Active Energy  (kWh)",
+          "Name": "TotalExportActiveEnergy",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -595,7 +595,7 @@
           "Factor": 0.01
         },
         {
-          "Name": "(PMM) Alarms 1",
+          "Name": "Alarms 1",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -606,11 +606,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Label": "L3OverVolt",
+              "Index": 7
+            },
+            {
+              "Label": "L1Offload",
+              "Index": 6
+            },
+            {
+              "Label": "L2Offload",
+              "Index": 5
+            },
+            {
+              "Label": "L3Offload",
+              "Index": 4
+            },
+            {
+              "Label": "L1OverLoad",
+              "Index": 3
+            },
+            {
+              "Label": "L2OverLoad",
+              "Index": 2
+            },
+            {
+              "Label": "L3OverLoad",
+              "Index": 1
+            },
+            {
+              "Label": "MainsFail",
+              "Index": 0
+            }
+          ],
           "ParameterIndexes": [ 98 ],
           "Factor": 1
         },
         {
-          "Name": "(PMM) Alarms 2",
+          "Name": "Alarms 2",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -621,11 +655,45 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Label": "L1Fail",
+              "Index": 7
+            },
+            {
+              "Label": "L2Fail",
+              "Index": 6
+            },
+            {
+              "Label": "L3Fail",
+              "Index": 5
+            },
+            {
+              "Label": "L1UnderVolt",
+              "Index": 4
+            },
+            {
+              "Label": "L2UnderVolt",
+              "Index": 3
+            },
+            {
+              "Label": "L3UnderVolt",
+              "Index": 2
+            },
+            {
+              "Label": "L1OverVolt",
+              "Index": 1
+            },
+            {
+              "Label": "L2OverVolt",
+              "Index": 0
+            }
+          ],
           "ParameterIndexes": [ 99 ],
           "Factor": 1
         },
         {
-          "Name": "(PMM) Alarms 3",
+          "Name": "Alarms 3",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -640,7 +708,7 @@
           "Factor": 1
         },
         {
-          "Name": "(PMM) Alarms 4",
+          "Name": "Alarms 4",
           "Signed": false,
           "EnableDataType": true,
           "MinVal": "0",
@@ -651,13 +719,18 @@
           "DataType": "Binary",
           "Evaluate": true,
           "ParameterType": "Data",
+          "BitwiseLabels": [
+            {
+              "Label": "ReversePhaseSequence",
+              "Index": 7
+            }
+          ],
           "ParameterIndexes": [ 101 ],
           "Factor": 1
         }
 
       ]
     }
-  
   ]
 
 }

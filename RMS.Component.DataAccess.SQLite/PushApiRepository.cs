@@ -57,7 +57,7 @@ namespace RMS.Component.DataAccess.SQLite
                     using (var connection = CreateConnection())
                     {
                         connection.Open();
-                        var query = @"INSERT INTO PushApi(Timestamp, ServerId, Data, Status) VALUES(@Timestamp, @ServerId, @Data, @Status); SELECT last_insert_rowid();";
+                        var query = @"INSERT INTO PushApi(Timestamp, ServerId, Request, Response, HttpStatusCode) VALUES(@Timestamp, @ServerId, @Request, @Response, @HttpStatusCode); SELECT last_insert_rowid();";
                         entity.Id = connection.Query<long>(query, entity).First();
                     }
                 }
@@ -78,8 +78,9 @@ namespace RMS.Component.DataAccess.SQLite
             sb.AppendLine("Id INTEGER PRIMARY KEY AUTOINCREMENT,");
             sb.AppendLine("Timestamp TEXT,");
             sb.AppendLine("ServerId INTEGER,");
-            sb.AppendLine("Data TEXT,");
-            sb.AppendLine("Status INTEGER");
+            sb.AppendLine("Request TEXT,");
+            sb.AppendLine("Response TEXT,");
+            sb.AppendLine("HttpStatusCode INTEGER");
             sb.AppendLine(");");
             return sb.ToString();
         }

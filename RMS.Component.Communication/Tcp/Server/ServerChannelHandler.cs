@@ -115,7 +115,8 @@ namespace RMS.Component.Communication.Tcp.Server
                             ProtocolHeader = result.ProtocolHeader,
                             TerminalId = result.TerminalId
                         };
-                        ReceivedPacketRepository.Save(entity);
+                        //ReceivedPacketRepository.Save(entity);
+                        RMS.Component.Communication.Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
 
                         var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
                         if (protocol != null)
