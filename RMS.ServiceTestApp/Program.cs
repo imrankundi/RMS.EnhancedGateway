@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace ServiceTestApp
+namespace RMS
 {
     static class Program
     {
@@ -13,7 +13,7 @@ namespace ServiceTestApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new RequestForm());
+            Application.Run(new MainWindow());
         }
     }
 }

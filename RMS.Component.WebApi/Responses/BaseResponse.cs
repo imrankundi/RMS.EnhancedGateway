@@ -6,8 +6,8 @@ namespace RMS.Component.WebApi.Responses
     {
         [JsonProperty("requestId")]
         public string RequestId { get; set; }
-        [JsonProperty("responseType")]
-        public ResponseType ResponseType { get; set; }
+        [JsonProperty("responseStatus")]
+        public ResponseStatus ResponseStatus { get; set; }
         [JsonProperty("message")]
         public string Message { get; set; }
         public string ToJson()
@@ -22,13 +22,13 @@ namespace RMS.Component.WebApi.Responses
         public void Success(string message = null)
         {
             Message = message != null ? message : null;
-            ResponseType = ResponseType.Success;
+            ResponseStatus = ResponseStatus.Success;
         }
 
         public void Failure(string message = null)
         {
             Message = message != null ? message : null;
-            ResponseType = ResponseType.Failed;
+            ResponseStatus = ResponseStatus.Failed;
         }
     }
 }

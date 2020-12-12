@@ -1,13 +1,11 @@
 ﻿using DotNetty.Transport.Channels;
 using Newtonsoft.Json;
 using RMS.AWS;
-using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Core.Enumerations;
 using RMS.Gateway;
 using RMS.Parser;
 using System;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -103,7 +101,7 @@ namespace RMS.Component.Communication.Tcp.Server
 
                 string key = string.Empty;
                 var result = ParsingManager.FirstLevelParser(message);
-                
+
                 if (result != null)
                 {
                     if (!result.Data.Equals(TerminalHelper.PONG))

@@ -1,0 +1,18 @@
+{
+  "name": "UcMain",
+  "labels": [
+    {
+      "name": "btnGetAITInfo",
+      "text": "GET AIT INFO"
+    },
+    {
+      "name": "btnVerifyCustomer",
+      "text": "VERIFY CUSTOMER"
+    },
+    {
+      "name": "lblTransactionType",
+      "text": "Transaction Type"
+    }
+  ],
+  "lists": []
+}

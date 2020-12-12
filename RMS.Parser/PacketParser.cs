@@ -2,19 +2,20 @@
 using Newtonsoft.Json;
 using RMS.Core.Common;
 using RMS.Core.Enumerations;
+using RMS.Protocols;
 using System;
 using System.Collections.Generic;
 
 namespace RMS.Parser
 {
-    public class ReonParser
+    public class PacketParser
     {
         private const char splitter = ',';
 
         public ReceivedPacket Packet { get; }
 
 
-        public ReonParser(ReceivedPacket packet)
+        public PacketParser(ReceivedPacket packet)
         {
             Packet = packet;
         }
@@ -45,7 +46,7 @@ namespace RMS.Parser
             };
 
             SiteInfo siteInfo = GetSiteInfo(parsedPacket.TerminalId);
-            if(siteInfo != null)
+            if (siteInfo != null)
             {
                 parsedPacket.Mapping = siteInfo.Name;
             }
@@ -108,9 +109,9 @@ namespace RMS.Parser
                             else if (mapping.DataType == DataType.Epoch)
                             {
                                 DateTime datetime = DateTimeHelper.FromEpoch(doubleValue);
-                                if(siteInfo != null)
+                                if (siteInfo != null)
                                 {
-                                    if(siteInfo.TimeOffset != null)
+                                    if (siteInfo.TimeOffset != null)
                                     {
                                         datetime = datetime.AddHours(siteInfo.TimeOffset.Hours);
                                         datetime = datetime.AddMinutes(siteInfo.TimeOffset.Minutes);
@@ -124,8 +125,8 @@ namespace RMS.Parser
                                 {
                                     int power = (mapping.ParameterIndexes.Count * 8) - 1;
                                     double maxValue = Math.Pow(2, power) - 1;
-                                    doubleValue = doubleValue > maxValue ? maxValue * 2 - doubleValue : doubleValue;
-                                    //doubleValue = doubleValue > maxValue ? doubleValue - maxValue * 2 : doubleValue;
+                                    //doubleValue = doubleValue > maxValue ? maxValue * 2 - doubleValue : doubleValue;
+                                    doubleValue = doubleValue > maxValue ? doubleValue - (maxValue + 1) * 2 : doubleValue;
 
                                 }
 
@@ -228,19 +229,19 @@ namespace RMS.Parser
             if (!string.IsNullOrEmpty(binary))
             {
                 var bitwiseArray = ConversionHelper.ToIntArray(binary.ToCharArray());
-                for (int ii = 0; ii < bitwiseArray.Length; ii++)
+                //for (int ii = 0; ii < bitwiseArray.Length; ii++)
+                //{
+                if (mapping.BitwiseLabels != null)
                 {
-                    if (mapping.BitwiseLabels != null)
+                    if (mapping.BitwiseLabels.Count > 0)
                     {
-                        if(mapping.BitwiseLabels.Count > 0)
+                        foreach (BitwiseLabel label in mapping.BitwiseLabels)
                         {
-                            foreach(BitwiseLabel label in mapping.BitwiseLabels)
-                            {
-                                dictionary.Add(label.Label, bitwiseArray[label.Index]);
-                            }
+                            dictionary.Add(label.Label, bitwiseArray[label.Index]);
                         }
                     }
                 }
+                //}
             }
 
             return dictionary;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RMS.Parser
+namespace RMS.Protocols
 {
     public class Page
     {

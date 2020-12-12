@@ -76,7 +76,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -106,7 +106,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F4",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -151,7 +151,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F7",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -207,7 +207,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_OverVoltage"
             },
             {
@@ -236,7 +236,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_AmbTempSensorFault"
             },
             {
@@ -265,7 +265,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_CANCommFail"
             },
             {
@@ -294,7 +294,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Input1"
             },
             {
@@ -323,7 +323,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Input4"
             },
             {
@@ -352,7 +352,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Input7"
             },
             {
@@ -430,7 +430,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F19",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -445,7 +445,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F20",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -475,7 +475,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F22",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -490,7 +490,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F23",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -512,7 +512,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_BattTestFail"
             },
             {
@@ -541,7 +541,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_ScheduleBattTest"
             },
             {
@@ -570,7 +570,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_CyclicBattBoostCh"
             },
             {
@@ -599,7 +599,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_BattTempSensorFail"
             },
             {
@@ -629,7 +629,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_BattLowTemp"
             },
             {
@@ -713,7 +713,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -773,7 +773,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F6",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -833,7 +833,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -944,7 +944,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -1041,7 +1041,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_DoubleRectFail"
             },
             {
@@ -1220,7 +1220,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect1Fail"
             },
             {
@@ -1249,7 +1249,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect1HighTemp"
             },
             {
@@ -1278,7 +1278,8 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+
+              "Index": 15,
               "Label": "Al_Rect1PowerLimit"
             },
             {
@@ -1393,7 +1394,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect2Fail"
             },
             {
@@ -1422,7 +1423,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect2HighTemp"
             },
             {
@@ -1451,7 +1452,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect2PowerLimit"
             },
             {
@@ -1566,7 +1567,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect3Fail"
             },
             {
@@ -1595,7 +1596,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect3HighTemp"
             },
             {
@@ -1624,7 +1625,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              "Mppt3SolarPositonSetting",
+              "Index": 15,
               "Label": "Al_Rect3PowerLimit"
             },
             {
@@ -1790,7 +1791,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect4Fail"
             },
             {
@@ -1819,7 +1820,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect4HighTemp"
             },
             {
@@ -1848,7 +1849,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect4PowerLimit"
             },
             {
@@ -1963,7 +1964,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect5Fail"
             },
             {
@@ -1993,7 +1994,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect5HighTemp"
             },
             {
@@ -2023,7 +2024,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect5PowerLimit"
             },
             {
@@ -2138,7 +2139,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect6Fail"
             },
             {
@@ -2167,7 +2168,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect6HighTemp"
             },
             {
@@ -2196,7 +2197,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect6PowerLimit"
             },
             {
@@ -2311,7 +2312,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect7Fail"
             },
             {
@@ -2340,7 +2341,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect7HighTemp"
             },
             {
@@ -2370,7 +2371,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect7PowerLimit"
             },
             {
@@ -2485,7 +2486,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect8Fail"
             },
             {
@@ -2514,7 +2515,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect8HighTemp"
             },
             {
@@ -2544,7 +2545,7 @@
           "ParameterType": "Data",
           "BitwiseLabels": [
             {
-              Mppt3SolarPositonSetting,
+              "Index": 15,
               "Label": "Al_Rect8PowerLimit"
             },
             {
@@ -2613,7 +2614,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F1",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2628,7 +2629,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2643,7 +2644,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F3",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2838,7 +2839,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F16",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2853,7 +2854,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F17",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2919,7 +2920,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F1",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2934,7 +2935,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -2949,7 +2950,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3114,7 +3115,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F14",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3270,7 +3271,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F2",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3435,7 +3436,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F13",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3450,7 +3451,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F14",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3817,7 +3818,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -3922,7 +3923,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -4292,7 +4293,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -4397,7 +4398,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -4767,7 +4768,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F3",
-          "Expression": "{0} * 256 + {1}",
+          "Expression": "({0} * 256 + {1} + (-32000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -4872,7 +4873,7 @@
           "MinVal": 0,
           "MaxVal": 0,
           "Field": "F10",
-          "Expression": "{0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3}",
+          "Expression": "({0} * 256 * 256 * 256 + {1} * 256 * 256 + {2} * 256 + {3} + (-1000000))",
           "Precision": 5,
           "DataType": "Double",
           "Evaluate": true,
@@ -5156,7 +5157,7 @@
         }
       ]
     }
-  
+
   ]
 
 }

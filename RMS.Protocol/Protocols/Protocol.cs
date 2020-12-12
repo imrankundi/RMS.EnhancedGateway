@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace RMS.Parser
+namespace RMS.Protocols
 {
     public class Protocol
     {

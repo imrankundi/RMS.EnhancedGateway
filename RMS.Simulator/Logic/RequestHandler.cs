@@ -21,7 +21,7 @@ namespace RMS.Simulator.Requests
                 RequestListener?.NotifyRequest(request);
                 BaseResponse response = new BaseResponse
                 {
-                    ResponseType = ResponseType.Success
+                    ResponseStatus = ResponseStatus.Success
                 };
                 return response;
 
@@ -33,7 +33,7 @@ namespace RMS.Simulator.Requests
                     ErrorDetails = ex.ToString(),
                     ErrorMessage = ex.Message,
                     Message = ex.Message,
-                    ResponseType = ResponseType.Failed
+                    ResponseStatus = ResponseStatus.Failed
                 };
                 return response;
             }

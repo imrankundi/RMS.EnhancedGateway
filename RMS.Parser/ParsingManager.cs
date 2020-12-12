@@ -98,7 +98,7 @@ namespace RMS.Parser
             {
                 if (receivedPacket != null)
                 {
-                    ReonParser parser = new ReonParser(receivedPacket);
+                    PacketParser parser = new PacketParser(receivedPacket);
 
                     //#if DEBUG
                     return ParsePacket(parser);
@@ -124,7 +124,7 @@ namespace RMS.Parser
                 string[] pkt = packet.Split('|');
                 if (pkt.Length > 0 && pkt.Length == 3)
                 {
-                    ReonParser parser = new ReonParser(new ReceivedPacket()
+                    PacketParser parser = new PacketParser(new ReceivedPacket()
                     {
                         Data = pkt[2],
                         ProtocolHeader = pkt[1],
@@ -155,7 +155,7 @@ namespace RMS.Parser
             try
             {
                 //DeviceParser parser = null;
-                ReonParser parser = null;
+                PacketParser parser = null;
                 int index = 0;
                 string terminalId = string.Empty;
                 string pkt = string.Empty;
@@ -186,7 +186,7 @@ namespace RMS.Parser
 
                             data = sb.ToString().TrimEnd(',');
 
-                            parser = new ReonParser(new ReceivedPacket()
+                            parser = new PacketParser(new ReceivedPacket()
                             {
                                 Data = data,
                                 ProtocolHeader = protocolHeader,
@@ -197,7 +197,7 @@ namespace RMS.Parser
                         {
                             data = pkt.Substring(index, pkt.Length - index).Replace('(', ',').Replace(')', ',').TrimStart(',').TrimEnd(',');
 
-                            parser = new ReonParser(new ReceivedPacket()
+                            parser = new PacketParser(new ReceivedPacket()
                             {
                                 Data = data,
                                 ProtocolHeader = protocolHeader,
@@ -221,7 +221,7 @@ namespace RMS.Parser
 
         }
 
-        public static ReonParsedPacket ParsePacket(ReonParser parser)
+        public static ReonParsedPacket ParsePacket(PacketParser parser)
         {
             return parser.Parse();
         }

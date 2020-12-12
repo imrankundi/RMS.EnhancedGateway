@@ -14,7 +14,7 @@ namespace RMS.Simulator.Logic
             RequestListener?.NotifyRequest(request);
             BaseResponse response = new BaseResponse
             {
-                ResponseType = ResponseType.Success
+                ResponseStatus = ResponseStatus.Success
             };
 
             return response;

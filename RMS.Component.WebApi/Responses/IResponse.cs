@@ -2,7 +2,7 @@
 {
     public interface IResponse
     {
-        ResponseType ResponseType { get; set; }
+        ResponseStatus ResponseStatus { get; set; }
         string ToJson();
     }
 }

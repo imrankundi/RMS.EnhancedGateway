@@ -1,12 +1,10 @@
 ﻿using Dapper;
 using RMS.Component.DataAccess.SQLite.Entities;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RMS.Component.DataAccess.SQLite
 {
@@ -45,7 +43,7 @@ namespace RMS.Component.DataAccess.SQLite
             bool result;
             try
             {
-                lock(locker)
+                lock (locker)
                 {
                     if (!File.Exists(DatabaseFile))
                     {
@@ -62,7 +60,7 @@ namespace RMS.Component.DataAccess.SQLite
                         entity.Id = connection.Query<long>(query, entity).First();
                     }
                 }
-                
+
                 result = true;
             }
             catch (Exception ex)

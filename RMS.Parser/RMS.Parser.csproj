@@ -49,17 +49,13 @@
     <Compile Include="Configuration\ConfigurationQueueResult.cs" />
     <Compile Include="Configuration\ConfigurationPacket.cs" />
     <Compile Include="Configuration\DeviceConfigurationManager.cs" />
-    <Compile Include="Protocol\BitwiseLabel.cs" />
-    <Compile Include="ReonParser.cs" />
+    <Compile Include="PacketParser.cs" />
     <Compile Include="ReonParsedPacket.cs" />
     <Compile Include="ParsedPacket.cs" />
     <Compile Include="ParsedPacketQueryBuilder.cs" />
     <Compile Include="OldParser.cs" />
     <Compile Include="ProtocolList.cs" />
-    <Compile Include="Protocol\Page.cs" />
-    <Compile Include="Protocol\Parameter.cs" />
     <Compile Include="ParsingManager.cs" />
-    <Compile Include="Protocol\Protocol.cs" />
     <Compile Include="ReceivedPacket.cs" />
     <Compile Include="DeviceParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,6 +145,10 @@
     <ProjectReference Include="..\RMS.Core\RMS.Core.csproj">
       <Project>{e5740b08-507a-4b3a-ae2c-9018d4005671}</Project>
       <Name>RMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
+      <Project>{0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca}</Project>
+      <Name>RMS.Protocol</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

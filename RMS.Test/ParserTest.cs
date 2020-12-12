@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RMS.Parser;
+using System;
 
 namespace RMS.Test
 {
@@ -19,10 +20,10 @@ namespace RMS.Test
             SP003230[MENT(95,189,32,28,25,3,12,27,36,80,56,39,87,80,21,24,4,238,10,240,11,184,0,38,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76,168]
             SP002968[MEMT(95,189,32,28,25,3,3,2,178,90,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,228,61]
              */
-            var message = CreateModbusPacket("SP900019", "MECM", 
+            var message = CreateModbusPacket("SP900019", "MECM",
                 new byte[] { 95, 192, 125, 175, 1, 4, 5, 0, 0, 66, 0, 251, 0, 16, 133, 36, 0, 0, 33, 135, 0, 15, 252, 125, 0, 0, 170, 46, 0, 0, 23, 152, 0, 16, 143, 19, 0, 11, 67, 100, 0, 5, 99, 71, 0, 9, 129, 106, 0, 7, 37, 65, 0, 16, 166, 157, 0, 0, 0, 14, 0, 16, 166, 156, 0, 0, 0, 15, 0, 16, 166, 151, 0, 0, 0, 20, 0, 0 });
             //var message = "SP002411<SGRC(ID(00,30/10/2020,14:23:19)X(28.0,24.2,-65,0)H(14,45,32264261,10478812,32264298,32236195,32216922,32217082)L(99,900.35,43106,21828503,43109,71240,90465,90265)A(00101111))>";
-            
+
             var packet = ParsingManager.FirstLevelParser(message);
             var protocl = ProtocolList.Instance.Find(packet.ProtocolHeader);
             if (protocl.ProtocolType == Core.Enumerations.ProtocolType.Monitoring)
@@ -46,6 +47,38 @@ namespace RMS.Test
         {
             string d = System.Text.Encoding.Default.GetString(data);
             return string.Format("{0}<{1}({2})>\r\n", siteId, deviceName, d);
+        }
+        [TestMethod]
+        public void CreateCommand()
+        {
+            Protocols.CommandBuilder builder = new Protocols.CommandBuilder("CGRC", "SP100100");
+            var section = builder.CreateCommandSection("ID");
+            section.AddParameterValue("00");
+            section.AddParameterValue("N");
+            section.AddParameterValue("N");
+            section = builder.CreateCommandSection("N");
+            section.AddParameterValue("1");
+            section.AddParameterValue("2");
+            section.AddParameterValue("3");
+            section.AddParameterValue("4");
+
+            var str = builder.Build();
+        }
+
+        [TestMethod]
+        public void SecondLevelParsing()
+        {
+            //SP900018[MECM(95,211,185,189,1,4,9,0,0,64,0,3,14,169,244,125,230,174,0,1,116,236,190,125,218,223,0,1,255,175,160,43,2,28,0,41,2,43,138,2,39,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+            ReceivedPacket packet = new ReceivedPacket
+            {
+                Data = "95,211,185,189,1,4,9,0,0,64,0,3,14,169,244,125,230,174,0,1,116,236,190,125,218,223,0,1,255,175,160,43,2,28,0,41,2,43,138,2,39,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                ProtocolHeader = "MECM",
+                ReceivedOn = DateTime.UtcNow,
+                TerminalId = "SP111111"
+            };
+
+            var pkt = ParsingManager.SecondLevelParser(packet);
+            var str = JsonConvert.SerializeObject(pkt, Formatting.Indented);
         }
     }
 }

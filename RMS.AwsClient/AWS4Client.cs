@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.AWS.Logging;
-using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Core.Common;
 using System;

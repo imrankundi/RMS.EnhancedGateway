@@ -4,11 +4,8 @@ using RMS.Component.WebApi.Responses;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
 using System;
-using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace ServiceTestApp
 {

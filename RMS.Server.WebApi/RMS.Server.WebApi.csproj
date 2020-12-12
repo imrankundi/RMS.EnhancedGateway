@@ -164,6 +164,10 @@
       <Project>{6282BE99-CE20-4331-B67F-35B216DF771A}</Project>
       <Name>RMS.Parser</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
+      <Project>{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}</Project>
+      <Name>RMS.Protocol</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Server.BusinessLogic\RMS.Server.BusinessLogic.csproj">
       <Project>{33DCB54F-788A-483F-B1EB-F7BA0BDD6D3E}</Project>
       <Name>RMS.Server.BusinessLogic</Name>

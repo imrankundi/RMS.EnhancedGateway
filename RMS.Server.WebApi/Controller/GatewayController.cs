@@ -33,7 +33,7 @@ namespace RMS.Server.WebApi.Controller
                 return new BaseResponse
                 {
                     Message = "Protocols are succesfully reloaded",
-                    ResponseType = ResponseType.Success
+                    ResponseStatus = ResponseStatus.Success
                 };
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace RMS.Server.WebApi.Controller
                 return new BaseResponse
                 {
                     Message = "Unable to reloaded Protocols [" + ex.Message + "]",
-                    ResponseType = ResponseType.Failed
+                    ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
@@ -55,7 +55,7 @@ namespace RMS.Server.WebApi.Controller
                 return new BaseResponse
                 {
                     Message = "Sites are succesfully reloaded",
-                    ResponseType = ResponseType.Success
+                    ResponseStatus = ResponseStatus.Success
                 };
             }
             catch (Exception ex)
@@ -63,7 +63,7 @@ namespace RMS.Server.WebApi.Controller
                 return new BaseResponse
                 {
                     Message = "Unable to reloaded Sites [" + ex.Message + "]",
-                    ResponseType = ResponseType.Failed
+                    ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
@@ -81,7 +81,7 @@ namespace RMS.Server.WebApi.Controller
                         RequestId = request.RequestId,
                         Data = null,
                         RequestType = request.RequestType,
-                        ResponseType = ResponseType.Failed,
+                        ResponseStatus = ResponseStatus.Failed,
                         Message = "Another configuration already in process. Please try again later"
                     };
                 }
@@ -109,7 +109,7 @@ namespace RMS.Server.WebApi.Controller
                                 RequestId = request.RequestId,
                                 Data = command.ResponseData,
                                 RequestType = request.RequestType,
-                                ResponseType = ResponseType.Success,
+                                ResponseStatus = ResponseStatus.Success,
                                 Message = "Configuration Successful",
                                 TerminalId = command.TerminalId
                             };
@@ -123,7 +123,7 @@ namespace RMS.Server.WebApi.Controller
                             RequestId = request.RequestId,
                             Data = null,
                             RequestType = request.RequestType,
-                            ResponseType = ResponseType.Failed,
+                            ResponseStatus = ResponseStatus.Failed,
                             Message = ex.Message
                         };
                     }
@@ -136,7 +136,7 @@ namespace RMS.Server.WebApi.Controller
                     RequestId = request.RequestId,
                     Data = null,
                     RequestType = request.RequestType,
-                    ResponseType = ResponseType.Failed,
+                    ResponseStatus = ResponseStatus.Failed,
                     Message = "Request Timed Out",
                     TerminalId = request.TerminalId
                 };
@@ -155,7 +155,7 @@ namespace RMS.Server.WebApi.Controller
                     RequestId = request.RequestId,
                     Data = null,
                     RequestType = request.RequestType,
-                    ResponseType = ResponseType.Failed,
+                    ResponseStatus = ResponseStatus.Failed,
                     Message = ex.Message
                 };
             }

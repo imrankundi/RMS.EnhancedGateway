@@ -34,7 +34,7 @@ namespace RMS.Server.BusinessLogic
                     ErrorDetails = ex.ToString(),
                     ErrorMessage = ex.Message,
                     Message = ex.Message,
-                    ResponseType = ResponseType.Failed
+                    ResponseStatus = ResponseStatus.Failed
                 };
 
                 return response;
@@ -50,7 +50,7 @@ namespace RMS.Server.BusinessLogic
                 ErrorDetails = "Not Implemented",
                 ErrorMessage = "Not Implemented",
                 Message = "Not Implemented",
-                ResponseType = ResponseType.Failed
+                ResponseStatus = ResponseStatus.Failed
             };
             return response;
         }
@@ -63,7 +63,7 @@ namespace RMS.Server.BusinessLogic
                 ErrorDetails = ex.ToString(),
                 ErrorMessage = ex.Message,
                 Message = ex.Message,
-                ResponseType = ResponseType.Failed
+                ResponseStatus = ResponseStatus.Failed
             };
             return response;
         }
@@ -75,7 +75,7 @@ namespace RMS.Server.BusinessLogic
                 ErrorDetails = "The api doesnot support this request type. Kindly contact sytem administrator.",
                 ErrorMessage = "Unsupported request type",
                 Message = "Unsupported request type",
-                ResponseType = ResponseType.Failed
+                ResponseStatus = ResponseStatus.Failed
             };
 
             return response;

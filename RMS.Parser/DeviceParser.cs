@@ -3,6 +3,7 @@ using RMS.Core.Common;
 using RMS.Core.Enumerations;
 using RMS.Core.Logging;
 using RMS.Core.QueryBuilder;
+using RMS.Protocols;
 using System;
 using System.Collections.Generic;
 

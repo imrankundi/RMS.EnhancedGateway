@@ -1,0 +1,27 @@
+{
+  "name": "MainForm",
+  "labels": [
+
+    {
+      "name": "groupAIT",
+      "text": "AIT/Agent Information"
+    },
+    {
+      "name": "lblTxnType",
+      "text": "TransactionType"
+    },
+    {
+      "name": "btnGetAITInfo",
+      "text": "GET AIT INFO"
+    },
+    {
+      "name": "btnVerifyCustomer",
+      "text": "Verify Customer"
+    },
+    {
+      "name": "btnGenReport",
+      "text": "Genrate Txn Report"
+    }
+  ],
+  "lists": []
+}
