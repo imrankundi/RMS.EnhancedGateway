@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
-using RMS.Protocols;
 using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace RMS.Parser
+namespace RMS.Protocols
 {
     public class ProtocolList
     {

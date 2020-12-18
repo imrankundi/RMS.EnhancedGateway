@@ -5,10 +5,10 @@ using DotNetty.Transport.Bootstrapping;
 using DotNetty.Transport.Channels;
 using DotNetty.Transport.Channels.Sockets;
 using RMS.Component.Common;
-using RMS.Component.Communication.Tcp.Client;
-using RMS.Component.Communication.Tcp.Common;
+using RMS.Component.Logging;
 using System;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using System.Timers;
@@ -21,6 +21,7 @@ namespace RMS.Component.Communication.Tcp.Server
         private readonly ServerChannelConfiguration configuration;
         public ITerminalCommandHandler ServerChannelHandler { get; set; }
         //public ClientChannelManager ClientChannelManager { get; set; }
+        public ILog Log { get; set; }
 
         private Timer timer;
         private const int timerIntervalInSeconds = 1;
@@ -41,7 +42,7 @@ namespace RMS.Component.Communication.Tcp.Server
         {
             try
             {
-                Logging.ServerChannelLogger.Instance.Log.Information(className, "DisconnectAllClientChannels", "Disconnecting clients");
+                Log?.Information(className, "DisconnectAllClientChannels", "Disconnecting clients");
 
 
                 //var channels = ClientChannelManager?.Channels.Keys.ToArray();
@@ -60,7 +61,7 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                Logging.ServerChannelLogger.Instance.Log.Error(className, "DisconnectAllClientChannels",
+                Log?.Error(className, "DisconnectAllClientChannels",
                     string.Format("Message: {0}, Details: {1}", ex.Message, ex.ToString()));
 
             }
@@ -73,7 +74,7 @@ namespace RMS.Component.Communication.Tcp.Server
 
         public ServerChannel(ServerChannelConfiguration configuration)
         {
-            Logging.ServerChannelLogger.Instance.Log.Verbose(className, className, "Constructor fired");
+            Log?.Verbose(className, className, "Constructor fired");
             timer = new Timer();
             timer.Interval = timerIntervalInSeconds * 1000;
             timer.Elapsed += Timer_Elapsed;
@@ -83,10 +84,8 @@ namespace RMS.Component.Communication.Tcp.Server
             if (configuration == null)
             {
 
-                RaiseError(null, ErrorMessages.Message(ErrorType.NullConfiguration), ErrorType.NullConfiguration);
-
-                Logging.ServerChannelLogger.Instance.Log.Error(className, className, "No configuration found");
-                Logging.ServerChannelLogger.Instance.Log.Error(className, className, "Unable to to create proper Router Channel");
+                Log?.Error(className, className, "No configuration found");
+                Log?.Error(className, className, "Unable to to create proper Router Channel");
                 return;
             }
 
@@ -97,15 +96,6 @@ namespace RMS.Component.Communication.Tcp.Server
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
 
-
-        }
-
-        private void RaiseError(ClientContext context, string message, ErrorType errorType)
-        {
-
-        }
-        private void RaiseError(ClientContext context, Exception ex, ErrorType errorType)
-        {
 
         }
         private X509Certificate2 GetCertificate()
@@ -120,6 +110,7 @@ namespace RMS.Component.Communication.Tcp.Server
         ServerChannelHandler handler;
         public async Task StartAsync()
         {
+            string methodName = MethodBase.GetCurrentMethod().Name;
             bossGroup = new MultithreadEventLoopGroup(1);
             workerGroup = new MultithreadEventLoopGroup();
 
@@ -146,8 +137,8 @@ namespace RMS.Component.Communication.Tcp.Server
                             }
                             else
                             {
-                                RaiseError(null, ErrorMessages.Message(ErrorType.NoCertificateFoundWhenTlsEnabled),
-                                    ErrorType.NoCertificateFoundWhenTlsEnabled);
+
+                                Log?.Error(className, methodName, "Certificate not found");
                             }
                         }
 
@@ -168,12 +159,13 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                RaiseError(null, ex, ErrorType.ServerInitialization);
+                Log?.Error(className, methodName, ex.ToString());
             }
         }
 
         public async Task StopAsync()
         {
+            string methodName = MethodBase.GetCurrentMethod().Name;
             try
             {
                 DisconnectAllClientChannels();
@@ -201,7 +193,7 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                RaiseError(null, ex.Message, ErrorType.ErrorWhileClosingServerGracefully);
+                Log?.Error(className, methodName, ex.ToString());
             }
         }
 

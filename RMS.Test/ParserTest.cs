@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RMS.Parser;
+using RMS.Protocols;
+using RMS.Protocols.GT;
 using System;
 
 namespace RMS.Test
@@ -8,6 +10,7 @@ namespace RMS.Test
     [TestClass]
     public class ParserTest
     {
+
         [TestMethod]
         public void ParseModbusPacket()
         {
@@ -28,7 +31,7 @@ namespace RMS.Test
             var protocl = ProtocolList.Instance.Find(packet.ProtocolHeader);
             if (protocl.ProtocolType == Core.Enumerations.ProtocolType.Monitoring)
             {
-                var pkt = ParsingManager.SecondLevelParser(packet);
+                var pkt = Parser.ParsingManager.SecondLevelParser(packet);
                 var str = JsonConvert.SerializeObject(pkt, Formatting.Indented);
             }
             else
@@ -69,7 +72,7 @@ namespace RMS.Test
         public void SecondLevelParsing()
         {
             //SP900018[MECM(95,211,185,189,1,4,9,0,0,64,0,3,14,169,244,125,230,174,0,1,116,236,190,125,218,223,0,1,255,175,160,43,2,28,0,41,2,43,138,2,39,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-            ReceivedPacket packet = new ReceivedPacket
+            Parser.ReceivedPacket packet = new ReceivedPacket
             {
                 Data = "95,211,185,189,1,4,9,0,0,64,0,3,14,169,244,125,230,174,0,1,116,236,190,125,218,223,0,1,255,175,160,43,2,28,0,41,2,43,138,2,39,38,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
                 ProtocolHeader = "MECM",
@@ -80,5 +83,15 @@ namespace RMS.Test
             var pkt = ParsingManager.SecondLevelParser(packet);
             var str = JsonConvert.SerializeObject(pkt, Formatting.Indented);
         }
+        [TestMethod]
+        public void GT02()
+        {
+            CGRC02 c = new CGRC02();
+            c.Device6 = "SPMX00DT";
+            c.SMSTransmissionInterval = 10;
+
+            var cmd = c.ToString();
+        }
+
     }
 }

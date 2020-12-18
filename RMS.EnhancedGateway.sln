@@ -55,6 +55,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.Component.DataAccess.SQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.Protocol", "RMS.Protocol\RMS.Protocol.csproj", "{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.Component.Communication.Configuration", "RMS.Component.Communication.Configuration\RMS.Component.Communication.Configuration.csproj", "{22149FD6-70B1-48D8-A889-B264E3A523E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -377,6 +379,18 @@ Global
 		{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}.Release|x64.Build.0 = Release|Any CPU
 		{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}.Release|x86.ActiveCfg = Release|Any CPU
 		{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}.Release|x86.Build.0 = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|x64.Build.0 = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{22149FD6-70B1-48D8-A889-B264E3A523E1}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

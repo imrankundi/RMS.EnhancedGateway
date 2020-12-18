@@ -109,9 +109,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ConfigManager.cs" />
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\TerminalCommandHandler.cs" />
     <Compile Include="Common\TerminalHelper.cs" />
+    <Compile Include="Controller\ConfigureController.cs" />
     <Compile Include="Controller\GatewayController.cs" />
     <Compile Include="Middleware\CustomMiddleware.cs" />
     <Compile Include="Program.cs" />
@@ -140,6 +142,10 @@
       <Project>{8a8b2c11-8bc2-41e9-8092-6d4689cad6da}</Project>
       <Name>RMS.AWS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Communication.Configuration\RMS.Component.Communication.Configuration.csproj">
+      <Project>{22149fd6-70b1-48d8-a889-b264e3a523e1}</Project>
+      <Name>RMS.Component.Communication.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Communication\RMS.Component.Communication.csproj">
       <Project>{39E18644-822D-48DB-ACF3-1DC617E4587B}</Project>
       <Name>RMS.Component.Communication</Name>
@@ -161,11 +167,11 @@
       <Name>RMS.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Parser\RMS.Parser.csproj">
-      <Project>{6282BE99-CE20-4331-B67F-35B216DF771A}</Project>
+      <Project>{6282be99-ce20-4331-b67f-35b216df771a}</Project>
       <Name>RMS.Parser</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
-      <Project>{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}</Project>
+      <Project>{0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca}</Project>
       <Name>RMS.Protocol</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Server.BusinessLogic\RMS.Server.BusinessLogic.csproj">

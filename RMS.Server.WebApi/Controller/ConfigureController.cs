@@ -2,7 +2,6 @@
 using RMS.Component.WebApi.Requests;
 using RMS.Component.WebApi.Responses;
 using RMS.Core.Common;
-using RMS.Parser;
 using RMS.Protocols;
 using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
@@ -16,7 +15,7 @@ using System.Web.Http;
 namespace RMS.Server.WebApi.Controller
 {
 
-    public class GatewayController : ApiController
+    public class ConfigureController : ApiController
     {
         // POST api/demo 
         public BaseResponse Post(BaseRequest request)
@@ -47,21 +46,20 @@ namespace RMS.Server.WebApi.Controller
             }
         }
         [HttpGet]
-        public BaseResponse ReloadSites()
+        public ConfigurationResponse GetParameters()
         {
             try
             {
-                SiteManager.Instance.Reload();
-                Console.WriteLine(JsonConvert.SerializeObject(SiteManager.Instance.Sites, Formatting.Indented));
-                return new BaseResponse
+                return new ConfigurationResponse
                 {
-                    Message = "Sites are succesfully reloaded",
+                    Data = ConfigManager.GetConfigProtocol("CGRC"),
+                    Message = "",
                     ResponseStatus = ResponseStatus.Success
                 };
             }
             catch (Exception ex)
             {
-                return new BaseResponse
+                return new ConfigurationResponse
                 {
                     Message = "Unable to reloaded Sites [" + ex.Message + "]",
                     ResponseStatus = ResponseStatus.Failed

@@ -7,8 +7,8 @@
     <ProjectGuid>{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RMS.Protocol</RootNamespace>
-    <AssemblyName>RMS.Protocol</AssemblyName>
+    <RootNamespace>RMS.Protocols</RootNamespace>
+    <AssemblyName>RMS.Protocols</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,7 +47,15 @@
     <Compile Include="Command\CommandBuilder.cs" />
     <Compile Include="Command\CommandSection.cs" />
     <Compile Include="Command\CommandType.cs" />
+    <Compile Include="Configuration\ConfigParameter.cs" />
+    <Compile Include="Configuration\ConfigParameterControlType.cs" />
+    <Compile Include="Configuration\ConfigProtocol.cs" />
+    <Compile Include="Configuration\ConfigSection.cs" />
+    <Compile Include="GT\CGRC00.cs" />
+    <Compile Include="GT\CGRC01.cs" />
+    <Compile Include="GT\CGRC02.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocols\ProtocolList.cs" />
     <Compile Include="Protocols\BitwiseLabel.cs" />
     <Compile Include="Protocols\Page.cs" />
     <Compile Include="Protocols\Parameter.cs" />
@@ -55,6 +66,9 @@
       <Project>{E5740B08-507A-4B3A-AE2C-9018D4005671}</Project>
       <Name>RMS.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

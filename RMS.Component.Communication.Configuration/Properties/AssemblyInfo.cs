@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RMS.Protocols")]
+[assembly: AssemblyTitle("RMS.Component.Communication.Configuration")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RMS.Protocols")]
+[assembly: AssemblyProduct("RMS.Component.Communication.Configuration")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca")]
+[assembly: Guid("22149fd6-70b1-48d8-a889-b264e3a523e1")]
 
 // Version information for an assembly consists of the following four values:
 //

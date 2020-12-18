@@ -5,6 +5,7 @@ using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Core.Enumerations;
 using RMS.Gateway;
 using RMS.Parser;
+using RMS.Protocols;
 using System;
 using System.Threading;
 using System.Threading.Tasks;

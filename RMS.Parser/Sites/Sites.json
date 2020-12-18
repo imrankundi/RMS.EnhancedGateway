@@ -1,8 +1,16 @@
 {
   "siteList": {
-    "SP900020": {
-      "TerminalId": "SP900061",
-      "Name": "ES2HYD02884",
+    "SP333444": {
+      "TerminalId": "SP333444",
+      "Name": "SALTECLABSGRC",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900001": {
+      "TerminalId": "SP900001",
+      "Name": "KHI2479[ECM]",
       "TimeOffset": {
         "Hours": 5,
         "Minutes": 0
@@ -10,15 +18,47 @@
     },
     "SP900013": {
       "TerminalId": "SP900013",
-      "Name": "REONTESTINGLABECM",
+      "Name": "REONTestingLabECM",
       "TimeOffset": {
         "Hours": 5,
         "Minutes": 0
       }
     },
-    "SP900047": {
-      "TerminalId": "SP900047",
-      "Name": "EN1-GKN-01985",
+    "SP900014": {
+      "TerminalId": "SP900014",
+      "Name": "ES1KHI02113",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900015": {
+      "TerminalId": "SP900015",
+      "Name": "ES2GWD02717",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900016": {
+      "TerminalId": "SP900016",
+      "Name": "MCH6",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900017": {
+      "TerminalId": "SP900017",
+      "Name": "ES2GWD02716",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900018": {
+      "TerminalId": "SP900018",
+      "Name": "ES1KHI03166",
       "TimeOffset": {
         "Hours": 5,
         "Minutes": 0
@@ -26,11 +66,708 @@
     },
     "SP900019": {
       "TerminalId": "SP900019",
-      "Name": "HOME-TEST",
+      "Name": "ES1KHI03184",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900020": {
+      "TerminalId": "SP900020",
+      "Name": "ES1KHI03299",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900021": {
+      "TerminalId": "SP900021",
+      "Name": "ES1LGF02668",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900022": {
+      "TerminalId": "SP900022",
+      "Name": "ES2SDH02054",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900023": {
+      "TerminalId": "SP900023",
+      "Name": "ES2WRH02280",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900024": {
+      "TerminalId": "SP900024",
+      "Name": "ES2MIT02798",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900025": {
+      "TerminalId": "SP900025",
+      "Name": "ES2DRK01974",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900026": {
+      "TerminalId": "SP900026",
+      "Name": "ES2JCA02339",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900027": {
+      "TerminalId": "SP900027",
+      "Name": "EC2CHN03248",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900028": {
+      "TerminalId": "SP900028",
+      "Name": "EC1LHR02319",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900029": {
+      "TerminalId": "SP900029",
+      "Name": "EC1KML02806",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900030": {
+      "TerminalId": "SP900030",
+      "Name": "EC2FSD02096",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900031": {
+      "TerminalId": "SP900031",
+      "Name": "EC1MCN02289",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900032": {
+      "TerminalId": "SP900032",
+      "Name": "EC2KTC03235",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900033": {
+      "TerminalId": "SP900033",
+      "Name": "ES2MPK02074",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900035": {
+      "TerminalId": "SP900035",
+      "Name": "EC2MZG02773",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900036": {
+      "TerminalId": "SP900036",
+      "Name": "EC2MZG01883",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900037": {
+      "TerminalId": "SP900037",
+      "Name": "EC2LYA02359",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900038": {
+      "TerminalId": "SP900038",
+      "Name": "EN1HPR02465",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900039": {
+      "TerminalId": "SP900039",
+      "Name": "EN1KSK03049",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900040": {
+      "TerminalId": "SP900040",
+      "Name": "EN1HPR02786",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900041": {
+      "TerminalId": "SP900041",
+      "Name": "EN1HPR02470",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900042": {
+      "TerminalId": "SP900042",
+      "Name": "ES1KHI03185",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900043": {
+      "TerminalId": "SP900043",
+      "Name": "ES1KHI03183",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900044": {
+      "TerminalId": "SP900044",
+      "Name": "ES1KHI03195",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900045": {
+      "TerminalId": "SP900045",
+      "Name": "EN1CHK02994",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900046": {
+      "TerminalId": "SP900046",
+      "Name": "EC2RJP03236",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900047": {
+      "TerminalId": "SP900047",
+      "Name": "EN1GKN01985",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900048": {
+      "TerminalId": "SP900048",
+      "Name": "EC1LHR02414",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900049": {
+      "TerminalId": "SP900049",
+      "Name": "EN1CHK02887",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900050": {
+      "TerminalId": "SP900050",
+      "Name": "EN1ISB03043",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900051": {
+      "TerminalId": "SP900051",
+      "Name": "EN1CHK02996",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900052": {
+      "TerminalId": "SP900052",
+      "Name": "EN2KOH02325",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900053": {
+      "TerminalId": "SP900053",
+      "Name": "EN1PSW03101",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900054": {
+      "TerminalId": "SP900054",
+      "Name": "EN1PSW03016",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900055": {
+      "TerminalId": "SP900055",
+      "Name": "EC1CCW02797",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900056": {
+      "TerminalId": "SP900056",
+      "Name": "EC1LHR02003",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900057": {
+      "TerminalId": "SP900057",
+      "Name": "EC1HSP01948",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900058": {
+      "TerminalId": "SP900058",
+      "Name": "ES2KRP00948",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900059": {
+      "TerminalId": "SP900059",
+      "Name": "ES2TAM02022",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900060": {
+      "TerminalId": "SP900060",
+      "Name": "ES2SUK02166",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900061": {
+      "TerminalId": "SP900061",
+      "Name": "ES2HYD02884",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900062": {
+      "TerminalId": "SP900062",
+      "Name": "ES2SUK03168",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900063": {
+      "TerminalId": "SP900063",
+      "Name": "EC1SKP02529",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900064": {
+      "TerminalId": "SP900064",
+      "Name": "EC1LHR02530",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900065": {
+      "TerminalId": "SP900065",
+      "Name": "EC2JRW02390",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900066": {
+      "TerminalId": "SP900066",
+      "Name": "EC2MNW01931",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900067": {
+      "TerminalId": "SP900067",
+      "Name": "EC2MNW02983",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900068": {
+      "TerminalId": "SP900068",
+      "Name": "ES2RYK01980",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900069": {
+      "TerminalId": "SP900069",
+      "Name": "EC2CHN02803",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900071": {
+      "TerminalId": "SP900071",
+      "Name": "EC2SGD02543",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900072": {
+      "TerminalId": "SP900072",
+      "Name": "ES2SDQ02376",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900073": {
+      "TerminalId": "SP900073",
+      "Name": "EC1MCN02290",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900074": {
+      "TerminalId": "SP900074",
+      "Name": "ES2RYK01949",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900076": {
+      "TerminalId": "SP900076",
+      "Name": "EC2DGK02542",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900077": {
+      "TerminalId": "SP900077",
+      "Name": "EC2BWP02989",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900078": {
+      "TerminalId": "SP900078",
+      "Name": "EN1ISB01996",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900079": {
+      "TerminalId": "SP900079",
+      "Name": "ES2KNP01935",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900080": {
+      "TerminalId": "SP900080",
+      "Name": "EC1MLS02264",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900081": {
+      "TerminalId": "SP900081",
+      "Name": "ES1KHI03302",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900082": {
+      "TerminalId": "SP900082",
+      "Name": "ES1KHI03297",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900084": {
+      "TerminalId": "SP900084",
+      "Name": "EC1MCN01947",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900085": {
+      "TerminalId": "SP900085",
+      "Name": "EN1FTJ03224",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900086": {
+      "TerminalId": "SP900086",
+      "Name": "EN2SWT02766",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900087": {
+      "TerminalId": "SP900087",
+      "Name": "EN2AKT02990",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900088": {
+      "TerminalId": "SP900088",
+      "Name": "EN2SWT03044",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900091": {
+      "TerminalId": "SP900091",
+      "Name": "EN2MSR02784",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900092": {
+      "TerminalId": "SP900092",
+      "Name": "ES1KHI02356",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900093": {
+      "TerminalId": "SP900093",
+      "Name": "EN2BNU02777",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900094": {
+      "TerminalId": "SP900094",
+      "Name": "EN1ATK02610",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900095": {
+      "TerminalId": "SP900095",
+      "Name": "EN1GKN03221",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900097": {
+      "TerminalId": "SP900097",
+      "Name": "ES1KHI02108",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900098": {
+      "TerminalId": "SP900098",
+      "Name": "ES2UKT01905",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900099": {
+      "TerminalId": "SP900099",
+      "Name": "EN2TLL02454",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900101": {
+      "TerminalId": "SP900101",
+      "Name": "ES1KHI02300",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900102": {
+      "TerminalId": "SP900102",
+      "Name": "ES2KDJ02377",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900103": {
+      "TerminalId": "SP900103",
+      "Name": "ES2JCA02065",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900104": {
+      "TerminalId": "SP900104",
+      "Name": "ES2SPR03191",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900105": {
+      "TerminalId": "SP900105",
+      "Name": "ES2SDP03252",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900106": {
+      "TerminalId": "SP900106",
+      "Name": "ES2SDK03632",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900107": {
+      "TerminalId": "SP900107",
+      "Name": "EC1HRN02752",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900108": {
+      "TerminalId": "SP900108",
+      "Name": "ES1KHI03173",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900110": {
+      "TerminalId": "SP900110",
+      "Name": "EUCBWN03582",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900111": {
+      "TerminalId": "SP900111",
+      "Name": "EUCBWN03584",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900112": {
+      "TerminalId": "SP900112",
+      "Name": "EC1BWN02792",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900114": {
+      "TerminalId": "SP900114",
+      "Name": "EC1BWN02525",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900115": {
+      "TerminalId": "SP900115",
+      "Name": "ES1KHI03160",
+      "TimeOffset": {
+        "Hours": 5,
+        "Minutes": 0
+      }
+    },
+    "SP900129": {
+      "TerminalId": "SP900129",
+      "Name": "EC1PRT01311",
       "TimeOffset": {
         "Hours": 5,
         "Minutes": 0
       }
     }
+
   }
 }

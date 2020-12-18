@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A4FE70FD-6186-4843-BE09-C6EF564156B0}</ProjectGuid>
+    <ProjectGuid>{22149FD6-70B1-48D8-A889-B264E3A523E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RMS.Component.WebApi</RootNamespace>
-    <AssemblyName>RMS.Component.WebApi</AssemblyName>
+    <RootNamespace>RMS.Component.Communication.Configuration</RootNamespace>
+    <AssemblyName>RMS.Component.Communication.Configuration</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,13 +36,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,18 +44,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="ChannelKeyValuePair.cs" />
+    <Compile Include="ClientChannelConfiguration.cs" />
+    <Compile Include="ClientChannelConfigurationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Requests\IRequest.cs" />
-    <Compile Include="Requests\BaseRequest.cs" />
-    <Compile Include="Responses\ConfigurationResponse.cs" />
-    <Compile Include="Responses\ErrorResponse.cs" />
-    <Compile Include="Responses\IResponse.cs" />
-    <Compile Include="Responses\BaseResponse.cs" />
-    <Compile Include="Responses\ResponseStatus.cs" />
+    <Compile Include="ServerChannelConfiguration.cs" />
+    <Compile Include="ServerChannelConfigurationManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
+      <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
+      <Name>RMS.AWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
+      <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
+      <Name>RMS.Component.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
+      <Project>{ba0aa6fa-2253-4a6a-a062-ab0f87c22815}</Project>
+      <Name>RMS.Component.Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configuration\ClientChannelConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Configuration\ServerChannelConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -54,7 +54,6 @@
     <Compile Include="ParsedPacket.cs" />
     <Compile Include="ParsedPacketQueryBuilder.cs" />
     <Compile Include="OldParser.cs" />
-    <Compile Include="ProtocolList.cs" />
     <Compile Include="ParsingManager.cs" />
     <Compile Include="ReceivedPacket.cs" />
     <Compile Include="DeviceParser.cs" />
