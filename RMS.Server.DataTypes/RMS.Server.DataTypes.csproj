@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ClientChannelConfiguration.cs" />
+    <Compile Include="Configuration\ServerChannelConfiguration.cs" />
     <Compile Include="Configuration\WebApiServerConfiguration.cs" />
-    <Compile Include="Configuration\WebApiServerConfigurationManager.cs" />
     <Compile Include="Constants\ServerConstants.cs" />
     <Compile Include="Models\AdviceMessageModel.cs" />
     <Compile Include="Models\CommandStatus.cs" />
+    <Compile Include="Models\CommonModel.cs" />
     <Compile Include="Models\TransactionQueueModel.cs" />
     <Compile Include="Models\TransactionInquiryModel.cs" />
     <Compile Include="Models\BaseServerModel.cs" />
@@ -76,15 +78,25 @@
     <Content Include="Configuration\WebApiServerConfiguration.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Configuration\ClientChannelConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Configuration\ServerChannelConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
-      <Project>{ba0aa6fa-2253-4a6a-a062-ab0f87c22815}</Project>
-      <Name>RMS.Component.Configuration</Name>
+    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
+      <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
+      <Name>RMS.AWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Logging.Models\RMS.Component.Logging.Models.csproj">
+      <Project>{571725D2-91C0-4BCB-B837-35F3CBF5DB35}</Project>
+      <Name>RMS.Component.Logging.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.WebApi\RMS.Component.WebApi.csproj">
-      <Project>{a4fe70fd-6186-4843-be09-c6ef564156b0}</Project>
+      <Project>{A4FE70FD-6186-4843-BE09-C6EF564156B0}</Project>
       <Name>RMS.Component.WebApi</Name>
     </ProjectReference>
   </ItemGroup>

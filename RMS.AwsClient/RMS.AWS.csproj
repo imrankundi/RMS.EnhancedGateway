@@ -47,13 +47,6 @@
   <ItemGroup>
     <Compile Include="AWS4Client.cs" />
     <Compile Include="IHttpClient.cs" />
-    <Compile Include="Logging\BaseLogger.cs" />
-    <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Logging\LoggingFactory.cs" />
-    <Compile Include="Logging\LogLevel.cs" />
-    <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerInfo.cs" />
   </ItemGroup>
@@ -62,9 +55,17 @@
       <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
       <Name>RMS.Component.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
+      <Project>{13c492fc-03a5-4a0e-a40e-288eff1f8a19}</Project>
+      <Name>RMS.Component.DataAccess.SQLite.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.DataAccess.SQLite\RMS.Component.DataAccess.SQLite.csproj">
       <Project>{E2C327B1-BDEA-436C-BB00-993F8B2351AD}</Project>
       <Name>RMS.Component.DataAccess.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
+      <Project>{6ECB1EF7-2C8F-4A75-BBA0-C772372973E3}</Project>
+      <Name>RMS.Component.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Core\RMS.Core.csproj">
       <Project>{E5740B08-507A-4B3A-AE2C-9018D4005671}</Project>

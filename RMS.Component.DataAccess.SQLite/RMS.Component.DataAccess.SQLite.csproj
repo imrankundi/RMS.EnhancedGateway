@@ -55,11 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\ListenerConfig.cs" />
-    <Compile Include="Entities\PushApiEntity.cs" />
-    <Compile Include="Entities\ReceivedPacketEntity.cs" />
-    <Compile Include="Entities\ServerChannelConfig.cs" />
-    <Compile Include="Entities\Status.cs" />
     <Compile Include="PushApiRepository.cs" />
     <Compile Include="ReceivedPacketRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +67,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
+      <Project>{13c492fc-03a5-4a0e-a40e-288eff1f8a19}</Project>
+      <Name>RMS.Component.DataAccess.SQLite.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Logging.Models\RMS.Component.Logging.Models.csproj">
+      <Project>{571725D2-91C0-4BCB-B837-35F3CBF5DB35}</Project>
+      <Name>RMS.Component.Logging.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
       <Project>{6ecb1ef7-2c8f-4a75-bba0-c772372973e3}</Project>
       <Name>RMS.Component.Logging</Name>

@@ -62,10 +62,6 @@
       <Project>{D36A1C37-0C2A-4838-835A-6712A3F84E37}</Project>
       <Name>RMS.Component.RestHelper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.WebApi\RMS.Component.WebApi.csproj">
-      <Project>{A4FE70FD-6186-4843-BE09-C6EF564156B0}</Project>
-      <Name>RMS.Component.WebApi</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TouchlessTests\" />

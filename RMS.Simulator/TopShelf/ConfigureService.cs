@@ -6,9 +6,9 @@ namespace RMS.Simulator
     internal static class ConfigureService
     {
         static readonly string className = nameof(SimulatorService);
-        static readonly string serviceName = "NCR Touchless Server Service";
-        static readonly string displayName = "NCR Touchless Server Service";
-        static readonly string description = "NCR Touchless Server Service";
+        static readonly string serviceName = "RMS Simulator Server Service";
+        static readonly string displayName = "RMS Simulator Server Service";
+        static readonly string description = "RMS Simulator Server Service";
         internal static void Configure()
         {
             try

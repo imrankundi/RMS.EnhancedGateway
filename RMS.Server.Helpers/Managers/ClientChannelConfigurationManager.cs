@@ -1,4 +1,4 @@
-﻿using RMS.Component.Configuration;
+﻿using RMS.Component.DataAccess.SQLite.Repositories;
 
 namespace RMS.Component.Communication.Tcp.Client
 {
@@ -26,9 +26,10 @@ namespace RMS.Component.Communication.Tcp.Client
         private ClientChannelConfiguration LoadConfiguration()
         {
 
-            var configurtionLoader = new ConfigurtionLoader<ClientChannelConfiguration>(filename, directory);
-            var configuration = configurtionLoader.LoadConfiguration();
-            return configuration;
+            var repo = new GatewayConfigRepository();
+            var config = repo.ReadTcpServerConfiguration();
+            var res = Component.Mappers.ConfigurationMapper.Map(config);
+            return res;
         }
     }
 }

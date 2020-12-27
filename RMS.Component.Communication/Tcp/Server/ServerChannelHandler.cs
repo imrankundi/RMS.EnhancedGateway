@@ -1,7 +1,9 @@
 ﻿using DotNetty.Transport.Channels;
 using Newtonsoft.Json;
 using RMS.AWS;
+using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
+using RMS.Component.Logging;
 using RMS.Core.Enumerations;
 using RMS.Gateway;
 using RMS.Parser;
@@ -16,6 +18,7 @@ namespace RMS.Component.Communication.Tcp.Server
     {
         private string className = nameof(ServerChannelHandler);
         public ITerminalCommandHandler ChannelHandler { get; set; }
+        public ILog Log { get; set; }
         public ServerChannelHandler()
         {
         }
@@ -36,14 +39,14 @@ namespace RMS.Component.Communication.Tcp.Server
                     }
                     catch (Exception ex)
                     {
-                        Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                        Log?.Error(className, methodName, ex.ToString());
                     }
                 }
 
             }
             catch (Exception ex)
             {
-                Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                Log?.Error(className, methodName, ex.ToString());
             }
 
 
@@ -53,7 +56,7 @@ namespace RMS.Component.Communication.Tcp.Server
         {
             string methodName = nameof(ChannelRead0);
 
-            Logging.ServerChannelLogger.Instance.Log.Verbose(className, methodName, string.Format("{0}: [{1}]", context.Channel, message));
+            Log?.Verbose(className, methodName, string.Format("{0}: [{1}]", context.Channel, message));
 
             try
             {
@@ -70,7 +73,7 @@ namespace RMS.Component.Communication.Tcp.Server
                             filter = message.Substring(message.Length - filterLenght, filterLenght);
                             if (!filter.Contains(">"))
                             {
-                                Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Partial Packet Received {0}: [{1}]", context.Channel, message));
+                                Log?.Warning(className, methodName, string.Format("Partial Packet Received {0}: [{1}]", context.Channel, message));
                                 info.MessageBuffer.Append(message);
                                 info.PartialPacket = true;
                                 return;
@@ -83,7 +86,7 @@ namespace RMS.Component.Communication.Tcp.Server
                                 info.MessageBuffer.Clear();
                                 if (info.PartialPacket)
                                 {
-                                    Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
+                                    Log?.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
                                 }
                                 info.PartialPacket = false;
                             }
@@ -94,7 +97,7 @@ namespace RMS.Component.Communication.Tcp.Server
                             info.PartialPacket = false;
                             message = info.MessageBuffer.ToString();
                             info.MessageBuffer.Clear();
-                            Logging.ServerChannelLogger.Instance.Log.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
+                            Log?.Warning(className, methodName, string.Format("Merging Partial Packets {0}: [{1}]", context.Channel, message));
 
                         }
                     }
@@ -114,8 +117,8 @@ namespace RMS.Component.Communication.Tcp.Server
                             ProtocolHeader = result.ProtocolHeader,
                             TerminalId = result.TerminalId
                         };
-                        //ReceivedPacketRepository.Save(entity);
-                        RMS.Component.Communication.Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                        ReceivedPacketRepository.Save(entity);
+                        //RMS.Component.Communication.Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
 
                         var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
                         if (protocol != null)
@@ -164,7 +167,7 @@ namespace RMS.Component.Communication.Tcp.Server
             catch (Exception ex)
             {
 
-                Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                Log?.Error(className, methodName, ex.ToString());
             }
 
         }
@@ -178,7 +181,7 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                Log?.Error(className, methodName, ex.ToString());
             }
 
         }
@@ -186,7 +189,7 @@ namespace RMS.Component.Communication.Tcp.Server
         public override void ExceptionCaught(IChannelHandlerContext context, Exception exception)
         {
             string methodName = nameof(ExceptionCaught);
-            Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, exception.ToString());
+            Log?.Error(className, methodName, exception.ToString());
 
         }
 
@@ -204,7 +207,7 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                Log?.Error(className, methodName, ex.ToString());
             }
         }
 
@@ -219,7 +222,7 @@ namespace RMS.Component.Communication.Tcp.Server
             }
             catch (Exception ex)
             {
-                Logging.ServerChannelLogger.Instance.Log.Error(className, methodName, ex.ToString());
+                Log?.Error(className, methodName, ex.ToString());
             }
 
         }

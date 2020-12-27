@@ -58,7 +58,6 @@
     <Compile Include="ReceivedPacket.cs" />
     <Compile Include="DeviceParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteManager.cs" />
     <Compile Include="StateManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +147,14 @@
     <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
       <Project>{0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca}</Project>
       <Name>RMS.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
+      <Project>{923D555C-A354-45DE-8D8C-237A124F942D}</Project>
+      <Name>RMS.Server.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.Helpers\RMS.Server.Helpers.csproj">
+      <Project>{4b4a7293-c1ce-4164-afcc-0b21a15137ba}</Project>
+      <Name>RMS.Server.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

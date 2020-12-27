@@ -142,10 +142,6 @@
       <Project>{8a8b2c11-8bc2-41e9-8092-6d4689cad6da}</Project>
       <Name>RMS.AWS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.Communication.Configuration\RMS.Component.Communication.Configuration.csproj">
-      <Project>{22149fd6-70b1-48d8-a889-b264e3a523e1}</Project>
-      <Name>RMS.Component.Communication.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Communication\RMS.Component.Communication.csproj">
       <Project>{39E18644-822D-48DB-ACF3-1DC617E4587B}</Project>
       <Name>RMS.Component.Communication</Name>
@@ -174,18 +170,21 @@
       <Project>{0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca}</Project>
       <Name>RMS.Protocol</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RMS.Server.BusinessLogic\RMS.Server.BusinessLogic.csproj">
-      <Project>{33DCB54F-788A-483F-B1EB-F7BA0BDD6D3E}</Project>
-      <Name>RMS.Server.BusinessLogic</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
       <Project>{923D555C-A354-45DE-8D8C-237A124F942D}</Project>
       <Name>RMS.Server.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.Helpers\RMS.Server.Helpers.csproj">
+      <Project>{4b4a7293-c1ce-4164-afcc-0b21a15137ba}</Project>
+      <Name>RMS.Server.Helpers</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Server.Tcp\RMS.Server.Tcp.csproj">
       <Project>{B1F94983-6D3A-485C-9EF5-8800119517CC}</Project>
       <Name>RMS.Server.Tcp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Manager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

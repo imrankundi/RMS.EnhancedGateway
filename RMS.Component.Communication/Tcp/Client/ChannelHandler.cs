@@ -1,5 +1,6 @@
 ﻿using DotNetty.Transport.Channels;
 using RMS.Component.Communication.Tcp.Client;
+using RMS.Component.Logging;
 using System;
 
 namespace RMS.Component.Communication.Tcp
@@ -11,6 +12,7 @@ namespace RMS.Component.Communication.Tcp
         public string ChannelKey { get; set; }
         public IChannel GetChannel() => this.channel;
         public IClientChannelHandler ClientChannelHandler { get; set; }
+        public ILog Log { get; set; }
         public override void ChannelActive(IChannelHandlerContext context)
         {
             try
@@ -33,7 +35,7 @@ namespace RMS.Component.Communication.Tcp
                 //var registerMessage = JsonConvert.SerializeObject(msg);
 
                 //context.WriteAndFlushAsync(registerMessage);
-                Logging.ClientChannelLogger.Instance.Log.Verbose(className, "ChannelActive",
+                Log?.Verbose(className, "ChannelActive",
                     "Connected with Server");
             }
             catch (Exception ex)
@@ -56,7 +58,7 @@ namespace RMS.Component.Communication.Tcp
                     Details = ex.ToString()
                 });
             }
-            Logging.ClientChannelLogger.Instance.Log.Error(className, methodName,
+            Log?.Error(className, methodName,
                 string.Format("Message: {0}, Details: {1}", ex.Message, ex.ToString()));
         }
         public override void ChannelInactive(IChannelHandlerContext context)

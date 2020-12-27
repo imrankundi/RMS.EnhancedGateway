@@ -1,5 +1,5 @@
 ﻿using DotNetty.Handlers.Tls;
-using RMS.Component.Communication.Tcp.Client;
+using RMS.Component.Logging;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Security;
@@ -9,6 +9,7 @@ namespace RMS.Component.Communication.Tcp.Common
 {
     public class TlsHandlerFactory
     {
+        public ILog Log { get; set; }
         string className = nameof(TlsHandlerFactory);
         public TlsHandler CreateStandardTlsHandler(string targetHost)
         {
@@ -34,23 +35,13 @@ namespace RMS.Component.Communication.Tcp.Common
         private bool ValidateCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
 
-            if (!ClientChannelConfigurationManager.Instance.Configurations.
-                ValidateCertificate)
-            {
-                Logging.ClientChannelLogger.Instance.Log.Verbose(className, "ValidateCertificate", "Certificate Validation Disabled");
-                return true;
-            }
-
-            Logging.ClientChannelLogger.Instance.Log.Verbose(className, "ValidateCertificate", "Validating Certificate");
-            Logging.ClientChannelLogger.Instance.Log.Information(className, "ValidateCertificate", string.Format("Certificate Policy Error: {0}", sslPolicyErrors.ToString()));
-
             switch (sslPolicyErrors)
             {
                 case SslPolicyErrors.None:
-                    Logging.ClientChannelLogger.Instance.Log.Information(className, "ValidateServerCertificate", "Certificated validated");
+                    Log?.Information(className, "ValidateServerCertificate", "Certificated validated");
                     return true;
                 default:
-                    Logging.ClientChannelLogger.Instance.Log.Information(className, "ValidateServerCertificate", "Invalid Certificate");
+                    Log?.Information(className, "ValidateServerCertificate", "Invalid Certificate");
                     return false;
 
             }

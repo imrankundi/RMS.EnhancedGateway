@@ -13,8 +13,6 @@ namespace RMS.Simulator.Requests
         }
         public BaseResponse HandleRequest(object request)
         {
-
-
             try
             {
 

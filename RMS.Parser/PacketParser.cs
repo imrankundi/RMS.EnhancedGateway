@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RMS.Core.Common;
 using RMS.Core.Enumerations;
 using RMS.Protocols;
+using RMS.Server.DataTypes;
 using System;
 using System.Collections.Generic;
 

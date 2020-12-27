@@ -2,6 +2,7 @@
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Component.Logging;
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
@@ -39,7 +40,7 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             return connection;
         }
 
-        public TcpServerChannelConfig ReadConfiguration()
+        public TcpServerChannelConfig ReadTcpServerConfiguration()
         {
             string methodName = MethodBase.GetCurrentMethod().Name;
             TcpServerChannelConfig config = null;
@@ -84,5 +85,82 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             }
 
         }
+
+        public WebApiConfig ReadWebApiConfiguration()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            WebApiConfig config = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM WebApiServer;";
+                    config = connection.Query<WebApiConfig>(query).FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+            return config;
+        }
+
+        public IEnumerable<SiteConfig> ReadSitesConfig()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            IEnumerable<SiteConfig> config = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM Sites;";
+                    config = connection.Query<SiteConfig>(query);
+                    if (config != null)
+                    {
+                        foreach (var c in config)
+                        {
+                            BindTimeOffset(connection, c);
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+            return config;
+        }
+
+        private void BindTimeOffset(SQLiteConnection connection, SiteConfig config)
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            try
+            {
+                var query = "SELECT t.* FROM Sites s INNER JOIN TimeOffsets t ON s.TimeOffsetId = t.Id;";
+                var timeOffsetConfigs = connection.Query<TimeOffsetConfig>(query).FirstOrDefault();
+                config.TimeOffset = timeOffsetConfigs;
+            }
+            catch (Exception ex)
+            {
+                Log?.Error(className, methodName, ex.ToString());
+            }
+
+        }
+
     }
 }

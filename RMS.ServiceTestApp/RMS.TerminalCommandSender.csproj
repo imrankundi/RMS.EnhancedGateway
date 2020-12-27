@@ -177,7 +177,7 @@
       <Name>RMS.Component.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.WebApi\RMS.Component.WebApi.csproj">
-      <Project>{a4fe70fd-6186-4843-be09-c6ef564156b0}</Project>
+      <Project>{A4FE70FD-6186-4843-BE09-C6EF564156B0}</Project>
       <Name>RMS.Component.WebApi</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">

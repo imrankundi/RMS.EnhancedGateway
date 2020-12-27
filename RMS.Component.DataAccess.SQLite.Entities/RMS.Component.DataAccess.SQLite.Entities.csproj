@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{22149FD6-70B1-48D8-A889-B264E3A523E1}</ProjectGuid>
+    <ProjectGuid>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RMS.Component.Communication.Configuration</RootNamespace>
-    <AssemblyName>RMS.Component.Communication.Configuration</AssemblyName>
+    <RootNamespace>RMS.Component.DataAccess.SQLite.Entities</RootNamespace>
+    <AssemblyName>RMS.Component.DataAccess.SQLite.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,9 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,35 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelKeyValuePair.cs" />
-    <Compile Include="ClientChannelConfiguration.cs" />
-    <Compile Include="ClientChannelConfigurationManager.cs" />
+    <Compile Include="ListenerConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServerChannelConfiguration.cs" />
-    <Compile Include="ServerChannelConfigurationManager.cs" />
+    <Compile Include="PushApiEntity.cs" />
+    <Compile Include="ReceivedPacketEntity.cs" />
+    <Compile Include="ServerChannelConfig.cs" />
+    <Compile Include="SiteConfig.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="TimeOffsetConfig.cs" />
+    <Compile Include="WebApiConfig.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
-      <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
-      <Name>RMS.AWS</Name>
+    <ProjectReference Include="..\RMS.Component.Logging.Models\RMS.Component.Logging.Models.csproj">
+      <Project>{571725D2-91C0-4BCB-B837-35F3CBF5DB35}</Project>
+      <Name>RMS.Component.Logging.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
-      <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
-      <Name>RMS.Component.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
-      <Project>{ba0aa6fa-2253-4a6a-a062-ab0f87c22815}</Project>
-      <Name>RMS.Component.Configuration</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Configuration\ClientChannelConfig.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Configuration\ServerChannelConfig.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

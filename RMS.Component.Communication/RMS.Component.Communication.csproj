@@ -171,13 +171,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Logging\BaseLogger.cs" />
-    <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\ILogger.cs" />
-    <Compile Include="Logging\Logger.cs" />
-    <Compile Include="Logging\LoggingFactory.cs" />
-    <Compile Include="Logging\LogLevel.cs" />
-    <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Tcp\Client\ClientContext.cs" />
     <Compile Include="Tcp\Common\TlsHandlerFactory.cs" />
     <Compile Include="Tcp\Server\PacketMerger.cs" />
@@ -195,7 +188,6 @@
     <Compile Include="Tcp\Client\ChannelHandler.cs" />
     <Compile Include="Tcp\Common\ErrorMessages.cs" />
     <Compile Include="Tcp\Common\ErrorType.cs" />
-    <Compile Include="Tcp\Common\LoggingFactory.cs" />
     <Compile Include="Tcp\Common\ChannelInfo.cs" />
     <Compile Include="Tcp\Server\ServerChannel.cs" />
     <Compile Include="Tcp\Server\ServerChannelHandler.cs" />
@@ -213,13 +205,9 @@
       <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
       <Name>RMS.Component.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.Communication.Configuration\RMS.Component.Communication.Configuration.csproj">
-      <Project>{22149fd6-70b1-48d8-a889-b264e3a523e1}</Project>
-      <Name>RMS.Component.Communication.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
-      <Project>{BA0AA6FA-2253-4A6A-A062-AB0F87C22815}</Project>
-      <Name>RMS.Component.Configuration</Name>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
+      <Project>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</Project>
+      <Name>RMS.Component.DataAccess.SQLite.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.DataAccess.SQLite\RMS.Component.DataAccess.SQLite.csproj">
       <Project>{e2c327b1-bdea-436c-bb00-993f8b2351ad}</Project>
@@ -252,6 +240,14 @@
     <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
       <Project>{0B2636C1-D2C7-4D9C-AACB-7010E2FC6ECA}</Project>
       <Name>RMS.Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
+      <Project>{923d555c-a354-45de-8d8c-237a124f942d}</Project>
+      <Name>RMS.Server.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.Helpers\RMS.Server.Helpers.csproj">
+      <Project>{4b4a7293-c1ce-4164-afcc-0b21a15137ba}</Project>
+      <Name>RMS.Server.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -31,6 +31,10 @@ namespace RMS.Server.WebApi
             timer.Enabled = false;
             try
             {
+                if (!server.IsStarted)
+                {
+                    RetryEstablishServerChannel();
+                }
                 SynchronizeTerminals();
             }
             catch (Exception ex)
@@ -42,6 +46,33 @@ namespace RMS.Server.WebApi
                 timer.Enabled = true;
             }
 
+        }
+
+        private bool retryingServerChannelConnection = false;
+        private void RetryEstablishServerChannel()
+        {
+            if (retryingServerChannelConnection)
+                return;
+
+            retryingServerChannelConnection = true;
+            //Log?.Verbose(className, "RetryEstablishRouterChannel", "Establishing Router Channel");
+            Console.WriteLine("Retrying....");
+            try
+            {
+                //if (cxpRouterChannel != null)
+                //    cxpRouterChannel.CloseAsync();
+
+                System.Threading.Thread.Sleep(5 * 1000);
+                server.StartAsync();
+                //ReEstablishCxpServerChannel();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+
+            retryingServerChannelConnection = false;
         }
 
         public async Task Start()

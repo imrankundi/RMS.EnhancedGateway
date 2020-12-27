@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using RMS.AWS.Logging;
+﻿using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
+using RMS.Component.Logging;
 using RMS.Core.Common;
 using System;
 using System.Linq;
@@ -14,8 +14,10 @@ namespace RMS.AWS
 {
     public class AWS4Client : IHttpClient
     {
+        public ILog Log { get; set; }
+        public bool SaveResponseOnSuccess { get; set; }
+        public bool SaveResponseOnFailure { get; set; }
         private ServerInfo server;
-
         public AWS4Client(ServerInfo server)
         {
             this.server = server;
@@ -62,8 +64,8 @@ namespace RMS.AWS
                             Response = content,
                             HttpStatusCode = msg.StatusCode
                         };
-                        //PushApiRepository.Save(entity);
-                        Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                        PushApiRepository.Save(entity);
+                        //Log?.Verbose(JsonConvert.SerializeObject(entity));
                         if (msg.StatusCode == HttpStatusCode.OK)
                         {
                             result = true;
@@ -88,8 +90,8 @@ namespace RMS.AWS
                         Response = "[ERROR_AT_GATEWAY] => " + ex.Message
                     };
 
-                    Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
-                    //PushApiRepository.Save(entity);
+                    //Log?.Write(JsonConvert.SerializeObject(entity));
+                    PushApiRepository.Save(entity);
                 }
             }
 

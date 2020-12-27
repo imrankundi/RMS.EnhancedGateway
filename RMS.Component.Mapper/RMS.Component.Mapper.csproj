@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D36A1C37-0C2A-4838-835A-6712A3F84E37}</ProjectGuid>
+    <ProjectGuid>{07B87684-314B-4077-AD71-07626D8F7BFF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RMS.Component.RestHelper</RootNamespace>
-    <AssemblyName>RMS.Component.RestHelper</AssemblyName>
+    <RootNamespace>RMS.Component.Mapper</RootNamespace>
+    <AssemblyName>RMS.Component.Mapper</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,12 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,25 +44,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\RestApi.cs" />
-    <Compile Include="Configuration\RestApiConfiguration.cs" />
-    <Compile Include="Configuration\RestApiConfigurationManager.cs" />
-    <Compile Include="RestClientFactory.cs" />
+    <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="ConfigurationMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configuration\RestApiConfiguration.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
+      <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
+      <Name>RMS.AWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
+      <Project>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</Project>
+      <Name>RMS.Component.DataAccess.SQLite.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
+      <Project>{923D555C-A354-45DE-8D8C-237A124F942D}</Project>
+      <Name>RMS.Server.DataTypes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
-      <Project>{BA0AA6FA-2253-4A6A-A062-AB0F87C22815}</Project>
-      <Name>RMS.Component.Configuration</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

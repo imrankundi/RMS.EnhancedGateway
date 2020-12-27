@@ -1,4 +1,4 @@
-﻿using RMS.Component.Configuration;
+﻿using RMS.Component.DataAccess.SQLite.Repositories;
 
 namespace RMS.Server.WebApi.Configuration
 {
@@ -20,8 +20,9 @@ namespace RMS.Server.WebApi.Configuration
         public WebApiServerConfiguration Configurations { get; private set; }
         private WebApiServerConfiguration LoadConfiguration()
         {
-            var configurtionLoader = new ConfigurtionLoader<WebApiServerConfiguration>(fileName, directory);
-            var configuration = configurtionLoader.LoadConfiguration();
+            var repo = new GatewayConfigRepository();
+            var webApi = repo.ReadWebApiConfiguration();
+            var configuration = Component.Mappers.ConfigurationMapper.Map(webApi);
             return configuration;
         }
     }

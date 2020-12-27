@@ -5,7 +5,7 @@ using DotNetty.Transport.Channels;
 using DotNetty.Transport.Channels.Sockets;
 using RMS.Component.Common;
 using RMS.Component.Communication.Tcp.Common;
-using RMS.Component.Communication.Tcp.Logging;
+using RMS.Component.Logging;
 using System;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -22,7 +22,7 @@ namespace RMS.Component.Communication.Tcp.Client
         IChannelHandler channelHandler;
         string targetHost = string.Empty;
         ChannelHandler handler;
-
+        public ILog Log { get; set; }
         ClientChannelConfiguration configuration;
         IChannel clientChannel;
         public bool IsConnected
@@ -80,15 +80,15 @@ namespace RMS.Component.Communication.Tcp.Client
             string thumbprint = configuration.Thumbprint;
             if (string.IsNullOrWhiteSpace(thumbprint))
             {
-                ClientChannelLogger.Instance.Log.Information(className, "GetCertificate", "No thumbprint found in configuration");
+                Log?.Information(className, "GetCertificate", "No thumbprint found in configuration");
                 return null;
 
             }
-            ClientChannelLogger.Instance.Log.Information(className, "GetCertificate", string.Format("Fetching Installed System Certificate, Thumbprint = [{0}]", thumbprint));
+            Log?.Information(className, "GetCertificate", string.Format("Fetching Installed System Certificate, Thumbprint = [{0}]", thumbprint));
             var certificate = CertificateHelper.GetSystemCertificateByThumbprint(configuration.Thumbprint);
 
             if (certificate != null)
-                ClientChannelLogger.Instance.Log.Information(className, "GetCertificate", "Certificate found");
+                Log?.Information(className, "GetCertificate", "Certificate found");
 
             return certificate;
         }
@@ -144,19 +144,19 @@ namespace RMS.Component.Communication.Tcp.Client
             catch (Exception ex)
             {
                 channelHandler = null;
-                ClientChannelLogger.Instance.Log.Error(className, "CreateChannelHandler", ex.ToString());
+                Log?.Error(className, "CreateChannelHandler", ex.ToString());
             }
 
             return channelHandler;
         }
         public bool Initialize()
         {
-            ClientChannelLogger.Instance.Log.Verbose(className, "Initialize", "Initializing Cxp Server Channel");
+            Log?.Verbose(className, "Initialize", "Initializing Cxp Server Channel");
 
             channelHandler = CreateChannelHandler();
             if (channelHandler == null)
             {
-                ClientChannelLogger.Instance.Log.Information(className, "Initialize", "Failed to Initialize Cxp Server Channel");
+                Log?.Information(className, "Initialize", "Failed to Initialize Cxp Server Channel");
                 return false;
 
             }
@@ -173,15 +173,15 @@ namespace RMS.Component.Communication.Tcp.Client
                     .Option(ChannelOption.TcpNodelay, true)
                     .Handler(channelHandler);
 
-            ClientChannelLogger.Instance.Log.Information(className, "Initialize", "Cxp Server Channel Initialized");
+            Log?.Information(className, "Initialize", "Cxp Server Channel Initialized");
             return true;
         }
         public async Task ConnectAsync()
         {
             try
             {
-                ClientChannelLogger.Instance.Log.Information(className, "ConnectAsync", string.Format("Connecting to Cxp Server. IP = {0}", configuration.EndPoint));
-                clientChannel = await bootstrap.ConnectAsync(configuration.EndPoint);
+                Log?.Information(className, "ConnectAsync", string.Format("Connecting to Cxp Server. IP = {0}", configuration.Host));
+                clientChannel = await bootstrap.ConnectAsync(configuration.Host, configuration.Port);
             }
             catch (Exception ex)
             {

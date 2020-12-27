@@ -156,7 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RMS.Component.Configuration\RMS.Component.Configuration.csproj">
-      <Project>{ba0aa6fa-2253-4a6a-a062-ab0f87c22815}</Project>
+      <Project>{BA0AA6FA-2253-4A6A-A062-AB0F87C22815}</Project>
       <Name>RMS.Component.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
@@ -168,12 +168,8 @@
       <Name>RMS.Component.RestHelper</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.WebApi\RMS.Component.WebApi.csproj">
-      <Project>{a4fe70fd-6186-4843-be09-c6ef564156b0}</Project>
+      <Project>{A4FE70FD-6186-4843-BE09-C6EF564156B0}</Project>
       <Name>RMS.Component.WebApi</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RMS.Server.BusinessLogic\RMS.Server.BusinessLogic.csproj">
-      <Project>{33dcb54f-788a-483f-b1eb-f7ba0bdd6d3e}</Project>
-      <Name>RMS.Server.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
       <Project>{923d555c-a354-45de-8d8c-237a124f942d}</Project>
