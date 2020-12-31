@@ -25,7 +25,7 @@ namespace RMS.Component.Communication.Tcp.Server
         {
         }
 
-        public IEnumerable<string> ChannelKeys => ChannelKeyDictionary?.Keys.ToArray();
+        public ICollection<string> ChannelKeys => ChannelKeyDictionary?.Keys;
 
         public ChannelInfo AddChannel(IChannelHandlerContext context)
         {

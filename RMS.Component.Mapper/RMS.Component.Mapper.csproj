@@ -53,6 +53,10 @@
       <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
       <Name>RMS.AWS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
+      <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
+      <Name>RMS.Component.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
       <Project>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</Project>
       <Name>RMS.Component.DataAccess.SQLite.Entities</Name>

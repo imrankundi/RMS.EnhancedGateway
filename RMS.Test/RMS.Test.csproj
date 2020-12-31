@@ -59,6 +59,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
+      <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
+      <Name>RMS.Component.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
       <Project>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</Project>
       <Name>RMS.Component.DataAccess.SQLite.Entities</Name>

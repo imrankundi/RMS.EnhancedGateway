@@ -50,6 +50,7 @@
     <Compile Include="Configuration\ServerChannelConfiguration.cs" />
     <Compile Include="Configuration\WebApiServerConfiguration.cs" />
     <Compile Include="Constants\ServerConstants.cs" />
+    <Compile Include="Email\EmailTemplate.cs" />
     <Compile Include="Models\AdviceMessageModel.cs" />
     <Compile Include="Models\CommandStatus.cs" />
     <Compile Include="Models\CommonModel.cs" />

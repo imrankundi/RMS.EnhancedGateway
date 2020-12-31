@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmailSubscriptionEntity.cs" />
     <Compile Include="ListenerConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EmailSubscriberEntity.cs" />
     <Compile Include="PushApiEntity.cs" />
     <Compile Include="ReceivedPacketEntity.cs" />
     <Compile Include="ServerChannelConfig.cs" />
     <Compile Include="SiteConfig.cs" />
+    <Compile Include="SmtpConfig.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="TimeOffsetConfig.cs" />
     <Compile Include="WebApiConfig.cs" />

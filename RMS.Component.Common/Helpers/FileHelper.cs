@@ -69,5 +69,39 @@ namespace RMS.Component.Common.Helpers
 
             return text;
         }
+
+        public static bool DeleteFileWithRetries(string path, int retries = 10, int waitInMilliseconds = 100)
+        {
+            bool result = false;
+            while (retries > 0)
+            {
+                try
+                {
+                    File.Delete(path);
+                    result = true;
+                    break;
+                }
+                catch (Exception)
+                {
+                    retries--;
+                    Thread.Sleep(waitInMilliseconds);
+                }
+            }
+            return result;
+        }
+
+        public static bool DeleteFile(string file)
+        {
+            try
+            {
+                File.Delete(file);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
     }
 }

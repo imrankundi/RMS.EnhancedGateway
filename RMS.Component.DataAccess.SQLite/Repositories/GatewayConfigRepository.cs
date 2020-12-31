@@ -70,6 +70,31 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             return config;
         }
 
+        public SmtpConfig ReadSmtpConfiguration()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            SmtpConfig config = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM SmtpSettings;";
+                    config = connection.Query<SmtpConfig>(query).FirstOrDefault();
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return config;
+        }
+
         private void BindServerListeners(SQLiteConnection connection, TcpServerChannelConfig config)
         {
             string methodName = MethodBase.GetCurrentMethod().Name;
@@ -145,7 +170,31 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
 
             return config;
         }
+        public IEnumerable<EmailSubscriberEntity> GetEmailSubscribersForNoChannelConnected()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            IEnumerable<EmailSubscriberEntity> entity = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT s.*, et.Template FROM EmailSubscriptions es INNER JOIN EmailSubscribers s ON es.SubscriberId = s.Id INNER JOIN EmailTemplates et ON es.TemplateId = et.Id WHERE et.TemplateKey = 'NO_CHANNEL_CONNECTED';";
+                    entity = connection.Query<EmailSubscriberEntity>(query);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
 
+            }
+
+            return entity;
+        }
         private void BindTimeOffset(SQLiteConnection connection, SiteConfig config)
         {
             string methodName = MethodBase.GetCurrentMethod().Name;

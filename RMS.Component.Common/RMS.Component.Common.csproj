@@ -50,6 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Email\Email.cs" />
+    <Compile Include="Email\EmailHelper.cs" />
+    <Compile Include="Email\SmtpSettings.cs" />
+    <Compile Include="Helpers\DirectoryHelper.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="OperatingSystemPlatform.cs" />
     <Compile Include="ProcessMonitor.cs" />
@@ -80,6 +84,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
+      <Project>{6ECB1EF7-2C8F-4A75-BBA0-C772372973E3}</Project>
+      <Name>RMS.Component.Logging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

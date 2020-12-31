@@ -23,7 +23,30 @@ namespace RMS.Server.WebApi.Controller
         {
             return null;
         }
-
+        [HttpGet]
+        public BaseResponse GetSiteCount()
+        {
+            try
+            {
+                //ProtocolList.Instance.Reload();
+                //var ClientChannelManager
+                var str = JsonConvert.SerializeObject(WebServer.server.ChannelKeys);
+                Console.WriteLine(str);
+                return new BaseResponse
+                {
+                    Message = "Sitelist: " + str,
+                    ResponseStatus = ResponseStatus.Success
+                };
+            }
+            catch (Exception ex)
+            {
+                return new BaseResponse
+                {
+                    Message = "Unable to reloaded Protocols [" + ex.Message + "]",
+                    ResponseStatus = ResponseStatus.Failed
+                };
+            }
+        }
         [HttpGet]
         public BaseResponse ReloadProtocols()
         {

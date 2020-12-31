@@ -6,6 +6,7 @@ using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.WebApi.Common;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -17,6 +18,8 @@ namespace RMS.Server.WebApi
         private ServerInfo info;
         private ServerChannelConfiguration configurations;
         private Timer timer;
+
+        public IEnumerable<string> ChannelKeys => server.ChannelKeys;
         public EnhancedGateway()
         {
             timer = new Timer();
@@ -36,6 +39,7 @@ namespace RMS.Server.WebApi
                     RetryEstablishServerChannel();
                 }
                 SynchronizeTerminals();
+                SendNoChannelConnectedEmail();
             }
             catch (Exception ex)
             {
@@ -48,6 +52,29 @@ namespace RMS.Server.WebApi
 
         }
 
+        private bool noChannelConnectedEmailSent = false;
+        private void SendNoChannelConnectedEmail()
+        {
+            try
+            {
+                if(server.ChannelKeys.Count == 0)
+                {
+                    if(!noChannelConnectedEmailSent)
+                    {
+                        Console.WriteLine("Sending No Channel Connected Email");
+                        //noChannelConnectedEmailSent = Configuration.EmailManager.Instance.SendNoChannelConnectedEmail();
+                    }
+                }
+                else
+                {
+                    noChannelConnectedEmailSent = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         private bool retryingServerChannelConnection = false;
         private void RetryEstablishServerChannel()
         {

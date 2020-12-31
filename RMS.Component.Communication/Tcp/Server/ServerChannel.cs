@@ -7,6 +7,7 @@ using DotNetty.Transport.Channels.Sockets;
 using RMS.Component.Common;
 using RMS.Component.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
@@ -21,6 +22,8 @@ namespace RMS.Component.Communication.Tcp.Server
         private readonly ServerChannelConfiguration configuration;
         public ITerminalCommandHandler ServerChannelHandler { get; set; }
         //public ClientChannelManager ClientChannelManager { get; set; }
+
+        public ICollection<string> ChannelKeys => ChannelManager.Instance.ChannelKeys;
         public ILog Log { get; set; }
 
         private Timer timer;

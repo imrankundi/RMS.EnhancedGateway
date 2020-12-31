@@ -23,7 +23,7 @@ namespace RMS.Test
         {
             var repo = new GatewayConfigRepository();
             var config = repo.ReadTcpServerConfiguration();
-            var res = RMS.Component.Mappers.ConfigurationMapper.Map(config);
+            var res = Component.Mappers.ConfigurationMapper.Map(config);
         }
 
         [TestMethod]
