@@ -50,6 +50,7 @@
     <Compile Include="Configuration\ServerChannelConfiguration.cs" />
     <Compile Include="Configuration\WebApiServerConfiguration.cs" />
     <Compile Include="Constants\ServerConstants.cs" />
+    <Compile Include="Email\EmailServiceConfiguration.cs" />
     <Compile Include="Email\EmailTemplate.cs" />
     <Compile Include="Models\AdviceMessageModel.cs" />
     <Compile Include="Models\CommandStatus.cs" />
@@ -91,6 +92,10 @@
     <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
       <Project>{8A8B2C11-8BC2-41E9-8092-6D4689CAD6DA}</Project>
       <Name>RMS.AWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
+      <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
+      <Name>RMS.Component.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Logging.Models\RMS.Component.Logging.Models.csproj">
       <Project>{571725D2-91C0-4BCB-B837-35F3CBF5DB35}</Project>

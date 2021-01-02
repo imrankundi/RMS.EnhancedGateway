@@ -20,40 +20,42 @@ namespace RMS.Server.EmailSender
                 IsConfigurationLoaded = true;
 
 
-            
+
         }
         static EmailManager() { }
         public static EmailManager Instance { get; } = new EmailManager();
         public bool IsConfigurationLoaded { get; } = false;
-        public SmtpSettings Configurations { get; private set; }
-        private SmtpSettings LoadConfiguration()
+        public EmailServiceConfiguration Configurations { get; private set; }
+        private EmailServiceConfiguration LoadConfiguration()
         {
             var repo = new EmailConfigRepository();
-            var config = repo.ReadSmtpConfiguration();
+            var config = repo.ReadEmailServiceConfiguration();
             var configuration = Component.Mappers.ConfigurationMapper.Map(config);
             return configuration;
         }
 
         public bool SendEmail(ILog log, EmailTemplate emailTemplate)
         {
-            
+
             bool result = false;
             string methodName = MethodBase.GetCurrentMethod().Name;
             try
             {
                 log?.Information(className, methodName, string.Format("Configuration:\n{0}", JsonConvert.SerializeObject(Configurations, Formatting.Indented)));
-                EmailHelper emailHelper = new EmailHelper(Configurations);
+                log?.Information(className, methodName, string.Format("EmailTemplate:\n{0}", JsonConvert.SerializeObject(emailTemplate, Formatting.Indented)));
+                EmailHelper emailHelper = new EmailHelper(Configurations.SmtpSettings);
                 emailHelper.Log = log;
                 result = emailHelper.Initialize();
-                if(result)
+                if (result)
                 {
                     Email email = new Email();
-                    email.FromEmail = Configurations.EmailAddress;
-                    email.FromName = Configurations.Name;
+                    email.FromEmail = Configurations.SmtpSettings.EmailAddress;
+                    email.FromName = Configurations.SmtpSettings.Name;
+                    email.IsHtml = emailTemplate.IsHtml;
                     email.To.AddRange(emailTemplate.ToEmailAddresses);
-                    if(emailTemplate.BccEmailAddresses != null)
+                    if (emailTemplate.BccEmailAddresses != null)
                     {
-                        if(emailTemplate.BccEmailAddresses.Count > 0)
+                        if (emailTemplate.BccEmailAddresses.Count > 0)
                         {
                             email.BCC.AddRange(emailTemplate.BccEmailAddresses);
                         }
@@ -70,7 +72,7 @@ namespace RMS.Server.EmailSender
                     result = emailHelper.SendEmail(email);
                 }
                 emailHelper.Dispose();
-                
+
             }
             catch (Exception ex)
             {

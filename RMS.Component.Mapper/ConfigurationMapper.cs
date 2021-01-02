@@ -4,6 +4,7 @@ using RMS.Component.Common;
 using RMS.Component.Communication.Tcp.Server;
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Server.DataTypes;
+using RMS.Server.DataTypes.Email;
 using RMS.Server.WebApi.Configuration;
 using System.Collections.Generic;
 
@@ -19,6 +20,7 @@ namespace RMS.Component.Mappers
             cfg.CreateMap<TimeOffsetConfig, TimeOffset>();
             cfg.CreateMap<WebApiConfig, WebApiServerConfiguration>();
             cfg.CreateMap<SmtpConfig, SmtpSettings>();
+            cfg.CreateMap<EmailConfig, EmailServiceConfiguration>();
         });
         public static Mapper Mapper => new Mapper(Config);
         public static ServerChannelConfiguration Map(TcpServerChannelConfig entity)
@@ -31,6 +33,12 @@ namespace RMS.Component.Mappers
             var obj = Mapper.Map<SmtpSettings>(entity);
             return obj;
         }
+        public static EmailServiceConfiguration Map(EmailConfig entity)
+        {
+            var obj = Mapper.Map<EmailServiceConfiguration>(entity);
+            return obj;
+        }
+
         public static SiteInfo Map(SiteConfig entity)
         {
             var obj = Mapper.Map<SiteInfo>(entity);

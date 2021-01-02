@@ -57,9 +57,9 @@ namespace RMS.Server.WebApi
         {
             try
             {
-                if(server.ChannelKeys.Count == 0)
+                if (server.ChannelKeys.Count == 0)
                 {
-                    if(!noChannelConnectedEmailSent)
+                    if (!noChannelConnectedEmailSent)
                     {
                         Console.WriteLine("Sending No Channel Connected Email");
                         //noChannelConnectedEmailSent = Configuration.EmailManager.Instance.SendNoChannelConnectedEmail();

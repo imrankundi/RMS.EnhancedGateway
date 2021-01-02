@@ -49,6 +49,7 @@
     <Compile Include="ReceivedPacketEntity.cs" />
     <Compile Include="ServerChannelConfig.cs" />
     <Compile Include="SiteConfig.cs" />
+    <Compile Include="EmailConfig.cs" />
     <Compile Include="SmtpConfig.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="TimeOffsetConfig.cs" />

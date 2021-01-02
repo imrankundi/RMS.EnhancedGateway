@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace RMS.Server.DataTypes.Email
 {
@@ -10,8 +6,7 @@ namespace RMS.Server.DataTypes.Email
     {
         public string EmailSubject { get; set; }
         public string EmailMessage { get; set; }
-        public string FromEmailAddress { get; set; }
-        public string FromName { get; set; }
+        public bool IsHtml { get; set; }
         public List<string> ToEmailAddresses { get; set; }
         public List<string> CcEmailAddresses { get; set; }
         public List<string> BccEmailAddresses { get; set; }

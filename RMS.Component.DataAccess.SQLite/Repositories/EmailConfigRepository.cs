@@ -2,7 +2,6 @@
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Component.Logging;
 using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
@@ -15,7 +14,7 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
         public static string FileExtension => ".sqlite";
         public static string DatabaseFile => string.Format(@"{0}\{1}{2}", DatabaseDirectory, FileName, FileExtension);
         public static string DatabaseDirectory => string.Format(@"{0}\Database", AppDomain.CurrentDomain.BaseDirectory);
-        public static string className = nameof(GatewayConfigRepository);
+        public static string className = nameof(EmailConfigRepository);
         public ILog Log { get; set; }
         public EmailConfigRepository() : this(null)
         {
@@ -38,7 +37,32 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             }
             return connection;
         }
-        public SmtpConfig ReadSmtpConfiguration()
+        public EmailConfig ReadEmailServiceConfiguration()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            EmailConfig entity = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM EmailConfig ORDER BY Id LIMIT 1;";
+                    entity = connection.Query<EmailConfig>(query).FirstOrDefault();
+                    entity.SmtpSettings = BindSmtpConfiguration(entity);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+
+            return entity;
+        }
+        private SmtpConfig BindSmtpConfiguration(EmailConfig entity)
         {
             string methodName = MethodBase.GetCurrentMethod().Name;
             SmtpConfig config = null;
@@ -47,8 +71,9 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
                 try
                 {
                     connection.Open();
-                    var query = "SELECT * FROM SmtpSettings;";
-                    config = connection.Query<SmtpConfig>(query).FirstOrDefault();
+                    var query = @"SELECT s.* FROM EmailConfig e INNER JOIN SmtpSettings s ON e.SmtpSettingsId = s.Id WHERE e.Id = @EmailServiceConfigId;";
+                    var param = new { @EmailServiceConfigId = entity.Id };
+                    config = connection.Query<SmtpConfig>(query, param).FirstOrDefault();
                 }
                 catch (Exception ex)
                 {
@@ -61,31 +86,6 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             }
 
             return config;
-        }
-        public IEnumerable<EmailSubscriberEntity> GetEmailSubscribersForNoChannelConnected()
-        {
-            string methodName = MethodBase.GetCurrentMethod().Name;
-            IEnumerable<EmailSubscriberEntity> entity = null;
-            using (var connection = CreateConnection())
-            {
-                try
-                {
-                    connection.Open();
-                    var query = "SELECT s.*, et.Template FROM EmailSubscriptions es INNER JOIN EmailSubscribers s ON es.SubscriberId = s.Id INNER JOIN EmailTemplates et ON es.TemplateId = et.Id WHERE et.TemplateKey = 'NO_CHANNEL_CONNECTED';";
-                    entity = connection.Query<EmailSubscriberEntity>(query);
-                }
-                catch (Exception ex)
-                {
-                    Log?.Error(className, methodName, ex.ToString());
-                }
-                finally
-                {
-                    connection.Close();
-                }
-
-            }
-
-            return entity;
         }
     }
 }
