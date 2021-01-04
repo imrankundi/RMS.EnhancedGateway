@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\ServiceMonitorConfigRepository.cs" />
     <Compile Include="Repositories\EmailConfigRepository.cs" />
     <Compile Include="Repositories\PushApiRepository.cs" />
     <Compile Include="Repositories\ReceivedPacketRepository.cs" />
@@ -66,6 +67,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Database\GatewayConfig.sqlite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Database\ServiceMonitorConfig.sqlite">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

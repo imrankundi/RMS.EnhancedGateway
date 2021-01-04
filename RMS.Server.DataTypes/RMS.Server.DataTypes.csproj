@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ClientChannelConfiguration.cs" />
+    <Compile Include="Configuration\MonitoringParameter.cs" />
+    <Compile Include="Configuration\ServiceMonitorServiceConfiguration.cs" />
     <Compile Include="Configuration\ServerChannelConfiguration.cs" />
     <Compile Include="Configuration\WebApiServerConfiguration.cs" />
     <Compile Include="Constants\ServerConstants.cs" />
-    <Compile Include="Email\EmailServiceConfiguration.cs" />
+    <Compile Include="Configuration\EmailServiceConfiguration.cs" />
     <Compile Include="Email\EmailTemplate.cs" />
     <Compile Include="Models\AdviceMessageModel.cs" />
     <Compile Include="Models\CommandStatus.cs" />

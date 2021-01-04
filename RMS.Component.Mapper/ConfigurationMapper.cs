@@ -21,11 +21,18 @@ namespace RMS.Component.Mappers
             cfg.CreateMap<WebApiConfig, WebApiServerConfiguration>();
             cfg.CreateMap<SmtpConfig, SmtpSettings>();
             cfg.CreateMap<EmailConfig, EmailServiceConfiguration>();
+            cfg.CreateMap<MontioringParameterConfig, MonitoringParameter>();
+            cfg.CreateMap<ServiceMonitorConfig, ServiceMonitorServiceConfiguration>();
         });
         public static Mapper Mapper => new Mapper(Config);
         public static ServerChannelConfiguration Map(TcpServerChannelConfig entity)
         {
             var obj = Mapper.Map<ServerChannelConfiguration>(entity);
+            return obj;
+        }
+        public static ServiceMonitorServiceConfiguration Map(ServiceMonitorConfig entity)
+        {
+            var obj = Mapper.Map<ServiceMonitorServiceConfiguration>(entity);
             return obj;
         }
         public static SmtpSettings Map(SmtpConfig entity)

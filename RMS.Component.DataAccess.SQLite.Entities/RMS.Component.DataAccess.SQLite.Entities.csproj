@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MonitoringParameter.cs" />
+    <Compile Include="ServiceMonitorConfig.cs" />
     <Compile Include="EmailSubscriptionEntity.cs" />
     <Compile Include="ListenerConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
