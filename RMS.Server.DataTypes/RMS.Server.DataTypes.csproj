@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -76,6 +77,10 @@
     <Compile Include="Quartz\SimpleTriggerDetail.cs" />
     <Compile Include="Quartz\TriggerDetail.cs" />
     <Compile Include="Quartz\TriggerType.cs" />
+    <Compile Include="WindowsService\ServiceControllerContainer.cs" />
+    <Compile Include="WindowsService\ServiceInfo.cs" />
+    <Compile Include="WindowsService\ServiceInstallationStatus.cs" />
+    <Compile Include="WindowsService\ServiceStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

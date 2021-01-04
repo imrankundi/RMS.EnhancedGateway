@@ -89,5 +89,28 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
 
             return config;
         }
+
+        public void Update(MontioringParameterConfig config)
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = @"UPDATE MonitoringParameterConfig SET ServiceState = @ServiceStatus, LastStateChange = @LastStateChange WHERE Id = @Id;";
+                    var param = new { @ServiceStatus = config.ServiceState, @LastStateChange = config.LastStateChange, @Id = config.Id };
+                    var result = connection.Execute(query, param);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }

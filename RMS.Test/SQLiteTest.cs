@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RMS.Component.DataAccess.SQLite.Repositories;
+using RMS.Server.DataTypes.WindowsService;
 using System.Linq;
 
 namespace RMS.Test
@@ -47,6 +48,16 @@ namespace RMS.Test
             var repo = new GatewayConfigRepository();
             var webApi = repo.ReadWebApiConfiguration();
             var res = RMS.Component.Mappers.ConfigurationMapper.Map(webApi);
+        }
+        [TestMethod]
+        public void UpdateServiceStatus()
+        {
+            var repo = new ServiceMonitorConfigRepository();
+            repo.Update(new Component.DataAccess.SQLite.Entities.MontioringParameterConfig
+            {
+                Id = 1,
+                ServiceState = (int)ServiceStatus.Running
+            });
         }
     }
 }

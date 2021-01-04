@@ -55,9 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServiceControllerContainer.cs" />
-    <Compile Include="ServiceStatus.cs" />
-    <Compile Include="ServiceInstallationStatus.cs" />
     <Compile Include="ServiceMonitorConfigurationManager.cs" />
     <Compile Include="ServiceMonitorService.cs" />
     <Compile Include="Program.cs" />

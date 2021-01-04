@@ -1,4 +1,10 @@
-﻿using RMS.Component.Logging;
+﻿using Newtonsoft.Json;
+using RMS.Component.Common.Helpers;
+using RMS.Component.DataAccess.SQLite.Entities;
+using RMS.Component.DataAccess.SQLite.Repositories;
+using RMS.Component.Logging;
+using RMS.Server.DataTypes.Email;
+using RMS.Server.DataTypes.WindowsService;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -20,7 +26,7 @@ namespace RMS.Server.ServiceMonitor
                 log = LoggingFactory.CreateLogger(ServiceMonitorConfigurationManager.Instance.Configurations.LogPath,
                     "ServiceMonitor", ServiceMonitorConfigurationManager.Instance.Configurations.LogLevel);
 
-                var list = GetServiceNames();
+                var list = GetServiceInfo();
 
                 serviceManager = new WindowsServiceInfoManager(log, list);
                 timer = new Timer();
@@ -35,12 +41,17 @@ namespace RMS.Server.ServiceMonitor
             }
         }
 
-        private IEnumerable<string> GetServiceNames()
+        private IEnumerable<ServiceInfo> GetServiceInfo()
         {
             var parameters = ServiceMonitorConfigurationManager.Instance.Configurations.Parameters;
 
             foreach (var parameter in parameters)
-                yield return parameter.ServiceName;
+                yield return new ServiceInfo
+                {
+                    Id = parameter.Id,
+                    ServiceName = parameter.ServiceName,
+                    ServiceStatus = (ServiceStatus)parameter.ServiceState
+                };
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
@@ -54,7 +65,25 @@ namespace RMS.Server.ServiceMonitor
                 {
                     var key = kv.Key;
                     ServiceControllerContainer value = kv.Value;
-                    Console.WriteLine("Service: {0}, Status: {1}, [{2}]", value.ServiceName, value.ServiceStatus, value.InstallationStatus);
+                    if (value.InstallationStatus == ServiceInstallationStatus.Installed)
+                    {
+                        if (value.ServiceInfo.ServiceStatus != value.ServiceStatus)
+                        {
+                            Console.WriteLine("Service: {0}, Status: {1}, [{2}]", value.ServiceName, value.ServiceStatus, value.InstallationStatus);
+                            value.ServiceInfo.ServiceStatus = value.ServiceStatus;
+                            var repo = new ServiceMonitorConfigRepository();
+                            repo.Update(new MontioringParameterConfig
+                            {
+                                Id = value.ServiceInfo.Id,
+                                ServiceState = (int)value.ServiceInfo.ServiceStatus,
+                                LastStateChange = DateTime.UtcNow
+                            });
+
+                            GenerateEmail(value);
+                        }
+
+                    }
+
                 }
 
                 timer.Enabled = false;
@@ -69,6 +98,29 @@ namespace RMS.Server.ServiceMonitor
             {
                 timer.Enabled = true;
             }
+        }
+
+        private void GenerateEmail(ServiceControllerContainer value)
+        {
+            EmailTemplate template = new EmailTemplate
+            {
+                ToEmailAddresses = new List<string>
+                {
+                    "imrankundi@hotmail.com" 
+                },
+                BccEmailAddresses = new List<string>
+                {
+                    "imrankundi@hotmail.com",
+                    "kundi.imranullah@gmail.com"
+                },
+                EmailMessage = string.Format("Service Name: {0}\nServiceState: {1}", value.ServiceName, value.ServiceStatus),
+                EmailSubject = "Service Status",
+                IsHtml = false
+            };
+
+            var json = JsonConvert.SerializeObject(template);
+
+            FileHelper.WriteAllText(@"C:\RMS\EmailService\Email\" + DateTime.Now.ToString("yyMMddHHmmss") + ".json", json);
         }
 
         public void Stop()

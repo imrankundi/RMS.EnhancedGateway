@@ -1,12 +1,13 @@
 ﻿using System;
 using System.ServiceProcess;
 
-namespace RMS.Server.ServiceMonitor
+namespace RMS.Server.DataTypes.WindowsService
 {
     public class ServiceControllerContainer
     {
         public ServiceController ServiceController { get; set; }
         public ServiceInstallationStatus InstallationStatus { get; set; }
+        public ServiceInfo ServiceInfo { get; set; }
         public string ServiceName
         {
             get

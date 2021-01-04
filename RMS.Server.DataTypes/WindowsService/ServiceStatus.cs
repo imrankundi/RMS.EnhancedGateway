@@ -1,4 +1,4 @@
-﻿namespace RMS.Server.ServiceMonitor
+﻿namespace RMS.Server.DataTypes.WindowsService
 {
     public enum ServiceStatus
     {
