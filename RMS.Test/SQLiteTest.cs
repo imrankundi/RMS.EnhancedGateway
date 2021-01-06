@@ -59,5 +59,19 @@ namespace RMS.Test
                 ServiceState = (int)ServiceStatus.Running
             });
         }
+
+        [TestMethod]
+        public void GetNoChannelConnectedEmail()
+        {
+            var repo = new EmailConfigRepository();
+            var res = repo.GetEmailTemplate("NO_CHANNEL_CONNECTED");
+        }
+
+        [TestMethod]
+        public void GetServiceStatusEmail()
+        {
+            var repo = new EmailConfigRepository();
+            var res = repo.GetEmailTemplate("SERVICE_STATUS");
+        }
     }
 }

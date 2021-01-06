@@ -94,6 +94,18 @@ namespace RMS.Component.Common
                     mail.Body = email.Body;
                     mail.From = new MailAddress(email.FromEmail, email.FromName);
                     mail.IsBodyHtml = email.IsHtml;
+                    if (email.To == null)
+                    {
+                        email.To = new List<string>
+                        {
+                            email.FromEmail
+                        };
+                    }
+
+                    if (email.To.Count == 0)
+                    {
+                        email.To.Add(email.FromEmail);
+                    }
                     AddToEmailTo(mail, email.To);
                     AddToEmailCC(mail, email.CC);
                     AddToEmailBcc(mail, email.BCC);

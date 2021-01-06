@@ -142,9 +142,21 @@
       <Project>{8a8b2c11-8bc2-41e9-8092-6d4689cad6da}</Project>
       <Name>RMS.AWS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
+      <Project>{3E6E38C2-A11E-4040-8E4B-7E678F56988F}</Project>
+      <Name>RMS.Component.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Communication\RMS.Component.Communication.csproj">
       <Project>{39E18644-822D-48DB-ACF3-1DC617E4587B}</Project>
       <Name>RMS.Component.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite.Entities\RMS.Component.DataAccess.SQLite.Entities.csproj">
+      <Project>{13C492FC-03A5-4A0E-A40E-288EFF1F8A19}</Project>
+      <Name>RMS.Component.DataAccess.SQLite.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.DataAccess.SQLite\RMS.Component.DataAccess.SQLite.csproj">
+      <Project>{E2C327B1-BDEA-436C-BB00-993F8B2351AD}</Project>
+      <Name>RMS.Component.DataAccess.SQLite</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
       <Project>{6ECB1EF7-2C8F-4A75-BBA0-C772372973E3}</Project>

@@ -47,7 +47,7 @@ namespace RMS.Server.EmailSender
                     try
                     {
                         var text = FileHelper.ReadAllTextWithRetries(file);
-                        var emailTemplate = JsonConvert.DeserializeObject<EmailTemplate>(text);
+                        var emailTemplate = JsonConvert.DeserializeObject<EmailFileTemplate>(text);
                         Console.WriteLine("Sending Email => {0}", file);
                         var emailSent = EmailManager.Instance.SendEmail(log, emailTemplate);
                         if (emailSent)

@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json.Linq;
 using RMS.AWS;
 using RMS.Component.Communication.Tcp.Server;
+using RMS.Component.Logging;
 using RMS.Core.Common;
 using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
+using RMS.Server.EmailSender;
 using RMS.Server.WebApi.Common;
 using System;
 using System.Collections.Generic;
@@ -18,6 +20,7 @@ namespace RMS.Server.WebApi
         private ServerInfo info;
         private ServerChannelConfiguration configurations;
         private Timer timer;
+        ILog log;
 
         public IEnumerable<string> ChannelKeys => server.ChannelKeys;
         public EnhancedGateway()
@@ -53,21 +56,34 @@ namespace RMS.Server.WebApi
         }
 
         private bool noChannelConnectedEmailSent = false;
+        private DateTime lastCheckDate = DateTime.MinValue;
+        private double waitBeforeSendingEmail = 30;
         private void SendNoChannelConnectedEmail()
         {
             try
             {
+                if (lastCheckDate == DateTime.MinValue)
+                {
+                    lastCheckDate = DateTime.UtcNow;
+                    return;
+                }
+
+                if (DateTime.UtcNow < lastCheckDate.AddSeconds(waitBeforeSendingEmail))
+                    return;
+
                 if (server.ChannelKeys.Count == 0)
                 {
                     if (!noChannelConnectedEmailSent)
                     {
                         Console.WriteLine("Sending No Channel Connected Email");
-                        //noChannelConnectedEmailSent = Configuration.EmailManager.Instance.SendNoChannelConnectedEmail();
+                        noChannelConnectedEmailSent = EmailManager.CreateNoClientSocketConnectedEmail(log);
                     }
+                    lastCheckDate = DateTime.UtcNow;
                 }
                 else
                 {
                     noChannelConnectedEmailSent = false;
+                    lastCheckDate = DateTime.UtcNow;
                 }
             }
             catch (Exception ex)
@@ -75,6 +91,8 @@ namespace RMS.Server.WebApi
 
             }
         }
+
+
         private bool retryingServerChannelConnection = false;
         private void RetryEstablishServerChannel()
         {

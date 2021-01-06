@@ -55,7 +55,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TopShelf\ConfigureService.cs" />
@@ -93,6 +92,10 @@
     <ProjectReference Include="..\RMS.Server.DataTypes\RMS.Server.DataTypes.csproj">
       <Project>{923d555c-a354-45de-8d8c-237a124f942d}</Project>
       <Name>RMS.Server.DataTypes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.Helpers\RMS.Server.Helpers.csproj">
+      <Project>{4b4a7293-c1ce-4164-afcc-0b21a15137ba}</Project>
+      <Name>RMS.Server.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

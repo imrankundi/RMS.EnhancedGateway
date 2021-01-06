@@ -1,6 +1,6 @@
-﻿namespace RMS.Component.DataAccess.SQLite.Entities
+﻿namespace RMS.Server.DataTypes
 {
-    public class EmailSubscriptionEntity
+    public class EmailSubscriber
     {
         public long Id { get; set; }
         public string SubscriberName { get; set; }

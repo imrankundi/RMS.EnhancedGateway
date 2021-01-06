@@ -95,6 +95,10 @@
       <Project>{923D555C-A354-45DE-8D8C-237A124F942D}</Project>
       <Name>RMS.Server.DataTypes</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Server.Helpers\RMS.Server.Helpers.csproj">
+      <Project>{4B4A7293-C1CE-4164-AFCC-0B21A15137BA}</Project>
+      <Name>RMS.Server.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

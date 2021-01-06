@@ -1,4 +1,6 @@
-﻿namespace RMS.Server.WebApi.Configuration
+﻿using RMS.Component.Logging.Models;
+
+namespace RMS.Server.WebApi.Configuration
 {
     public class WebApiServerConfiguration
     {
@@ -7,5 +9,8 @@
         public bool EnableSimulation { get; set; }
         public int TerminalCommandRetries { get; set; }
         public int TerminalCommandRetryIntervalInSeconds { get; set; }
+        public string LogPath { get; set; }
+        public LogLevel LogLevel { get; set; }
+        public string EmailPath { get; set; }
     }
 }

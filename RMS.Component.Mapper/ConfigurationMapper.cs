@@ -23,6 +23,8 @@ namespace RMS.Component.Mappers
             cfg.CreateMap<EmailConfig, EmailServiceConfiguration>();
             cfg.CreateMap<MontioringParameterConfig, MonitoringParameter>();
             cfg.CreateMap<ServiceMonitorConfig, ServiceMonitorServiceConfiguration>();
+            cfg.CreateMap<EmailSubscriberEntity, EmailSubscriber>();
+            cfg.CreateMap<EmailTemplateEntity, EmailTemplate>();
         });
         public static Mapper Mapper => new Mapper(Config);
         public static ServerChannelConfiguration Map(TcpServerChannelConfig entity)

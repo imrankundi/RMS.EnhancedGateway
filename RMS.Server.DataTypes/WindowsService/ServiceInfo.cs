@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RMS.Server.DataTypes.WindowsService
+﻿namespace RMS.Server.DataTypes.WindowsService
 {
     public class ServiceInfo
     {

@@ -7,8 +7,6 @@ using System.ServiceProcess;
 
 namespace RMS.Server.ServiceMonitor
 {
-
-
     public class WindowsServiceInfoManager
     {
         private string className = nameof(WindowsServiceInfoManager);
@@ -67,7 +65,6 @@ namespace RMS.Server.ServiceMonitor
                         }
                     }
                 }
-
             }
             catch (Exception ex)
             {

@@ -1,10 +1,8 @@
-﻿using Newtonsoft.Json;
-using RMS.Component.Common.Helpers;
-using RMS.Component.DataAccess.SQLite.Entities;
+﻿using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Component.DataAccess.SQLite.Repositories;
 using RMS.Component.Logging;
-using RMS.Server.DataTypes.Email;
 using RMS.Server.DataTypes.WindowsService;
+using RMS.Server.EmailSender;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -40,7 +38,6 @@ namespace RMS.Server.ServiceMonitor
                 log?.Error(className, methodName, ex.ToString());
             }
         }
-
         private IEnumerable<ServiceInfo> GetServiceInfo()
         {
             var parameters = ServiceMonitorConfigurationManager.Instance.Configurations.Parameters;
@@ -53,7 +50,6 @@ namespace RMS.Server.ServiceMonitor
                     ServiceStatus = (ServiceStatus)parameter.ServiceState
                 };
         }
-
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
             string methodName = MethodBase.GetCurrentMethod().Name;
@@ -81,13 +77,10 @@ namespace RMS.Server.ServiceMonitor
 
                             GenerateEmail(value);
                         }
-
                     }
-
                 }
 
                 timer.Enabled = false;
-
             }
             catch (Exception ex)
             {
@@ -99,34 +92,24 @@ namespace RMS.Server.ServiceMonitor
                 timer.Enabled = true;
             }
         }
-
         private void GenerateEmail(ServiceControllerContainer value)
         {
-            EmailTemplate template = new EmailTemplate
-            {
-                ToEmailAddresses = new List<string>
-                {
-                    "imrankundi@hotmail.com" 
-                },
-                BccEmailAddresses = new List<string>
-                {
-                    "imrankundi@hotmail.com",
-                    "kundi.imranullah@gmail.com"
-                },
-                EmailMessage = string.Format("Service Name: {0}\nServiceState: {1}", value.ServiceName, value.ServiceStatus),
-                EmailSubject = "Service Status",
-                IsHtml = false
-            };
-
-            var json = JsonConvert.SerializeObject(template);
-
-            FileHelper.WriteAllText(@"C:\RMS\EmailService\Email\" + DateTime.Now.ToString("yyMMddHHmmss") + ".json", json);
+            EmailManager.CreateServiceStatusEmail(value.ServiceInfo, log);
         }
-
         public void Stop()
         {
+            if (timer != null)
+            {
+                try
+                {
+                    timer.Stop();
+                    timer.Dispose();
+                }
+                catch (Exception ex)
+                {
 
-
+                }
+            }
         }
     }
 }

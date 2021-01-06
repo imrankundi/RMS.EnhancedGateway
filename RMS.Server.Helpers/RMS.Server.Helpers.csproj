@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\EmailManager.cs" />
     <Compile Include="Managers\ServerChannelConfigurationManager.cs" />
     <Compile Include="Managers\SiteManager.cs" />
     <Compile Include="Managers\WebApiServerConfigurationManager.cs" />
@@ -65,6 +66,10 @@
     <ProjectReference Include="..\RMS.Component.DataAccess.SQLite\RMS.Component.DataAccess.SQLite.csproj">
       <Project>{e2c327b1-bdea-436c-bb00-993f8b2351ad}</Project>
       <Name>RMS.Component.DataAccess.SQLite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RMS.Component.Logging\RMS.Component.Logging.csproj">
+      <Project>{6ECB1EF7-2C8F-4A75-BBA0-C772372973E3}</Project>
+      <Name>RMS.Component.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Mapper\RMS.Component.Mapper.csproj">
       <Project>{07b87684-314b-4077-ad71-07626d8f7bff}</Project>

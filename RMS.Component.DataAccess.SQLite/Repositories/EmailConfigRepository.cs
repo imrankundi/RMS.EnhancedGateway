@@ -2,6 +2,7 @@
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Component.Logging;
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
 using System.Reflection;
@@ -86,6 +87,60 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             }
 
             return config;
+        }
+        public EmailTemplateEntity GetEmailTemplate(string templateKey)
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            EmailTemplateEntity entity = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM EmailTemplates WHERE TemplateKey = @TemplateKey;";
+                    var param = new { @TemplateKey = templateKey };
+                    entity = connection.Query<EmailTemplateEntity>(query, param).FirstOrDefault();
+                    BindSubscribers(entity);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+            return entity;
+        }
+
+        private IEnumerable<EmailSubscriberEntity> BindSubscribers(EmailTemplateEntity entity)
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT s.* FROM EmailTemplates et INNER JOIN EmailSubscriptions es ON et.Id = es.TemplateId INNER JOIN EmailSubscribers s ON s.Id = es.SubscriberId WHERE TemplateId = @TemplateId;";
+                    var param = new { @TemplateId = entity.Id };
+                    entity.Subscribers = connection.Query<EmailSubscriberEntity>(query, param);
+                    //BindSubscribers(entity);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+            return entity.Subscribers;
         }
     }
 }
