@@ -131,9 +131,7 @@
     <None Include="packages.config" />
     <None Include="Reon\Configurtion Packet.json" />
     <None Include="Reon\Reon Sample Packet.json" />
-    <None Include="Sites\Sites.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Sites\Sites.json" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LoreSoft.MathExpressions\LoreSoft.MathExpressions.csproj">
