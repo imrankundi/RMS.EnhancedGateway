@@ -55,7 +55,7 @@ namespace RMS.Parser
             {
 
             }
-            
+
         }
 
         private IEnumerable<SiteInfo> LoadConfiguration()

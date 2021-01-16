@@ -63,6 +63,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.Server.EmailSender", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.Server.ServiceMonitor", "RMS.Server.ServiceMonitor\RMS.Server.ServiceMonitor.csproj", "{0ACC433C-CA75-48ED-A928-CD40EB0C3787}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.LogReader", "RMS.LogReader\RMS.LogReader.csproj", "{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RMS.AWS.ManualIngester", "RMS.AWS.ManualIngester\RMS.AWS.ManualIngester.csproj", "{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -433,6 +437,30 @@ Global
 		{0ACC433C-CA75-48ED-A928-CD40EB0C3787}.Release|x64.Build.0 = Release|Any CPU
 		{0ACC433C-CA75-48ED-A928-CD40EB0C3787}.Release|x86.ActiveCfg = Release|Any CPU
 		{0ACC433C-CA75-48ED-A928-CD40EB0C3787}.Release|x86.Build.0 = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|x64.Build.0 = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Debug|x86.Build.0 = Debug|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|x64.ActiveCfg = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|x64.Build.0 = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|x86.ActiveCfg = Release|Any CPU
+		{5D76778E-47F5-467E-A899-8EC0D2F7D6E0}.Release|x86.Build.0 = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|x64.Build.0 = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

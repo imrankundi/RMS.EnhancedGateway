@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\LogRepository.cs" />
     <Compile Include="Repositories\ServiceMonitorConfigRepository.cs" />
     <Compile Include="Repositories\EmailConfigRepository.cs" />
     <Compile Include="Repositories\PushApiRepository.cs" />
