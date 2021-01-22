@@ -1,22 +1,14 @@
-﻿using Newtonsoft.Json;
-using RMS.AWS.Logging;
-using RMS.Component.DataAccess.SQLite;
-using RMS.Component.DataAccess.SQLite.Entities;
-using RMS.Component.Logging;
-using RMS.Core.Common;
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RMS.AWS
 {
-    public class AWS4Client : IHttpClient
+    public class AWS4Client
     {
-        //public ILog Log { get; set; }
         public bool SaveResponseOnSuccess { get; set; }
         public bool SaveResponseOnFailure { get; set; }
         private ServerInfo server;
@@ -25,7 +17,7 @@ namespace RMS.AWS
             this.server = server;
         }
 
-        public async Task<bool> PostData(string messageBody, int httpTimeout = 30)
+        public bool PostData(string messageBody, int httpTimeout = 30)
         {
             DateTime timeStamp = DateTime.UtcNow;
             bool result = false;
@@ -56,18 +48,8 @@ namespace RMS.AWS
                         httpClient.Timeout = TimeSpan.FromSeconds(httpTimeout);
                         httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("AWS4-HMAC-SHA256", authorizationHeader);
 
-                        HttpResponseMessage msg = await httpClient.SendAsync(httpRequestMessage);
+                        HttpResponseMessage msg = httpClient.SendAsync(httpRequestMessage).Result;
                         string content = msg.Content.ReadAsStringAsync().Result;
-                        PushApiEntity entity = new PushApiEntity
-                        {
-                            Timestamp = DateTimeHelper.CurrentUniversalTime,
-                            Request = messageBody,
-                            ServerId = server.Id,
-                            Response = content,
-                            HttpStatusCode = msg.StatusCode
-                        };
-                        //PushApiRepository.Save(entity);
-                        Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
 
                         //Log?.Verbose(JsonConvert.SerializeObject(entity));
                         if (msg.StatusCode == HttpStatusCode.OK)
@@ -78,26 +60,15 @@ namespace RMS.AWS
                         {
                             result = false;
                         }
+                        Console.WriteLine(content);
                     }
                 }
                 catch (Exception ex)
                 {
-                    //Logger.Instance.Log.Write(messageBody);
+                    //Logger.Instance.Log.Write(server.Id.ToString(), MessageBody);
                     //ErrorLogger.GetInstance().LogExceptionAsync(ex, "Posting data to server from AWS4Client");
                     result = false;
-                    PushApiEntity entity = new PushApiEntity
-                    {
-                        Timestamp = DateTimeHelper.CurrentUniversalTime,
-                        Request = messageBody,
-                        ServerId = server.Id,
-                        HttpStatusCode = HttpStatusCode.Unused,
-                        Response = "[ERROR_AT_GATEWAY] => " + ex.Message
-                    };
 
-                    Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
-
-                    //Log?.Write(JsonConvert.SerializeObject(entity));
-                    //PushApiRepository.Save(entity);
                 }
             }
 
@@ -221,14 +192,5 @@ namespace RMS.AWS
             return string.Join("", signature.Select(x => x.ToString("x2")));
         }
 
-        bool IHttpClient.IsValid()
-        {
-            return !(string.IsNullOrWhiteSpace(server.AccessKey)
-                || string.IsNullOrWhiteSpace(server.SecretKey)
-                || string.IsNullOrWhiteSpace(server.Region)
-                || string.IsNullOrWhiteSpace(server.Service)
-                || string.IsNullOrWhiteSpace(server.XApiKey)
-                || string.IsNullOrWhiteSpace(server.EndPointUri));
-        }
     }
 }

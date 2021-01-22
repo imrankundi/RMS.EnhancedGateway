@@ -1,7 +1,9 @@
 ﻿namespace RMS.Protocols.GT
 {
-    public class CGRC01
+    public class CGRC01 : ICGRC
     {
+        public string TerminalId { get; private set; }
+        public string Code => "01";
         public string SIM1Number { get; set; }
         public string SIM1APN { get; set; }
         public string Sim1UserID { get; set; }
@@ -14,7 +16,33 @@
         public string ServerNumber { get; set; }
         public string ServerIP { get; set; }
         public int ServerPort { get; set; }
+        public CGRC01(string terminalId)
+        {
+            TerminalId = terminalId;
+        }
+        public void Parse(string[] strArray)
+        {
+            if (strArray != null)
+            {
+                if (strArray.Length > 29)
+                {
+                    SIM1Number= strArray[18];
+                    SIM1APN= strArray[19];
+                    Sim1UserID= strArray[20];
+                    Sim1Password= strArray[21];
+                    SIM2Number= strArray[22];
+                    SIM2APN= strArray[23];
+                    Sim2UserID= strArray[24];
+                    Sim2Password= strArray[25];
+                    GPRSTerminalID= strArray[26];
+                    ServerNumber = strArray[27];
+                    ServerIP = strArray[28];
 
+                    int.TryParse(strArray[29], out int port);
+                    ServerPort = port;
+                }
+            }
+        }
         public override string ToString()
         {
             SIM1Number = string.IsNullOrEmpty(SIM1Number) ? "" : SIM1Number;
@@ -26,8 +54,8 @@
             GPRSTerminalID = string.IsNullOrEmpty(GPRSTerminalID) ? "" : GPRSTerminalID;
             ServerNumber = string.IsNullOrEmpty(ServerNumber) ? "" : ServerNumber;
             ServerIP = string.IsNullOrEmpty(ServerIP) ? "" : ServerIP;
-            return string.Format("CGRC(ID(01,N,N)N({0},{1},{2},{3},{4},{5},{6},{7},{8},{9},)",
-                SIM1Number, SIM1APN, Sim1UserID, Sim1Password, SIM2Number, Sim2Password, GPRSTerminalID, ServerNumber,
+            return string.Format("{0}<CGRC(ID({1},N,N)N({2},{3},{4},{5},{6},{7},{8},{9},{10},{11})>",
+                TerminalId, Code, SIM1Number, SIM1APN, Sim1UserID, Sim1Password, SIM2Number, Sim2Password, GPRSTerminalID, ServerNumber,
                 ServerIP, ServerPort);
         }
     }

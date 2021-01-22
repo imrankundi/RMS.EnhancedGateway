@@ -20,13 +20,26 @@ namespace RMS.Parser
             {
                 int index = 0;
                 string terminalId = string.Empty;
+                int terminalIdLength = 8;
                 string pkt = string.Empty;
                 packet = packet.TrimEnd('\n').TrimEnd('\r');
                 packet = packet.TrimEnd('\r').TrimEnd('\n');
                 index = packet.IndexOf('<');
                 if (index != -1)
                 {
-                    terminalId = packet.Substring(0, index);
+
+                    if(index > terminalIdLength)
+                    {
+                        int start = (index - terminalIdLength);
+                        terminalId = packet.Substring(start, terminalIdLength);
+                    }
+                    else
+                    {
+                        terminalId = packet.Substring(0, index);
+                    }
+
+
+
                     pkt = packet.Substring(index, packet.Length - index).TrimStart('<').TrimEnd('>');
 
                     string protocolHeader = string.Empty;

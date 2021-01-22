@@ -11,8 +11,8 @@ namespace RMS.Parser
         public ProtocolType ProtocolType { get; set; }
         public string TerminalId { get; set; }
         public string Id { get; set; }
-        public int PageNumber { get; internal set; }
-        public DateTime ReceivedOn { get; internal set; }
+        public int PageNumber { get; set; }
+        public DateTime ReceivedOn { get; set; }
         public List<Field> Fields { get; private set; }
 
         public ParsedPacket()

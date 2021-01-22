@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using RMS.Core.Enumerations;
 using System;
 using System.Collections.Generic;
 
@@ -9,8 +8,8 @@ namespace RMS.Parser
     {
         [JsonIgnore]
         public string ProtocolHeader { get; set; }
-        [JsonIgnore]
-        public ProtocolType ProtocolType { get; set; }
+        //[JsonIgnore]
+        //public ProtocolType ProtocolType { get; set; }
         [JsonProperty("siteId")]
         public string TerminalId { get; set; }
         [JsonProperty("mapping")]

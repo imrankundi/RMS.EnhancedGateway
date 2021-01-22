@@ -118,6 +118,10 @@
       <Project>{6282be99-ce20-4331-b67f-35b216df771a}</Project>
       <Name>RMS.Parser</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RMS.Protocol\RMS.Protocol.csproj">
+      <Project>{0b2636c1-d2c7-4d9c-aacb-7010e2fc6eca}</Project>
+      <Name>RMS.Protocol</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

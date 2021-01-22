@@ -50,12 +50,9 @@
     <Compile Include="Configuration\ConfigurationPacket.cs" />
     <Compile Include="Configuration\DeviceConfigurationManager.cs" />
     <Compile Include="PacketParser.cs" />
-    <Compile Include="ReonParsedPacket.cs" />
-    <Compile Include="ParsedPacket.cs" />
     <Compile Include="ParsedPacketQueryBuilder.cs" />
     <Compile Include="OldParser.cs" />
     <Compile Include="ParsingManager.cs" />
-    <Compile Include="ReceivedPacket.cs" />
     <Compile Include="DeviceParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateManager.cs" />

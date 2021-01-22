@@ -5,7 +5,7 @@ namespace RMS.AWS.Logging
     public class Logger
     {
         private static readonly Logger instance = new Logger();
-        private const string logFileName = "packet.log";
+        private const string logFileName = "pushed-packets.log";
 
         public ILog Log { get; set; }
 

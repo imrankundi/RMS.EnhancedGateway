@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using RMS.Component.DataAccess.SQLite.Repositories;
 using RMS.Parser;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,9 @@ namespace RMS.AWS.ManualIngester
         {
             InitializeComponent();
             btnPushPackets.Enabled = false;
-            btnLoadParsedPackets.Enabled = false;
+            btnLoadParsedPackets.Enabled = true;
+            btnPushPackets.Enabled = false;
+            btnExecuteQuery.Enabled = false;
         }
 
         private void btnLoadParsedPackets_Click(object sender, EventArgs e)
@@ -22,18 +25,16 @@ namespace RMS.AWS.ManualIngester
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "JSON File|*.json";
+                ofd.Filter = "SQLite Database|*.sqlite|All Files|*.*";
                 var result = ofd.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    lblParsedPacketFile.Text = ofd.FileName;
-                    var text = File.ReadAllText(ofd.FileName);
-                    packets = JsonConvert.DeserializeObject<IEnumerable<ReonParsedPacket>>(text);
-                    btnPushPackets.Enabled = true;
+                    lblSelectedDatabaseFile.Text = ofd.FileName;
+                    btnExecuteQuery.Enabled = true;
                 }
                 else
                 {
-                    lblParsedPacketFile.Text = "No File Selected";
+                    lblSelectedDatabaseFile.Text = "No File Selected.";
                 }
             }
             catch (Exception ex)
@@ -89,10 +90,17 @@ namespace RMS.AWS.ManualIngester
                 {
                     try
                     {
-                        //var datetime = (DateTime)packet.Data[0]["Timestamp"];
-                        //datetime = datetime.AddHours(5);
-                        //packet.Data[0]["Timestamp"] = datetime;
-                        var res = client.PostData(JsonConvert.SerializeObject(packet, Formatting.None));
+                        var datetime = (DateTime)packet.Data[0]["Timestamp"];
+                        datetime = datetime.AddHours(5);
+                        packet.Data[0]["Timestamp"] = datetime;
+                        packet.Mapping = txtMapping.Text;
+
+                        string json = JsonConvert.SerializeObject(packet, Formatting.None);
+
+
+
+                        var res = client.PostData(json);
+                        
                         if (res)
                         {
                             count++;
@@ -116,7 +124,22 @@ namespace RMS.AWS.ManualIngester
         {
             totalPackets = packets.ToList().Count;
             btnPushPackets.Enabled = false;
-            Push();
+            foreach (var packet in packets)
+            {
+                var datetime = (DateTime)packet.Data[0]["Timestamp"];
+                datetime = datetime.AddHours(5);
+                packet.Data[0]["Timestamp"] = datetime;
+                packet.Mapping = txtMapping.Text;
+            }
+            //Push();
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "JSON|*.json";
+            var result = sfd.ShowDialog();
+            
+            if(result == DialogResult.OK)
+            {
+                File.WriteAllText(sfd.FileName, JsonConvert.SerializeObject(packets, Formatting.Indented));
+            }
         }
 
         private void UpdateText(int count)
@@ -132,6 +155,7 @@ namespace RMS.AWS.ManualIngester
                 if (count == totalPackets)
                 {
                     lblPushedPacketCount.Text = "[Completed...]";
+                    btnPushPackets.Enabled = true;
                 }
 
             }
@@ -139,6 +163,22 @@ namespace RMS.AWS.ManualIngester
             {
 
             }
+
+        }
+
+        private void btnExecuteQuery_Click(object sender, EventArgs e)
+        {
+            LogRepository repo = new LogRepository(lblSelectedDatabaseFile.Text);
+            var result = repo.ReadPushApiLog(txtQuery.Text);
+
+
+            var filteredResult = result.Select(x => JsonConvert.DeserializeObject<ReonParsedPacket>(x.Request)).ToList();
+
+            packets = filteredResult;
+            dgvResult.DataSource = filteredResult;
+
+
+            btnPushPackets.Enabled = true;
 
         }
     }

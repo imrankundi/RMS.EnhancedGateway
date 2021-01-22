@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RMS.AWS.ManualIngester;
+using System;
 using System.Windows.Forms;
 
 namespace RMS.LogReader
@@ -13,7 +14,7 @@ namespace RMS.LogReader
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogViewer());
+            Application.Run(new Ingester());
         }
     }
 }
