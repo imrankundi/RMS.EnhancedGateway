@@ -51,10 +51,12 @@
     <Compile Include="Configuration\ConfigParameterControlType.cs" />
     <Compile Include="Configuration\ConfigProtocol.cs" />
     <Compile Include="Configuration\ConfigSection.cs" />
-    <Compile Include="GT\CGRC00.cs" />
-    <Compile Include="GT\CGRC01.cs" />
-    <Compile Include="GT\CGRC02.cs" />
+    <Compile Include="GT\GTWatchdogSettings.cs" />
+    <Compile Include="GT\GTGeneralSettings.cs" />
+    <Compile Include="GT\GTSimAndServerSettings.cs" />
+    <Compile Include="GT\GTPollingAndGprsSettings.cs" />
     <Compile Include="GT\GTCommandFactory.cs" />
+    <Compile Include="GT\GTCommandType.cs" />
     <Compile Include="GT\ICGRC.cs" />
     <Compile Include="Packets\ParsedPacket.cs" />
     <Compile Include="Packets\ReceivedPacket.cs" />

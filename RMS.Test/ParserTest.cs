@@ -86,7 +86,7 @@ namespace RMS.Test
         [TestMethod]
         public void GT02()
         {
-            CGRC02 c = new CGRC02("SP333444");
+            GTPollingAndGprsSettings c = new GTPollingAndGprsSettings("SP333444");
             c.Device6 = "SPMX00DT";
             c.SMSTransmissionInterval = 10;
 

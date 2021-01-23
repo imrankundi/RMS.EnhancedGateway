@@ -1,13 +1,16 @@
 ﻿using Newtonsoft.Json;
+using RMS.Server.DataTypes.Requests;
 using System;
 using System.Text;
 
 namespace RMS.Protocols.GT
 {
-    public class CGRC00 : ICGRC
+    public class GTGeneralSettings : ICGRC
     {
         public string TerminalId { get; private set; }
         public string Code => "00";
+        public GTCommandType CommandType { get; set; }
+        public string CommandTypeDescription => CommandType.ToString();
         public string User1 { get; set; }
         public string User2 { get; set; }
         public string User3 { get; set; }
@@ -50,9 +53,10 @@ namespace RMS.Protocols.GT
         public bool Reserved11 { get; set; }
         public bool Reserved12 { get; set; }
 
-        public CGRC00(string terminalId)
+        public GTGeneralSettings(string terminalId)
         {
             TerminalId = terminalId;
+            CommandType = GTCommandType.GeneralSettings;
         }
         public override string ToString()
         {

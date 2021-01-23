@@ -1,23 +1,20 @@
 ﻿using RMS.Parser;
-using System;
+using RMS.Server.DataTypes.Requests;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RMS.Protocols.GT
 {
     public class GTCommandFactory
     {
-        public static ICollection<ICGRC> GetConfiguration(ReceivedPacket packet)
+        public static Dictionary<string, ICGRC> GetConfiguration(ReceivedPacket packet)
         {
-            List<ICGRC> list = new List<ICGRC>();
-            CGRC00 cgrc00 = new CGRC00(packet.TerminalId);
-            CGRC01 cgrc01 = new CGRC01(packet.TerminalId);
-            CGRC02 cgrc02 = new CGRC02(packet.TerminalId);
-            list.Add(cgrc00);
-            list.Add(cgrc01);
-            list.Add(cgrc02);
+            Dictionary<string, ICGRC> list = new Dictionary<string, ICGRC>();
+            GTGeneralSettings cgrc00 = new GTGeneralSettings(packet.TerminalId);
+            GTSimAndServerSettings cgrc01 = new GTSimAndServerSettings(packet.TerminalId);
+            GTPollingAndGprsSettings cgrc02 = new GTPollingAndGprsSettings(packet.TerminalId);
+            list.Add(nameof(GTGeneralSettings), cgrc00);
+            list.Add(nameof(GTSimAndServerSettings), cgrc01);
+            list.Add(nameof(GTPollingAndGprsSettings), cgrc02);
             //string raw = "SP333444<CGRC(ID(00,17/01/2021,07:51:07)N(+923333451191,+923468220229,+923333404763,,,,,,,,SR117R00BL01R00,13-Jan-16,16:27:21,+923,internet,,,+923,internet,,,333444,+923333451191,67.23.248.114,30004,SPMX00DT,SPMX01DT,,,,,,,1,15,2,4,30,9600,15,2)L(1000101101000000000001000000000000))\r>";
             string[] strArray = SplitPacket(packet.Data);
 
@@ -28,6 +25,66 @@ namespace RMS.Protocols.GT
             return list;
         }
 
+        public static ICGRC GetConfiguration(ReceivedPacket packet, GTCommandType commandType)
+        {
+            ICGRC cgrc = null;
+            string[] strArray = SplitPacket(packet.Data);
+            switch (commandType)
+            {
+                case GTCommandType.GeneralSettings:
+                    cgrc = new GTGeneralSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.SimAndServerSettings:
+                    cgrc = new GTSimAndServerSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.PollingAndGprsSettings:
+                    cgrc = new GTPollingAndGprsSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.WatchdogSettings:
+                    cgrc = new GTWatchdogSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.Reset:
+                case GTCommandType.ResetRom:
+                case GTCommandType.ExtendedConfigurationSettings:
+                default:
+                    break;
+            }
+            return cgrc;
+        }
+        public static string CreateGetCommand(string terminalId, GTCommandType commandType)
+        {
+            string command = string.Empty;
+
+            switch(commandType)
+            {
+                case GTCommandType.GeneralSettings:
+                case GTCommandType.SimAndServerSettings:
+                case GTCommandType.PollingAndGprsSettings:
+                    command = string.Format("{0}<SGRC00ST>", terminalId);
+                    break;
+                case GTCommandType.WatchdogSettings:
+                    command = string.Format("{0}<SGRC01ST>", terminalId);
+                    break;
+                case GTCommandType.Reset:
+                    command = "RESETGDT";
+                    break;
+                case GTCommandType.ResetRom:
+                    command = "RESETROM";
+                    break;
+                case GTCommandType.ExtendedConfigurationSettings:
+                    command = string.Format("{0}<SGRC03ST>", terminalId);
+                    break;
+                default:
+                    command = "";
+                    break;
+            }
+
+            return command;
+        }
         private static string[] SplitPacket(string rawPacket)
         {
             if (!string.IsNullOrEmpty(rawPacket))

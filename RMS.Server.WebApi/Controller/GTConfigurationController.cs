@@ -163,14 +163,13 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
-
-        [HttpGet]
-        public TerminalCommandResponse GetConfiguration(string id)
+        [HttpPost]
+        public TerminalCommandResponse GetConfiguration(GTGetConfigurationRequest configRequest)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
             TerminalCommandRequest request = new TerminalCommandRequest();
-            request.TerminalId = id;
-            request.Data = string.Format("{0}<SGRC00ST>", id);
+            request.TerminalId = configRequest.TerminalId;
+            request.Data = GTCommandFactory.CreateGetCommand(configRequest.TerminalId, configRequest.CommandType);
             try
             {
                 var cmd = TerminalCommandHandler.Instance.Find(request.TerminalId);
@@ -206,8 +205,130 @@ namespace RMS.Server.WebApi.Controller
                             TerminalCommandHandler.Instance.Remove(request.TerminalId);
                             //GTCommandFactory.GetConfiguration()
                             var data = command.ResponseData;
-                            ICollection<ICGRC> gtConfig = null;
+                            ICGRC gtConfig = null;
                             if(!string.IsNullOrEmpty(data))
+                            {
+                                var packet = ParsingManager.FirstLevelParser(data);
+                                gtConfig = GTCommandFactory.GetConfiguration(packet, configRequest.CommandType);
+                            }
+                            return new TerminalCommandResponse
+                            {
+                                RequestId = request.RequestId,
+                                Data = gtConfig,
+                                RequestType = request.RequestType,
+                                ResponseStatus = ResponseStatus.Success,
+                                Message = "Configuration Successful",
+                                TerminalId = command.TerminalId
+                            };
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        return new TerminalCommandResponse
+                        {
+                            RequestId = request.RequestId,
+                            Data = null,
+                            RequestType = request.RequestType,
+                            ResponseStatus = ResponseStatus.Failed,
+                            Message = ex.Message
+                        };
+                    }
+                    Thread.Sleep(config.TerminalCommandRetryIntervalInSeconds * 1000);
+                }
+
+                TerminalCommandHandler.Instance.Remove(request.TerminalId);
+                return new TerminalCommandResponse
+                {
+                    RequestId = request.RequestId,
+                    Data = null,
+                    RequestType = request.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = "Request Timed Out",
+                    TerminalId = request.TerminalId
+                };
+
+                //var configurations = WebApiServerConfigurationManager.Instance.Configurations;
+                //IOwinContext owinContext = Request.GetOwinContext();
+                //string clientIp = owinContext.Environment["server.RemoteIpAddress"] as string;
+
+                //return RequestHandler.HandleRequest(jsonObject, new CommunicationContext { IP = clientIp });
+
+            }
+            catch (Exception ex)
+            {
+                return new TerminalCommandResponse
+                {
+                    RequestId = request.RequestId,
+                    Data = null,
+                    RequestType = request.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = ex.Message
+                };
+            }
+        }
+        [HttpGet]
+        public TerminalCommandResponse SetConfiguration(string id)
+        {
+            var config = WebApiServerConfigurationManager.Instance.Configurations;
+            TerminalCommandRequest request = new TerminalCommandRequest();
+            request.TerminalId = id;
+
+            var cgrc00 = new GTPollingAndGprsSettings(id);
+            cgrc00.Device1 = "SDPC00DT";
+            cgrc00.Device2 = "SDC100DT";
+            cgrc00.Device3 = "SPMX00DT";
+            cgrc00.Device4 = "SAPX00DT";
+            cgrc00.Device5 = "SFSX00DT";
+            cgrc00.Device6 = "";
+            cgrc00.Device7 = "";
+            cgrc00.Device8 = "";
+            cgrc00.GSMRetryTimeOut = 1;
+            cgrc00.SMSTransmissionInterval = 15;
+            cgrc00.GPRSRetryTimeout = 2;
+            cgrc00.GPRSRetryCount = 4;
+            cgrc00.PollingInterval = 30;
+            cgrc00.PollingBaudRate = 9600;
+            cgrc00.MaxServerIdleTime = 10;
+            cgrc00.NoOfDevices = 5;
+            request.Data = cgrc00.ToString();
+            try
+            {
+                var cmd = TerminalCommandHandler.Instance.Find(request.TerminalId);
+                if (cmd != null)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestId = request.RequestId,
+                        Data = request.Data,
+                        RequestType = request.RequestType,
+                        ResponseStatus = ResponseStatus.Failed,
+                        Message = "Another configuration already in process. Please try again later"
+                    };
+                }
+                TerminalCommandHandler.Instance.Add(new TerminalCommand
+                {
+                    RequestData = request.Data,
+                    TerminalId = request.TerminalId,
+                    RequestReceivedOn = DateTimeHelper.CurrentUniversalTime,
+                    Status = CommandStatus.RequestReceived
+                });
+                WebServer.server.Notify(request);
+
+                int retries = config.TerminalCommandRetries;
+                while (retries > 0)
+                {
+                    retries--;
+                    try
+                    {
+                        var command = TerminalCommandHandler.Instance.Find(request.TerminalId);
+                        if (command.Status == CommandStatus.ResponseReceived)
+                        {
+                            TerminalCommandHandler.Instance.Remove(request.TerminalId);
+                            //GTCommandFactory.GetConfiguration()
+                            var data = command.ResponseData;
+                            Dictionary<string, ICGRC> gtConfig = null;
+                            if (!string.IsNullOrEmpty(data))
                             {
                                 var packet = ParsingManager.FirstLevelParser(data);
                                 gtConfig = GTCommandFactory.GetConfiguration(packet);
@@ -215,7 +336,7 @@ namespace RMS.Server.WebApi.Controller
                             return new TerminalCommandResponse
                             {
                                 RequestId = request.RequestId,
-                                Data = JsonConvert.SerializeObject(gtConfig),
+                                Data = gtConfig,
                                 RequestType = request.RequestType,
                                 ResponseStatus = ResponseStatus.Success,
                                 Message = "Configuration Successful",

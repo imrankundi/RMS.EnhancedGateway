@@ -7,6 +7,6 @@ namespace RMS.Server.DataTypes.Responses
     {
         public GatewayRequestType RequestType { get; set; }
         public string TerminalId { get; set; }
-        public string Data { get; set; }
+        public object Data { get; set; }
     }
 }

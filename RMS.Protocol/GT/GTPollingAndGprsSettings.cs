@@ -1,9 +1,13 @@
-﻿namespace RMS.Protocols.GT
+﻿using RMS.Server.DataTypes.Requests;
+
+namespace RMS.Protocols.GT
 {
-    public class CGRC02 : ICGRC
+    public class GTPollingAndGprsSettings : ICGRC
     {
         public string TerminalId { get; private set; }
         public string Code => "02";
+        public GTCommandType CommandType { get; set; }
+        public string CommandTypeDescription => CommandType.ToString();
         public string Device1 { get; set; }
         public string Device2 { get; set; }
         public string Device3 { get; set; }
@@ -20,9 +24,10 @@
         public int PollingBaudRate { get; set; }
         public int MaxServerIdleTime { get; set; }
         public int NoOfDevices { get; set; }
-        public CGRC02(string terminalId)
+        public GTPollingAndGprsSettings(string terminalId)
         {
             TerminalId = terminalId;
+            CommandType = GTCommandType.PollingAndGprsSettings;
         }
         public void Parse(string[] strArray)
         {

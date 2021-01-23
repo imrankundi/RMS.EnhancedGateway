@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceTestApp;
+using System;
 using System.Windows.Forms;
 
 namespace RMS
@@ -13,7 +14,7 @@ namespace RMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new RequestForm());
         }
     }
 }

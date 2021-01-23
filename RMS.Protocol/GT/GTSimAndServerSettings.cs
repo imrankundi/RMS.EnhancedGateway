@@ -1,9 +1,13 @@
-﻿namespace RMS.Protocols.GT
+﻿using RMS.Server.DataTypes.Requests;
+
+namespace RMS.Protocols.GT
 {
-    public class CGRC01 : ICGRC
+    public class GTSimAndServerSettings : ICGRC
     {
         public string TerminalId { get; private set; }
         public string Code => "01";
+        public GTCommandType CommandType { get; set; }
+        public string CommandTypeDescription => CommandType.ToString();
         public string SIM1Number { get; set; }
         public string SIM1APN { get; set; }
         public string Sim1UserID { get; set; }
@@ -16,9 +20,10 @@
         public string ServerNumber { get; set; }
         public string ServerIP { get; set; }
         public int ServerPort { get; set; }
-        public CGRC01(string terminalId)
+        public GTSimAndServerSettings(string terminalId)
         {
             TerminalId = terminalId;
+            CommandType = GTCommandType.SimAndServerSettings;
         }
         public void Parse(string[] strArray)
         {
