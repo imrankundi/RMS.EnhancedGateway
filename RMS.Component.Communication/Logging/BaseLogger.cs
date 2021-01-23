@@ -53,18 +53,26 @@ namespace RMS.Component.Communication.Logging
 
         public void Write(string text)
         {
-            string file = string.Format("{0}\\{1}-{2}.{3}", this.directory, this.fileName,
-                DateTime.Now.ToString("yyyyMMddHH"), this.fileExtension);
+            //string file = string.Format("{0}\\{1}-{2}.{3}", this.directory, this.fileName,
+            //    DateTime.Now.ToString("yyyyMMddHH"), this.fileExtension);
+            string dir = string.Format("{0}\\{1}", this.directory, DateTime.UtcNow.ToString("yyyyMMdd"));
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+            if (!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
+            }
+            string file = string.Format("{0}\\{1}-{2}.{3}", dir, this.fileName,
+                DateTime.UtcNow.ToString("yyyyMMddHH"), this.fileExtension);
             //string content = string.Format("{0} ({1}) [{2}] | {3}\n",
             //    DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff zzz"),
             //    Thread.CurrentThread.ManagedThreadId.ToString("000"),
             //    level.ToString().Substring(0, 3).ToUpper(),
             //    text);
 
-            if (!Directory.Exists(directory))
-            {
-                Directory.CreateDirectory(directory);
-            }
+            
             try
             {
                 BaseLogger.locker.AcquireWriterLock(int.MaxValue);
