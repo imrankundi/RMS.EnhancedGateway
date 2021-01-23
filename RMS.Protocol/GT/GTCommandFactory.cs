@@ -1,4 +1,5 @@
-﻿using RMS.Parser;
+﻿using Newtonsoft.Json.Linq;
+using RMS.Parser;
 using RMS.Server.DataTypes.Requests;
 using System.Collections.Generic;
 
@@ -48,8 +49,15 @@ namespace RMS.Protocols.GT
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.Reset:
+                    cgrc = new GTReset(packet.TerminalId);
+                    break;
                 case GTCommandType.ResetRom:
+                    cgrc = new GTResetRom(packet.TerminalId);
+                    break;
                 case GTCommandType.ExtendedConfigurationSettings:
+                    cgrc = new GTExtendedConfigurationSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
                 default:
                     break;
             }
@@ -84,6 +92,39 @@ namespace RMS.Protocols.GT
             }
 
             return command;
+        }
+        public static string CreateSetCommand(string terminalId, object data, GTCommandType commandType)
+        {
+            JObject jsonObject = (JObject)data;
+            ICGRC cgrc = new GTNullCommand(terminalId);
+            switch(commandType)
+            {
+                case GTCommandType.GeneralSettings:
+                    cgrc = jsonObject.ToObject<GTGeneralSettings>();
+                    break;
+                case GTCommandType.PollingAndGprsSettings:
+                    cgrc = jsonObject.ToObject<GTPollingAndGprsSettings>();
+                    break;
+                case GTCommandType.SimAndServerSettings:
+                    cgrc = jsonObject.ToObject<GTSimAndServerSettings>();
+                    break;
+                case GTCommandType.Reset:
+                    cgrc = jsonObject.ToObject<GTReset>();
+                    break;
+                case GTCommandType.ResetRom:
+                    cgrc = jsonObject.ToObject<GTResetRom>();
+                    break;
+                case GTCommandType.ExtendedConfigurationSettings:
+                    cgrc = jsonObject.ToObject<GTExtendedConfigurationSettings>();
+                    break;
+                case GTCommandType.WatchdogSettings:
+                    cgrc = jsonObject.ToObject<GTWatchdogSettings>();
+                    break;
+                default:
+                    break;
+            }
+
+            return cgrc.ToString();
         }
         private static string[] SplitPacket(string rawPacket)
         {

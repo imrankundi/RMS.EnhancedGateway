@@ -5,34 +5,24 @@ using System.Text;
 
 namespace RMS.Protocols.GT
 {
-    public class GTWatchdogSettings : ICGRC
+    public class GTReset : ICGRC
     {
         public string TerminalId { get; private set; }
         public string Code => "NA";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();
         public int TimerInterval { get; set; }
-        public GTWatchdogSettings(string terminalId)
+        public GTReset(string terminalId)
         {
             TerminalId = terminalId;
-            CommandType = GTCommandType.WatchdogSettings;
+            CommandType = GTCommandType.Reset;
         }
         public override string ToString()
         {
-            return string.Format("{0}<WDT({1})>",
-                TerminalId, TimerInterval);
+            return "RESETGDT";
         }
         public void Parse(string[] strArray)
         {
-            if (strArray != null)
-            {
-                if (strArray.Length > 17)
-                {
-                    int.TryParse(strArray[5], out int timerInterval);
-                    TimerInterval = timerInterval;
-                }
-
-            }
         }
         public string ToJson()
         {

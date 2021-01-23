@@ -113,6 +113,7 @@
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\TerminalCommandHandler.cs" />
     <Compile Include="Common\TerminalHelper.cs" />
+    <Compile Include="Common\TerminalRequestHandler.cs" />
     <Compile Include="Controller\GTConfigurationController.cs" />
     <Compile Include="Controller\ConfigureController.cs" />
     <Compile Include="Controller\GatewayController.cs" />

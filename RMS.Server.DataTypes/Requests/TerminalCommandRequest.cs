@@ -9,6 +9,5 @@
 
         public string TerminalId { get; set; }
         public string Data { get; set; }
-        //public IList<string> Packets { get; set; }
     }
 }
