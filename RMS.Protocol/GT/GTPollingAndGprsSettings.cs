@@ -73,7 +73,7 @@ namespace RMS.Protocols.GT
                 }
             }
         }
-        public override string ToString()
+        public string CreateCommand()
         {
             Device1 = string.IsNullOrEmpty(Device1) ? "" : Device1;
             Device2 = string.IsNullOrEmpty(Device2) ? "" : Device2;
@@ -83,10 +83,14 @@ namespace RMS.Protocols.GT
             Device6 = string.IsNullOrEmpty(Device6) ? "" : Device6;
             Device7 = string.IsNullOrEmpty(Device7) ? "" : Device7;
             Device8 = string.IsNullOrEmpty(Device8) ? "" : Device8;
-            return string.Format("{0}<CGRC(ID({1},N,N)N({2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},{17},)>",
-                TerminalId, Code, Device1, Device2, Device3, Device4, Device5, Device6, Device7, Device8,
+            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},{13},{14},{15},{16},)",
+                Code, Device1, Device2, Device3, Device4, Device5, Device6, Device7, Device8,
                 GSMRetryTimeOut, SMSTransmissionInterval, GPRSRetryTimeout, GPRSRetryCount, PollingInterval,
                 PollingBaudRate, MaxServerIdleTime, NoOfDevices);
+        }
+        public override string ToString()
+        {
+            return string.Format("{0}<{1}>", TerminalId, CreateCommand());
         }
 
     }

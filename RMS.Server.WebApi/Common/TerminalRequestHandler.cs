@@ -8,6 +8,7 @@ using RMS.Server.DataTypes.Responses;
 using RMS.Server.WebApi.Configuration;
 using System;
 using System.Threading;
+using System.Linq;
 
 namespace RMS.Server.WebApi.Common
 {
@@ -20,6 +21,18 @@ namespace RMS.Server.WebApi.Common
             TerminalCommandResponse response = new TerminalCommandResponse();
             try
             {
+                var connected = WebServer.server.ChannelKeys.Contains(commandRequest.TerminalId);
+                if(!connected)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestId = commandRequest.RequestId,
+                        Data = commandRequest.Data,
+                        RequestType = commandRequest.RequestType,
+                        ResponseStatus = ResponseStatus.Failed,
+                        Message = "Site not connected."
+                    };
+                }
                 var cmd = TerminalCommandHandler.Instance.Find(commandRequest.TerminalId);
                 if (cmd != null)
                 {

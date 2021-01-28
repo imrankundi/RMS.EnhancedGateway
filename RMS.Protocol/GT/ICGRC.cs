@@ -17,5 +17,6 @@ namespace RMS.Protocols.GT
         GTCommandType CommandType { get; set; }
         string CommandTypeDescription { get; }
         void Parse(string[] strArray);
+        string CreateCommand();
     }
 }

@@ -17,6 +17,10 @@ namespace RMS.Protocols.GT
             TerminalId = terminalId;
             CommandType = GTCommandType.Unknown;
         }
+        public string CreateCommand()
+        {
+            return ToString();
+        }
         public override string ToString()
         {
             return "";

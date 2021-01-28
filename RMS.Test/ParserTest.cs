@@ -109,5 +109,56 @@ namespace RMS.Test
 
         }
 
+        [TestMethod]
+        public void ParseModbusGetCommand()
+        {
+            var cmd1 = GTCommandFactory.CreateGetModbusDeviceCommand("SP111111", 1, 1);
+            var cmd2 = GTCommandFactory.CreateGetModbusDeviceCommand("SP111111", 1, 5);
+            var cmd3 = GTCommandFactory.CreateGetModbusDeviceCommand("SP111111", 10, 5);
+        }
+
+        [TestMethod]
+        public void ParseModbusGetParsing()
+        {
+            string raw = "SP003254<CMOD(GET[MNAR,38,4,4095,51,0])>";
+            var packet = ParsingManager.FirstLevelParser(raw);
+            var str = packet.Data.Replace("GET[", "").TrimEnd(']');
+            var strArray = str.Split(',');
+            GTGetModbusDevice device = new GTGetModbusDevice(packet.TerminalId);
+            device.Parse(strArray);
+
+            device.DeviceName = "MDPC";
+            var s = device.ToString();
+        }
+        [TestMethod]
+        public void ParseModbusAddCommand()
+        {
+            GTAddModbusDeviceCollection col = new GTAddModbusDeviceCollection("SP111111");
+            
+            
+            GTAddModbusDevice device = new GTAddModbusDevice("SP111111");
+
+            device.DeviceName = "MDPC";
+            device.DeviceId = 2;
+            device.NumberOfElements = 10;
+            device.StartingAddress = 100;
+
+            col.Devices.Add(device);
+            col.Devices.Add(device);
+
+            GTAddModbusDevice device2 = new GTAddModbusDevice("SP111111");
+
+            device.DeviceName = "MGSE";
+            device.DeviceId = 5;
+            device.NumberOfElements = 10;
+            device.StartingAddress = 200;
+
+            col.Devices.Add(device);
+            col.Devices.Add(device);
+
+            var s = device.ToString();
+
+            var c = col.ToString();
+        }
     }
 }

@@ -9,6 +9,10 @@
         ExtendedConfigurationSettings = 4,
         Reset = 5,
         ResetRom = 6,
-        WatchdogSettings = 7
+        WatchdogSettings = 7,
+        AddModbusDevice = 8,
+        AddMultipleModbusDevices = 9,
+        GetModbusDevice = 10,
+        GetMultipleModbusDevices = 11
     }
 }

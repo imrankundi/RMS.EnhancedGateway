@@ -156,6 +156,90 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
-        
+        [HttpPost]
+        public TerminalCommandResponse AddMultipleModbusDevices(GTSetConfigurationRequest request)
+        {
+            var config = WebApiServerConfigurationManager.Instance.Configurations;
+            TerminalCommandRequest commandRequest = new TerminalCommandRequest();
+            commandRequest.TerminalId = request.TerminalId;
+            try
+            {
+                commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
+                return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+            }
+            catch (Exception ex)
+            {
+                return new TerminalCommandResponse
+                {
+                    RequestId = commandRequest.RequestId,
+                    Data = null,
+                    RequestType = commandRequest.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = ex.Message
+                };
+            }
+        }
+        [HttpPost]
+        public TerminalCommandResponse AddModbusDevice(GTSetConfigurationRequest request)
+        {
+            var config = WebApiServerConfigurationManager.Instance.Configurations;
+            TerminalCommandRequest commandRequest = new TerminalCommandRequest();
+            commandRequest.TerminalId = request.TerminalId;
+            try
+            {
+                commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
+                return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+            }
+            catch (Exception ex)
+            {
+                return new TerminalCommandResponse
+                {
+                    RequestId = commandRequest.RequestId,
+                    Data = null,
+                    RequestType = commandRequest.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = ex.Message
+                };
+            }
+        }
+        [HttpPost]
+        public TerminalCommandResponse GetModbusDevice(GTGetModbusDeviceRequest request)
+        {
+            var config = WebApiServerConfigurationManager.Instance.Configurations;
+            TerminalCommandRequest commandRequest = new TerminalCommandRequest();
+            commandRequest.TerminalId = request.TerminalId;
+            try
+            {
+                if(request.CommandType == GTCommandType.GetModbusDevice || request.CommandType == GTCommandType.GetMultipleModbusDevices)
+                {
+                    commandRequest.Data = GTCommandFactory.CreateGetModbusDeviceCommand(request.TerminalId, request.StartIndex, request.NumberOfDevices);
+                    var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                    return response;
+                }
+                else
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestId = commandRequest.RequestId,
+                        Data = null,
+                        RequestType = commandRequest.RequestType,
+                        ResponseStatus = ResponseStatus.Failed,
+                        Message = "Invalid Command Request"
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new TerminalCommandResponse
+                {
+                    RequestId = commandRequest.RequestId,
+                    Data = null,
+                    RequestType = commandRequest.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = ex.Message
+                };
+            }
+        }
+
     }
 }

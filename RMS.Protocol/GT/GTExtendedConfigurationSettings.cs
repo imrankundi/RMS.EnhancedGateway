@@ -11,49 +11,71 @@ namespace RMS.Protocols.GT
         public string Code => "03";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();
-        public string N1 { get; set; }
-        public string N2 { get; set; }
-        public string N3 { get; set; }
-        public string N4 { get; set; }
-        public string N5 { get; set; }
-        public string N6 { get; set; }
-        public string N7 { get; set; }
-        public string N8 { get; set; }
-        public bool L1 { get; set; }
-        public bool L2 { get; set; }
-        public bool L3 { get; set; }
-        public bool L4 { get; set; }
-        public bool L5 { get; set; }
-        public bool L6 { get; set; }
-        public bool L7 { get; set; }
-        public bool L8 { get; set; }
-        
+        public int StorageSnapshotInterval { get; set; }
+        public int StorageRmsSendInterval { get; set; }
+        [JsonIgnore]
+        public string AuxLatchStatus
+        {
+            get
+            {
+                return string.Format("{0}{1}{2}{3}{4}{5}", (int)Aux1LatchState, (int)Aux2LatchState,
+                    (int)Aux3LatchState, (int)Aux4LatchState, (int)Aux5LatchState, (int)Aux6LatchState);
+            }
+        }
+        public GTAuxLatchState Aux1LatchState { get; set; }
+        public GTAuxLatchState Aux2LatchState { get; set; }
+        public GTAuxLatchState Aux3LatchState { get; set; }
+        public GTAuxLatchState Aux4LatchState { get; set; }
+        public GTAuxLatchState Aux5LatchState { get; set; }
+        public GTAuxLatchState Aux6LatchState { get; set; }
+        public int AuxLatchTime { get; set; }
+        [JsonIgnore]
+        public string Reserved1 { get; set; }
+        [JsonIgnore]
+        public string Reserved2 { get; set; }
+        [JsonIgnore]
+        public string Reserved3 { get; set; }
+        [JsonIgnore]
+        public string Reserved4 { get; set; }
+        public bool ClearStorage { get; set; }
+        public bool StorageFoundStatus { get; private set; }
+        public bool StorageBusyStatus { get; private set; }
+        [JsonIgnore]
+        public bool ReservedFlag1 { get; set; }
+        [JsonIgnore]
+        public bool ReservedFlag2 { get; set; }
+        [JsonIgnore]
+        public bool ReservedFlag3 { get; set; }
+        [JsonIgnore]
+        public bool ReservedFlag4 { get; set; }
+        [JsonIgnore]
+        public bool ReservedFlag5 { get; set; }
+
         public GTExtendedConfigurationSettings(string terminalId)
         {
             TerminalId = terminalId;
             CommandType = GTCommandType.ExtendedConfigurationSettings;
         }
+        public string CreateCommand()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(GetBooleanAsString(ClearStorage));
+            sb.Append(GetBooleanAsString(StorageFoundStatus));
+            sb.Append(GetBooleanAsString(StorageBusyStatus));
+            sb.Append(GetBooleanAsString(ReservedFlag1));
+            sb.Append(GetBooleanAsString(ReservedFlag2));
+            sb.Append(GetBooleanAsString(ReservedFlag3));
+            sb.Append(GetBooleanAsString(ReservedFlag4));
+            sb.Append(GetBooleanAsString(ReservedFlag5));
+
+            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8})L({9})",
+                Code, StorageSnapshotInterval, StorageRmsSendInterval, AuxLatchStatus,
+                AuxLatchTime, Reserved1, Reserved2, Reserved3, Reserved4, sb.ToString());
+        }
         public override string ToString()
         {
-            N1 = string.IsNullOrEmpty(N1) ? "" : N1;
-            N2 = string.IsNullOrEmpty(N2) ? "" : N2;
-            N3 = string.IsNullOrEmpty(N3) ? "" : N3;
-            N4 = string.IsNullOrEmpty(N4) ? "" : N4;
-            N5 = string.IsNullOrEmpty(N5) ? "" : N5;
-            N8 = string.IsNullOrEmpty(N8) ? "" : N8;
-
-            StringBuilder sb = new StringBuilder();
-            sb.Append(GetBooleanAsString(L1));
-            sb.Append(GetBooleanAsString(L2));
-            sb.Append(GetBooleanAsString(L3));
-            sb.Append(GetBooleanAsString(L4));
-            sb.Append(GetBooleanAsString(L5));
-            sb.Append(GetBooleanAsString(L6));
-            sb.Append(GetBooleanAsString(L7));
-            sb.Append(GetBooleanAsString(L8));
-
-            return string.Format("{0}<CGRC(ID({1},N,N)N({2},{3},{4},{5},{6},{7},{8},{9})L({10})>",
-                TerminalId, Code, N1, N2, N3, N4, N5, N6, N7, N8, sb.ToString());
+            return string.Format("{0}<{1}>",
+                TerminalId, CreateCommand());
         }
         private string GetBooleanAsString(bool value)
         {
@@ -63,34 +85,64 @@ namespace RMS.Protocols.GT
         {
             return (value == '1' ? true : false);
         }
+        private void GetLatchStatus(string value)
+        {
+            var charArray = value.ToCharArray();
+            if (charArray != null && charArray.Length > 5)
+            {
+                Aux1LatchState = GetCharToLatchState(charArray[5]);
+                Aux2LatchState = GetCharToLatchState(charArray[4]);
+                Aux3LatchState = GetCharToLatchState(charArray[3]);
+                Aux4LatchState = GetCharToLatchState(charArray[2]);
+                Aux5LatchState = GetCharToLatchState(charArray[1]);
+                Aux6LatchState = GetCharToLatchState(charArray[0]);
+            }
+        }
+        private GTAuxLatchState GetCharToLatchState(char c)
+        {
+            switch (c)
+            {
+                case '0':
+                    return GTAuxLatchState.LatchOnLow;
+                case '1':
+                    return GTAuxLatchState.LatchOnHigh;
+                default:
+                    return GTAuxLatchState.DisableLatching;
+            }
+        }
         public void Parse(string[] strArray)
         {
             if (strArray != null)
             {
                 if (strArray.Length > 12)
                 {
-                    N1 = strArray[5];
-                    N2 = strArray[6];
-                    N3 = strArray[7];
-                    N4 = strArray[8];
-                    N5 = strArray[9];
-                    N6 = strArray[10];
-                    N7 = strArray[11];
-                    N8 = strArray[12];
+                    int.TryParse(strArray[5], out int storageSnapshotInterval);
+                    StorageSnapshotInterval = storageSnapshotInterval;
+
+                    int.TryParse(strArray[6], out int storageRmsSendInterval);
+                    StorageRmsSendInterval = storageRmsSendInterval;
+
+                    int.TryParse(strArray[8], out int auxLatchTime);
+                    AuxLatchTime = auxLatchTime;
+
+                    Reserved1 = strArray[9];
+                    Reserved2 = strArray[10];
+                    Reserved3 = strArray[11];
+                    Reserved4 = strArray[12];
                 }
 
-                if(strArray.Length > 14)
+                if (strArray.Length > 14)
                 {
                     var charArray = strArray[14].ToCharArray();
 
-                    L1 = GetCharAsBoolean(charArray[0]);
-                    L2 = GetCharAsBoolean(charArray[1]);
-                    L3 = GetCharAsBoolean(charArray[2]);
-                    L4 = GetCharAsBoolean(charArray[3]);
-                    L5 = GetCharAsBoolean(charArray[4]);
-                    L6 = GetCharAsBoolean(charArray[5]);
-                    L7 = GetCharAsBoolean(charArray[6]);
-                    L8 = GetCharAsBoolean(charArray[7]);
+                    ClearStorage = GetCharAsBoolean(charArray[0]);
+                    StorageFoundStatus = GetCharAsBoolean(charArray[1]);
+                    StorageBusyStatus = GetCharAsBoolean(charArray[2]);
+                    ReservedFlag1 = GetCharAsBoolean(charArray[3]);
+                    ReservedFlag2 = GetCharAsBoolean(charArray[4]);
+                    ReservedFlag3 = GetCharAsBoolean(charArray[5]);
+                    ReservedFlag4 = GetCharAsBoolean(charArray[6]);
+                    ReservedFlag5 = GetCharAsBoolean(charArray[7]);
 
                 }
             }

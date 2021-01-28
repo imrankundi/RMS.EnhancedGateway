@@ -2,6 +2,7 @@
 using RMS.Parser;
 using RMS.Server.DataTypes.Requests;
 using System.Collections.Generic;
+using System.Text;
 
 namespace RMS.Protocols.GT
 {
@@ -29,22 +30,26 @@ namespace RMS.Protocols.GT
         public static ICGRC GetConfiguration(ReceivedPacket packet, GTCommandType commandType)
         {
             ICGRC cgrc = null;
-            string[] strArray = SplitPacket(packet.Data);
+            string[] strArray = null;
             switch (commandType)
             {
                 case GTCommandType.GeneralSettings:
+                    strArray = SplitPacket(packet.Data);
                     cgrc = new GTGeneralSettings(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.SimAndServerSettings:
+                    strArray = SplitPacket(packet.Data);
                     cgrc = new GTSimAndServerSettings(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.PollingAndGprsSettings:
+                    strArray = SplitPacket(packet.Data);
                     cgrc = new GTPollingAndGprsSettings(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.WatchdogSettings:
+                    strArray = SplitPacket(packet.Data);
                     cgrc = new GTWatchdogSettings(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
@@ -55,7 +60,18 @@ namespace RMS.Protocols.GT
                     cgrc = new GTResetRom(packet.TerminalId);
                     break;
                 case GTCommandType.ExtendedConfigurationSettings:
+                    strArray = SplitPacket(packet.Data);
                     cgrc = new GTExtendedConfigurationSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.GetModbusDevice:
+                    strArray = SplitPacket(packet.Data.Replace("GET[","").TrimEnd(']'));
+                    cgrc = new GTGetModbusDevice(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.GetMultipleModbusDevices:
+                    strArray = SplitPacket(packet.Data, ';');
+                    cgrc = new GTGetModbusDeviceCollection(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 default:
@@ -93,6 +109,18 @@ namespace RMS.Protocols.GT
 
             return command;
         }
+        public static string CreateGetModbusDeviceCommand(string terminalId, int startIndex, int numberOfDevices = 1)
+        {
+            string command;
+
+            StringBuilder sb = new StringBuilder();
+            for(int ii = startIndex; ii < (startIndex + numberOfDevices); ii++)
+            {
+                sb.AppendFormat("GET[{0}];", ii);
+            }
+            command = string.Format("{0}<CMOD({1})>", terminalId, sb.ToString().TrimEnd(';'));
+            return command;
+        }
         public static string CreateSetCommand(string terminalId, object data, GTCommandType commandType)
         {
             JObject jsonObject = (JObject)data;
@@ -120,17 +148,23 @@ namespace RMS.Protocols.GT
                 case GTCommandType.WatchdogSettings:
                     cgrc = jsonObject.ToObject<GTWatchdogSettings>();
                     break;
+                case GTCommandType.AddMultipleModbusDevices:
+                    cgrc = jsonObject.ToObject<GTAddModbusDeviceCollection>();
+                    break;
+                case GTCommandType.AddModbusDevice:
+                    cgrc = jsonObject.ToObject<GTAddModbusDevice>();
+                    break;
                 default:
                     break;
             }
 
             return cgrc.ToString();
         }
-        private static string[] SplitPacket(string rawPacket)
+        private static string[] SplitPacket(string rawPacket, char separator = ',')
         {
             if (!string.IsNullOrEmpty(rawPacket))
             {
-                string[] strArray = rawPacket.Split(',');
+                string[] strArray = rawPacket.Split(separator);
                 return strArray;
             }
 

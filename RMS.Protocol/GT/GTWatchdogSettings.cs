@@ -17,10 +17,13 @@ namespace RMS.Protocols.GT
             TerminalId = terminalId;
             CommandType = GTCommandType.WatchdogSettings;
         }
+        public string CreateCommand()
+        {
+            return string.Format("WDT({0})", TimerInterval);
+        }
         public override string ToString()
         {
-            return string.Format("{0}<WDT({1})>",
-                TerminalId, TimerInterval);
+            return string.Format("{0}<{1}>", TerminalId, CreateCommand());
         }
         public void Parse(string[] strArray)
         {

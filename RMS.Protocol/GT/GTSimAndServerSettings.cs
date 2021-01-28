@@ -48,7 +48,7 @@ namespace RMS.Protocols.GT
                 }
             }
         }
-        public override string ToString()
+        public string CreateCommand()
         {
             SIM1Number = string.IsNullOrEmpty(SIM1Number) ? "" : SIM1Number;
             SIM1APN = string.IsNullOrEmpty(SIM1APN) ? "" : SIM1APN;
@@ -59,9 +59,13 @@ namespace RMS.Protocols.GT
             GPRSTerminalID = string.IsNullOrEmpty(GPRSTerminalID) ? "" : GPRSTerminalID;
             ServerNumber = string.IsNullOrEmpty(ServerNumber) ? "" : ServerNumber;
             ServerIP = string.IsNullOrEmpty(ServerIP) ? "" : ServerIP;
-            return string.Format("{0}<CGRC(ID({1},N,N)N({2},{3},{4},{5},{6},{7},{8},{9},{10},{11})>",
-                TerminalId, Code, SIM1Number, SIM1APN, Sim1UserID, Sim1Password, SIM2Number, Sim2Password, GPRSTerminalID, ServerNumber,
-                ServerIP, ServerPort);
+            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",
+                TerminalId, Code, SIM1Number, SIM1APN, Sim1UserID, Sim1Password, SIM2Number, 
+                Sim2Password, GPRSTerminalID, ServerNumber, ServerIP, ServerPort);
+        }
+        public override string ToString()
+        {
+            return string.Format("{0}<{1}>", TerminalId, CreateCommand());
         }
     }
 }

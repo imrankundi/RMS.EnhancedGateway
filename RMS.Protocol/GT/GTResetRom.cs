@@ -17,9 +17,13 @@ namespace RMS.Protocols.GT
             TerminalId = terminalId;
             CommandType = GTCommandType.ResetRom;
         }
+        public string CreateCommand()
+        {
+            return "RESETGDT";
+        }
         public override string ToString()
         {
-            return "RESETROM";
+            return CreateCommand();
         }
         public void Parse(string[] strArray)
         {

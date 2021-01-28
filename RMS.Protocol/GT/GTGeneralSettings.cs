@@ -58,7 +58,7 @@ namespace RMS.Protocols.GT
             TerminalId = terminalId;
             CommandType = GTCommandType.GeneralSettings;
         }
-        public override string ToString()
+        public string CreateCommand()
         {
             User1 = string.IsNullOrEmpty(User1) ? "" : User1;
             User2 = string.IsNullOrEmpty(User2) ? "" : User2;
@@ -99,8 +99,12 @@ namespace RMS.Protocols.GT
             sb.Append(GetBooleanAsString(Reserved11));
             sb.Append(GetBooleanAsString(Reserved12));
 
-            return string.Format("{0}<CGRC(ID({1},N,N)N({2},{3},{4},{5},{6},{7},{8},{9},{10},{11},)L({12})>",
-                TerminalId, Code, User1, User2, User3, User4, User5, User6, User7, User8, User9, User10, sb.ToString());
+            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10},)L({11})",
+                Code, User1, User2, User3, User4, User5, User6, User7, User8, User9, User10, sb.ToString());
+        }
+        public override string ToString()
+        {
+            return string.Format("{0}<{1}>", TerminalId, CreateCommand());
         }
         private string GetBooleanAsString(bool value)
         {
