@@ -36,9 +36,14 @@ namespace RMS.Parser
                     else
                     {
                         terminalId = packet.Substring(0, index);
+                        if (!terminalId.StartsWith("S") && terminalId.StartsWith("P"))
+                        {
+                            terminalId = "S" + terminalId;
+                        }
                     }
 
 
+                    
 
                     pkt = packet.Substring(index, packet.Length - index).TrimStart('<').TrimEnd('>');
 
