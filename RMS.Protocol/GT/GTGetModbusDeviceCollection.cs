@@ -39,10 +39,13 @@ namespace RMS.Protocols.GT
             {
                 foreach(var str in strArray)
                 {
-                    GTGetModbusDevice device = new GTGetModbusDevice(TerminalId);
-                    var arr = str.Replace("GET[", "").TrimEnd(']').Split(',');
-                    device.Parse(arr);
-                    Devices.Add(device);
+                    if(!str.Equals(GTCommandFactory.ModbusInvalidString) && str.StartsWith("GET"))
+                    {
+                        GTGetModbusDevice device = new GTGetModbusDevice(TerminalId);
+                        var arr = str.Replace("GET[", "").TrimEnd(']').Split(',');
+                        device.Parse(arr);
+                        Devices.Add(device);
+                    }
                 }
             }
         }

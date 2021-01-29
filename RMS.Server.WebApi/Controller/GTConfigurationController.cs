@@ -210,7 +210,13 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
-                if(request.CommandType == GTCommandType.GetModbusDevice || request.CommandType == GTCommandType.GetMultipleModbusDevices)
+                if(request.CommandType == GTCommandType.GetModbusDevice)
+                {
+                    commandRequest.Data = GTCommandFactory.CreateGetModbusDeviceCommand(request.TerminalId, request.StartIndex, 1);
+                    var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                    return response;
+                }
+                else if (request.CommandType == GTCommandType.GetMultipleModbusDevices)
                 {
                     commandRequest.Data = GTCommandFactory.CreateGetModbusDeviceCommand(request.TerminalId, request.StartIndex, request.NumberOfDevices);
                     var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);

@@ -8,6 +8,7 @@ namespace RMS.Protocols.GT
 {
     public class GTCommandFactory
     {
+        public const string ModbusInvalidString = "Invalid String Number";
         public static Dictionary<string, ICGRC> GetConfiguration(ReceivedPacket packet)
         {
             Dictionary<string, ICGRC> list = new Dictionary<string, ICGRC>();
@@ -65,9 +66,16 @@ namespace RMS.Protocols.GT
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.GetModbusDevice:
-                    strArray = SplitPacket(packet.Data.Replace("GET[","").TrimEnd(']'));
-                    cgrc = new GTGetModbusDevice(packet.TerminalId);
-                    cgrc.Parse(strArray);
+                    if (!packet.Data.Equals(GTCommandFactory.ModbusInvalidString))
+                    {
+                        if(packet.Data.StartsWith("GET"))
+                        {
+                            strArray = SplitPacket(packet.Data.Replace("GET[", "").TrimEnd(']'));
+                            cgrc = new GTGetModbusDevice(packet.TerminalId);
+                            cgrc.Parse(strArray);
+                        }
+                        
+                    }
                     break;
                 case GTCommandType.GetMultipleModbusDevices:
                     strArray = SplitPacket(packet.Data, ';');
