@@ -13,7 +13,7 @@ namespace RMS.Protocols.GT
         [JsonIgnore]
         string Code { get; }
         [JsonIgnore]
-        string TerminalId { get; }
+        string TerminalId { get; set; }
         GTCommandType CommandType { get; set; }
         string CommandTypeDescription { get; }
         void Parse(string[] strArray);

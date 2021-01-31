@@ -7,7 +7,7 @@ namespace RMS.Protocols.GT
 {
     public class GTGeneralSettings : ICGRC
     {
-        public string TerminalId { get; private set; }
+        public string TerminalId { get; set; }
         public string Code => "00";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();
@@ -52,6 +52,12 @@ namespace RMS.Protocols.GT
         public bool Reserved10 { get; set; }
         public bool Reserved11 { get; set; }
         public bool Reserved12 { get; set; }
+        public bool Reserved13 { get; set; }
+        public bool Reserved14 { get; set; }
+        public bool Reserved15 { get; set; }
+        public bool Reserved16 { get; set; }
+        public bool Reserved17 { get; set; }
+        public bool Reserved18 { get; set; }
 
         public GTGeneralSettings(string terminalId)
         {
@@ -98,6 +104,12 @@ namespace RMS.Protocols.GT
             sb.Append(GetBooleanAsString(Reserved10));
             sb.Append(GetBooleanAsString(Reserved11));
             sb.Append(GetBooleanAsString(Reserved12));
+            sb.Append(GetBooleanAsString(Reserved13));
+            sb.Append(GetBooleanAsString(Reserved14));
+            sb.Append(GetBooleanAsString(Reserved15));
+            sb.Append(GetBooleanAsString(Reserved16));
+            sb.Append(GetBooleanAsString(Reserved17));
+            sb.Append(GetBooleanAsString(Reserved18));
 
             return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10},)L({11})",
                 Code, User1, User2, User3, User4, User5, User6, User7, User8, User9, User10, sb.ToString());
@@ -140,34 +152,44 @@ namespace RMS.Protocols.GT
                     var charArray = strArray[47].ToCharArray();
 
                     
-                    GPRS = GetCharAsBoolean(charArray[0]);
-                    AlertUser1OnSMS = GetCharAsBoolean(charArray[1]);
-                    GPRSReconnection = GetCharAsBoolean(charArray[2]);
-                    RS232Port = GetCharAsBoolean(charArray[3]);
-                    RS485Port = GetCharAsBoolean(charArray[4]);
-                    Polling = GetCharAsBoolean(charArray[5]);
-                    CounterString = GetCharAsBoolean(charArray[6]);
-                    FuelString = GetCharAsBoolean(charArray[7]);
-                    ResetCounter2 = GetCharAsBoolean(charArray[8]);
-                    ResetCounter3 = GetCharAsBoolean(charArray[9]);
-                    ResetCounter4 = GetCharAsBoolean(charArray[10]);
-                    ResetCounter5 = GetCharAsBoolean(charArray[11]);
-                    ResetCounter6 = GetCharAsBoolean(charArray[12]);
-                    ResetCounter7 = GetCharAsBoolean(charArray[13]);
-                    ResetCounter8 = GetCharAsBoolean(charArray[14]);
-                    Modbus = GetCharAsBoolean(charArray[15]);
-                    Reserved1 = GetCharAsBoolean(charArray[16]);
-                    Reserved2 = GetCharAsBoolean(charArray[17]);
-                    Reserved3 = GetCharAsBoolean(charArray[18]);
-                    Reserved4 = GetCharAsBoolean(charArray[19]);
-                    Reserved5 = GetCharAsBoolean(charArray[20]);
-                    Reserved6 = GetCharAsBoolean(charArray[21]);
-                    Reserved7 = GetCharAsBoolean(charArray[22]);
-                    Reserved8 = GetCharAsBoolean(charArray[23]);
-                    Reserved9 = GetCharAsBoolean(charArray[24]);
-                    Reserved10 = GetCharAsBoolean(charArray[25]);
-                    Reserved11 = GetCharAsBoolean(charArray[26]);
-                    Reserved12 = GetCharAsBoolean(charArray[27]);
+                    if(charArray.Length > 33)
+                    {
+                        GPRS = GetCharAsBoolean(charArray[0]);
+                        AlertUser1OnSMS = GetCharAsBoolean(charArray[1]);
+                        GPRSReconnection = GetCharAsBoolean(charArray[2]);
+                        RS232Port = GetCharAsBoolean(charArray[3]);
+                        RS485Port = GetCharAsBoolean(charArray[4]);
+                        Polling = GetCharAsBoolean(charArray[5]);
+                        CounterString = GetCharAsBoolean(charArray[6]);
+                        FuelString = GetCharAsBoolean(charArray[7]);
+                        ResetCounter2 = GetCharAsBoolean(charArray[8]);
+                        ResetCounter3 = GetCharAsBoolean(charArray[9]);
+                        ResetCounter4 = GetCharAsBoolean(charArray[10]);
+                        ResetCounter5 = GetCharAsBoolean(charArray[11]);
+                        ResetCounter6 = GetCharAsBoolean(charArray[12]);
+                        ResetCounter7 = GetCharAsBoolean(charArray[13]);
+                        ResetCounter8 = GetCharAsBoolean(charArray[14]);
+                        Modbus = GetCharAsBoolean(charArray[15]);
+                        Reserved1 = GetCharAsBoolean(charArray[16]);
+                        Reserved2 = GetCharAsBoolean(charArray[17]);
+                        Reserved3 = GetCharAsBoolean(charArray[18]);
+                        Reserved4 = GetCharAsBoolean(charArray[19]);
+                        Reserved5 = GetCharAsBoolean(charArray[20]);
+                        Reserved6 = GetCharAsBoolean(charArray[21]);
+                        Reserved7 = GetCharAsBoolean(charArray[22]);
+                        Reserved8 = GetCharAsBoolean(charArray[23]);
+                        Reserved9 = GetCharAsBoolean(charArray[24]);
+                        Reserved10 = GetCharAsBoolean(charArray[25]);
+                        Reserved11 = GetCharAsBoolean(charArray[26]);
+                        Reserved12 = GetCharAsBoolean(charArray[27]);
+                        Reserved13 = GetCharAsBoolean(charArray[28]);
+                        Reserved14 = GetCharAsBoolean(charArray[29]);
+                        Reserved15 = GetCharAsBoolean(charArray[30]);
+                        Reserved16 = GetCharAsBoolean(charArray[31]);
+                        Reserved17 = GetCharAsBoolean(charArray[32]);
+                        Reserved18 = GetCharAsBoolean(charArray[33]);
+                    }
+                    
 
                 }
             }

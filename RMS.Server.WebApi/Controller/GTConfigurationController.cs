@@ -246,6 +246,28 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
-
+        [HttpPost]
+        public TerminalCommandResponse ClearAllModbusDevices(GTClearModbusDevicesConfigurationRequest request)
+        {
+            var config = WebApiServerConfigurationManager.Instance.Configurations;
+            TerminalCommandRequest commandRequest = new TerminalCommandRequest();
+            commandRequest.TerminalId = request.TerminalId;
+            try
+            {
+                commandRequest.Data = GTCommandFactory.CreateClearModbusDevicesCommand(request.TerminalId);
+                return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+            }
+            catch (Exception ex)
+            {
+                return new TerminalCommandResponse
+                {
+                    RequestId = commandRequest.RequestId,
+                    Data = null,
+                    RequestType = commandRequest.RequestType,
+                    ResponseStatus = ResponseStatus.Failed,
+                    Message = ex.Message
+                };
+            }
+        }
     }
 }

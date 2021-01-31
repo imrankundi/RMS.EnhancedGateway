@@ -13,6 +13,7 @@
         AddModbusDevice = 8,
         AddMultipleModbusDevices = 9,
         GetModbusDevice = 10,
-        GetMultipleModbusDevices = 11
+        GetMultipleModbusDevices = 11,
+        ClearAllModbusDevices = 12
     }
 }

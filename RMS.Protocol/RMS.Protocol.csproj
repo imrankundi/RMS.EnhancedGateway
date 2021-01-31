@@ -51,6 +51,7 @@
     <Compile Include="Configuration\ConfigParameterControlType.cs" />
     <Compile Include="Configuration\ConfigProtocol.cs" />
     <Compile Include="Configuration\ConfigSection.cs" />
+    <Compile Include="GT\GTClearModbusDevices.cs" />
     <Compile Include="GT\GTGetModbusDeviceCollection.cs" />
     <Compile Include="GT\GTGetModbusDevice.cs" />
     <Compile Include="GT\GTAddModbusDeviceCollection.cs" />

@@ -1,33 +1,34 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System.Collections.Generic;
+using System;
 using System.Text;
 
 namespace RMS.Protocols.GT
 {
-    public class GTGetModbusDeviceCollection : ICGRC
+    public class GTClearModbusDevices : ICGRC
     {
+        private const string deviceResponseMessage = "CLEARED ALL MODBUS STRINGS";
+        private const string failureResponseMessage = "FAILED TO CLEAR MODBUS STRINGS";
         public string TerminalId { get; set; }
         public string Code => "NA";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();
-        public ICollection<GTGetModbusDevice> Devices { get; set; }
+        public string Message { get; set; }
+        //public string DeviceName { get; set; }
+        //public int DeviceId { get; set; }
+        //public int FunctionCode { get; private set; }
+        //public int StartingAddress { get; set; }
+        //public int NumberOfElements { get; set; }
+        //public int PageNumber { get; set; }
 
-        public GTGetModbusDeviceCollection(string terminalId)
+        public GTClearModbusDevices(string terminalId)
         {
             TerminalId = terminalId;
-            CommandType = GTCommandType.GetMultipleModbusDevices;
-            Devices = new List<GTGetModbusDevice>();
+            CommandType = GTCommandType.ClearAllModbusDevices;
         }
         public string CreateCommand()
         {
-            string command = string.Empty;
-            StringBuilder sb = new StringBuilder();
-            foreach(var device in Devices)
-            {
-                sb.AppendFormat("{0};", device.CreateCommand());
-            }
-            return sb.ToString().TrimEnd(';');
+            return "CLR";
         }
         public override string ToString()
         {
@@ -37,14 +38,15 @@ namespace RMS.Protocols.GT
         {
             if(strArray != null)
             {
-                foreach(var str in strArray)
+                if(strArray.Length > 0)
                 {
-                    if(!str.Equals(GTCommandFactory.ModbusInvalidString) && str.StartsWith("GET"))
+                    if(strArray[0].Equals(deviceResponseMessage))
                     {
-                        GTGetModbusDevice device = new GTGetModbusDevice(TerminalId);
-                        var arr = str.Replace("GET[", "").TrimEnd(']').Split(',');
-                        device.Parse(arr);
-                        Devices.Add(device);
+                        Message = deviceResponseMessage;
+                    }
+                    else
+                    {
+                        Message = failureResponseMessage;
                     }
                 }
             }

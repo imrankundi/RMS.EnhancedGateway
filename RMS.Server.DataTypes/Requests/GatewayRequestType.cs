@@ -4,6 +4,7 @@
     {
         TerminalCommand = 1,
         ReloadProtocols = 2,
-        ReloadSites = 3
+        ReloadSites = 3,
+        GetSites = 4
     }
 }

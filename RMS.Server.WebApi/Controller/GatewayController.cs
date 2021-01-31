@@ -12,6 +12,7 @@ using RMS.Server.WebApi.Configuration;
 using System;
 using System.Threading;
 using System.Web.Http;
+using System.Linq;
 
 namespace RMS.Server.WebApi.Controller
 {
@@ -28,13 +29,11 @@ namespace RMS.Server.WebApi.Controller
         {
             try
             {
-                //ProtocolList.Instance.Reload();
-                //var ClientChannelManager
-                var str = JsonConvert.SerializeObject(WebServer.server.ChannelKeys);
-                Console.WriteLine(str);
+                var count = WebServer.server.ChannelKeys.Count();
+                Console.WriteLine(count);
                 return new BaseResponse
                 {
-                    Message = "Sitelist: " + str,
+                    Message = string.Format("Connected Sites Count: {0}", count),
                     ResponseStatus = ResponseStatus.Success
                 };
             }
@@ -42,7 +41,27 @@ namespace RMS.Server.WebApi.Controller
             {
                 return new BaseResponse
                 {
-                    Message = "Unable to reloaded Protocols [" + ex.Message + "]",
+                    Message = ex.Message,
+                    ResponseStatus = ResponseStatus.Failed
+                };
+            }
+        }
+        [HttpGet]
+        public GetSitesResponse GetSites()
+        {
+            try
+            {
+                return new GetSitesResponse
+                {
+                    Sites = WebServer.server.ChannelKeys,
+                    ResponseStatus = ResponseStatus.Success
+                };
+            }
+            catch (Exception ex)
+            {
+                return new GetSitesResponse
+                {
+                    Message = ex.Message,
                     ResponseStatus = ResponseStatus.Failed
                 };
             }

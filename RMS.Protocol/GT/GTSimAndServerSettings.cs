@@ -4,7 +4,7 @@ namespace RMS.Protocols.GT
 {
     public class GTSimAndServerSettings : ICGRC
     {
-        public string TerminalId { get; private set; }
+        public string TerminalId { get; set; }
         public string Code => "01";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();

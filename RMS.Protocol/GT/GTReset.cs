@@ -7,7 +7,7 @@ namespace RMS.Protocols.GT
 {
     public class GTReset : ICGRC
     {
-        public string TerminalId { get; private set; }
+        public string TerminalId { get; set; }
         public string Code => "NA";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();

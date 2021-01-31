@@ -68,18 +68,35 @@ namespace RMS.Protocols.GT
                 case GTCommandType.GetModbusDevice:
                     if (!packet.Data.Equals(GTCommandFactory.ModbusInvalidString))
                     {
-                        if(packet.Data.StartsWith("GET"))
+                        if (packet.Data.StartsWith("GET"))
                         {
                             strArray = SplitPacket(packet.Data.Replace("GET[", "").TrimEnd(']'));
                             cgrc = new GTGetModbusDevice(packet.TerminalId);
                             cgrc.Parse(strArray);
                         }
-                        
+
                     }
                     break;
                 case GTCommandType.GetMultipleModbusDevices:
                     strArray = SplitPacket(packet.Data, ';');
                     cgrc = new GTGetModbusDeviceCollection(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.ClearAllModbusDevices:
+                    cgrc = new GTClearModbusDevices(packet.TerminalId);
+                    cgrc.Parse(new string[] { packet.Data });
+                    break;
+                case GTCommandType.AddModbusDevice:
+                    if (packet.Data.StartsWith("ADD"))
+                    {
+                        strArray = SplitPacket(packet.Data.Replace("ADD[", "").TrimEnd(']'));
+                        cgrc = new GTAddModbusDevice(packet.TerminalId);
+                        cgrc.Parse(strArray);
+                    }
+                    break;
+                case GTCommandType.AddMultipleModbusDevices:
+                    strArray = SplitPacket(packet.Data, ';');
+                    cgrc = new GTAddModbusDeviceCollection(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 default:
@@ -91,7 +108,7 @@ namespace RMS.Protocols.GT
         {
             string command = string.Empty;
 
-            switch(commandType)
+            switch (commandType)
             {
                 case GTCommandType.GeneralSettings:
                 case GTCommandType.SimAndServerSettings:
@@ -122,7 +139,7 @@ namespace RMS.Protocols.GT
             string command;
 
             StringBuilder sb = new StringBuilder();
-            for(int ii = startIndex; ii < (startIndex + numberOfDevices); ii++)
+            for (int ii = startIndex; ii < (startIndex + numberOfDevices); ii++)
             {
                 sb.AppendFormat("GET[{0}];", ii);
             }
@@ -133,40 +150,57 @@ namespace RMS.Protocols.GT
         {
             JObject jsonObject = (JObject)data;
             ICGRC cgrc = new GTNullCommand(terminalId);
-            switch(commandType)
+            switch (commandType)
             {
                 case GTCommandType.GeneralSettings:
                     cgrc = jsonObject.ToObject<GTGeneralSettings>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.PollingAndGprsSettings:
                     cgrc = jsonObject.ToObject<GTPollingAndGprsSettings>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.SimAndServerSettings:
                     cgrc = jsonObject.ToObject<GTSimAndServerSettings>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.Reset:
                     cgrc = jsonObject.ToObject<GTReset>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.ResetRom:
                     cgrc = jsonObject.ToObject<GTResetRom>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.ExtendedConfigurationSettings:
                     cgrc = jsonObject.ToObject<GTExtendedConfigurationSettings>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.WatchdogSettings:
                     cgrc = jsonObject.ToObject<GTWatchdogSettings>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.AddMultipleModbusDevices:
                     cgrc = jsonObject.ToObject<GTAddModbusDeviceCollection>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 case GTCommandType.AddModbusDevice:
                     cgrc = jsonObject.ToObject<GTAddModbusDevice>();
+                    cgrc.TerminalId = terminalId;
+                    break;
+                case GTCommandType.ClearAllModbusDevices:
+                    cgrc = jsonObject.ToObject<GTClearModbusDevices>();
+                    cgrc.TerminalId = terminalId;
                     break;
                 default:
                     break;
             }
 
             return cgrc.ToString();
+        }
+        public static string CreateClearModbusDevicesCommand(string terminalId)
+        {
+            return string.Format("{0}<CMOD(CLR)>", terminalId);
         }
         private static string[] SplitPacket(string rawPacket, char separator = ',')
         {

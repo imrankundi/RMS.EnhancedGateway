@@ -9,12 +9,16 @@ namespace RMS.Protocols.GT
 {
     public class GTAddModbusDeviceCollection : ICGRC
     {
-        public string TerminalId { get; private set; }
+        public string TerminalId { get; set; }
         public string Code => "NA";
         public GTCommandType CommandType { get; set; }
         public string CommandTypeDescription => CommandType.ToString();
         public ICollection<GTAddModbusDevice> Devices { get; set; }
 
+        public GTAddModbusDeviceCollection()
+        {
+
+        }
         public GTAddModbusDeviceCollection(string terminalId)
         {
             TerminalId = terminalId;
@@ -23,7 +27,6 @@ namespace RMS.Protocols.GT
         }
         public string CreateCommand()
         {
-            string command = string.Empty;
             StringBuilder sb = new StringBuilder();
             foreach(var device in Devices)
             {
@@ -37,6 +40,19 @@ namespace RMS.Protocols.GT
         }
         public void Parse(string[] strArray)
         {
+            if (strArray != null)
+            {
+                foreach (var str in strArray)
+                {
+                    if (str.StartsWith("ADD"))
+                    {
+                        GTAddModbusDevice device = new GTAddModbusDevice(TerminalId);
+                        var arr = str.Replace("ADD[", "").TrimEnd(']').Split(',');
+                        device.Parse(arr);
+                        Devices.Add(device);
+                    }
+                }
+            }
         }
         public string ToJson()
         {
