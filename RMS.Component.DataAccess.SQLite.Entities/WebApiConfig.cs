@@ -13,5 +13,6 @@ namespace RMS.Component.DataAccess.SQLite.Entities
         public bool EnableSimulation { get; set; }
         public int TerminalCommandRetries { get; set; }
         public int TerminalCommandRetryIntervalInSeconds { get; set; }
+        public JwtSettingsEntity JwtSettings { get; set; }
     }
 }

@@ -25,6 +25,8 @@ namespace RMS.Component.Mappers
             cfg.CreateMap<ServiceMonitorConfig, ServiceMonitorServiceConfiguration>();
             cfg.CreateMap<EmailSubscriberEntity, EmailSubscriber>();
             cfg.CreateMap<EmailTemplateEntity, EmailTemplate>();
+            cfg.CreateMap<JwtSettingsEntity, JwtSettings>();
+            cfg.CreateMap<UserEntity, User>();
         });
         public static Mapper Mapper => new Mapper(Config);
         public static ServerChannelConfiguration Map(TcpServerChannelConfig entity)
@@ -47,7 +49,6 @@ namespace RMS.Component.Mappers
             var obj = Mapper.Map<EmailServiceConfiguration>(entity);
             return obj;
         }
-
         public static SiteInfo Map(SiteConfig entity)
         {
             var obj = Mapper.Map<SiteInfo>(entity);
@@ -61,6 +62,16 @@ namespace RMS.Component.Mappers
         public static IEnumerable<SiteInfo> Map(IEnumerable<SiteConfig> entities)
         {
             var obj = Mapper.Map<IEnumerable<SiteInfo>>(entities);
+            return obj;
+        }
+        public static User Map(UserEntity entity)
+        {
+            var obj = Mapper.Map<User>(entity);
+            return obj;
+        }
+        public static IEnumerable<User> Map(IEnumerable<UserEntity> entities)
+        {
+            var obj = Mapper.Map<IEnumerable<User>>(entities);
             return obj;
         }
     }

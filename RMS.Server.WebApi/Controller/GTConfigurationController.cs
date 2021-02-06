@@ -9,6 +9,7 @@ using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
 using RMS.Server.WebApi.Common;
 using RMS.Server.WebApi.Configuration;
+using RMS.Server.WebApi.Jwt.Filters;
 using System;
 using System.Threading;
 using System.Web.Http;
@@ -25,11 +26,23 @@ namespace RMS.Server.WebApi.Controller
         }
         
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse Command(TerminalCommandRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
             try
             {
+                if (request.RequestType != GatewayRequestType.TerminalCommand)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
                 var cmd = TerminalCommandHandler.Instance.Find(request.TerminalId);
                 if (cmd != null)
                 {
@@ -67,7 +80,7 @@ namespace RMS.Server.WebApi.Controller
                                 Data = command.ResponseData,
                                 RequestType = request.RequestType,
                                 ResponseStatus = ResponseStatus.Success,
-                                Message = "Configuration Successful",
+                                Message = "Response Received from Device",
                                 TerminalId = command.TerminalId
                             };
                         }
@@ -97,6 +110,8 @@ namespace RMS.Server.WebApi.Controller
                     Message = "Request Timed Out",
                     TerminalId = request.TerminalId
                 };
+
+
             }
             catch (Exception ex)
             {
@@ -110,7 +125,9 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
+
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse GetConfiguration(GTGetConfigurationRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -118,8 +135,41 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
-                commandRequest.Data = GTCommandFactory.CreateGetCommand(request.TerminalId, request.CommandType);
-                return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                if(request.RequestType != GatewayRequestType.TerminalCommand)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
+
+                if(request.CommandType == GTCommandType.GeneralSettings || 
+                    request.CommandType == GTCommandType.ExtendedConfigurationSettings ||
+                    request.CommandType == GTCommandType.PollingAndGprsSettings ||
+                    request.CommandType == GTCommandType.SimAndServerSettings ||
+                    request.CommandType == GTCommandType.WatchdogSettings)
+                {
+                    commandRequest.Data = GTCommandFactory.CreateGetCommand(request.TerminalId, request.CommandType);
+                    var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                    response.RequestId = request.RequestId;
+                    return response;
+                }
+                else
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
+                
             }
             catch (Exception ex)
             {
@@ -133,7 +183,9 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
+        
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse SetConfiguration(GTSetConfigurationRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -141,8 +193,45 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
-                commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
-                return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                
+
+
+                if (request.RequestType != GatewayRequestType.TerminalCommand)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
+
+                if (request.CommandType == GTCommandType.GeneralSettings ||
+                    request.CommandType == GTCommandType.ExtendedConfigurationSettings ||
+                    request.CommandType == GTCommandType.PollingAndGprsSettings ||
+                    request.CommandType == GTCommandType.Reset ||
+                    request.CommandType == GTCommandType.ResetRom ||
+                    request.CommandType == GTCommandType.SimAndServerSettings ||
+                    request.CommandType == GTCommandType.WatchdogSettings)
+                {
+                    commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
+                    var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
+                    response.RequestId = request.RequestId;
+                    return response;
+                }
+                else
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
             }
             catch (Exception ex)
             {
@@ -156,7 +245,9 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
+        
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse AddMultipleModbusDevices(GTSetConfigurationRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -164,6 +255,19 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
+                if (!(request.RequestType == GatewayRequestType.TerminalCommand &&
+                    request.CommandType == GTCommandType.AddMultipleModbusDevices))
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
+
                 commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
                 return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
             }
@@ -179,7 +283,9 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
+        
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse AddModbusDevice(GTSetConfigurationRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -187,6 +293,18 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
+                if (!(request.RequestType == GatewayRequestType.TerminalCommand &&
+                    request.CommandType == GTCommandType.AddModbusDevice))
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
                 commandRequest.Data = GTCommandFactory.CreateSetCommand(request.TerminalId, request.Data, request.CommandType);
                 return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
             }
@@ -202,7 +320,9 @@ namespace RMS.Server.WebApi.Controller
                 };
             }
         }
+        
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse GetModbusDevice(GTGetModbusDeviceRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -247,6 +367,7 @@ namespace RMS.Server.WebApi.Controller
             }
         }
         [HttpPost]
+        [JwtAuthentication]
         public TerminalCommandResponse ClearAllModbusDevices(GTClearModbusDevicesConfigurationRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -254,6 +375,19 @@ namespace RMS.Server.WebApi.Controller
             commandRequest.TerminalId = request.TerminalId;
             try
             {
+                if(!(request.RequestType == GatewayRequestType.TerminalCommand && 
+                    request.CommandType == GTCommandType.ClearAllModbusDevices))
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
+
                 commandRequest.Data = GTCommandFactory.CreateClearModbusDevicesCommand(request.TerminalId);
                 return TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);
             }

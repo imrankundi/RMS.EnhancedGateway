@@ -5,6 +5,7 @@
         TerminalCommand = 1,
         ReloadProtocols = 2,
         ReloadSites = 3,
-        GetSites = 4
+        GetSites = 4,
+        Token = 5
     }
 }

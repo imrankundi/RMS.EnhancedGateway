@@ -21,21 +21,6 @@ namespace RMS.Parser
         {
             return string.Format(@"{0}\{1}", AppDomain.CurrentDomain.BaseDirectory, "Sites");
         }
-        private void ReadFromFile()
-        {
-            string folder = FolderPath();
-            if (Directory.Exists(folder))
-            {
-                string filePath = string.Format(@"{0}\{1}", folder, "Sites.json");
-
-                if (File.Exists(filePath))
-                {
-                    string text = File.ReadAllText(filePath);
-                    Sites = JsonConvert.DeserializeObject<Sites>(text);
-                }
-            }
-        }
-
         private void ReadFromDatabase()
         {
             try

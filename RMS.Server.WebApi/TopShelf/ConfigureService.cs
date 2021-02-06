@@ -6,14 +6,11 @@ namespace RMS.Server.WebApi
     internal static class ConfigureService
     {
         static readonly string className = nameof(ConfigureService);
-        static readonly string serviceName = "SalTec RMS Enhanced Gateway Service";
-        static readonly string displayName = "SalTec RMS Enhanced Gateway Service";
-        static readonly string description = "SalTec RMS Enhanced Gateway Service";
         internal static void Configure()
         {
             try
             {
-
+                var config = ServiceSettingsManager.Instance.Configurations;
                 HostFactory.Run(configure =>
                 {
                     configure.Service<WebServer>(service =>
@@ -25,9 +22,10 @@ namespace RMS.Server.WebApi
 
                     //Setup Account that window service use to run.  
                     configure.RunAsLocalSystem();
-                    configure.SetServiceName(serviceName);
-                    configure.SetDisplayName(displayName);
-                    configure.SetDescription(description);
+                    configure.SetServiceName(config.ServiceName);
+                    configure.SetDisplayName(config.DisplayName);
+                    configure.SetDescription(config.Description);
+                    configure.SetInstanceName(config.InstanceName);
                 });
             }
             catch (Exception)

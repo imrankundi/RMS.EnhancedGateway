@@ -1,4 +1,5 @@
 ﻿using RMS.Component.Logging.Models;
+using RMS.Server.DataTypes;
 
 namespace RMS.Server.WebApi.Configuration
 {
@@ -12,5 +13,6 @@ namespace RMS.Server.WebApi.Configuration
         public string LogPath { get; set; }
         public LogLevel LogLevel { get; set; }
         public string EmailPath { get; set; }
+        public JwtSettings JwtSettings { get; set; }
     }
 }

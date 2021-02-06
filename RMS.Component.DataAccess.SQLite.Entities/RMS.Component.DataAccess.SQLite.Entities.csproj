@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JwtSettingsEntity.cs" />
+    <Compile Include="UserEntity.cs" />
     <Compile Include="EmailTemplateEntity.cs" />
     <Compile Include="MonitoringParameter.cs" />
     <Compile Include="ServiceMonitorConfig.cs" />

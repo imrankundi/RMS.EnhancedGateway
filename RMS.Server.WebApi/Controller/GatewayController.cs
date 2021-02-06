@@ -13,6 +13,7 @@ using System;
 using System.Threading;
 using System.Web.Http;
 using System.Linq;
+using RMS.Server.WebApi.Jwt.Filters;
 
 namespace RMS.Server.WebApi.Controller
 {
@@ -25,6 +26,7 @@ namespace RMS.Server.WebApi.Controller
             return null;
         }
         [HttpGet]
+        [AllowAnonymous]
         public BaseResponse GetSiteCount()
         {
             try
@@ -33,6 +35,7 @@ namespace RMS.Server.WebApi.Controller
                 Console.WriteLine(count);
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = string.Format("Connected Sites Count: {0}", count),
                     ResponseStatus = ResponseStatus.Success
                 };
@@ -41,18 +44,21 @@ namespace RMS.Server.WebApi.Controller
             {
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = ex.Message,
                     ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
         [HttpGet]
+        [AllowAnonymous]
         public GetSitesResponse GetSites()
         {
             try
             {
                 return new GetSitesResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Sites = WebServer.server.ChannelKeys,
                     ResponseStatus = ResponseStatus.Success
                 };
@@ -61,12 +67,14 @@ namespace RMS.Server.WebApi.Controller
             {
                 return new GetSitesResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = ex.Message,
                     ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
         [HttpGet]
+        [AllowAnonymous]
         public BaseResponse ReloadProtocols()
         {
             try
@@ -75,6 +83,7 @@ namespace RMS.Server.WebApi.Controller
                 Console.WriteLine(JsonConvert.SerializeObject(ProtocolList.Instance.Protocols.Keys));
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = "Protocols are succesfully reloaded",
                     ResponseStatus = ResponseStatus.Success
                 };
@@ -83,12 +92,14 @@ namespace RMS.Server.WebApi.Controller
             {
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = "Unable to reloaded Protocols [" + ex.Message + "]",
                     ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
         [HttpGet]
+        [AllowAnonymous]
         public BaseResponse ReloadSites()
         {
             try
@@ -97,6 +108,7 @@ namespace RMS.Server.WebApi.Controller
                 Console.WriteLine(JsonConvert.SerializeObject(SiteManager.Instance.Sites, Formatting.Indented));
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = "Sites are succesfully reloaded",
                     ResponseStatus = ResponseStatus.Success
                 };
@@ -105,17 +117,29 @@ namespace RMS.Server.WebApi.Controller
             {
                 return new BaseResponse
                 {
+                    RequestId = DateTime.UtcNow.ToString("yyyyMMddHHmmssffffff"),
                     Message = "Unable to reloaded Sites [" + ex.Message + "]",
                     ResponseStatus = ResponseStatus.Failed
                 };
             }
         }
-
+        [JwtAuthentication]
         public TerminalCommandResponse Command(TerminalCommandRequest request)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
             try
             {
+                if (request.RequestType != GatewayRequestType.TerminalCommand)
+                {
+                    return new TerminalCommandResponse
+                    {
+                        RequestType = request.RequestType,
+                        RequestId = request.RequestId,
+                        Message = "Invalid Request Type",
+                        ResponseStatus = ResponseStatus.Failed,
+                        TerminalId = request.TerminalId
+                    };
+                }
                 var cmd = TerminalCommandHandler.Instance.Find(request.TerminalId);
                 if (cmd != null)
                 {
@@ -153,7 +177,7 @@ namespace RMS.Server.WebApi.Controller
                                 Data = command.ResponseData,
                                 RequestType = request.RequestType,
                                 ResponseStatus = ResponseStatus.Success,
-                                Message = "Configuration Successful",
+                                Message = "Response Received from Device",
                                 TerminalId = command.TerminalId
                             };
                         }

@@ -77,7 +77,7 @@ namespace RMS.Server.WebApi.Common
                                 Data = gtConfig,
                                 RequestType = commandRequest.RequestType,
                                 ResponseStatus = ResponseStatus.Success,
-                                Message = "Configuration Successful",
+                                Message = "Response Received",
                                 TerminalId = command.TerminalId
                             };
                         }

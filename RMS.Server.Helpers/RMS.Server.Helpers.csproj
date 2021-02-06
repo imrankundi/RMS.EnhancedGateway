@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Managers\EmailManager.cs" />
     <Compile Include="Managers\ServerChannelConfigurationManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Managers\SiteManager.cs" />
     <Compile Include="Managers\WebApiServerConfigurationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

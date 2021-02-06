@@ -1,6 +1,12 @@
-﻿using Owin;
+﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Jwt;
+using Microsoft.Owin.Security.OAuth;
+using Owin;
 using RMS.Server.WebApi.Common;
+using RMS.Server.WebApi.Configuration;
 using RMS.Server.WebApi.Middlewares;
+using System.Text;
 using System.Web.Http;
 
 namespace RMS.Server.WebApi
@@ -34,8 +40,12 @@ namespace RMS.Server.WebApi
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.Formatters.Add(config.Formatters.JsonFormatter);
 
+            config.Filters.Add(new AuthorizeAttribute());
+            //config.Filters.Add(new UnhandledExceptionFilter());
             // Web Api
             app.UseWebApi(config);
+
+            
 
 
             // Enable CORS

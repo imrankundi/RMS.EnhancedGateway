@@ -122,6 +122,7 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
                     connection.Open();
                     var query = "SELECT * FROM WebApiServer;";
                     config = connection.Query<WebApiConfig>(query).FirstOrDefault();
+                    BindJwtSettings(connection, config);
                 }
                 catch (Exception ex)
                 {
@@ -135,6 +136,31 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
             }
 
             return config;
+        }
+        public IEnumerable<UserEntity> GetUsers()
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            IEnumerable<UserEntity> entity = null;
+            using (var connection = CreateConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    var query = "SELECT * FROM Users;";
+                    entity = connection.Query<UserEntity>(query);
+                }
+                catch (Exception ex)
+                {
+                    Log?.Error(className, methodName, ex.ToString());
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+
+            return entity;
         }
 
         public IEnumerable<SiteConfig> ReadSitesConfig()
@@ -203,6 +229,22 @@ namespace RMS.Component.DataAccess.SQLite.Repositories
                 var query = "SELECT t.* FROM Sites s INNER JOIN TimeOffsets t ON s.TimeOffsetId = t.Id;";
                 var timeOffsetConfigs = connection.Query<TimeOffsetConfig>(query).FirstOrDefault();
                 config.TimeOffset = timeOffsetConfigs;
+            }
+            catch (Exception ex)
+            {
+                Log?.Error(className, methodName, ex.ToString());
+            }
+
+        }
+
+        private void BindJwtSettings(SQLiteConnection connection, WebApiConfig config)
+        {
+            string methodName = MethodBase.GetCurrentMethod().Name;
+            try
+            {
+                var query = "SELECT js.* FROM WebApiServer ws INNER JOIN JwtSettings js ON ws.JwtSettingsId = js.Id;";
+                var timeOffsetConfigs = connection.Query<JwtSettingsEntity>(query).FirstOrDefault();
+                config.JwtSettings = timeOffsetConfigs;
             }
             catch (Exception ex)
             {

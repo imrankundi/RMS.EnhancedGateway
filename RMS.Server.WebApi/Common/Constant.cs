@@ -4,14 +4,14 @@
     {
         public static class Compnay
         {
-            public const string Name = "NCR Pakistan";
+            public const string Name = "SalTec Powerlink";
         }
         public static class Product
         {
-            public const string ServiceName = "NCR TMCW Server Service";
-            public const string ServiceDescription = "NCR TMCW Server Service";
-            public const string Name = "NCR TMCW Server Service";
-            public const string Version = "1.0.0.2";
+            public const string ServiceName = "SalTec Powerlink Redirect Gateway";
+            public const string ServiceDescription = "SalTec Powerlink Redirect Gateway";
+            public const string Name = "Redirect Gateway";
+            public const string Version = "2.0.0.1";
             public static string Information => string.Format("{0} ver {1}", Name, Version);
         }
 
