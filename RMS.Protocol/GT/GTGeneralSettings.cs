@@ -7,56 +7,107 @@ namespace RMS.Protocols.GT
 {
     public class GTGeneralSettings : ICGRC
     {
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "00";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
+        [JsonProperty("user1")]
         public string User1 { get; set; }
+        [JsonProperty("user2")]
         public string User2 { get; set; }
+        [JsonProperty("user3")]
         public string User3 { get; set; }
+        [JsonProperty("user4")]
         public string User4 { get; set; }
+        [JsonProperty("user5")]
         public string User5 { get; set; }
+        [JsonProperty("user6")]
         public string User6 { get; set; }
+        [JsonProperty("user7")]
         public string User7 { get; set; }
+        [JsonProperty("user8")]
         public string User8 { get; set; }
+        [JsonProperty("user9")]
         public string User9 { get; set; }
+        [JsonProperty("user10")]
         public string User10 { get; set; }
+        [JsonProperty("firmwareVersion")]
         public string FirmwareVersion { get; private set; }
+        [JsonProperty("compilationDate")]
         public string CompilationDate { get; private set; }
+        [JsonProperty("compilationTime")]
         public string CompilationTime { get; private set; }
+        [JsonProperty("gprs")]
         public bool GPRS { get; set; }
+        [JsonProperty("smsFallBack")]
         public bool SmsFallBack { get; set; }
+        [JsonProperty("alertUser1OnSMS")]
         public bool AlertUser1OnSMS { get; set; }
+        [JsonProperty("gprsReconnection")]
         public bool GPRSReconnection { get; set; }
+        [JsonProperty("rs232Port")]
         public bool RS232Port { get; set; }
+        [JsonProperty("rs485Port")]
         public bool RS485Port { get; set; }
+        [JsonProperty("polling")]
         public bool Polling { get; set; }
+        [JsonProperty("bypassMode")]
         public bool BypassMode { get; set; }
+        [JsonProperty("counterString")]
         public bool CounterString { get; set; }
+        [JsonProperty("fuelString")]
         public bool FuelString { get; set; }
+        [JsonProperty("resetCounter2")]
         public bool ResetCounter2 { get; set; }
+        [JsonProperty("resetCounter3")]
         public bool ResetCounter3 { get; set; }
+        [JsonProperty("resetCounter4")]
         public bool ResetCounter4 { get; set; }
+        [JsonProperty("resetCounter5")]
         public bool ResetCounter5 { get; set; }
+        [JsonProperty("resetCounter6")]
         public bool ResetCounter6 { get; set; }
+        [JsonProperty("resetCounter7")]
         public bool ResetCounter7 { get; set; }
+        [JsonProperty("resetCounter8")]
         public bool ResetCounter8 { get; set; }
+        [JsonProperty("forcedReset")]
         public bool ForcedReset { get; set; }
+        [JsonProperty("modemReset")]
         public bool ModemReset { get; set; }
+        [JsonProperty("GTReset")]
         public bool GTReset { get; set; }
+        [JsonProperty("modbus")]
         public bool Modbus { get; set; }
+        [JsonProperty("reserved1")]
         public bool Reserved1 { get; set; }
+        [JsonProperty("storage")]
         public bool Storage { get; set; }
+        [JsonProperty("reserved3")]
         public bool Reserved3 { get; set; }
+        [JsonProperty("reserved4")]
         public bool Reserved4 { get; set; }
+        [JsonProperty("code")]
         public bool Reserved5 { get; set; }
+        [JsonProperty("reserved5")]
         public bool Reserved6 { get; set; }
+        [JsonProperty("reserved7")]
         public bool Reserved7 { get; set; }
+        [JsonProperty("reserved8")]
         public bool Reserved8 { get; set; }
+        [JsonProperty("reserved9")]
         public bool Reserved9 { get; set; }
+        [JsonProperty("counterFormat")]
         public bool CounterFormat { get; set; }
+        [JsonProperty("reserved11")]
         public bool Reserved11 { get; set; }
+        [JsonProperty("reserved12")]
         public bool Reserved12 { get; set; }
+        [JsonProperty("reserved13")]
         public bool Reserved13 { get; set; }
 
         public GTGeneralSettings(string terminalId)
@@ -76,7 +127,7 @@ namespace RMS.Protocols.GT
             User10 = string.IsNullOrEmpty(User10) ? "" : User10;
 
             StringBuilder sb = new StringBuilder();
-            
+
             sb.Append(GetBooleanAsString(GPRS));
             sb.Append(GetBooleanAsString(SmsFallBack));
             sb.Append(GetBooleanAsString(Reserved1));
@@ -96,6 +147,9 @@ namespace RMS.Protocols.GT
             sb.Append(GetBooleanAsString(ResetCounter6));
             sb.Append(GetBooleanAsString(ResetCounter7));
             sb.Append(GetBooleanAsString(ResetCounter8));
+
+            sb.Append(GetBooleanAsString(GTReset));
+            sb.Append(GetBooleanAsString(ModemReset));
             sb.Append(GetBooleanAsString(Modbus));
             
             sb.Append(GetBooleanAsString(Storage));

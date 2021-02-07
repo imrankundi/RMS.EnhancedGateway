@@ -9,9 +9,13 @@ namespace RMS.Protocols.GT
     {
         private const string deviceResponseMessage = "CLEARED ALL MODBUS STRINGS";
         private const string failureResponseMessage = "FAILED TO CLEAR MODBUS STRINGS";
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "NA";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
         public string Message { get; set; }
         //public string DeviceName { get; set; }

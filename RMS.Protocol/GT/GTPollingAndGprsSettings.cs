@@ -1,28 +1,49 @@
-﻿using RMS.Server.DataTypes.Requests;
+﻿using Newtonsoft.Json;
+using RMS.Server.DataTypes.Requests;
 
 namespace RMS.Protocols.GT
 {
     public class GTPollingAndGprsSettings : ICGRC
     {
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "02";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
+        [JsonProperty("device1")]
         public string Device1 { get; set; }
+        [JsonProperty("device2")]
         public string Device2 { get; set; }
+        [JsonProperty("device3")]
         public string Device3 { get; set; }
+        [JsonProperty("device4")]
         public string Device4 { get; set; }
+        [JsonProperty("device5")]
         public string Device5 { get; set; }
+        [JsonProperty("device6")]
         public string Device6 { get; set; }
+        [JsonProperty("device7")]
         public string Device7 { get; set; }
+        [JsonProperty("device8")]
         public string Device8 { get; set; }
+        [JsonProperty("gsmRetryTimeOut")]
         public int GSMRetryTimeOut { get; set; }
+        [JsonProperty("smsTransmissionInterval")]
         public int SMSTransmissionInterval { get; set; }
+        [JsonProperty("gprsRetryTimeout")]
         public int GPRSRetryTimeout { get; set; }
+        [JsonProperty("gprsRetryCount")]
         public int GPRSRetryCount { get; set; }
+        [JsonProperty("pollingInterval")]
         public int PollingInterval { get; set; }
+        [JsonProperty("pollingBaudRate")]
         public int PollingBaudRate { get; set; }
+        [JsonProperty("maxServerIdleTime")]
         public int MaxServerIdleTime { get; set; }
+        [JsonProperty("noOfDevices")]
         public int NoOfDevices { get; set; }
         public GTPollingAndGprsSettings(string terminalId)
         {

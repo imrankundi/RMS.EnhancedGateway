@@ -1,4 +1,5 @@
-﻿using RMS.Protocols.GT;
+﻿using Newtonsoft.Json;
+using RMS.Protocols.GT;
 
 namespace RMS.Server.DataTypes.Requests
 {
@@ -9,8 +10,9 @@ namespace RMS.Server.DataTypes.Requests
             RequestType = GatewayRequestType.TerminalCommand;
             CommandType = GTCommandType.ClearAllModbusDevices;
         }
-
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
     }
 }

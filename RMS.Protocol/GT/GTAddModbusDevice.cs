@@ -7,15 +7,25 @@ namespace RMS.Protocols.GT
 {
     public class GTAddModbusDevice : ICGRC
     {
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "NA";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
+        [JsonProperty("deviceName")]
         public string DeviceName { get; set; }
+        [JsonProperty("deviceId")]
         public int DeviceId { get; set; }
+        [JsonProperty("functionCode")]
         public int FunctionCode { get; set; }
+        [JsonProperty("startingAddress")]
         public int StartingAddress { get; set; }
+        [JsonProperty("numberOfElements")]
         public int NumberOfElements { get; set; }
+        [JsonProperty("pageNumber")]
         public int PageNumber { get; set; }
 
         public GTAddModbusDevice(string terminalId)

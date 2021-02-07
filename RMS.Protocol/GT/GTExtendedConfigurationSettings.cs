@@ -7,11 +7,17 @@ namespace RMS.Protocols.GT
 {
     public class GTExtendedConfigurationSettings : ICGRC
     {
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "03";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
+        [JsonProperty("storageSnapshotInterval")]
         public int StorageSnapshotInterval { get; set; }
+        [JsonProperty("storageRmsSendInterval")]
         public int StorageRmsSendInterval { get; set; }
         [JsonIgnore]
         public string AuxLatchStatus
@@ -22,12 +28,19 @@ namespace RMS.Protocols.GT
                     (int)Aux3LatchState, (int)Aux4LatchState, (int)Aux5LatchState, (int)Aux6LatchState);
             }
         }
+        [JsonProperty("aux1LatchState")]
         public GTAuxLatchState Aux1LatchState { get; set; }
+        [JsonProperty("aux2LatchState")]
         public GTAuxLatchState Aux2LatchState { get; set; }
+        [JsonProperty("aux3LatchState")]
         public GTAuxLatchState Aux3LatchState { get; set; }
+        [JsonProperty("aux4LatchState")]
         public GTAuxLatchState Aux4LatchState { get; set; }
+        [JsonProperty("aux5LatchState")]
         public GTAuxLatchState Aux5LatchState { get; set; }
+        [JsonProperty("aux6LatchState")]
         public GTAuxLatchState Aux6LatchState { get; set; }
+        [JsonProperty("auxLatchTime")]
         public int AuxLatchTime { get; set; }
         [JsonIgnore]
         public string Reserved1 { get; set; }
@@ -37,8 +50,11 @@ namespace RMS.Protocols.GT
         public string Reserved3 { get; set; }
         [JsonIgnore]
         public string Reserved4 { get; set; }
+        [JsonProperty("clearStorage")]
         public bool ClearStorage { get; set; }
+        [JsonProperty("storageFoundStatus")]
         public bool StorageFoundStatus { get; private set; }
+        [JsonProperty("storageBusyStatus")]
         public bool StorageBusyStatus { get; private set; }
         [JsonIgnore]
         public bool ReservedFlag1 { get; set; }

@@ -7,10 +7,15 @@ namespace RMS.Protocols.GT
 {
     public class GTWatchdogSettings : ICGRC
     {
+        [JsonProperty("terminalId")]
         public string TerminalId { get; set; }
+        [JsonProperty("code")]
         public string Code => "NA";
+        [JsonProperty("commandType")]
         public GTCommandType CommandType { get; set; }
+        [JsonProperty("commandTypeDescription")]
         public string CommandTypeDescription => CommandType.ToString();
+        [JsonProperty("timerInterval")]
         public int TimerInterval { get; set; }
         public GTWatchdogSettings(string terminalId)
         {
