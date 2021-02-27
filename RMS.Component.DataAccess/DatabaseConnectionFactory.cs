@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Data;
 
-namespace PKPSAssets.Component.DataAccess
+namespace RMS.Component.DataAccess
 {
     public abstract class DatabaseConnectionFactory : IDatabaseConnectionFactory
     {

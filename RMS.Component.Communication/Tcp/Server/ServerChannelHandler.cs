@@ -1,13 +1,13 @@
 ﻿using DotNetty.Transport.Channels;
 using Newtonsoft.Json;
 using RMS.AWS;
-using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
 using RMS.Component.Logging;
 using RMS.Core.Enumerations;
 using RMS.Gateway;
 using RMS.Parser;
 using RMS.Protocols;
+using RMS.Server.WebApi.Configuration;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,6 +35,14 @@ namespace RMS.Component.Communication.Tcp.Server
                     try
                     {
                         AWS4Client client = new AWS4Client(listener);
+
+                        int logLevel = (int)WebApiServerConfigurationManager.Instance.Configurations.LogLevel;
+                        
+                        client.LogPacketOnFailure = true;
+
+                        if (logLevel >= (int)Component.Logging.Models.LogLevel.Debug)
+                            client.LogPacketOnSuccess = false;
+
                         Task.Run(() => client.PostData(JsonConvert.SerializeObject(request, Formatting.None)));
                     }
                     catch (Exception ex)
@@ -110,15 +118,20 @@ namespace RMS.Component.Communication.Tcp.Server
                 {
                     if (!result.Data.Equals(TerminalHelper.PONG))
                     {
-                        ReceivedPacketEntity entity = new ReceivedPacketEntity
+                        int logLevel = (int)WebApiServerConfigurationManager.Instance.Configurations.LogLevel;
+                        if (logLevel >= (int)Component.Logging.Models.LogLevel.Debug)
                         {
-                            ReceivedOn = result.ReceivedOn,
-                            Data = result.Data,
-                            ProtocolHeader = result.ProtocolHeader,
-                            TerminalId = result.TerminalId
-                        };
-                        //ReceivedPacketRepository.Save(entity);
-                        RMS.Component.Communication.Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                            ReceivedPacketEntity entity = new ReceivedPacketEntity
+                            {
+                                ReceivedOn = result.ReceivedOn,
+                                Data = result.Data,
+                                ProtocolHeader = result.ProtocolHeader,
+                                TerminalId = result.TerminalId
+                            };
+                            //ReceivedPacketRepository.Save(entity);
+                            Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                        }
+                            
 
                         var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
                         if (protocol != null)

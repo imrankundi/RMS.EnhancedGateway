@@ -1,4 +1,4 @@
-﻿namespace PKPSAssets.Component.DataAccess
+﻿namespace RMS.Component.DataAccess
 {
     public enum DatabaseProvider
     {

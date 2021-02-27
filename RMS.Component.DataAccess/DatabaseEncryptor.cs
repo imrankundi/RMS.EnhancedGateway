@@ -1,7 +1,7 @@
 ﻿using RMS.Component.Security.Cryptography.Symmetric;
 using System.Security.Cryptography;
 
-namespace PKPSAssets.Component.DataAccess
+namespace RMS.Component.DataAccess
 {
     public class DatabaseEncryptor
     {

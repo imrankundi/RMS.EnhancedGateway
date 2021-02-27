@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace PKPSAssets.Component.DataAccess
+namespace RMS.Component.DataAccess
 {
     public class DatabaseFactory
     {

@@ -1,7 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
-namespace PKPSAssets.Component.DataAccess
+namespace RMS.Component.DataAccess
 {
     public class OracleConnectionFactory : DatabaseConnectionFactory
     {

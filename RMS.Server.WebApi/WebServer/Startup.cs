@@ -1,12 +1,6 @@
-﻿using Microsoft.IdentityModel.Tokens;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Jwt;
-using Microsoft.Owin.Security.OAuth;
-using Owin;
+﻿using Owin;
 using RMS.Server.WebApi.Common;
-using RMS.Server.WebApi.Configuration;
 using RMS.Server.WebApi.Middlewares;
-using System.Text;
 using System.Web.Http;
 
 namespace RMS.Server.WebApi

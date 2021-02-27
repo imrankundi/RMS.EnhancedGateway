@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RMS.AWS.Logging;
-using RMS.Component.DataAccess.SQLite;
 using RMS.Component.DataAccess.SQLite.Entities;
-using RMS.Component.Logging;
 using RMS.Core.Common;
 using System;
 using System.Linq;
@@ -16,9 +14,8 @@ namespace RMS.AWS
 {
     public class AWS4Client : IHttpClient
     {
-        //public ILog Log { get; set; }
-        public bool SaveResponseOnSuccess { get; set; }
-        public bool SaveResponseOnFailure { get; set; }
+        public bool LogPacketOnSuccess { get; set; }
+        public bool LogPacketOnFailure { get; set; }
         private ServerInfo server;
         public AWS4Client(ServerInfo server)
         {
@@ -58,18 +55,7 @@ namespace RMS.AWS
 
                         HttpResponseMessage msg = await httpClient.SendAsync(httpRequestMessage);
                         string content = msg.Content.ReadAsStringAsync().Result;
-                        PushApiEntity entity = new PushApiEntity
-                        {
-                            Timestamp = DateTimeHelper.CurrentUniversalTime,
-                            Request = messageBody,
-                            ServerId = server.Id,
-                            Response = content,
-                            HttpStatusCode = msg.StatusCode
-                        };
-                        //PushApiRepository.Save(entity);
-                        Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
 
-                        //Log?.Verbose(JsonConvert.SerializeObject(entity));
                         if (msg.StatusCode == HttpStatusCode.OK)
                         {
                             result = true;
@@ -78,26 +64,58 @@ namespace RMS.AWS
                         {
                             result = false;
                         }
+
+                        if(!result)
+                        {
+                            if(LogPacketOnFailure)
+                            {
+                                PushApiEntity entity = new PushApiEntity
+                                {
+                                    Timestamp = DateTimeHelper.CurrentUniversalTime,
+                                    Request = messageBody,
+                                    ServerId = server.Id,
+                                    Response = content,
+                                    HttpStatusCode = msg.StatusCode
+                                };
+                                //PushApiRepository.Save(entity);
+                                FailedPacketLogger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                            }
+                            
+                        }
+                        else
+                        {
+                            if(LogPacketOnSuccess)
+                            {
+                                PushApiEntity entity = new PushApiEntity
+                                {
+                                    Timestamp = DateTimeHelper.CurrentUniversalTime,
+                                    Request = messageBody,
+                                    ServerId = server.Id,
+                                    Response = content,
+                                    HttpStatusCode = msg.StatusCode
+                                };
+                                //PushApiRepository.Save(entity);
+                                Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    //Logger.Instance.Log.Write(messageBody);
-                    //ErrorLogger.GetInstance().LogExceptionAsync(ex, "Posting data to server from AWS4Client");
                     result = false;
-                    PushApiEntity entity = new PushApiEntity
+                    if(LogPacketOnFailure)
                     {
-                        Timestamp = DateTimeHelper.CurrentUniversalTime,
-                        Request = messageBody,
-                        ServerId = server.Id,
-                        HttpStatusCode = HttpStatusCode.Unused,
-                        Response = "[ERROR_AT_GATEWAY] => " + ex.Message
-                    };
+                        PushApiEntity entity = new PushApiEntity
+                        {
+                            Timestamp = DateTimeHelper.CurrentUniversalTime,
+                            Request = messageBody,
+                            ServerId = server.Id,
+                            HttpStatusCode = HttpStatusCode.Unused,
+                            Response = "[ERROR_AT_GATEWAY] => " + ex.Message
+                        };
 
-                    Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
-
-                    //Log?.Write(JsonConvert.SerializeObject(entity));
-                    //PushApiRepository.Save(entity);
+                        FailedPacketLogger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
+                    }
                 }
             }
 

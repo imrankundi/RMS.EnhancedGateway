@@ -1,7 +1,7 @@
 ﻿using RMS.Component.Configuration;
 using System.Collections.Generic;
 
-namespace PKPSAssets.Component.DataAccess
+namespace RMS.Component.DataAccess
 {
     public class DatabaseConfigurationManager
     {

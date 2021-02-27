@@ -7,6 +7,7 @@ using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.EmailSender;
 using RMS.Server.WebApi.Common;
+using RMS.Server.WebApi.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -23,8 +24,13 @@ namespace RMS.Server.WebApi
         ILog log;
 
         public IEnumerable<string> ChannelKeys => server.ChannelKeys;
-        public EnhancedGateway()
+        public EnhancedGateway() : this(null)
         {
+
+        }
+        public EnhancedGateway(ILog log)
+        {
+            this.log = log;
             timer = new Timer();
             timer.Interval = ServerChannelConfigurationManager.Instance.Configurations.SyncIntervalInSeconds * 1000;
             timer.Elapsed += Timer_Elapsed;
@@ -33,7 +39,6 @@ namespace RMS.Server.WebApi
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            Console.WriteLine("Timer Tick...");
             timer.Enabled = false;
             try
             {
@@ -154,7 +159,8 @@ namespace RMS.Server.WebApi
                 configurations = ServerChannelConfigurationManager.Instance.Configurations;
                 server = new ServerChannel(configurations)
                 {
-                    ServerChannelHandler = this
+                    ServerChannelHandler = this,
+                    Log = log
                 };
                 await server.StartAsync();
 

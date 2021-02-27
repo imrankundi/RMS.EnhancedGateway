@@ -111,6 +111,7 @@ namespace RMS.Component.Communication.Tcp.Server
         IEventLoopGroup bossGroup;
         IEventLoopGroup workerGroup;
         ServerChannelHandler handler;
+
         public async Task StartAsync()
         {
             string methodName = MethodBase.GetCurrentMethod().Name;
@@ -152,6 +153,8 @@ namespace RMS.Component.Communication.Tcp.Server
                         handler = new ServerChannelHandler();
                         //handler.ClientChannelManager = ClientChannelManager;
                         handler.ChannelHandler = ServerChannelHandler;
+                        handler.Log = Log;
+
                         pipeline.AddLast("handler", handler);
                     }));
 

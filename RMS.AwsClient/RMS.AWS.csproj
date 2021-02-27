@@ -50,6 +50,7 @@
     <Compile Include="Logging\BaseLogger.cs" />
     <Compile Include="Logging\ILog.cs" />
     <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Logging\FailedPacketLogger.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LoggingFactory.cs" />
     <Compile Include="Logging\LogLevel.cs" />

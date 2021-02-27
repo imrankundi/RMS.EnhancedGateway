@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using RMS.Component.Common.Helpers;
 
 namespace RMS.AWS.ManualIngester
 {
@@ -14,7 +15,7 @@ namespace RMS.AWS.ManualIngester
         {
             InitializeComponent();
             btnPushPackets.Enabled = false;
-            btnLoadParsedPackets.Enabled = false;
+            btnLoadParsedPackets.Enabled = true;
         }
 
         private void btnLoadParsedPackets_Click(object sender, EventArgs e)
@@ -28,7 +29,9 @@ namespace RMS.AWS.ManualIngester
                 {
                     lblParsedPacketFile.Text = ofd.FileName;
                     var text = File.ReadAllText(ofd.FileName);
-                    packets = JsonConvert.DeserializeObject<IEnumerable<ReonParsedPacket>>(text);
+                    text = "[" + text.TrimEnd(',') + "]";
+                    packets = JsonConvert.DeserializeObject<IEnumerable<RMS.Component.DataAccess.SQLite.Entities.PushApiEntity>>(text);
+                    File.Move(ofd.FileName, ofd.FileName + ".working");
                     btnPushPackets.Enabled = true;
                 }
                 else
@@ -50,7 +53,7 @@ namespace RMS.AWS.ManualIngester
 
         private ServerInfo serverInfo;
         AWS4Client client;
-        private IEnumerable<ReonParsedPacket> packets;
+        private IEnumerable<RMS.Component.DataAccess.SQLite.Entities.PushApiEntity> packets;
         private void btnLoadServerInfo_Click(object sender, EventArgs e)
         {
             try
@@ -140,6 +143,57 @@ namespace RMS.AWS.ManualIngester
 
             }
 
+        }
+
+        private void btnZip_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "JSON File|*.json";
+                var result = ofd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    GunZip.Compress(ofd.FileName);
+                }
+                else
+                {
+                    lblServerInfoFile.Text = "No File Selected";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                ShowMessage(ex);
+            }
+        }
+
+        private void btnUnzip_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                ofd.Filter = "JSON File|*.gz";
+                var result = ofd.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    GunZip.Decompress(ofd.FileName);
+                }
+                else
+                {
+                    lblServerInfoFile.Text = "No File Selected";
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                ShowMessage(ex);
+            }
         }
     }
 }

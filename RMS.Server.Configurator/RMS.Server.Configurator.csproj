@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5CCC9FC-3B27-4D27-9873-8C7DC453633F}</ProjectGuid>
+    <ProjectGuid>{101F97BC-5EE7-460A-B55A-50B9255CDC94}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>RMS.AWS.ManualIngester</RootNamespace>
-    <AssemblyName>RMS.AWS.ManualIngester</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>RMS.Server.Configurator</RootNamespace>
+    <AssemblyName>RMS.Server.Configurator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -22,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,9 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,21 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AWS4Client.cs" />
-    <Compile Include="IHttpClient.cs" />
-    <Compile Include="Ingester.cs">
+    <Compile Include="Configurator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ingester.Designer.cs">
-      <DependentUpon>Ingester.cs</DependentUpon>
+    <Compile Include="Configurator.Designer.cs">
+      <DependentUpon>Configurator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PushApiEntity.cs" />
-    <Compile Include="ReonParsedPacket.cs" />
-    <Compile Include="ServerInfo.cs" />
-    <EmbeddedResource Include="Ingester.resx">
-      <DependentUpon>Ingester.cs</DependentUpon>
+    <EmbeddedResource Include="Configurator.resx">
+      <DependentUpon>Configurator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,7 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
-      <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
-      <Name>RMS.Component.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
