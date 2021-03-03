@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using RMS.Protocols.GT;
 
 namespace RMS.Server.DataTypes.Requests
 {

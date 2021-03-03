@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System;
-using System.Text;
 
 namespace RMS.Protocols.GT
 {
@@ -40,11 +38,11 @@ namespace RMS.Protocols.GT
         }
         public void Parse(string[] strArray)
         {
-            if(strArray != null)
+            if (strArray != null)
             {
-                if(strArray.Length > 0)
+                if (strArray.Length > 0)
                 {
-                    if(strArray[0].Equals(deviceResponseMessage))
+                    if (strArray[0].Equals(deviceResponseMessage))
                     {
                         Message = deviceResponseMessage;
                     }

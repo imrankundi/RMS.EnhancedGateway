@@ -134,8 +134,8 @@ namespace RMS.Test
         public void ParseModbusAddCommand()
         {
             GTAddModbusDeviceCollection col = new GTAddModbusDeviceCollection("SP111111");
-            
-            
+
+
             GTAddModbusDevice device = new GTAddModbusDevice("SP111111");
 
             device.DeviceName = "MDPC";

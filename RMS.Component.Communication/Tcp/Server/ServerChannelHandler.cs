@@ -34,10 +34,10 @@ namespace RMS.Component.Communication.Tcp.Server
                 {
                     try
                     {
-                        AWS4Client client = new AWS4Client(listener);
+                        var client = new AwsSqsClient(listener);
 
                         int logLevel = (int)WebApiServerConfigurationManager.Instance.Configurations.LogLevel;
-                        
+
                         client.LogPacketOnFailure = true;
 
                         if (logLevel >= (int)Component.Logging.Models.LogLevel.Debug)
@@ -131,7 +131,7 @@ namespace RMS.Component.Communication.Tcp.Server
                             //ReceivedPacketRepository.Save(entity);
                             Logging.Logger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
                         }
-                            
+
 
                         var protocol = ProtocolList.Instance.Find(result.ProtocolHeader);
                         if (protocol != null)

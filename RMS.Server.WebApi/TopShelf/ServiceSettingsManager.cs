@@ -1,6 +1,4 @@
-﻿using RMS.Component.DataAccess.SQLite.Repositories;
-
-namespace RMS.Server.WebApi
+﻿namespace RMS.Server.WebApi
 {
     public class ServiceSettingsManager
     {

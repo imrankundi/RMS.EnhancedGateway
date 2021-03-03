@@ -24,7 +24,7 @@ namespace RMS.Server.WebApi
             MethodName = method.Name;
             #endregion
             configurations = WebApiServerConfigurationManager.Instance.Configurations;
-            WebApiLogger = LoggingFactory.CreateLogger(configurations.LogPath, "web-api.log", configurations.LogLevel);           
+            WebApiLogger = LoggingFactory.CreateLogger(configurations.LogPath, "web-api.log", configurations.LogLevel);
         }
         public void Start()
         {

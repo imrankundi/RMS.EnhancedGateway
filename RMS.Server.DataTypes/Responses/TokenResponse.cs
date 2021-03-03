@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RMS.Component.WebApi.Responses;
 using RMS.Server.DataTypes.Requests;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace RMS.Server.DataTypes.Responses
 {

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System;
 using System.Text;
 
 namespace RMS.Protocols.GT
@@ -151,7 +150,7 @@ namespace RMS.Protocols.GT
             sb.Append(GetBooleanAsString(GTReset));
             sb.Append(GetBooleanAsString(ModemReset));
             sb.Append(GetBooleanAsString(Modbus));
-            
+
             sb.Append(GetBooleanAsString(Storage));
             sb.Append(GetBooleanAsString(Reserved3));
             sb.Append(GetBooleanAsString(Reserved4));
@@ -201,12 +200,12 @@ namespace RMS.Protocols.GT
                     CompilationTime = strArray[17];
                 }
 
-                if(strArray.Length > 47)
+                if (strArray.Length > 47)
                 {
                     var charArray = strArray[47].ToCharArray();
 
-                    
-                    if(charArray.Length > 33)
+
+                    if (charArray.Length > 33)
                     {
                         GPRS = GetCharAsBoolean(charArray[0]);
                         SmsFallBack = GetCharAsBoolean(charArray[1]);
@@ -231,7 +230,7 @@ namespace RMS.Protocols.GT
                         ModemReset = GetCharAsBoolean(charArray[20]);
 
                         Modbus = GetCharAsBoolean(charArray[21]);
-                        
+
                         Storage = GetCharAsBoolean(charArray[22]);
                         Reserved3 = GetCharAsBoolean(charArray[23]);
                         Reserved4 = GetCharAsBoolean(charArray[24]);
@@ -245,7 +244,7 @@ namespace RMS.Protocols.GT
                         Reserved12 = GetCharAsBoolean(charArray[32]);
                         Reserved13 = GetCharAsBoolean(charArray[33]);
                     }
-                    
+
 
                 }
             }

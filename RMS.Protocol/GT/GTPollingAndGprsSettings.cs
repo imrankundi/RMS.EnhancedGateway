@@ -68,7 +68,7 @@ namespace RMS.Protocols.GT
                     int.TryParse(strArray[38], out int gsmRetryTimeout);
                     GSMRetryTimeOut = gsmRetryTimeout;
 
-                    
+
                     int.TryParse(strArray[39], out int smsTransmissionInterval);
                     SMSTransmissionInterval = smsTransmissionInterval;
 

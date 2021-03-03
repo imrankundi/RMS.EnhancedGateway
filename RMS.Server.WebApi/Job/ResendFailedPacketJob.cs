@@ -98,7 +98,7 @@ namespace RMS.Jobs
                 {
                     try
                     {
-                        AWS4Client client = new AWS4Client(listener);
+                        var client = new AwsSqsClient(listener);
 
                         int logLevel = (int)WebApiServerConfigurationManager.Instance.Configurations.LogLevel;
 

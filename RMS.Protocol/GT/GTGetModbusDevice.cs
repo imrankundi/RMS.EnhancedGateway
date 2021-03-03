@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System;
-using System.Text;
 
 namespace RMS.Protocols.GT
 {
@@ -55,7 +53,7 @@ namespace RMS.Protocols.GT
             {
                 if (strArray.Length > 4)
                 {
-                    DeviceName = strArray[0].Replace("GET[","");
+                    DeviceName = strArray[0].Replace("GET[", "");
 
                     int.TryParse(strArray[1], out int deviceId);
                     DeviceId = deviceId;

@@ -49,15 +49,15 @@ namespace RMS.Protocols.GT
             {
                 if (strArray.Length > 29)
                 {
-                    Sim1Number= strArray[18];
-                    Sim1APN= strArray[19];
-                    Sim1UserId= strArray[20];
-                    Sim1Password= strArray[21];
-                    Sim2Number= strArray[22];
-                    Sim2APN= strArray[23];
-                    Sim2UserId= strArray[24];
-                    Sim2Password= strArray[25];
-                    GPRSTerminalID= strArray[26];
+                    Sim1Number = strArray[18];
+                    Sim1APN = strArray[19];
+                    Sim1UserId = strArray[20];
+                    Sim1Password = strArray[21];
+                    Sim2Number = strArray[22];
+                    Sim2APN = strArray[23];
+                    Sim2UserId = strArray[24];
+                    Sim2Password = strArray[25];
+                    GPRSTerminalID = strArray[26];
                     ServerNumber = strArray[27];
                     ServerIP = strArray[28];
 
@@ -78,7 +78,7 @@ namespace RMS.Protocols.GT
             ServerNumber = string.IsNullOrEmpty(ServerNumber) ? "" : ServerNumber;
             ServerIP = string.IsNullOrEmpty(ServerIP) ? "" : ServerIP;
             return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",
-                TerminalId, Code, Sim1Number, Sim1APN, Sim1UserId, Sim1Password, Sim2Number, 
+                TerminalId, Code, Sim1Number, Sim1APN, Sim1UserId, Sim1Password, Sim2Number,
                 Sim2Password, GPRSTerminalID, ServerNumber, ServerIP, ServerPort);
         }
         public override string ToString()

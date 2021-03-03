@@ -1,9 +1,7 @@
-﻿using Newtonsoft.Json;
-using RMS.Component.DataAccess.SQLite.Repositories;
+﻿using RMS.Component.DataAccess.SQLite.Repositories;
 using RMS.Server.DataTypes;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace RMS.Parser
 {

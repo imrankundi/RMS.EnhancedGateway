@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
@@ -33,7 +31,7 @@ namespace RMS.Protocols.GT
         public string CreateCommand()
         {
             StringBuilder sb = new StringBuilder();
-            foreach(var device in Devices)
+            foreach (var device in Devices)
             {
                 sb.AppendFormat("{0};", device.CreateCommand());
             }

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RMS.Server.DataTypes
+﻿namespace RMS.Server.DataTypes
 {
     public class User
     {

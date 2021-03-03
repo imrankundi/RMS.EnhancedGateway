@@ -65,9 +65,9 @@ namespace RMS.AWS
                             result = false;
                         }
 
-                        if(!result)
+                        if (!result)
                         {
-                            if(LogPacketOnFailure)
+                            if (LogPacketOnFailure)
                             {
                                 PushApiEntity entity = new PushApiEntity
                                 {
@@ -80,11 +80,11 @@ namespace RMS.AWS
                                 //PushApiRepository.Save(entity);
                                 FailedPacketLogger.Instance.Log.Write(JsonConvert.SerializeObject(entity));
                             }
-                            
+
                         }
                         else
                         {
-                            if(LogPacketOnSuccess)
+                            if (LogPacketOnSuccess)
                             {
                                 PushApiEntity entity = new PushApiEntity
                                 {
@@ -103,7 +103,7 @@ namespace RMS.AWS
                 catch (Exception ex)
                 {
                     result = false;
-                    if(LogPacketOnFailure)
+                    if (LogPacketOnFailure)
                     {
                         PushApiEntity entity = new PushApiEntity
                         {

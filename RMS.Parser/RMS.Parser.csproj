@@ -58,6 +58,7 @@
     <Compile Include="StateManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Configuration\json1.json" />
     <None Include="Drivers\MDPC.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

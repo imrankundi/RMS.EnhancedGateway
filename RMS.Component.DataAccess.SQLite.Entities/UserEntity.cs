@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace RMS.Component.DataAccess.SQLite.Entities
+﻿namespace RMS.Component.DataAccess.SQLite.Entities
 {
     public class UserEntity
     {

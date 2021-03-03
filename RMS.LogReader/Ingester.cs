@@ -100,7 +100,7 @@ namespace RMS.AWS.ManualIngester
 
 
                         var res = client.PostData(json);
-                        
+
                         if (res)
                         {
                             count++;
@@ -135,8 +135,8 @@ namespace RMS.AWS.ManualIngester
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "JSON|*.json";
             var result = sfd.ShowDialog();
-            
-            if(result == DialogResult.OK)
+
+            if (result == DialogResult.OK)
             {
                 File.WriteAllText(sfd.FileName, JsonConvert.SerializeObject(packets, Formatting.Indented));
             }

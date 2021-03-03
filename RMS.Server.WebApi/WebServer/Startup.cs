@@ -39,7 +39,7 @@ namespace RMS.Server.WebApi
             // Web Api
             app.UseWebApi(config);
 
-            
+
 
 
             // Enable CORS

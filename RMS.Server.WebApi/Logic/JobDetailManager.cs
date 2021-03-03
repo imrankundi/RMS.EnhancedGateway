@@ -1,5 +1,5 @@
-﻿using RMS.Jobs;
-using Quartz;
+﻿using Quartz;
+using RMS.Jobs;
 using System.Reflection;
 namespace RMS.Server.BusinessLogic
 {
@@ -8,7 +8,7 @@ namespace RMS.Server.BusinessLogic
         public const string Group = "Gateway";
         protected static string ClassName => nameof(JobDetailManager);
         protected static string MethodName { get; private set; }
-        
+
         public static IJobDetail CreateResendFailedPacketJob(string name, string group, int jobId = -1)
         {
             #region Logging
@@ -23,6 +23,6 @@ namespace RMS.Server.BusinessLogic
                 .Build();
             return jobDetail;
         }
-      
+
     }
 }

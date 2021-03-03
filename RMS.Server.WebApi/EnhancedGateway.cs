@@ -7,7 +7,6 @@ using RMS.Server.DataTypes;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.EmailSender;
 using RMS.Server.WebApi.Common;
-using RMS.Server.WebApi.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

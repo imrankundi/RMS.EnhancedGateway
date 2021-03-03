@@ -1,11 +1,10 @@
 ﻿using Newtonsoft.Json;
-using RMS.Parser;
+using RMS.Component.Common.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using RMS.Component.Common.Helpers;
 
 namespace RMS.AWS.ManualIngester
 {

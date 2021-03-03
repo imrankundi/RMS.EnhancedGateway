@@ -7,14 +7,14 @@ using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
 using RMS.Server.WebApi.Configuration;
 using System;
-using System.Threading;
 using System.Linq;
+using System.Threading;
 
 namespace RMS.Server.WebApi.Common
 {
     public class TerminalRequestHandler
     {
-        public static TerminalCommandResponse SendGTCommandRequest(TerminalCommandRequest commandRequest, 
+        public static TerminalCommandResponse SendGTCommandRequest(TerminalCommandRequest commandRequest,
             GTCommandType commandType)
         {
             var config = WebApiServerConfigurationManager.Instance.Configurations;
@@ -22,7 +22,7 @@ namespace RMS.Server.WebApi.Common
             try
             {
                 var connected = WebServer.server.ChannelKeys.Contains(commandRequest.TerminalId);
-                if(!connected)
+                if (!connected)
                 {
                     return new TerminalCommandResponse
                     {

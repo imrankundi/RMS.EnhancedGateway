@@ -1,10 +1,5 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RMS.Protocols.GT
 {

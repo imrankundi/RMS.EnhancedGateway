@@ -47,7 +47,7 @@ namespace RMS.Server.BusinessLogic
 
             await JobScheduler.ScheduleJob(resendFailedPacketJobDetail, resendFailedPacketTrigger);
             /*-----------------------------------------------------------------------------------------------------------------*/
-            
+
 
             WebServer.WebApiLogger?.Verbose(ClassName, MethodName, "End");
         }

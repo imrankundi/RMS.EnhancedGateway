@@ -28,7 +28,7 @@ namespace RMS.Protocols.GT
         {
             string command = string.Empty;
             StringBuilder sb = new StringBuilder();
-            foreach(var device in Devices)
+            foreach (var device in Devices)
             {
                 sb.AppendFormat("{0};", device.CreateCommand());
             }
@@ -40,11 +40,11 @@ namespace RMS.Protocols.GT
         }
         public void Parse(string[] strArray)
         {
-            if(strArray != null)
+            if (strArray != null)
             {
-                foreach(var str in strArray)
+                foreach (var str in strArray)
                 {
-                    if(!str.Equals(GTCommandFactory.ModbusInvalidString) && str.StartsWith("GET"))
+                    if (!str.Equals(GTCommandFactory.ModbusInvalidString) && str.StartsWith("GET"))
                     {
                         GTGetModbusDevice device = new GTGetModbusDevice(TerminalId);
                         var arr = str.Replace("GET[", "").TrimEnd(']').Split(',');

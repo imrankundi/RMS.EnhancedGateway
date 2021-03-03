@@ -3,7 +3,6 @@ using RMS.Core.Security;
 using RMS.Parser;
 using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
-using RMS.Server.WebApi.Configuration;
 using System;
 using System.Web.Http;
 

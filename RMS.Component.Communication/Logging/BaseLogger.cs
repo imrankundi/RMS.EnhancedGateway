@@ -72,7 +72,7 @@ namespace RMS.Component.Communication.Logging
             //    level.ToString().Substring(0, 3).ToUpper(),
             //    text);
 
-            
+
             try
             {
                 BaseLogger.locker.AcquireWriterLock(int.MaxValue);

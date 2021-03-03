@@ -50,7 +50,7 @@ namespace RMS.Parser
         }
         public User FindUserByUserName(string userName)
         {
-            if(Users.UserList.ContainsKey(userName))
+            if (Users.UserList.ContainsKey(userName))
             {
                 return Users.UserList[userName];
             }

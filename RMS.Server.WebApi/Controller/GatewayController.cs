@@ -9,11 +9,11 @@ using RMS.Server.DataTypes.Requests;
 using RMS.Server.DataTypes.Responses;
 using RMS.Server.WebApi.Common;
 using RMS.Server.WebApi.Configuration;
+using RMS.Server.WebApi.Jwt.Filters;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Http;
-using System.Linq;
-using RMS.Server.WebApi.Jwt.Filters;
 
 namespace RMS.Server.WebApi.Controller
 {

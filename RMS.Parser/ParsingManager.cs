@@ -28,7 +28,7 @@ namespace RMS.Parser
                 if (index != -1)
                 {
 
-                    if(index > terminalIdLength)
+                    if (index > terminalIdLength)
                     {
                         int start = (index - terminalIdLength);
                         terminalId = packet.Substring(start, terminalIdLength);
@@ -43,7 +43,7 @@ namespace RMS.Parser
                     }
 
 
-                    
+
 
                     pkt = packet.Substring(index, packet.Length - index).TrimStart('<').TrimEnd('>');
 
