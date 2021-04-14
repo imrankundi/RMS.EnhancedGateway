@@ -32,9 +32,9 @@ namespace RMS.Protocols.GT
         {
             if (strArray != null)
             {
-                if (strArray.Length > 17)
+                if (strArray.Length > 19)
                 {
-                    int.TryParse(strArray[5], out int timerInterval);
+                    int.TryParse(strArray[19], out int timerInterval);
                     TimerInterval = timerInterval;
                 }
 

@@ -14,6 +14,7 @@
         AddMultipleModbusDevices = 9,
         GetModbusDevice = 10,
         GetMultipleModbusDevices = 11,
-        ClearAllModbusDevices = 12
+        ClearAllModbusDevices = 12,
+        NetworkReadOnlyInformation = 13
     }
 }

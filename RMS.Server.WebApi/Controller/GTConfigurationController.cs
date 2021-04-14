@@ -149,7 +149,8 @@ namespace RMS.Server.WebApi.Controller
                     request.CommandType == GTCommandType.ExtendedConfigurationSettings ||
                     request.CommandType == GTCommandType.PollingAndGprsSettings ||
                     request.CommandType == GTCommandType.SimAndServerSettings ||
-                    request.CommandType == GTCommandType.WatchdogSettings)
+                    request.CommandType == GTCommandType.WatchdogSettings ||
+                    request.CommandType == GTCommandType.NetworkReadOnlyInformation)
                 {
                     commandRequest.Data = GTCommandFactory.CreateGetCommand(request.TerminalId, request.CommandType);
                     var response = TerminalRequestHandler.SendGTCommandRequest(commandRequest, request.CommandType);

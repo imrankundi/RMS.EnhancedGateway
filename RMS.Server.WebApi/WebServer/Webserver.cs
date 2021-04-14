@@ -42,8 +42,8 @@ namespace RMS.Server.WebApi
                 WebApiLogger?.Information(ClassName, MethodName, "Instantiating TCP Server Channel");
                 server = new EnhancedGateway(serverChannelLog);
                 Task.Run(() => server.Start());
-                WebApiLogger?.Information(ClassName, MethodName, "Starting Job Scheduler");
-                Task.Run(() => TaskManager.StartJobScheduler());
+                //WebApiLogger?.Information(ClassName, MethodName, "Starting Job Scheduler");
+                //Task.Run(() => TaskManager.StartJobScheduler());
             }
 
             //Task.Run(() => TaskManager.StartJobScheduler());

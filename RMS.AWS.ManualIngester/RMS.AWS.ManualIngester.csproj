@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AWS4Client.cs" />
     <Compile Include="IHttpClient.cs" />
     <Compile Include="Ingester.cs">
       <SubType>Form</SubType>
@@ -62,7 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PushApiEntity.cs" />
     <Compile Include="ReonParsedPacket.cs" />
-    <Compile Include="ServerInfo.cs" />
+    <Compile Include="SiteInfo.cs" />
     <EmbeddedResource Include="Ingester.resx">
       <DependentUpon>Ingester.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RMS.AwsClient\RMS.AWS.csproj">
+      <Project>{8a8b2c11-8bc2-41e9-8092-6d4689cad6da}</Project>
+      <Name>RMS.AWS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RMS.Component.Common\RMS.Component.Common.csproj">
       <Project>{3e6e38c2-a11e-4040-8e4b-7e678f56988f}</Project>
       <Name>RMS.Component.Common</Name>

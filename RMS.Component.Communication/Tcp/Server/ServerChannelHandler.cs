@@ -41,6 +41,8 @@ namespace RMS.Component.Communication.Tcp.Server
                         client.LogPacketOnFailure = true;
 
                         if (logLevel >= (int)Component.Logging.Models.LogLevel.Debug)
+                            client.LogPacketOnSuccess = true;
+                        else
                             client.LogPacketOnSuccess = false;
 
                         Task.Run(() => client.PostData(JsonConvert.SerializeObject(request, Formatting.None)));

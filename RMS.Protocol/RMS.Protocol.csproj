@@ -61,6 +61,7 @@
     <Compile Include="GT\GTAddModbusDevice.cs" />
     <Compile Include="GT\GTResetRom.cs" />
     <Compile Include="GT\GTReset.cs" />
+    <Compile Include="GT\GTNetworkReadOnlyInformation.cs" />
     <Compile Include="GT\GTWatchdogSettings.cs" />
     <Compile Include="GT\GTGeneralSettings.cs" />
     <Compile Include="GT\GTSimAndServerSettings.cs" />

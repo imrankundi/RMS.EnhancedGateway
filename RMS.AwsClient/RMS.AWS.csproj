@@ -63,6 +63,7 @@
     <Compile Include="Logging\LogLevel.cs" />
     <Compile Include="Logging\LogWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReceivedPacket.cs" />
     <Compile Include="ServerInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,7 +27,7 @@ namespace RMS.Server.WebApi.Common
                     return new TerminalCommandResponse
                     {
                         RequestId = commandRequest.RequestId,
-                        Data = commandRequest.Data,
+                        Data = null,//commandRequest.Data,
                         RequestType = commandRequest.RequestType,
                         ResponseStatus = ResponseStatus.Failed,
                         Message = "Site not connected."

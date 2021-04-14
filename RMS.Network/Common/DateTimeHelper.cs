@@ -13,7 +13,7 @@ namespace RMS.Network
         public static string SynchronizeGT()
         {
             DateTime datetime = GetDateTime();
-            return String.Format("SPDT({0},{1})",
+            return String.Format("SPDT({0},{1})\r\n",
                 datetime.ToString("dd/MM/yyyy"),
                 datetime.ToString("HH:mm:ss")); // giving problem with virtual gt
         }

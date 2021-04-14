@@ -105,13 +105,16 @@ namespace RMS.Jobs
                         client.LogPacketOnFailure = true;
 
                         if (logLevel >= (int)Component.Logging.Models.LogLevel.Debug)
+                            client.LogPacketOnSuccess = true;
+                        else
                             client.LogPacketOnSuccess = false;
 
                         foreach (var packet in packets)
                         {
                             try
                             {
-                                var res = client.PostData(packet.Request);
+                                var res = client.PostData(packet.Request).Result;
+
                             }
                             catch (Exception)
                             {

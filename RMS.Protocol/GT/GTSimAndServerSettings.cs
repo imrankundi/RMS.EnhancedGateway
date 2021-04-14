@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using RMS.Server.DataTypes.Requests;
+using System;
 
 namespace RMS.Protocols.GT
 {
@@ -66,6 +67,24 @@ namespace RMS.Protocols.GT
                 }
             }
         }
+
+        private void Validate()
+        {
+            if (string.IsNullOrEmpty(Sim1Number) ||
+            string.IsNullOrEmpty(Sim1APN) ||
+            string.IsNullOrEmpty(Sim1UserId) ||
+            string.IsNullOrEmpty(Sim1Password) ||
+            string.IsNullOrEmpty(Sim2Number) ||
+            string.IsNullOrEmpty(Sim2APN) ||
+            string.IsNullOrEmpty(Sim2UserId) ||
+            string.IsNullOrEmpty(Sim2Password) ||
+            string.IsNullOrEmpty(GPRSTerminalID) ||
+            string.IsNullOrEmpty(ServerNumber) ||
+            string.IsNullOrEmpty(ServerIP))
+            {
+                throw new Exception("All parameters are required while setting GT Configuration");
+            }
+        }
         public string CreateCommand()
         {
             Sim1Number = string.IsNullOrEmpty(Sim1Number) ? "" : Sim1Number;
@@ -73,16 +92,19 @@ namespace RMS.Protocols.GT
             Sim1UserId = string.IsNullOrEmpty(Sim1UserId) ? "" : Sim1UserId;
             Sim1Password = string.IsNullOrEmpty(Sim1Password) ? "" : Sim1Password;
             Sim2Number = string.IsNullOrEmpty(Sim2Number) ? "" : Sim2Number;
+            Sim2APN = string.IsNullOrEmpty(Sim2APN) ? "" : Sim2APN;
+            Sim2UserId = string.IsNullOrEmpty(Sim2UserId) ? "" : Sim2UserId;
             Sim2Password = string.IsNullOrEmpty(Sim2Password) ? "" : Sim2Password;
             GPRSTerminalID = string.IsNullOrEmpty(GPRSTerminalID) ? "" : GPRSTerminalID;
             ServerNumber = string.IsNullOrEmpty(ServerNumber) ? "" : ServerNumber;
             ServerIP = string.IsNullOrEmpty(ServerIP) ? "" : ServerIP;
-            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10})",
-                TerminalId, Code, Sim1Number, Sim1APN, Sim1UserId, Sim1Password, Sim2Number,
-                Sim2Password, GPRSTerminalID, ServerNumber, ServerIP, ServerPort);
+            return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12},)",
+                Code, Sim1Number, Sim1APN, Sim1UserId, Sim1Password, Sim2Number, Sim2APN,
+                Sim2UserId, Sim2Password, GPRSTerminalID, ServerNumber, ServerIP, ServerPort);
         }
         public override string ToString()
         {
+            //Validate();
             return string.Format("{0}<{1}>", TerminalId, CreateCommand());
         }
     }

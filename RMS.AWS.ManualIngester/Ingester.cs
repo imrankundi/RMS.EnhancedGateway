@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
 using RMS.Component.Common.Helpers;
+using RMS.Parser;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using TestConsoleApp;
 
 namespace RMS.AWS.ManualIngester
 {
@@ -22,14 +24,12 @@ namespace RMS.AWS.ManualIngester
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "JSON File|*.json";
+                ofd.Filter = "Log File|*.log";
                 var result = ofd.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     lblParsedPacketFile.Text = ofd.FileName;
-                    var text = File.ReadAllText(ofd.FileName);
-                    text = "[" + text.TrimEnd(',') + "]";
-                    packets = JsonConvert.DeserializeObject<IEnumerable<RMS.Component.DataAccess.SQLite.Entities.PushApiEntity>>(text);
+                    ReadReceivedPackets(ofd.FileName);
                     File.Move(ofd.FileName, ofd.FileName + ".working");
                     btnPushPackets.Enabled = true;
                 }
@@ -51,8 +51,7 @@ namespace RMS.AWS.ManualIngester
         }
 
         private ServerInfo serverInfo;
-        AWS4Client client;
-        private IEnumerable<RMS.Component.DataAccess.SQLite.Entities.PushApiEntity> packets;
+        AwsSqsClient client;
         private void btnLoadServerInfo_Click(object sender, EventArgs e)
         {
             try
@@ -65,8 +64,8 @@ namespace RMS.AWS.ManualIngester
                     lblServerInfoFile.Text = ofd.FileName;
                     var text = File.ReadAllText(ofd.FileName);
                     serverInfo = JsonConvert.DeserializeObject<ServerInfo>(text);
-                    client = new AWS4Client(serverInfo);
-                    btnLoadParsedPackets.Enabled = true;
+                    client = new AwsSqsClient(serverInfo);
+                    btnLoadSites.Enabled = true;
                 }
                 else
                 {
@@ -95,7 +94,7 @@ namespace RMS.AWS.ManualIngester
                         //datetime = datetime.AddHours(5);
                         //packet.Data[0]["Timestamp"] = datetime;
                         var res = client.PostData(JsonConvert.SerializeObject(packet, Formatting.None));
-                        if (res)
+                        if (res.Result)
                         {
                             count++;
                             UpdateText(count);
@@ -144,42 +143,63 @@ namespace RMS.AWS.ManualIngester
 
         }
 
-        private void btnZip_Click(object sender, EventArgs e)
+
+        static Dictionary<string, SiteInfo> dict = new Dictionary<string, SiteInfo>();
+
+        public void ReadSitesCsv(string path)
         {
-            try
+            dict.Clear();
+            var lines = File.ReadAllLines(path);
+            foreach (var line in lines)
             {
-                OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "JSON File|*.json";
-                var result = ofd.ShowDialog();
-                if (result == DialogResult.OK)
+                var str = line.Split(',');
+
+                var siteId = str[1];
+                var siteName = str[2];
+
+                dict.Add(siteId, new SiteInfo
                 {
-                    GunZip.Compress(ofd.FileName);
-                }
-                else
-                {
-                    lblServerInfoFile.Text = "No File Selected";
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-
-                ShowMessage(ex);
+                    Id = siteId,
+                    Name = siteName
+                });
+                Console.WriteLine("Id: {0}, Name: {1}", siteId, siteName);
             }
         }
-
-        private void btnUnzip_Click(object sender, EventArgs e)
+        List<ReceivedPacket> packets;
+        private void ReadReceivedPackets(string path)
         {
+            var text = File.ReadAllText(path);
+            text = "[" + text.TrimEnd(',') + "]";
+            var json = JsonConvert.DeserializeObject<IEnumerable<ReceivedPacket>>(text);
+            packets = FilteredList(json);
 
+        }
+        private List<ReceivedPacket> FilteredList(IEnumerable<ReceivedPacket> json)
+        {
+            List<ReceivedPacket> list = new List<ReceivedPacket>();
+            foreach (var packet in json)
+            {
+                if (dict.ContainsKey(packet.TerminalId))
+                {
+                    list.Add(packet);
+                }
+            }
+
+            return list;
+        }
+
+        private void btnLoadSites_Click(object sender, EventArgs e)
+        {
             try
             {
                 OpenFileDialog ofd = new OpenFileDialog();
-                ofd.Filter = "JSON File|*.gz";
+                ofd.Filter = "CSV File|*.csv";
                 var result = ofd.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    GunZip.Decompress(ofd.FileName);
+                    lblLoadSites.Text = ofd.FileName;
+                    ReadSitesCsv(ofd.FileName);
+                    btnLoadParsedPackets.Enabled = true;
                 }
                 else
                 {

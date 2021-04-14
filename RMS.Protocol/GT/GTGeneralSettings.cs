@@ -54,10 +54,6 @@ namespace RMS.Protocols.GT
         public bool RS485Port { get; set; }
         [JsonProperty("polling")]
         public bool Polling { get; set; }
-        [JsonProperty("bypassMode")]
-        public bool BypassMode { get; set; }
-        [JsonProperty("counterString")]
-        public bool CounterString { get; set; }
         [JsonProperty("fuelString")]
         public bool FuelString { get; set; }
         [JsonProperty("resetCounter2")]
@@ -70,29 +66,28 @@ namespace RMS.Protocols.GT
         public bool ResetCounter5 { get; set; }
         [JsonProperty("resetCounter6")]
         public bool ResetCounter6 { get; set; }
-        [JsonProperty("resetCounter7")]
-        public bool ResetCounter7 { get; set; }
         [JsonProperty("resetCounter8")]
-        public bool ResetCounter8 { get; set; }
-        [JsonProperty("forcedReset")]
-        public bool ForcedReset { get; set; }
+        public bool ResetCounter1 { get; set; }
         [JsonProperty("modemReset")]
         public bool ModemReset { get; set; }
         [JsonProperty("GTReset")]
         public bool GTReset { get; set; }
         [JsonProperty("modbus")]
         public bool Modbus { get; set; }
-        [JsonProperty("reserved1")]
-        public bool Reserved1 { get; set; }
+        
         [JsonProperty("storage")]
         public bool Storage { get; set; }
+        [JsonProperty("reserved1")]
+        public bool Reserved1 { get; set; }
+        [JsonProperty("reserved2")]
+        public bool Reserved2 { get; set; }
         [JsonProperty("reserved3")]
         public bool Reserved3 { get; set; }
         [JsonProperty("reserved4")]
         public bool Reserved4 { get; set; }
-        [JsonProperty("code")]
-        public bool Reserved5 { get; set; }
         [JsonProperty("reserved5")]
+        public bool Reserved5 { get; set; }
+        [JsonProperty("reserved6")]
         public bool Reserved6 { get; set; }
         [JsonProperty("reserved7")]
         public bool Reserved7 { get; set; }
@@ -100,14 +95,20 @@ namespace RMS.Protocols.GT
         public bool Reserved8 { get; set; }
         [JsonProperty("reserved9")]
         public bool Reserved9 { get; set; }
-        [JsonProperty("counterFormat")]
-        public bool CounterFormat { get; set; }
+        [JsonProperty("reserved10")]
+        public bool Reserved10 { get; set; }
         [JsonProperty("reserved11")]
         public bool Reserved11 { get; set; }
         [JsonProperty("reserved12")]
         public bool Reserved12 { get; set; }
         [JsonProperty("reserved13")]
         public bool Reserved13 { get; set; }
+        [JsonProperty("reserved14")]
+        public bool Reserved14 { get; set; }
+        [JsonProperty("reserved15")]
+        public bool Reserved15 { get; set; }
+        [JsonProperty("reserved16")]
+        public bool Reserved16 { get; set; }
 
         public GTGeneralSettings(string terminalId)
         {
@@ -121,6 +122,8 @@ namespace RMS.Protocols.GT
             User3 = string.IsNullOrEmpty(User3) ? "" : User3;
             User4 = string.IsNullOrEmpty(User4) ? "" : User4;
             User5 = string.IsNullOrEmpty(User5) ? "" : User5;
+            User6 = string.IsNullOrEmpty(User5) ? "" : User6;
+            User7 = string.IsNullOrEmpty(User5) ? "" : User7;
             User8 = string.IsNullOrEmpty(User8) ? "" : User8;
             User9 = string.IsNullOrEmpty(User9) ? "" : User9;
             User10 = string.IsNullOrEmpty(User10) ? "" : User10;
@@ -135,34 +138,32 @@ namespace RMS.Protocols.GT
             sb.Append(GetBooleanAsString(RS232Port));
             sb.Append(GetBooleanAsString(RS485Port));
             sb.Append(GetBooleanAsString(Polling));
-            sb.Append(GetBooleanAsString(BypassMode));
-
-            sb.Append(GetBooleanAsString(CounterString));
-            sb.Append(GetBooleanAsString(FuelString));
-            sb.Append(GetBooleanAsString(ResetCounter2));
-            sb.Append(GetBooleanAsString(ResetCounter3));
-            sb.Append(GetBooleanAsString(ResetCounter4));
-            sb.Append(GetBooleanAsString(ResetCounter5));
-            sb.Append(GetBooleanAsString(ResetCounter6));
-            sb.Append(GetBooleanAsString(ResetCounter7));
-            sb.Append(GetBooleanAsString(ResetCounter8));
-
-            sb.Append(GetBooleanAsString(GTReset));
-            sb.Append(GetBooleanAsString(ModemReset));
-            sb.Append(GetBooleanAsString(Modbus));
-
-            sb.Append(GetBooleanAsString(Storage));
+            sb.Append(GetBooleanAsString(Reserved2));
             sb.Append(GetBooleanAsString(Reserved3));
+            sb.Append(GetBooleanAsString(FuelString));
             sb.Append(GetBooleanAsString(Reserved4));
+            sb.Append(GetBooleanAsString(ResetCounter6));
+            sb.Append(GetBooleanAsString(ResetCounter5));
+            sb.Append(GetBooleanAsString(ResetCounter4));
+            sb.Append(GetBooleanAsString(ResetCounter3));
+            sb.Append(GetBooleanAsString(ResetCounter2));
+            sb.Append(GetBooleanAsString(ResetCounter1));
             sb.Append(GetBooleanAsString(Reserved5));
+            sb.Append(GetBooleanAsString(ModemReset));
+            sb.Append(GetBooleanAsString(GTReset));
+            sb.Append(GetBooleanAsString(Modbus));
+            sb.Append(GetBooleanAsString(Storage));
             sb.Append(GetBooleanAsString(Reserved6));
             sb.Append(GetBooleanAsString(Reserved7));
             sb.Append(GetBooleanAsString(Reserved8));
             sb.Append(GetBooleanAsString(Reserved9));
-            sb.Append(GetBooleanAsString(CounterFormat));
+            sb.Append(GetBooleanAsString(Reserved10));
             sb.Append(GetBooleanAsString(Reserved11));
             sb.Append(GetBooleanAsString(Reserved12));
             sb.Append(GetBooleanAsString(Reserved13));
+            sb.Append(GetBooleanAsString(Reserved14));
+            sb.Append(GetBooleanAsString(Reserved15));
+            sb.Append(GetBooleanAsString(Reserved16));
 
             return string.Format("CGRC(ID({0},N,N)N({1},{2},{3},{4},{5},{6},{7},{8},{9},{10},)L({11})",
                 Code, User1, User2, User3, User4, User5, User6, User7, User8, User9, User10, sb.ToString());
@@ -215,37 +216,33 @@ namespace RMS.Protocols.GT
                         RS232Port = GetCharAsBoolean(charArray[5]);
                         RS485Port = GetCharAsBoolean(charArray[6]);
                         Polling = GetCharAsBoolean(charArray[7]);
-                        BypassMode = GetCharAsBoolean(charArray[8]);
-                        CounterString = GetCharAsBoolean(charArray[9]);
+                        Reserved2 = GetCharAsBoolean(charArray[8]);
+                        Reserved3 = GetCharAsBoolean(charArray[9]);
                         FuelString = GetCharAsBoolean(charArray[10]);
-                        ResetCounter2 = GetCharAsBoolean(charArray[11]);
-                        ResetCounter3 = GetCharAsBoolean(charArray[12]);
-                        ResetCounter4 = GetCharAsBoolean(charArray[13]);
-                        ResetCounter5 = GetCharAsBoolean(charArray[14]);
-                        ResetCounter6 = GetCharAsBoolean(charArray[15]);
-                        ResetCounter7 = GetCharAsBoolean(charArray[16]);
-                        ResetCounter8 = GetCharAsBoolean(charArray[17]);
-                        ForcedReset = GetCharAsBoolean(charArray[18]);
-                        GTReset = GetCharAsBoolean(charArray[19]);
-                        ModemReset = GetCharAsBoolean(charArray[20]);
-
+                        Reserved4 = GetCharAsBoolean(charArray[11]);
+                        ResetCounter6 = GetCharAsBoolean(charArray[12]);
+                        ResetCounter5 = GetCharAsBoolean(charArray[13]);
+                        ResetCounter4 = GetCharAsBoolean(charArray[14]);
+                        ResetCounter3 = GetCharAsBoolean(charArray[15]);
+                        ResetCounter2 = GetCharAsBoolean(charArray[16]);
+                        ResetCounter1 = GetCharAsBoolean(charArray[17]);
+                        Reserved5 = GetCharAsBoolean(charArray[18]);
+                        ModemReset = GetCharAsBoolean(charArray[19]);
+                        GTReset = GetCharAsBoolean(charArray[20]);
                         Modbus = GetCharAsBoolean(charArray[21]);
-
                         Storage = GetCharAsBoolean(charArray[22]);
-                        Reserved3 = GetCharAsBoolean(charArray[23]);
-                        Reserved4 = GetCharAsBoolean(charArray[24]);
-                        Reserved5 = GetCharAsBoolean(charArray[25]);
-                        Reserved6 = GetCharAsBoolean(charArray[26]);
-                        Reserved7 = GetCharAsBoolean(charArray[27]);
-                        Reserved8 = GetCharAsBoolean(charArray[28]);
-                        Reserved9 = GetCharAsBoolean(charArray[29]);
-                        CounterFormat = GetCharAsBoolean(charArray[30]);
-                        Reserved11 = GetCharAsBoolean(charArray[31]);
-                        Reserved12 = GetCharAsBoolean(charArray[32]);
-                        Reserved13 = GetCharAsBoolean(charArray[33]);
+                        Reserved6 = GetCharAsBoolean(charArray[23]);
+                        Reserved7 = GetCharAsBoolean(charArray[24]);
+                        Reserved8 = GetCharAsBoolean(charArray[25]);
+                        Reserved9 = GetCharAsBoolean(charArray[26]);
+                        Reserved10 = GetCharAsBoolean(charArray[27]);
+                        Reserved11 = GetCharAsBoolean(charArray[28]);
+                        Reserved12 = GetCharAsBoolean(charArray[29]);
+                        Reserved13 = GetCharAsBoolean(charArray[30]);
+                        Reserved14 = GetCharAsBoolean(charArray[31]);
+                        Reserved15 = GetCharAsBoolean(charArray[32]);
+                        Reserved16 = GetCharAsBoolean(charArray[33]);
                     }
-
-
                 }
             }
         }

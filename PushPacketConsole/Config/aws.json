@@ -1,0 +1,16 @@
+{
+  "AccessKey": "AKIASOGN2S6ESXVZYD6Z",
+  "AuthenticationType": "AWS4",
+  "EndPointUri": "https://sqs.ap-southeast-1.amazonaws.com/167935383433/json-stream-ingest",
+  "HttpTimeoutSecs": 10,
+  "Id": 1,
+  "MaxRecordsPerHit": 50,
+  "MaxRecordsToFetch": 10000,
+  "Name": "Reon (AWSV4)",
+  "ParallelTcpConn": 2000,
+  "Region": "ap-southeast-1",
+  "SecretKey": "AVlqLh4eNc4m79lYpYRIq638Ug8oc2aUh5PyKm8q",
+  "Service": "execute-api",
+  "UploadInterval": 100,
+  "XApiKey": "fWXOewHZVL4EX6q7qgv9H5v85SF96wLh7jAMsFCs"
+}

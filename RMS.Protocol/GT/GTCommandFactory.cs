@@ -27,7 +27,6 @@ namespace RMS.Protocols.GT
 
             return list;
         }
-
         public static ICGRC GetConfiguration(ReceivedPacket packet, GTCommandType commandType)
         {
             ICGRC cgrc = null;
@@ -63,6 +62,11 @@ namespace RMS.Protocols.GT
                 case GTCommandType.ExtendedConfigurationSettings:
                     strArray = SplitPacket(packet.Data);
                     cgrc = new GTExtendedConfigurationSettings(packet.TerminalId);
+                    cgrc.Parse(strArray);
+                    break;
+                case GTCommandType.NetworkReadOnlyInformation:
+                    strArray = SplitPacket(packet.Data);
+                    cgrc = new GTNetworkReadOnlyInformation(packet.TerminalId);
                     cgrc.Parse(strArray);
                     break;
                 case GTCommandType.GetModbusDevice:
@@ -116,6 +120,7 @@ namespace RMS.Protocols.GT
                     command = string.Format("{0}<SGRC00ST>", terminalId);
                     break;
                 case GTCommandType.WatchdogSettings:
+                case GTCommandType.NetworkReadOnlyInformation:
                     command = string.Format("{0}<SGRC01ST>", terminalId);
                     break;
                 case GTCommandType.Reset:

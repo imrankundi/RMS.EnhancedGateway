@@ -33,7 +33,7 @@ namespace RMS.Server.BusinessLogic
             var resendFailedPacketTriggerDetail = new TriggerDetail
             {
                 GroupName = JobDetailManager.Group,
-                CronExpression = "0/15 * * * * ?",
+                CronExpression = "0 0/30 0 ? * * *",
                 JobName = resendFailedPacketJobName,
                 TriggerName = resendFailedPacketTriggerName,
                 TriggerType = TriggerType.Cron

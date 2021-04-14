@@ -60,6 +60,18 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Configuration\json1.json" />
+    <None Include="Drivers\C485.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Drivers\C232.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Drivers\CNFG.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Drivers\M232.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Drivers\MDPC.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
